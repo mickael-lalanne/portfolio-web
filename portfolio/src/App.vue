@@ -17,12 +17,14 @@ export default {
   }),
 };
 </script>
-
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+</style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 html, body {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
+  scroll-behavior: smooth;
 }
 
 </style>

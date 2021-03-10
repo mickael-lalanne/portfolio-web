@@ -1,46 +1,92 @@
 <template>
-  <div class="main-menu-container">
-    <v-row class="text-center">
-      <v-col cols="3">
-          <MainMenuItem :videoSrc="'/media/keyboard.7213bb9f.mp4'" :itemName="'Présentation'"/>
-      </v-col>
-      <v-col cols="3">
-          <MainMenuItem :videoSrc="'/media/keyboard.7213bb9f.mp4'" :itemName="'Formation'"/>
-      </v-col>
-      <v-col cols="3">
-          <MainMenuItem :videoSrc="'/media/keyboard.7213bb9f.mp4'" :itemName="'Projets'"/>
-      </v-col>
-      <v-col cols="3">
-          <MainMenuItem :videoSrc="'/media/keyboard.7213bb9f.mp4'" :itemName="'Hobbies'"/>
-      </v-col>
-
-    </v-row>
-  </div>
+    <div ref="mainMenuContainer" class="main-menu-container">
+        <div class="menu-item text-center" @click="$emit('itemClick', 'presentation')">
+            Présentation
+            <div v-if="selectedCategory === 'presentation'" class="menu-item-highlight"></div>
+        </div>
+        <div class="menu-item text-center" @click="$emit('itemClick', 'projects')">
+            Projets
+            <div v-if="selectedCategory === 'projects'" class="menu-item-highlight"></div>
+        </div>
+        <!-- <div class="menu-item text-center" @click="$emit('itemClick', 'hobbies')">
+            Hobbies
+            <div v-if="selectedCategory === 'hobbies'" class="menu-item-highlight"></div>
+        </div> -->
+        <div class="menu-item text-center" @click="$emit('itemClick', 'contact')">
+            Contact
+            <div v-if="selectedCategory === 'contact'" class="menu-item-highlight"></div>
+        </div>
+    </div>
 </template>
 
 <script>
-  import MainMenuItem from '@/components/home/MainMenuItem.vue';
-  export default {
+
+export default {
     name: 'MainMenu',
     components: {
-        MainMenuItem,
+    },
+    props: {
+        selectedCategory: { type: String, default: () => 'presentation' },
     },
     data: () => ({
     }),
-  }
+    created: function () {
+        window.onscroll = this.onScroll;
+    },
+    methods: {
+        onScroll: function () {
+            // Get the header
+            const header = this.$refs.mainMenuContainer;
+
+            // Get the offset position of the navbar
+            const sticky = header.offsetTop;
+
+            if (window.pageYOffset > sticky && window.innerHeight < window.pageYOffset) {
+                header.classList.add('main-menu-container-sticky');
+            } else {
+                header.classList.remove('main-menu-container-sticky');
+            }
+        }
+    }
+};
 </script>
 
 <style scoped>
 .main-menu-container {
-    padding-left: 10%;
-    padding-right: 10%;
+    /* position: fixed; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 30px;
+    background-color: #1a1c20;
+    z-index: 1;
 }
-.menu-category {
-    transform: rotate(-90deg);
-    font-size: 5em;
+.main-menu-container-sticky {
+    position: fixed;
+    top: 0;
 }
-.background-video {
-    position: absolute;
+.menu-item {
+    position: relative;
+    /* background: #c9d6df; */
+    font-size: 14px;
+    /* border-top: 1px solid black; */
+    cursor: pointer;
+    width: 200px;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fcf1f1;
+}
+.menu-item:hover {
+    background-color: #404347;
+}
+.menu-item-highlight {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 4px;
+    background-color: #f9813a;
 }
 </style>
