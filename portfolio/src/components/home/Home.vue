@@ -1,80 +1,84 @@
 <template>
-<v-app>
-  <div ref="homeContainer" class="home-container" data-app>
-      <div class="home-content-container">
-        <div>
-          Salut, moi c'est <span class="highlight">Mickaël Lalanne</span>.
-          <br>
-          Je suis développeur web full-stack.
-          <CustomButton
-            class="see-work-button"
-            text="Voir mon travail"
-            @click="onSeeWorkButtonClick"
-          />
+    <v-app>
+        <div ref="homeContainer" class="home-container" data-app>
+            <div class="home-content-container">
+                <div>
+                    Salut, moi c'est
+                    <span class="highlight">Mickaël Lalanne</span>.
+                    <br />
+                    Je suis développeur web full-stack.
+                    <CustomButton
+                        class="see-work-button"
+                        text="Voir mon travail"
+                        @click="onSeeWorkButtonClick"
+                    />
+                </div>
+            </div>
+            <vue-particles
+                class="particles-container"
+                color="#dedede"
+                :particleOpacity="0.2"
+                :particlesNumber="40"
+                shapeType="circle"
+                :particleSize="4"
+                linesColor="#dedede"
+                :linesWidth="1"
+                :lineLinked="true"
+                :lineOpacity="0.2"
+                :linesDistance="150"
+                :moveSpeed="0.8"
+                :hoverEffect="true"
+                hoverMode="grab"
+                :clickEffect="true"
+                clickMode="push"
+            >
+            </vue-particles>
+            <!-- <Presentation/> -->
+            <MainMenu
+                :selectedCategory="selectedCategory"
+                @itemClick="scrollToCategory"
+            />
+            <Presentation ref="presentationCategory" />
+            <Projects ref="projectsCategory" />
+            <!-- <Hobbies ref="hobbiesCategory"/> -->
+            <CategorySeparator />
+            <Contact ref="contactCategory" />
         </div>
-      </div>
-      <vue-particles
-        class="particles-container"
-        color="#dedede"
-        :particleOpacity="0.2"
-        :particlesNumber="40"
-        shapeType="circle"
-        :particleSize="4"
-        linesColor="#dedede"
-        :linesWidth="1"
-        :lineLinked="true"
-        :lineOpacity="0.2"
-        :linesDistance="150"
-        :moveSpeed="0.8"
-        :hoverEffect="true"
-        hoverMode="grab"
-        :clickEffect="true"
-        clickMode="push"
-      >
-      </vue-particles>
-      <!-- <Presentation/> -->
-      <MainMenu
-        :selectedCategory="selectedCategory"
-        @itemClick="scrollToCategory"
-      />
-      <Presentation ref="presentationCategory" />
-      <Projects ref="projectsCategory"/>
-      <!-- <Hobbies ref="hobbiesCategory"/> -->
-      <CategorySeparator/>  
-      <Contact ref="contactCategory"/>
-  </div>
-</v-app>
+    </v-app>
 </template>
 
 <script>
-  import MainMenu from '@/components/home/MainMenu.vue';
-  // import HeaderShape from '@/components/home/HeaderShape.vue';
-  import Presentation from '@/components/presentation/Presentation.vue';
-  // import Hobbies from '@/components/hobbies/Hobbies.vue';
-  import Projects from '@/components/projects/Projects.vue';
-  import Contact from '@/components/contact/Contact.vue';
-  import CategorySeparator from '@/components/home/CategorySeparator.vue';
-  import CustomButton from '@/components/shared/CustomButton.vue';
+import MainMenu from "@/components/home/MainMenu.vue";
+// import HeaderShape from '@/components/home/HeaderShape.vue';
+import Presentation from "@/components/presentation/Presentation.vue";
+// import Hobbies from '@/components/hobbies/Hobbies.vue';
+import Projects from "@/components/projects/Projects.vue";
+import Contact from "@/components/contact/Contact.vue";
+import CategorySeparator from "@/components/home/CategorySeparator.vue";
+import CustomButton from "@/components/shared/CustomButton.vue";
 
-  export default {
-    name: 'Home',
+export default {
+    name: "Home",
     components: {
-      MainMenu,
-      Presentation,
-      Contact,
-      Projects,
-      CategorySeparator,
-      CustomButton
+        MainMenu,
+        Presentation,
+        Contact,
+        Projects,
+        CategorySeparator,
+        CustomButton,
     },
     data: () => ({
-      selectedCategory: 'presentation',
-      scrollTimeout: null
+        selectedCategory: "presentation",
+        scrollTimeout: null,
     }),
-    mounted: function () {
-      this.$refs.homeContainer.addEventListener('scroll', this.onHomeContainerScroll);
-      window.addEventListener('scroll', this.onHomeContainerScroll);
+    mounted: function() {
+        this.$refs.homeContainer.addEventListener(
+            "scroll",
+            this.onHomeContainerScroll
+        );
+        window.addEventListener("scroll", this.onHomeContainerScroll);
 
-      console.log(`
+        console.log(`
       ⢀⡴⠑⡄⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
       ⠸⡇⠀⠿⡀⠀⠀⠀⣀⡴⢿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
       ⠀⠀⠀⠀⠑⢄⣠⠾⠁⣀⣄⡈⠙⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀ 
@@ -90,97 +94,119 @@
       ⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀ 
       ⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠛⠉
-      `)
+      `);
     },
     methods: {
-      scrollToCategory: function (categoryName = 'presentation') {
-        this.selectedCategory = categoryName;
-        const categoryElt = this.$refs[categoryName + 'Category'].$el;
-        categoryElt.scrollIntoView();
-      },
-      onSeeWorkButtonClick: function () {
-        const categoryElt = this.$refs.presentationCategory.$el;
-        var elementPosition = categoryElt.getBoundingClientRect().top;
+        scrollToCategory: function(categoryName = "presentation") {
+            this.selectedCategory = categoryName;
+            const categoryElt = this.$refs[categoryName + "Category"].$el;
+            categoryElt.scrollIntoView();
+        },
+        onSeeWorkButtonClick: function() {
+            const categoryElt = this.$refs.presentationCategory.$el;
+            var elementPosition = categoryElt.getBoundingClientRect().top;
 
-        window.scrollTo({
-            top: elementPosition,
-            behavior: "smooth"
-        });
-      },
-      onHomeContainerScroll: function () {
-        if (!this.scrollTimeout) {
-          this.scrollTimeout = setTimeout(() => {
-            const presentationPercent = this.getViewPercentage(this.$refs['presentationCategory'].$el);
-            const projectsPercent = this.getViewPercentage(this.$refs['projectsCategory'].$el);
-            const hobbiesPercent = this.getViewPercentage(this.$refs['hobbiesCategory'].$el);
-            const contactPercent = this.getViewPercentage(this.$refs['contactCategory'].$el);
+            window.scrollTo({
+                top: elementPosition,
+                behavior: "smooth",
+            });
+        },
+        onHomeContainerScroll: function() {
+            if (!this.scrollTimeout) {
+                this.scrollTimeout = setTimeout(() => {
+                    const presentationPercent = this.getViewPercentage(
+                        this.$refs["presentationCategory"].$el
+                    );
+                    const projectsPercent = this.getViewPercentage(
+                        this.$refs["projectsCategory"].$el
+                    );
+                    const hobbiesPercent = this.getViewPercentage(
+                        this.$refs["hobbiesCategory"].$el
+                    );
+                    const contactPercent = this.getViewPercentage(
+                        this.$refs["contactCategory"].$el
+                    );
 
-            const percentageValue = 55;
-            if (presentationPercent > percentageValue) {
-              this.selectedCategory = 'presentation';
-            } else if (projectsPercent > percentageValue) {
-              this.selectedCategory = 'projects';
-            } else if (hobbiesPercent > percentageValue) {
-              this.selectedCategory = 'hobbies';
-            } else if (contactPercent > percentageValue) {
-              this.selectedCategory = 'contact';
+                    const percentageValue = 55;
+                    if (presentationPercent > percentageValue) {
+                        this.selectedCategory = "presentation";
+                    } else if (projectsPercent > percentageValue) {
+                        this.selectedCategory = "projects";
+                    } else if (hobbiesPercent > percentageValue) {
+                        this.selectedCategory = "hobbies";
+                    } else if (contactPercent > percentageValue) {
+                        this.selectedCategory = "contact";
+                    }
+
+                    this.scrollTimeout = null;
+                }, 300);
+            }
+        },
+        getViewPercentage(element) {
+            const viewport = {
+                top: window.pageYOffset,
+                bottom: window.pageYOffset + window.innerHeight,
+            };
+
+            const elementBoundingRect = element.getBoundingClientRect();
+            const elementPos = {
+                top: elementBoundingRect.y + window.pageYOffset,
+                bottom:
+                    elementBoundingRect.y +
+                    elementBoundingRect.height +
+                    window.pageYOffset,
+            };
+
+            if (
+                viewport.top > elementPos.bottom ||
+                viewport.bottom < elementPos.top
+            ) {
+                return 0;
             }
 
-            this.scrollTimeout = null;
-          }, 300);
-        }
-      },
-      getViewPercentage(element) {
-        const viewport = {
-          top: window.pageYOffset,
-          bottom: window.pageYOffset + window.innerHeight
-        };
+            // Element is fully within viewport
+            if (
+                viewport.top < elementPos.top &&
+                viewport.bottom > elementPos.bottom
+            ) {
+                return 100;
+            }
 
-        const elementBoundingRect = element.getBoundingClientRect();
-        const elementPos = {
-          top: elementBoundingRect.y + window.pageYOffset,
-          bottom: elementBoundingRect.y + elementBoundingRect.height + window.pageYOffset
-        };
+            // Element is bigger than the viewport
+            if (
+                elementPos.top < viewport.top &&
+                elementPos.bottom > viewport.bottom
+            ) {
+                return 100;
+            }
 
-        if (viewport.top > elementPos.bottom || viewport.bottom < elementPos.top) {
-          return 0;
-        }
+            const elementHeight = elementBoundingRect.height;
+            let elementHeightInView = elementHeight;
 
-        // Element is fully within viewport
-        if (viewport.top < elementPos.top && viewport.bottom > elementPos.bottom) {
-          return 100;
-        }
+            if (elementPos.top < viewport.top) {
+                elementHeightInView =
+                    elementHeight - (window.pageYOffset - elementPos.top);
+            }
 
-        // Element is bigger than the viewport
-        if (elementPos.top < viewport.top && elementPos.bottom > viewport.bottom) {
-          return 100;
-        }
+            if (elementPos.bottom > viewport.bottom) {
+                elementHeightInView =
+                    elementHeightInView - (elementPos.bottom - viewport.bottom);
+            }
 
-        const elementHeight = elementBoundingRect.height;
-        let elementHeightInView = elementHeight;
+            const percentageInView =
+                (elementHeightInView / window.innerHeight) * 100;
 
-        if (elementPos.top < viewport.top) {
-          elementHeightInView = elementHeight - (window.pageYOffset - elementPos.top);
-        }
-
-        if (elementPos.bottom > viewport.bottom) {
-          elementHeightInView = elementHeightInView - (elementPos.bottom - viewport.bottom);
-        }
-
-        const percentageInView = (elementHeightInView / window.innerHeight) * 100;
-
-        return Math.round(percentageInView);
-      }
-    }
-  }
+            return Math.round(percentageInView);
+        },
+    },
+};
 </script>
 
 <style scoped>
 .home-container {
-  height: 100vh;
-  width: 100vw;
-  /* background: var(--v-background-base); */
-  background-color: #1a1c20;
+    height: 100vh;
+    width: 100vw;
+    background-color: #1a1c20;
 }
 .home-content-container {
     width: 100vw;
@@ -196,12 +222,12 @@
     color: #f9813a;
 }
 .particles-container {
-  position: absolute;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
 }
 .see-work-button {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 </style>

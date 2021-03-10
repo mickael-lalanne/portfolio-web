@@ -1,60 +1,61 @@
 <template>
-<div class="project-container">
-  <div class="section-title">Mes projets</div>
-  <!-- Intuiface Analytics -->
-  <ProjectPreview
-    :title="P1_TITLE"
-    :description="P1_DESCRIPTION"
-    :skills="P1_SKILLS"
-    :imgName="P1_IMG"
-    :dialogComponent="P1_DIALOG"
-  />
-  <v-divider class="project-divider"></v-divider>
-  <!-- Tutoriel API Explorer -->
-  <ProjectPreview
-    :title="P2_TITLE"
-    :description="P1_DESCRIPTION"
-    :skills="P1_SKILLS"
-    :imgName="P2_IMG"
-    :dialogComponent="P2_DIALOG"
-    reverse
-  />
-</div>
+    <div class="project-container">
+        <div class="section-title">Mes projets</div>
+        <!-- Intuiface Analytics -->
+        <ProjectPreview
+            :title="P1_TITLE"
+            :description="P1_DESCRIPTION"
+            :skills="P1_SKILLS"
+            :imgName="P1_IMG"
+            :dialogComponent="P1_DIALOG"
+        />
+        <v-divider class="project-divider"></v-divider>
+        <!-- Tutoriel API Explorer -->
+        <ProjectPreview
+            :title="P2_TITLE"
+            :description="P1_DESCRIPTION"
+            :skills="P1_SKILLS"
+            :imgName="P2_IMG"
+            :dialogComponent="P2_DIALOG"
+            reverse
+        />
+    </div>
 </template>
 
 <script>
-import ProjectPreview from '@/components/projects/ProjectPreview.vue';
+import ProjectPreview from "@/components/projects/ProjectPreview.vue";
 
 export default {
-    name: 'Projects',
+    name: "Projects",
     components: { ProjectPreview },
     data: () => ({
-      P1_TITLE: 'INTUIFACE ANALYTICS - CHART & DASHBOARDS',
-      P1_DESCRIPTION: 'The website and membership management system we created for the association had to replace an existing set-up which had become old and cumbersome. We produced detailed user profiles of all the user groups to ensure that the site would meet the needs of diverse audiences as much as possible as well as being engaging to visit.',
-      P1_IMG: 'analytics',
-      P1_SKILLS: ['Angular', 'Highcharts', 'Mongodb'],
-      P1_DIALOG: 'ProjectAnalytics',
-      P2_TITLE: 'API EXPLORER - TUTORIEL',
-      P2_IMG: 'apiExplorer',
-      P2_DIALOG: 'ProjectApiExplorer',
-    })
+        P1_TITLE: "INTUIFACE ANALYTICS - CHART & DASHBOARDS",
+        P1_DESCRIPTION:
+            "The website and membership management system we created for the association had to replace an existing set-up which had become old and cumbersome. We produced detailed user profiles of all the user groups to ensure that the site would meet the needs of diverse audiences as much as possible as well as being engaging to visit.",
+        P1_IMG: "analytics",
+        P1_SKILLS: ["Angular", "Highcharts", "Mongodb"],
+        P1_DIALOG: "ProjectAnalytics",
+        P2_TITLE: "API EXPLORER - TUTORIEL",
+        P2_IMG: "apiExplorer",
+        P2_DIALOG: "ProjectApiExplorer",
+    }),
 };
 </script>
 
 <style scoped>
 .project-container {
-  /* height: 100vh; */
-  background-color: #1a1c20;
-  padding: 100px 5%;
+    /* height: 100vh; */
+    background-color: #1a1c20;
+    padding: 100px 5%;
 }
 .section-title {
-  color: #f9813a;
-  font-size: 40px;
-  text-align: center;
-  padding-bottom: 100px;
+    color: #f9813a;
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 100px;
 }
 .project-divider {
-  background-color: white;
-  margin: 100px 0;
+    background-color: white;
+    margin: 100px 0;
 }
 </style>

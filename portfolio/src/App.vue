@@ -1,30 +1,28 @@
 <template>
-  <div>
-    <Home/>
-  </div>
+    <div>
+        <Home />
+    </div>
 </template>
 
 <script>
-import Home from '@/components/home/Home.vue';
+import Home from "@/components/home/Home.vue";
 
 export default {
-  name: 'App',
+    name: "App",
 
-  components: { Home },
+    components: { Home },
 
-  data: () => ({
-    //
-  }),
+    data: () => ({
+    }),
 };
 </script>
+<style></style>
 <style>
-</style>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
-html, body {
-  font-family: 'Lato', sans-serif;
-  scroll-behavior: smooth;
+html,
+body {
+    font-family: "Lato", sans-serif;
+    scroll-behavior: smooth;
 }
-
 </style>

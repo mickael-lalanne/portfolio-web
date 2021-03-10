@@ -1,53 +1,67 @@
 <template>
     <div ref="mainMenuContainer" class="main-menu-container">
-        <div class="menu-item text-center" @click="$emit('itemClick', 'presentation')">
+        <div
+            class="menu-item text-center"
+            @click="$emit('itemClick', 'presentation')"
+        >
             Présentation
-            <div v-if="selectedCategory === 'presentation'" class="menu-item-highlight"></div>
+            <div
+                v-if="selectedCategory === 'presentation'"
+                class="menu-item-highlight"
+            ></div>
         </div>
-        <div class="menu-item text-center" @click="$emit('itemClick', 'projects')">
+        <div
+            class="menu-item text-center"
+            @click="$emit('itemClick', 'projects')"
+        >
             Projets
-            <div v-if="selectedCategory === 'projects'" class="menu-item-highlight"></div>
+            <div
+                v-if="selectedCategory === 'projects'"
+                class="menu-item-highlight"
+            ></div>
         </div>
-        <!-- <div class="menu-item text-center" @click="$emit('itemClick', 'hobbies')">
-            Hobbies
-            <div v-if="selectedCategory === 'hobbies'" class="menu-item-highlight"></div>
-        </div> -->
-        <div class="menu-item text-center" @click="$emit('itemClick', 'contact')">
+        <div
+            class="menu-item text-center"
+            @click="$emit('itemClick', 'contact')"
+        >
             Contact
-            <div v-if="selectedCategory === 'contact'" class="menu-item-highlight"></div>
+            <div
+                v-if="selectedCategory === 'contact'"
+                class="menu-item-highlight"
+            ></div>
         </div>
     </div>
 </template>
 
 <script>
-
 export default {
-    name: 'MainMenu',
-    components: {
-    },
+    name: "MainMenu",
+    components: {},
     props: {
-        selectedCategory: { type: String, default: () => 'presentation' },
+        selectedCategory: { type: String, default: () => "presentation" },
     },
-    data: () => ({
-    }),
-    created: function () {
+    data: () => ({}),
+    created: function() {
         window.onscroll = this.onScroll;
     },
     methods: {
-        onScroll: function () {
+        onScroll: function() {
             // Get the header
             const header = this.$refs.mainMenuContainer;
 
             // Get the offset position of the navbar
             const sticky = header.offsetTop;
 
-            if (window.pageYOffset > sticky && window.innerHeight < window.pageYOffset) {
-                header.classList.add('main-menu-container-sticky');
+            if (
+                window.pageYOffset > sticky &&
+                window.innerHeight < window.pageYOffset
+            ) {
+                header.classList.add("main-menu-container-sticky");
             } else {
-                header.classList.remove('main-menu-container-sticky');
+                header.classList.remove("main-menu-container-sticky");
             }
-        }
-    }
+        },
+    },
 };
 </script>
 
@@ -68,9 +82,7 @@ export default {
 }
 .menu-item {
     position: relative;
-    /* background: #c9d6df; */
     font-size: 14px;
-    /* border-top: 1px solid black; */
     cursor: pointer;
     width: 200px;
     height: 100%;

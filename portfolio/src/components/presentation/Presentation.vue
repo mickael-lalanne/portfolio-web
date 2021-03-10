@@ -1,7 +1,10 @@
 <template>
     <div class="presentation-container">
         <div class="profile-container">
-            <img class="profile-picture" src="@/assets/images/profilePicture.png"/>
+            <img
+                class="profile-picture"
+                src="@/assets/images/profilePicture.png"
+            />
             <div>
                 <div class="resume-name">Mickaël Lalanne</div>
                 <div class="resume-category">
@@ -18,7 +21,7 @@
                 </div>
                 <div class="resume-category">
                     <v-icon class="resume-title" color="black">
-                        <!-- mdi-email --> mdi-email-outline
+                        mdi-email-outline
                     </v-icon>
                     <div class="resume-text">mickael.lalanne03@gmail.com</div>
                 </div>
@@ -36,7 +39,8 @@
                 </div>
                 <div class="keywords-container">
                     <v-chip
-                        v-for="keyword in KEYWORDS" :key="keyword"
+                        v-for="keyword in KEYWORDS"
+                        :key="keyword"
                         class="keyword-chip"
                         :color="'green'"
                         text-color="white"
@@ -46,19 +50,34 @@
                 </div>
             </div>
         </div>
-            <Timeline/>
+        <Timeline />
     </div>
 </template>
 
 <script>
-import Timeline from '@/components/presentation/Timeline.vue';
+import Timeline from "@/components/presentation/Timeline.vue";
 
 export default {
-    name: 'Presentation',
+    name: "Presentation",
     components: { Timeline },
     data: () => ({
-        KEYWORDS: ['Vue.js', 'Angular', 'npm', 'Typsecript', 'Javascript', 'HTML', 'CSS', 'Vuex', 'ngrx',
-            'AWS', 'Lambda', 'S3', 'Jenkins', 'Jira', 'Git']
+        KEYWORDS: [
+            "Vue.js",
+            "Angular",
+            "npm",
+            "Typsecript",
+            "Javascript",
+            "HTML",
+            "CSS",
+            "Vuex",
+            "ngrx",
+            "AWS",
+            "Lambda",
+            "S3",
+            "Jenkins",
+            "Jira",
+            "Git",
+        ],
     }),
 };
 </script>

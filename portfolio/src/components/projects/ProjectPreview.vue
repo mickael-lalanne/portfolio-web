@@ -1,48 +1,58 @@
 <template>
-<div class="project-preview-container" :style="`flex-direction: ${reverse ? 'row-reverse' : 'row'}`">
-    <div class="project-left">
-        <div class="project-title"> {{ title }}</div>
-        <div class="project-description"> {{ description }}</div>
-        <div class="project-link" @click="showDialog = true">DÉTAIL</div>
-        <!-- <div class="project-link">LIEN VERS LE SITE</div> -->
-        <div class="skills-container">
-            <div v-for="skill in skills" :key="skill" class="skill-container">
-                <img class="skill-icon" src="@/assets/images/check.png"/>
-                {{ skill }}
+    <div
+        class="project-preview-container"
+        :style="`flex-direction: ${reverse ? 'row-reverse' : 'row'}`"
+    >
+        <div class="project-left">
+            <div class="project-title">{{ title }}</div>
+            <div class="project-description">{{ description }}</div>
+            <div class="project-link" @click="showDialog = true">DÉTAIL</div>
+            <!-- <div class="project-link">LIEN VERS LE SITE</div> -->
+            <div class="skills-container">
+                <div
+                    v-for="skill in skills"
+                    :key="skill"
+                    class="skill-container"
+                >
+                    <img class="skill-icon" src="@/assets/images/check.png" />
+                    {{ skill }}
+                </div>
             </div>
         </div>
+        <div>
+            <img
+                class="project-img"
+                :src="require(`@/assets/images/${imgName}.png`)"
+            />
+        </div>
+        <component
+            :is="dialogComponent"
+            :showDialog="showDialog"
+            @close="showDialog = false"
+        ></component>
     </div>
-    <div>
-        <img class="project-img" :src="require(`@/assets/images/${imgName}.png`)"/>
-    </div>
-    <component
-        :is="dialogComponent"
-        :showDialog="showDialog"
-        @close="showDialog = false"
-    ></component>
-</div>
 </template>
 
 <script>
-import ProjectAnalytics from '@/components/projects/ProjectAnalytics.vue';
-import ProjectApiExplorer from '@/components/projects/ProjectApiExplorer.vue';
+import ProjectAnalytics from "@/components/projects/ProjectAnalytics.vue";
+import ProjectApiExplorer from "@/components/projects/ProjectApiExplorer.vue";
 
 export default {
-    name: 'ProjectPreview',
+    name: "ProjectPreview",
     components: {
         ProjectAnalytics,
-        ProjectApiExplorer
+        ProjectApiExplorer,
     },
     props: {
         title: { type: String },
-        description : { type: String },
-        imgName : { type: String },
+        description: { type: String },
+        imgName: { type: String },
         skills: { type: Array },
         reverse: { type: Boolean },
-        dialogComponent: { type: String }
+        dialogComponent: { type: String },
     },
     data: () => ({
-        showDialog: false
+        showDialog: false,
     }),
 };
 </script>
