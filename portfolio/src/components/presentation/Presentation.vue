@@ -1,54 +1,57 @@
 <template>
     <div class="presentation-container">
+        <div class="resume-name pt-12">Qui va là ?</div>
+        <div class="title-separator mb-12"></div>
         <div class="profile-container">
             <img
-                class="profile-picture"
+                class="profile-picture mr-12"
                 src="@/assets/images/profilePicture.png"
             />
             <div>
-                <div class="resume-name">Mickaël Lalanne</div>
                 <div class="resume-category">
-                    <v-icon class="resume-title" color="black">
-                        mdi-cake
+                    <v-icon class="resume-icon" color="var(--v-primary-base)">
+                        mdi-account-circle-outline
                     </v-icon>
-                    <div class="resume-text">24</div>
+                    <div class="resume-text">Mickaël Lalanne, 24 ans</div>
                 </div>
                 <div class="resume-category">
-                    <v-icon class="resume-title" color="black">
+                    <v-icon class="resume-icon" color="var(--v-primary-base)">
                         mdi-pin-outline
                     </v-icon>
                     <div class="resume-text">Toulouse</div>
                 </div>
                 <div class="resume-category">
-                    <v-icon class="resume-title" color="black">
+                    <v-icon class="resume-icon" color="var(--v-primary-base)">
                         mdi-email-outline
                     </v-icon>
                     <div class="resume-text">mickael.lalanne03@gmail.com</div>
                 </div>
                 <div class="resume-category">
-                    <v-icon class="resume-title" color="black">
+                    <v-icon class="resume-icon" color="var(--v-primary-base)">
                         mdi-briefcase-outline
                     </v-icon>
-                    <div class="resume-text">Ingénieur R&D chez Intuiface</div>
+                    <div class="resume-text">
+                        Ingénieur R&D chez <i class="ml-1">Intuiface</i>
+                    </div>
                 </div>
                 <div class="resume-category">
-                    <v-icon class="resume-title" color="black">
+                    <v-icon class="resume-icon" color="var(--v-primary-base)">
                         mdi-gamepad-square-outline
                     </v-icon>
                     <div class="resume-text">Jeux vidéo</div>
                 </div>
-                <div class="keywords-container">
-                    <v-chip
-                        v-for="keyword in KEYWORDS"
-                        :key="keyword"
-                        class="keyword-chip"
-                        :color="'green'"
-                        text-color="white"
-                    >
-                        {{ keyword }}
-                    </v-chip>
-                </div>
             </div>
+        </div>
+        <div class="keywords-container mt-12">
+            <v-chip
+                v-for="keyword in KEYWORDS"
+                :key="keyword"
+                class="keyword-chip"
+                text-color="var(--v-dark-base)"
+                color="var(--v-light2-base)"
+            >
+                {{ keyword }}
+            </v-chip>
         </div>
         <Timeline />
     </div>
@@ -84,40 +87,54 @@ export default {
 
 <style scoped>
 .presentation-container {
-    height: 100vh;
     background-color: #fcf1f1;
     padding: 0px 20%;
 }
 .profile-container {
-    padding-top: 2%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 .profile-picture {
-    width: 20vw;
+    width: 400px;
 }
 .resume-name {
     color: var(--v-primary-base);
     text-align: center;
     font-size: 32px;
-    margin-bottom: 32px;
-    margin-top: 32px;
-}
-.resume-title {
+    text-transform: uppercase;
     font-weight: bold;
-    margin-right: 15px;
+}
+.resume-icon {
+    font-weight: bold;
+    margin-right: 10px;
+    background-color: var(--v-dark-base);
+    padding: 10px;
+    border-radius: 10%;
 }
 .resume-category {
     display: flex;
     font-size: 18px;
     margin-top: 16px;
 }
+.resume-text {
+    display: flex;
+    align-items: center;
+    color: black;
+}
 .keywords-container {
     margin-top: 20px;
     width: 500px;
+    margin: auto;
 }
 .keyword-chip {
     margin: 5px;
+}
+.title-separator {
+    width: 100px;
+    height: 4px;
+    background-color: var(--v-primary-base);
+    text-align: center;
+    margin: auto;
 }
 </style>

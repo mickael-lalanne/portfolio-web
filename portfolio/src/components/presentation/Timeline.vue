@@ -129,7 +129,7 @@ h2 {
 .timeline {
     display: flex;
     flex-direction: column;
-    margin: $margin auto;
+    padding: $margin 0;
     position: relative;
 
     &__event {
