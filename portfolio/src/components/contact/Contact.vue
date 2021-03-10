@@ -21,13 +21,12 @@
             required
         ></v-text-field>
 
-        <v-select
-            v-model="select"
-            :items="items"
-            :rules="[v => !!v || 'Item is required']"
-            label="Item"
-            required
-        ></v-select>
+        <v-textarea
+            name="input-7-1"
+            label="Default style"
+            value="The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through."
+            hint="Hint text"
+        ></v-textarea>
 
         <v-btn
             :disabled="!valid"
@@ -36,21 +35,6 @@
             @click="validate"
         >
             Validate
-        </v-btn>
-
-        <v-btn
-            color="error"
-            class="mr-4"
-            @click="reset"
-        >
-            Reset Form
-        </v-btn>
-
-        <v-btn
-            color="warning"
-            @click="resetValidation"
-        >
-            Reset Validation
         </v-btn>
     </v-form>
 </div>
@@ -74,12 +58,6 @@ export default {
             v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
         ],
         select: null,
-        items: [
-            'Item 1',
-            'Item 2',
-            'Item 3',
-            'Item 4',
-        ],
         checkbox: false
     }),
     methods: {

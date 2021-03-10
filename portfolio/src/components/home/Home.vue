@@ -6,6 +6,11 @@
           Salut, moi c'est <span class="highlight">Mickaël Lalanne</span>.
           <br>
           Je suis développeur web full-stack.
+          <CustomButton
+            class="see-work-button"
+            text="Voir mon travail"
+            @click="onSeeWorkButtonClick"
+          />
         </div>
       </div>
       <vue-particles
@@ -49,10 +54,18 @@
   import Projects from '@/components/projects/Projects.vue';
   import Contact from '@/components/contact/Contact.vue';
   import CategorySeparator from '@/components/home/CategorySeparator.vue';
+  import CustomButton from '@/components/shared/CustomButton.vue';
 
   export default {
     name: 'Home',
-    components: { MainMenu, Presentation, Contact, Projects, CategorySeparator },
+    components: {
+      MainMenu,
+      Presentation,
+      Contact,
+      Projects,
+      CategorySeparator,
+      CustomButton
+    },
     data: () => ({
       selectedCategory: 'presentation',
       scrollTimeout: null
@@ -80,10 +93,19 @@
       `)
     },
     methods: {
-      scrollToCategory: function (categoryName) {
+      scrollToCategory: function (categoryName = 'presentation') {
         this.selectedCategory = categoryName;
         const categoryElt = this.$refs[categoryName + 'Category'].$el;
         categoryElt.scrollIntoView();
+      },
+      onSeeWorkButtonClick: function () {
+        const categoryElt = this.$refs.presentationCategory.$el;
+        var elementPosition = categoryElt.getBoundingClientRect().top;
+
+        window.scrollTo({
+            top: elementPosition,
+            behavior: "smooth"
+        });
       },
       onHomeContainerScroll: function () {
         if (!this.scrollTimeout) {
@@ -179,5 +201,7 @@
   width: 100vw;
   height: 100vh;
 }
-
+.see-work-button {
+  margin-top: 20px;
+}
 </style>
