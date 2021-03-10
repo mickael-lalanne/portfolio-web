@@ -49,7 +49,7 @@ export default {
     padding: 100px 5%;
 }
 .section-title {
-    color: #f9813a;
+    color: var(--v-primary-base);
     font-size: 40px;
     text-align: center;
     padding-bottom: 100px;

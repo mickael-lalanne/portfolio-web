@@ -219,7 +219,7 @@ export default {
     color: #fcf1f1;
 }
 .highlight {
-    color: #f9813a;
+    color: var(--v-primary-base);
 }
 .particles-container {
     position: absolute;

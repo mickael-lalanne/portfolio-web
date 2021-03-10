@@ -93,7 +93,7 @@ export default {
 
 <style scoped>
 .project-container {
-    background-color: #fcf1f1;
+    background-color: var(--v-light-base);
     padding: 0 20% !important;
     text-align: justify;
 }

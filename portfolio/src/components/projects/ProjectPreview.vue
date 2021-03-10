@@ -84,7 +84,7 @@ export default {
     cursor: pointer;
     text-decoration: underline;
     padding-top: 10px;
-    color: #f9813a;
+    color: var(--v-primary-base);
 }
 .project-img {
     display: block;

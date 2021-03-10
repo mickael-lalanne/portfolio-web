@@ -101,7 +101,7 @@ $bdrs-icon: 100%;
 // $color5: #24b47e;
 // $color6: #aff1b6;
 
-$color1: #f9813a;
+$color1: var(--v-primary-base);
 $color2: #ffe497;
 
 $color3: #693c72;

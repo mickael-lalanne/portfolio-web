@@ -98,7 +98,7 @@ export default {
     width: 20vw;
 }
 .resume-name {
-    color: #f9813a;
+    color: var(--v-primary-base);
     text-align: center;
     font-size: 32px;
     margin-bottom: 32px;

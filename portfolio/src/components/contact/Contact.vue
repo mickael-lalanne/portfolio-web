@@ -72,7 +72,7 @@ export default {
 <style scoped>
 .contact-container {
     height: 100vh;
-    background-color: #fcf1f1;
+    background-color: var(--v-light-base);
     padding: 175px 0;
     display: flex;
     justify-content: center;

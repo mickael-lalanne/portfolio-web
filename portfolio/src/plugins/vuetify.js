@@ -11,19 +11,9 @@ export default new Vuetify({
     theme: {
         themes: {
             light: {
-                primary: '#f0f5f9',
-                secondary: '#c9d6df',
-                tertiary: '#52616b',
-                lighter: '#EEF5DB',
-                darker: '#4F6367',
-                // primary: '#CC5803',
-                // secondary: '#F7934C',
-                // tertiary: '#F7B05B',
-                // lighter: '#FFC15E',
-                // darker: '#332817',
-                //  -  -  -  -  
-
-                background: 'f0f5f9'
+                primary: '#f9813a',
+                light: '#fcf1f1',
+                dark: '#1a1c20'
             },
         },
         options: {
