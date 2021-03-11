@@ -2,6 +2,9 @@
     <div class="contact-container">
         <div class="section-title">Contact</div>
         <div class="title-separator"></div>
+        <div class="section-subtitle">
+            Tu as une question ? N'hésite pas à m'envoyer un message !
+        </div>
         <div class="form-container">
             <v-form
                 ref="form"
@@ -9,31 +12,23 @@
                 lazy-validation
                 class="contact-form"
             >
+                <!-- Subject field -->
                 <v-text-field
-                    v-model="name"
-                    :counter="10"
-                    :rules="nameRules"
-                    label="Name"
-                    required
+                    v-model="subject"
+                    label="Sujet"
                 ></v-text-field>
 
-                <v-text-field
-                    v-model="email"
-                    :rules="emailRules"
-                    label="E-mail"
-                    required
-                ></v-text-field>
-
+                <!-- Message field -->
                 <v-textarea
-                    name="input-7-1"
-                    label="Default style"
-                    value="The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through."
-                    hint="Hint text"
+                    v-model="message"
+                    label="Message"
+                    rows="8"
                 ></v-textarea>
 
-                <a class="contact-button">
-                    <span class="text">Horizontal</span>
-                </a>
+                <!-- Send message button -->
+                <div class="d-flex justify-end">
+                    <div class="send-message-btn" @click="sendMessage">Envoyer</div>
+                </div>
             </v-form>
         </div>
     </div>
@@ -45,19 +40,8 @@ export default {
     components: {},
     data: () => ({
         valid: true,
-        name: "",
-        nameRules: [
-            (v) => !!v || "Name is required",
-            (v) =>
-                (v && v.length <= 10) || "Name must be less than 10 characters",
-        ],
-        email: "",
-        emailRules: [
-            (v) => !!v || "E-mail is required",
-            (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
-        ],
-        select: null,
-        checkbox: false,
+        message: "",
+        subject: "",
     }),
     methods: {
         validate() {
@@ -69,6 +53,11 @@ export default {
         resetValidation() {
             this.$refs.form.resetValidation();
         },
+        sendMessage() {
+            window.open(
+                `mailto:mickael.lalanne03@gmail.com?subject=${encodeURIComponent(this.subject)}&body=${encodeURIComponent(this.message)}`
+            );
+        }
     },
 };
 </script>
@@ -83,7 +72,11 @@ export default {
     justify-content: center;
 }
 .contact-form {
-    width: 20vw;
+    width: 30vw;
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 30px 60px -12px rgb(50 50 93 / 25%),
+        0 18px 36px -18px rgb(0 0 0 / 30%), 0 -12px 36px -8px rgb(0 0 0 / 3%);
 }
 .title-separator {
     width: 100px;
@@ -91,7 +84,7 @@ export default {
     background-color: var(--v-primary-base);
     text-align: center;
     margin: auto;
-    margin-bottom: 100px;
+    margin-bottom: 65px;
 }
 .section-title {
     color: var(--v-primary-base);
@@ -100,58 +93,35 @@ export default {
     text-transform: uppercase;
     font-weight: bold;
 }
-.contact-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 150px;
-    height: 45px;
-    margin: 20px;
-    border: 2px solid var(--v-primary-base);
-    font-size: 24px;
+.section-subtitle {
+    color: var(--v-dark-base);
+    font-size: 20px;
+    margin-bottom: 65px;
+    text-align: center;
+}
+
+// SEND MESSAGE BUTTON
+.send-message-btn {
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
     cursor: pointer;
 
-    > .text {
-        position: relative;
-        color: transparent;
-        background-image: linear-gradient(
-            90deg,
-            var(--v-dark-base) 0%,
-            var(--v-dark-base) 50%,
-            var(--v-primary-base) 50%,
-            var(--v-primary-base) 100%
-        );
-        background-repeat: repeat;
-        background-size: 200%;
-        background-position: 100% 0;
-        -webkit-background-clip: text;
-        background-clip: text;
-        transition: background-position 600ms;
-    }
+    color: var(--v-secondary-base);
+    transition: 0.25s;
 
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--v-primary-base);
-        transform-origin: 100% 0;
-        transform: scale3d(0, 1, 1);
-        transition: transform 600ms;
+    &:hover,
+    &:focus {
+        border-color: var(--v-secondary-base);
+        color: #fff;
     }
+}
 
-    &:hover {
-        .text {
-            background-position: 0 0;
-        }
-
-        &::before {
-            transform-origin: 0 0;
-            transform: scale3d(1, 1, 1);
-        }
-    }
+.send-message-btn:hover,
+.send-message-btn:focus {
+    box-shadow: inset 7.5em 0 0 0 var(--v-secondary-base);
 }
 </style>

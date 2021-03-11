@@ -18,7 +18,7 @@
                     <v-icon class="resume-icon" color="var(--v-primary-base)">
                         mdi-pin-outline
                     </v-icon>
-                    <div class="resume-text">Toulouse</div>
+                    <div class="resume-text">France, Toulouse</div>
                 </div>
                 <div class="resume-category">
                     <v-icon class="resume-icon" color="var(--v-primary-base)">
@@ -31,14 +31,14 @@
                         mdi-briefcase-outline
                     </v-icon>
                     <div class="resume-text">
-                        Ingénieur R&D chez <i class="ml-1">Intuiface</i>
+                        Ingénieur R&D pour <i class="ml-1">Intuiface</i>
                     </div>
                 </div>
                 <div class="resume-category">
                     <v-icon class="resume-icon" color="var(--v-primary-base)">
                         mdi-gamepad-square-outline
                     </v-icon>
-                    <div class="resume-text">Jeux vidéo</div>
+                    <div class="resume-text">Jeux vidéo, montage vidéo</div>
                 </div>
             </div>
         </div>
@@ -80,6 +80,7 @@ export default {
             "Jenkins",
             "Jira",
             "Git",
+            "MongoDB"
         ],
     }),
 };

@@ -155,7 +155,7 @@ export default {
             height: 100%;
             background: var(--v-primary-base);;
             position: absolute;
-            top: 52%;
+            top: 60%;
             // transform: translateY(-50%);
             left: -3.5rem;
             z-index: -1;
