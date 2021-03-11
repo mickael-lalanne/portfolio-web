@@ -1,6 +1,7 @@
 <template>
     <div class="project-container">
-        <div class="section-title">Mes projets</div>
+        <div class="section-title">Projets</div>
+        <div class="title-separator"></div>
         <!-- Intuiface Analytics -->
         <ProjectPreview
             :title="P1_TITLE"
@@ -52,10 +53,19 @@ export default {
     color: var(--v-primary-base);
     font-size: 40px;
     text-align: center;
-    padding-bottom: 100px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 .project-divider {
     background-color: white;
     margin: 100px 0;
+}
+.title-separator {
+    width: 100px;
+    height: 4px;
+    background-color: var(--v-primary-base);
+    text-align: center;
+    margin: auto;
+    margin-bottom: 100px;
 }
 </style>

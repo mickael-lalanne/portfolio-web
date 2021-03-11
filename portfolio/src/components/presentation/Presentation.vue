@@ -88,7 +88,7 @@ export default {
 <style scoped>
 .presentation-container {
     background-color: #fcf1f1;
-    padding: 0px 20%;
+    padding: 0px 28%;
 }
 .profile-container {
     display: flex;
@@ -124,7 +124,7 @@ export default {
 }
 .keywords-container {
     margin-top: 20px;
-    width: 500px;
+    text-align: center;
     margin: auto;
 }
 .keyword-chip {

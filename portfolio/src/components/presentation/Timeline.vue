@@ -1,20 +1,22 @@
 <template>
-    <div class="timeline">
+    <div class="timeline pb-12 pt-6">
         <div
-            class="timeline__event animated fadeInUp delay-3s timeline__event--type1"
+            class="timeline__event  animated fadeInUp delay-3s timeline__event--type1"
         >
-            <div class="timeline__event__icon">
-                <i class="lni-cake"></i>
+            <div class="timeline__event__icon ">
+                <img src="@/assets/images/timeline/intuifaceLogo.png" />
+                <div class="timeline__event__date">
+                    2018
+                </div>
             </div>
-            <div class="timeline__event__date">2018 - Aujourd'hui</div>
-            <div class="timeline__event__content">
-                <div class="timeline__event__title">Intuiface</div>
+            <div class="timeline__event__content ">
+                <div class="timeline__event__title">
+                    INTUIFACE
+                </div>
                 <div class="timeline__event__description">
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Vel, nam! Nam eveniet ut aliquam ab asperiores,
-                        accusamus iure veniam corporis incidunt reprehenderit
-                        accusantium id aut architecto harum quidem dolorem in!
+                        Suite à un stage de 6 mois chez Intuiface, j'ai été embauché en tant qu'Ingénieur R&D.
+                        Depuis 2018, je travaille en équipe sur des nouveaux projets, m'assure de maintenir ceux existants.
                     </p>
                 </div>
             </div>
@@ -23,51 +25,57 @@
             class="timeline__event animated fadeInUp delay-2s timeline__event--type2"
         >
             <div class="timeline__event__icon">
-                <i class="lni-burger"></i>
+                <img src="@/assets/images/timeline/diplomeLogo+3.png" />
+                <div class="timeline__event__date">
+                    2018
+                </div>
             </div>
-            <div class="timeline__event__date">2018</div>
             <div class="timeline__event__content">
-                <div class="timeline__event__title">Licence Profesionnelle</div>
+                <div class="timeline__event__title">
+                    LICENCE PROFESIONNELLE
+                </div>
                 <div class="timeline__event__description">
                     <p>
-                        Obtention de la licence professionnelle Activités et
-                        Techniques de Communication, spécialité Multimédia-
-                        Internet - Webmaster
+                        Obtention de la licence professionnelle Activités et Techniques de Communication, spécialité Multimédia- Internet - Webmaster
+                        à l'IUT de Gap.
                     </p>
                 </div>
             </div>
         </div>
         <div
-            class="timeline__event animated fadeInUp delay-1s timeline__event--type3"
+            class="timeline__event animated fadeInUp delay-1s timeline__event--type1"
         >
             <div class="timeline__event__icon">
-                <i class="lni-slim"></i>
+                <img src="@/assets/images/timeline/diplomeLogo+2.png" />
+                <div class="timeline__event__date">
+                    2017
+                </div>
             </div>
-            <div class="timeline__event__date">2017</div>
             <div class="timeline__event__content">
-                <div class="timeline__event__title">BTS</div>
+                <div class="timeline__event__title">
+                    BTS
+                </div>
                 <div class="timeline__event__description">
                     <p>
-                        Brevet de technicien supérieur, Services informatiques
-                        aux organisations, option b: Solutions Logicielles et
-                        Applications Métiers
+                        Brevet de technicien supérieur, Services informatiques aux organisations, option b: Solutions Logicielles et Applications Métiers
                     </p>
                 </div>
             </div>
         </div>
-        <div class="timeline__event animated fadeInUp timeline__event--type1">
+        <div class="timeline__event animated fadeInUp timeline__event--type2">
             <div class="timeline__event__icon">
-                <i class="lni-cake"></i>
+                <img src="@/assets/images/timeline/diplomeLogo.png" />
+                <div class="timeline__event__date">
+                    2014
+                </div>
             </div>
-            <div class="timeline__event__date">2014</div>
             <div class="timeline__event__content">
-                <div class="timeline__event__title">BAC</div>
+                <div class="timeline__event__title">
+                    Bac
+                </div>
                 <div class="timeline__event__description">
                     <p>
-                        Obtention du baccalauréat Technologique STI2D: Sciences
-                        et technologies de l'industrie et du développement
-                        durable Spécialité: Innovation Technique et
-                        Eco-conception
+                        Obtention du baccalauréat Technologique STI2D: Sciences et technologies de l'industrie et du développement durable Spécialité: Innovation Technique et Eco-conception
                     </p>
                 </div>
             </div>
@@ -84,101 +92,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$content-width: calc(40vw - 84px);
-$margin: 20px;
-$spacing: 20px;
-$bdrs: 6px;
-$circle-size: 40px;
-$icon-size: 32px;
-$bdrs-icon: 100%;
-
-// $color1: #9251ac;
-// $color2: #f6a4ec;
-
-// $color3: #87bbfe;
-// $color4: #555ac0;
-
-// $color5: #24b47e;
-// $color6: #aff1b6;
-
-$color1: var(--v-primary-base);
-$color2: #ffe497;
-
-$color3: #693c72;
-$color4: #9868a1;
-
-$color5: #5eaaa8;
-$color6: #a3d2ca;
-* {
-    box-sizing: border-box;
-}
-html {
-    font-size: 14px;
-}
-body {
-    background: #f6f9fc;
-    font-family: "Open Sans", sans-serif;
-    color: #525f7f;
-}
-h2 {
-    margin: 5%;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 100;
-}
 .timeline {
     display: flex;
     flex-direction: column;
-    padding: $margin 0;
-    position: relative;
 
     &__event {
-        margin-bottom: $spacing;
+        background: #fff;
+        margin-bottom: 20px;
         position: relative;
         display: flex;
-        margin: $spacing 0;
-        border-radius: $bdrs;
-        align-self: center;
-        width: 50vw;
-
-        &:nth-child(2n + 1) {
-            flex-direction: row-reverse;
-            .timeline__event__date {
-                border-radius: 0 $bdrs $bdrs 0;
-            }
-            .timeline__event__content {
-                border-radius: $bdrs 0 0 $bdrs;
-            }
-
-            .timeline__event__icon {
-                &:before {
-                    content: "";
-                    width: 2px;
-                    height: 100%;
-                    background: $color2;
-                    position: absolute;
-                    top: 0%;
-                    left: 50%;
-                    right: auto;
-                    z-index: -1;
-                    transform: translateX(-50%);
-                    animation: fillTop 2s forwards 4s ease-in-out;
-                }
-                &:after {
-                    content: "";
-                    width: 100%;
-                    height: 2px;
-                    background: $color2;
-                    position: absolute;
-                    right: 0;
-                    z-index: -1;
-                    top: 50%;
-                    left: auto;
-                    transform: translateY(-50%);
-                    animation: fillLeft 2s forwards 4s ease-in-out;
-                }
-            }
-        }
+        margin: 20px 0;
+        border-radius: 8px;
+        box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+            0 18px 36px -18px rgba(0, 0, 0, 0.3),
+            0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+        z-index: 0;
 
         &__title {
             font-size: 1.2rem;
@@ -186,152 +114,91 @@ h2 {
             text-transform: uppercase;
 
             font-weight: 600;
-            color: $color1;
+            color: var(--v-primary-base);
             letter-spacing: 1.5px;
         }
         &__content {
-            padding: $spacing;
-            box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-                0 18px 36px -18px rgba(0, 0, 0, 0.3),
-                0 -12px 36px -8px rgba(0, 0, 0, 0.025);
-            background: #fff;
-            width: $content-width;
-            border-radius: 0 $bdrs $bdrs 0;
+            padding: 20px;
         }
         &__date {
-            color: $color2;
+            color: white;
             font-size: 1.5rem;
             font-weight: 600;
-            background: $color1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             white-space: nowrap;
-            padding: 0 $spacing;
-            border-radius: $bdrs 0 0 $bdrs;
-            width: 250px;
         }
         &__icon {
+            border-radius: 8px 0 0 8px;
+            background: var(--v-primary-base);;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: $color1;
-            padding: $spacing;
-            align-self: center;
-            margin: 0 $spacing;
-            background: $color2;
-            border-radius: $bdrs-icon;
-            width: $circle-size;
-            box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-                0 18px 36px -18px rgba(0, 0, 0, 0.3),
-                0 -12px 36px -8px rgba(0, 0, 0, 0.025);
-            padding: 40px;
-            height: $circle-size;
-            position: relative;
+            min-width: 95px;
+            font-size: 20px;
+            color: var(--v-primary-base);
+            padding: 20px;
 
-            i {
-                font-size: $icon-size;
-            }
-
-            &:before {
-                content: "";
-                width: 2px;
-                height: 100%;
-                background: $color2;
+            img {
                 position: absolute;
-                top: 0%;
-                z-index: -1;
-                left: 50%;
-                transform: translateX(-50%);
-                animation: fillTop 2s forwards 4s ease-in-out;
-            }
-            &:after {
-                content: "";
-                width: 100%;
-                height: 2px;
-                background: $color2;
-                position: absolute;
-                left: 0%;
-                z-index: -1;
                 top: 50%;
+                left: -84px;
                 transform: translateY(-50%);
-                animation: fillLeftOdd 2s forwards 4s ease-in-out;
+                width: 60px;
             }
         }
         &__description {
             flex-basis: 60%;
         }
 
-        &--type2 {
-            &:after {
-                background: $color4;
-            }
-            .timeline__event__date {
-                color: $color3;
-                background: $color4;
-            }
-
-            &:nth-child(2n + 1) {
-                .timeline__event__icon {
-                    &:before,
-                    &:after {
-                        background: $color3;
-                    }
-                }
-            }
-
-            .timeline__event__icon {
-                background: $color3;
-                color: $color4;
-                &:before,
-                &:after {
-                    background: $color3;
-                }
-            }
-            .timeline__event__title {
-                color: $color4;
-            }
-            .timeline__event__title {
-            }
+        &:after {
+            content: "";
+            width: 2px;
+            height: 100%;
+            background: var(--v-primary-base);;
+            position: absolute;
+            top: 52%;
+            // transform: translateY(-50%);
+            left: -3.5rem;
+            z-index: -1;
         }
 
-        &--type3 {
+        &:before {
+            content: "";
+            width: 5rem;
+            height: 5rem;
+            position: absolute;
+            background: var(--v-primary-base);
+            border-radius: 100%;
+            left: -6rem;
+            // right: 90%;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 2px solid white;
+        }
+        &--type2 {
+            &:before {
+                background: var(--v-secondary-base);
+                border-color: white;
+            }
             &:after {
-                background: $color5;
+                background: var(--v-secondary-base);
             }
             .timeline__event__date {
-                color: $color6;
-                background-color: $color5;
-            }
-
-            &:nth-child(2n + 1) {
-                .timeline__event__icon {
-                    &:before,
-                    &:after {
-                        background: $color6;
-                    }
-                }
+                color: white;
             }
 
             .timeline__event__icon {
-                background: $color6;
-                color: $color5;
-                &:before,
-                &:after {
-                    background: $color6;
-                }
+                background: var(--v-secondary-base);
+                color: var(--v-secondary-base);
             }
             .timeline__event__title {
-                color: $color5;
+                color: var(--v-secondary-base);
             }
             .timeline__event__title {
             }
         }
         &:last-child {
-            .timeline__event__icon {
-                &:before {
-                    content: none;
-                }
+            &:after {
+                content: none;
             }
         }
     }
@@ -340,59 +207,9 @@ h2 {
 @media (max-width: 786px) {
     .timeline__event {
         flex-direction: column;
-        align-self: center;
-        &__content {
-            width: 100%;
-        }
-
-        &__icon {
-            border-radius: $bdrs $bdrs 0 0;
-            width: 100%;
-            margin: 0;
-            box-shadow: none;
-
-            &:before,
-            &:after {
-                display: none;
-            }
-        }
-        &__date {
-            border-radius: 0;
-            padding: $spacing;
-        }
-
-        &:nth-child(2n + 1) {
-            flex-direction: column;
-            align-self: center;
-
-            .timeline__event__date {
-                border-radius: 0;
-                padding: $spacing;
-            }
-
-            .timeline__event__icon {
-                border-radius: $bdrs $bdrs 0 0;
-                margin: 0;
-            }
-        }
     }
-}
-
-@keyframes fillLeft {
-    100% {
-        right: 100%;
-    }
-}
-
-@keyframes fillTop {
-    100% {
-        top: 100%;
-    }
-}
-
-@keyframes fillLeftOdd {
-    100% {
-        left: 100%;
+    .timeline__event__icon {
+        border-radius: 4px 4px 0 0;
     }
 }
 </style>
