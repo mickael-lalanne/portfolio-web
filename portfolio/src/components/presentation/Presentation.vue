@@ -4,7 +4,7 @@
         <div class="title-separator mb-12"></div>
         <div class="profile-container">
             <img
-                class="profile-picture mr-12"
+                class="profile-picture"
                 src="@/assets/images/profilePicture.png"
             />
             <div>
@@ -53,7 +53,7 @@
                 {{ keyword }}
             </v-chip>
         </div>
-        <Timeline />
+        <Timeline class="timeline-container" />
     </div>
 </template>
 
@@ -81,16 +81,15 @@ export default {
             "Jira",
             "Git",
             "MongoDB",
-            "Jest"
+            "Jest",
         ],
     }),
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .presentation-container {
     background-color: #fcf1f1;
-    padding: 0px 28%;
 }
 .profile-container {
     display: flex;
@@ -99,6 +98,7 @@ export default {
 }
 .profile-picture {
     width: 400px;
+    max-width: 80vw;
 }
 .resume-name {
     color: var(--v-primary-base);
@@ -138,5 +138,42 @@ export default {
     background-color: var(--v-primary-base);
     text-align: center;
     margin: auto;
+}
+
+// RESPONSIVE
+
+// Medium devices (tablets, max 768px and less)
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 768px) {
+    .profile-picture {
+        margin-right: 48px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .keywords-container,
+    .timeline-container {
+        padding: 0 20%;
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .presentation-container {
+        padding: 0px 28%;
+    }
+}
+
+// Small devices (landscape phones, less than 576px)
+@media (max-width: 576px) {
+    .keywords-container,
+    .timeline-container {
+        padding: 0 5px;
+    }
 }
 </style>
