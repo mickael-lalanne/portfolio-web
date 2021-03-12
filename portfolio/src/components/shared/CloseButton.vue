@@ -2,7 +2,6 @@
     <div class="close-container" @click="$emit('click')">
         <div class="leftright"></div>
         <div class="rightleft"></div>
-        <label class="close">close</label>
     </div>
 </template>
 
@@ -69,11 +68,6 @@ label {
     transition: all 0.3s ease-in;
     opacity: 0;
 }
-.close {
-    margin: 60px 0 0 5px;
-    position: absolute;
-}
-
 .close-container:hover .leftright {
     transform: rotate(-45deg);
     background-color: $tomatored;

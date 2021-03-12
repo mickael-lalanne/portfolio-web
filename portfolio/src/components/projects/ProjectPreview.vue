@@ -103,7 +103,6 @@ export default {
 }
 .skill-icon {
     width: 25px;
-    margin-top: 5px;
     padding-right: 5px;
 }
 

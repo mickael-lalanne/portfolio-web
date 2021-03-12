@@ -18,7 +18,7 @@
                     <v-icon class="resume-icon" color="var(--v-primary-base)">
                         mdi-pin-outline
                     </v-icon>
-                    <div class="resume-text">France, Toulouse</div>
+                    <div class="resume-text">Toulouse, France</div>
                 </div>
                 <div class="resume-category">
                     <v-icon class="resume-icon" color="var(--v-primary-base)">

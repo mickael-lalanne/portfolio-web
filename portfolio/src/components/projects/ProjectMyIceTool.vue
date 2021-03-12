@@ -9,28 +9,26 @@
             <!-- CLOSE BUTTON -->
             <CloseButton @click="$emit('close')" />
             <!-- TITLE -->
-            <div class="project-titl">
+            <div class="project-title">
                 <img src="@/assets/images/projects/myIceTool/logoName.png" />
             </div>
             <!-- PRESENTATION -->
             <div class="section-title">
-                Présentation de l’API Explorer
+                Présentation
             </div>
             <div class="section-content">
-                L’API Explorer permet la création d’une interface pour n’importe
-                quelle requête service web de type REST. Avec cette interface,
-                une expérience IntuiFace en cours d'exécution peut lire et
-                écrire de manière dynamique sur la source de données et / ou le
-                périphérique accessible via ce service Web. L’API Explorer
-                permet d’avoir accès à des dizaines de milliers d'API publiques
-                et privées disponibles dans le cloud.
-                <br />
-                Il y a tout : des listes de films, des prévisions
-                météorologiques, les dernières photos de la NASA et tout ce qui
-                est possible de trouver sur Internet. La majorité est gratuite
-                tandis que d'autres peuvent exiger des frais d'accès. Certains
-                peuvent être privés et internes à votre organisation. Peu
-                importe, tous sont accessibles dans Intuiface.
+                <b>My Ice Tool</b> est un projet étudiant que j'ai du réalisé durant ma licence professionnelle à Gap.
+                L'objectif était de réaliser un site web permettant de visualiser les conditions d'escalades sur des cascades de glaces dans des zones spécifiques.
+                Notre équipe a notamment dû:
+                <div class="pl-10"> 
+                    - Créer l'identité graphique du site. <br>
+                    - Gérer l'authentification, avec la possibilité de <b>s'inscrire directement avec son compte Google ou Facebook</b>. <br>
+                    - Utiliser l'<b>api Google Maps</b> afin de tracer des zones sur une carte et d'y afficher des points d'intérêts. <br>
+                    - Gérer l'ajout et la visualisation de commentaires. <br>
+                    - Afficher l'historique des dernières températures pour chaque cascade.
+                    Pour se faire, un <b>cron</b> se charge une fois par jour d'appeler une api météo pour récupérer les dernières température et les stocker dans une base de données <b>MySQL</b>.<br>
+                </div>
+                Ce projet a été réalisé à l'aide du framework PHP <b>Laravel</b> et une équipe constituée de 3 développeurs et 1 graphiste.
             </div>
 
             <!-- Page d'inscription -->
@@ -121,15 +119,17 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .project-container {
     background-color: var(--v-light-base);
-    padding: 5vh 20% !important;
+    padding: 5vh 30vw !important;
     text-align: justify;
 }
 .project-title {
     text-align: center;
-    padding-bottom: 15px;
+    img {
+        width: 600px;
+    }
 }
 img {
     max-width: 100%;
@@ -145,5 +145,22 @@ img {
     padding-top: 10px;
     padding-bottom: 5px;
     text-decoration: underline;
+}
+
+// RESPONSIVE
+
+@media (max-width: 1200px) {
+    .project-container {
+        padding: 5vh 15vw !important;
+    }
+}
+// Medium devices (tablets, max 768px and less)
+@media (max-width: 768px) {
+    .project-container {
+        padding: 5vh 3vw !important;
+    }
+    .project-title {
+        padding-top: 50px;
+    }
 }
 </style>

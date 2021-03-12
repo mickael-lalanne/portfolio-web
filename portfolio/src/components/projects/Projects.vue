@@ -24,8 +24,8 @@
         <!-- Tutoriel API Explorer -->
         <ProjectPreview
             :title="P3_TITLE"
-            :description="P1_DESCRIPTION"
-            :skills="P1_SKILLS"
+            :description="P3_DESCRIPTION"
+            :skills="P3_SKILLS"
             :imgName="P3_IMG"
             :dialogComponent="P3_DIALOG"
         />
@@ -49,8 +49,12 @@ export default {
         P2_IMG: "apiExplorer",
         P2_DIALOG: "ProjectApiExplorer",
         P3_TITLE: "MY ICE TOOL - PROJET TUTEURÉ",
+        P3_DESCRIPTION: `My Ice Tool est un projet étudiant que j'ai du réalisé durant ma licence professionnelle à Gap.
+            L'objectif était de réaliser un site web permettant de visualiser les conditions d'escalades sur des cascades de glaces dans des zones spécifiques.
+            Notre équipe a notamment dû créer l'identité graphique du site, gérer l'authentification, l'ajout de commentaires, utiliser l'api de Google Maps afin de tracer des zones et des points d'intérêts, stocker l'historique des températures en base à l'aide d'un cron, ...`,
         P3_IMG: "myIceTool",
         P3_DIALOG: "ProjectMyIceTool",
+        P3_SKILLS: ["Framework PHP Laravel", "Google Maps API", "Cron et Base de données MySQL"]
     }),
 };
 </script>
