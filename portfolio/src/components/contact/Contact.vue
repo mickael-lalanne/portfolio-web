@@ -72,7 +72,6 @@ export default {
     justify-content: center;
 }
 .contact-form {
-    width: 30vw;
     background-color: white;
     padding: 30px;
     box-shadow: 0 30px 60px -12px rgb(50 50 93 / 25%),
@@ -123,5 +122,28 @@ export default {
 .send-message-btn:hover,
 .send-message-btn:focus {
     box-shadow: inset 7.5em 0 0 0 var(--v-secondary-base);
+}
+
+// RESPONSIVE
+
+// Small devices (landscape phones, max 576px and less)
+@media (max-width: 576px) {
+    .contact-form {
+        width: 90vw;
+    }
+}
+
+// Medium devices (tablets, max 768px and less)
+@media (max-width: 768px) {
+    .contact-form {
+        width: 70vw;
+    }
+}
+
+// Large devices (desktops, min 769px and up)
+@media (min-width: 769px) {
+    .contact-form {
+        width: 600px;
+    }
 }
 </style>

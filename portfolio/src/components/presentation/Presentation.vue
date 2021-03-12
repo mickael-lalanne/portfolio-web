@@ -80,7 +80,8 @@ export default {
             "Jenkins",
             "Jira",
             "Git",
-            "MongoDB"
+            "MongoDB",
+            "Jest"
         ],
     }),
 };
