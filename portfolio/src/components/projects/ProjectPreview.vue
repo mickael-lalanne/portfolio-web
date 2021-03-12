@@ -57,7 +57,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .project-preview-container {
     display: flex;
     color: white;
@@ -66,7 +66,7 @@ export default {
 }
 .project-left {
     width: 80%;
-    max-width: 580px;
+    max-width: 770px;
     margin: 0px 50px;
 }
 .project-title {
@@ -88,7 +88,8 @@ export default {
 }
 .project-img {
     display: block;
-    max-width: 760px;
+    max-width: 80vw;
+    width: 800px;
     border: 2px solid white;
 }
 .skills-container {
@@ -102,5 +103,17 @@ export default {
     width: 25px;
     margin-top: 5px;
     padding-right: 5px;
+}
+
+// RESPONSIVE
+
+// Devices under 1600px
+@media (max-width: 1599px) {
+    .project-preview-container {
+        flex-direction: column !important;
+    }
+    .project-img {
+        margin-top: 50px;
+    }
 }
 </style>

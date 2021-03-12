@@ -43,7 +43,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .project-container {
     /* height: 100vh; */
     background-color: #1a1c20;
@@ -58,7 +58,7 @@ export default {
 }
 .project-divider {
     background-color: white;
-    margin: 100px 0;
+    margin: 7vh 0;
 }
 .title-separator {
     width: 100px;
