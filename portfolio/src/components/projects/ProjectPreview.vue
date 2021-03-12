@@ -36,12 +36,14 @@
 <script>
 import ProjectAnalytics from "@/components/projects/ProjectAnalytics.vue";
 import ProjectApiExplorer from "@/components/projects/ProjectApiExplorer.vue";
+import ProjectMyIceTool from "@/components/projects/ProjectMyIceTool.vue";
 
 export default {
     name: "ProjectPreview",
     components: {
         ProjectAnalytics,
         ProjectApiExplorer,
+        ProjectMyIceTool
     },
     props: {
         title: { type: String },

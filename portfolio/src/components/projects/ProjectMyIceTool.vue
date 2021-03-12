@@ -1,0 +1,149 @@
+<template>
+    <v-dialog
+        v-model="showDialog"
+        fullscreen
+        hide-overlay
+        transition="dialog-bottom-transition"
+    >
+        <v-card class="project-container">
+            <!-- CLOSE BUTTON -->
+            <CloseButton @click="$emit('close')" />
+            <!-- TITLE -->
+            <div class="project-titl">
+                <img src="@/assets/images/projects/myIceTool/logoName.png" />
+            </div>
+            <!-- PRESENTATION -->
+            <div class="section-title">
+                Présentation de l’API Explorer
+            </div>
+            <div class="section-content">
+                L’API Explorer permet la création d’une interface pour n’importe
+                quelle requête service web de type REST. Avec cette interface,
+                une expérience IntuiFace en cours d'exécution peut lire et
+                écrire de manière dynamique sur la source de données et / ou le
+                périphérique accessible via ce service Web. L’API Explorer
+                permet d’avoir accès à des dizaines de milliers d'API publiques
+                et privées disponibles dans le cloud.
+                <br />
+                Il y a tout : des listes de films, des prévisions
+                météorologiques, les dernières photos de la NASA et tout ce qui
+                est possible de trouver sur Internet. La majorité est gratuite
+                tandis que d'autres peuvent exiger des frais d'accès. Certains
+                peuvent être privés et internes à votre organisation. Peu
+                importe, tous sont accessibles dans Intuiface.
+            </div>
+
+            <!-- Page d'inscription -->
+            <div class="section-title">Page d'inscription</div>
+            <img class="pb-3" src="@/assets/images/projects/myIceTool/home.jpg"/>
+            <div class="section-content">
+                <div class="section-content-title">
+                    - Connexion/inscription avec validation du compte:
+                </div>
+                Un formulaire de connexion et d’inscription seront disponible sur la page principale. Une fois le formulaire d’inscription correctement rempli, les informations seront stockées dans la base de données.
+                <br>
+                L’utilisateur aura aussi la possibilité de s’inscrire avec Google. Pour cela, on récupérera son nom, prénom et adresse mail directement avec l’API Google+, et on demandera à l’utilisateur s’il souhaite s’inscrire à la newsletter.
+                <br>
+                <div class="section-content-title">
+                    - Connexion Google/Facebook:
+                </div>
+                L’utilisateur peut se connecter directement avec son compte Google ou Facebook sans rentrer ses identifiants. Il faudra utiliser les API Facebook et Google+.
+                <div class="section-content-title">
+                    - Force de mot de passe:
+                </div>
+                Il existe 3 niveaux de force pour le mot de passe : faible, moyen, bon. Pour que l’utilisateur puisse s’inscrire, le mot de passe doit obligatoirement :
+                <div class="pl-10"> 
+                    - Être au minimum de niveau moyen <br>
+                    - Avoir au moins 8 caractères <br>
+                    - Contenir au moins 1 chiffre <br>
+                    - Contenir au moins 1 majuscule <br>
+                    - Interdire les suites de lettres <br>
+                </div>
+            </div>
+
+            <!-- Page principale -->
+            <div class="section-title">Page Principale</div>
+            <img class="pb-3" src="@/assets/images/projects/myIceTool/main.jpg"/>
+            <div class="section-content">
+                <div class="section-content-title">
+                    - API Google Map, Afficher les zones et les cascades:
+                </div>
+                Lors du chargement de la page principale, la carte devra se placer sur la cascade préféré de l’utilisateur connecté. Ensuite, des requêtes AJAX permettront d’afficher les zones et cascades disponibles dans le périmètre.
+                En cliquant sur une cascade, il sera possible de connaître ses coordonnées, sa température, son niveau de danger, et d’afficher l’historique des températures ainsi que les commentaires.
+                <div class="section-content-title">
+                    - Recherche de cascades avec autocomplétion:
+                </div>
+                Quand l’utilisateur commence à taper le nom d’une zone ou d’une cascade dans la barre de recherche, une liste de résultats s’affiche en temps réel pour auto compléter la recherche.
+            </div>
+
+            <!-- Historique des températures -->
+            <div class="section-title">Historique des températures</div>
+            <img class="pb-3" src="@/assets/images/projects/myIceTool/history.jpg"/>
+            <div class="section-content">
+                Quand l’utilisateur cliquera sur ‘Historique des températures’, on ira récupérer dans la base de données l’historique de la cascade sélectionnée et on affichera les résultats sous forme de tableau.
+            </div>
+
+            <!-- Commentaires -->
+            <div class="section-title">Commentaires</div>
+            <img class="pb-3" src="@/assets/images/projects/myIceTool/main.jpg"/>
+            <div class="section-content">
+                <div class="section-content-title">
+                    - Affichage des commentaires:
+                </div>
+                Quand l’utilisateur cliquera sur ‘Commentaires’, on ira récupérer dans la base de données les commentaires de la cascade sélectionnée et on les affichera sous forme de liste comme ci-dessus.
+                On affichera : le nom de l’utilisateur, la date à laquelle il a posté le commentaire, le contenu, la ou les photos disponibles.
+                <div class="section-content-title">
+                    - Recherche de cascades avec autocomplétion:
+                </div>
+                    Quand l’utilisateur cliquera sur ‘Commentaires’, il aura la possibilité d’ajouter un commentaire en indiquant le commentaire, et en ajoutant ou non une ou plusieurs photos.
+                    Son nom et la date à laquelle le commentaire a été posté seront récupérés automatiquement.
+            </div>
+
+            <!-- A proos -->
+            <div class="section-title">Page à propops</div>
+            <img class="pb-3" src="@/assets/images/projects/myIceTool/about.jpg"/>
+        </v-card>
+    </v-dialog>
+</template>
+
+<script>
+import CloseButton from "@/components/shared/CloseButton.vue";
+
+export default {
+    name: "ProjectMyIceTool",
+    components: { CloseButton },
+    props: {
+        showDialog: { type: Boolean },
+    },
+    data: () => ({
+        dialog: false,
+    }),
+};
+</script>
+
+<style scoped>
+.project-container {
+    background-color: var(--v-light-base);
+    padding: 5vh 20% !important;
+    text-align: justify;
+}
+.project-title {
+    text-align: center;
+    padding-bottom: 15px;
+}
+img {
+    max-width: 100%;
+}
+.section-title {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+.section-content-title {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-decoration: underline;
+}
+</style>

@@ -20,6 +20,15 @@
             :dialogComponent="P2_DIALOG"
             reverse
         />
+        <v-divider class="project-divider"></v-divider>
+        <!-- Tutoriel API Explorer -->
+        <ProjectPreview
+            :title="P3_TITLE"
+            :description="P1_DESCRIPTION"
+            :skills="P1_SKILLS"
+            :imgName="P3_IMG"
+            :dialogComponent="P3_DIALOG"
+        />
     </div>
 </template>
 
@@ -39,6 +48,9 @@ export default {
         P2_TITLE: "API EXPLORER - TUTORIEL",
         P2_IMG: "apiExplorer",
         P2_DIALOG: "ProjectApiExplorer",
+        P3_TITLE: "MY ICE TOOL - PROJET TUTEURÉ",
+        P3_IMG: "myIceTool",
+        P3_DIALOG: "ProjectMyIceTool",
     }),
 };
 </script>
