@@ -49,9 +49,7 @@
 
 <script>
 import MainMenu from "@/components/home/MainMenu.vue";
-// import HeaderShape from '@/components/home/HeaderShape.vue';
 import Presentation from "@/components/presentation/Presentation.vue";
-// import Hobbies from '@/components/hobbies/Hobbies.vue';
 import Projects from "@/components/projects/Projects.vue";
 import Contact from "@/components/contact/Contact.vue";
 import CategorySeparator from "@/components/home/CategorySeparator.vue";
@@ -202,7 +200,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .home-container {
     height: 100vh;
     width: 100vw;
@@ -216,6 +214,7 @@ export default {
     justify-content: center;
     text-align: center;
     font-size: 4em;
+    padding: 10%;
     color: #fcf1f1;
 }
 .highlight {
@@ -229,5 +228,33 @@ export default {
 }
 .see-work-button {
     margin-top: 20px;
+}
+
+// RESPONSIVE
+
+@media (max-width: 1600px) {
+    .home-content-container {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .home-content-container {
+        font-size: 44px;
+    }
+}
+
+// Medium devices (tablets, max 768px and less)
+@media (max-width: 768px) {
+    .home-content-container {
+        font-size: 39px;
+    }
+}
+
+// Small devices (landscape phones, max 576px and less)
+@media (max-width: 576px) {
+    .home-content-container {
+        font-size: 26px;
+    }
 }
 </style>
