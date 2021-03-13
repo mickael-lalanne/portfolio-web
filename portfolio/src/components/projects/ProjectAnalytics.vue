@@ -20,19 +20,16 @@
                 Présentation
             </div>
             <div class="section-content">
-                Analytics - Chart & Dashboards est une application web
-                accessible directement sur son compte my.intuiface. Du début des
-                devs jusqu'à sa release, c'est mon pre J'ai aussi continué de
-                travailler sur le projet une fois releasé pour ajouter de
-                nouvelles features comme les charts de type "Gauge" et Single
-                "Value". Le projet a été développé avec le framework Angular.
+                Analytics - Chart & Dashboards est une application web accessible directement sur son compte 
+                <a href="https://my.intuiface.com/" target="_blank">my.intuiface</a>.<br>
+                C'est mon premier vrai projet professionnel et j'ai eu la chance d'être impliqué dès le début des devs.<br>
+                Même après la release du produit, j'ai continué de travailler sur le projet pour ajouter de nouvelles features comme les charts de type <b>"Gauge"</b> et <b>"Single Value"</b>.<br>
+                L'application a été développé avec le framework <b>Angular</b>.
                 Pour les charts, nous avons utilisé la librairie
-                <a href="https://www.highcharts.com/" target="_blank"
-                    >Highcharts</a
-                >.<br />
-                Nous étions 2 développeurs front-end, 1 développeur back-end, 1
-                graphiste et un chef de projet qui s'occupait des tests et
-                specfications UX.
+                <a href="https://www.highcharts.com/" target="_blank">
+                    Highcharts
+                </a >.<br />
+                L'équipe était composée d'un chef de projet qui s'occupait des tests et spécifications UX, d'un designer, de deux développeurs front-end et d'un développeur back-end.
             </div>
             <div style="text-align: center;" class="pt-3">
                 <iframe
@@ -50,16 +47,16 @@
                 La première fois qu'un utilisateur se connecte, 2 dashboards lui
                 sont automatiquement créé: <br />
                 <div class="pl-10">
-                    - un dashboard avec des charts par défaut basé sur SES
-                    données.<br />
+                    - un dashboard avec des charts par défaut basé sur SES données.<br />
                     - un deuxième dashboard appelé "Tradeshow", basé sur les
                     données d'Intuiface sur une plage de date spécifique et qui
                     aura toujours des données.<br />
                 </div>
                 Il est possible d'agencer les charts de la manière que l'on
-                souhaite avec du drag & drop, mais aussi de les redimensionner.
-                Pour chaque chart, nous avons la possibilité de les télécharger
-                dans plusieurs formats: png, jpeg, svg, pdf, csv, xls.
+                souhaite avec du <b>drag & drop</b>, mais aussi de les <b>redimensionner</b>.
+                Pour chaque chart, nous avons la possibilité de les <b>télécharger
+                dans plusieurs formats</b>: png, jpeg, svg, pdf, csv, xls.<br>
+                Il est à noter qu'il existe des règles de tarifications pouvant impacter le nombre de dashboard et le nombre de charts à l'intérieur.
             </div>
             <img
                 alt="Dashboard"
@@ -72,14 +69,14 @@
             <div class="section-content">
                 La partie chart editor permet quant à elle d'éditer le chart. Il
                 est possible de drag & dropper ce que l'on appele des "Data
-                Point Parameters" pour filtrer ou afficher des valeurs. Il est
-                notamment possible de: - Spécifier une plage de date (date
-                range) ou d'utiliser celle définit côté Dashboard - Choisir le
-                type de chart parmis: Line, Area, Bar, Column, Pie, Radar,
-                Single Value et Gauge. - Changer des options comme le refresh
-                automatique des valeurs, le format des valeurs affichés
-                (préfixe, suffixe, multiplicateur) ou encore des options
-                sépcifique au type de chart.
+                Point Parameters" pour filtrer ou afficher des valeurs.
+                Il est notamment possible de:
+                <div class="">
+                    - Spécifier une plage de date (<b>date range</b>) ou d'utiliser celle définit côté Dashboard <br>
+                    - Choisir le <b>type de chart</b> parmis: Line, Area, Bar, Column, Pie, Radar, Single Value et Gauge <br>
+                    - Changer des options comme le <b>refresh automatique des valeurs</b>, le <b>formatting des valeurs affichées</b> <br>
+                    (préfixe, suffixe, multiplicateur) ou encore des options sépcifique au type de chart
+                </div>
             </div>
             <img
                 alt="Chart Editor"
@@ -95,7 +92,7 @@
                 utiliser. Il a la possibilité d'ajouter le chart directement
                 dans son dashboard ou d'éditer d'abord le template dans le Chart
                 Editor.<br />
-                Chaque template est stocké en base de données avec un numéro de
+                Chaque template est <b>stocké en base de données</b> avec un numéro de
                 version.
             </div>
             <div style="margin: auto" class="pt-3">
@@ -166,6 +163,14 @@ img {
     padding-top: 10px;
     padding-bottom: 5px;
     text-decoration: underline;
+}
+
+a {
+    text-decoration: underline;
+    color: unset !important;
+    &:hover {
+        color: var(--v-secondary-base) !important;
+    }
 }
 
 // RESPONSIVE

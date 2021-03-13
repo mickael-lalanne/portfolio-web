@@ -9,17 +9,23 @@
                     src="@/assets/images/timeline/intuifaceLogo.png"
                 />
                 <div class="timeline__event__date">
-                    2018
+                    Depuis 2018
                 </div>
             </div>
             <div class="timeline__event__content ">
                 <div class="timeline__event__title">
-                    INTUIFACE
+                    <a
+                        href="https://www.intuiface.com/"
+                        target="_blank"
+                        style="text-decoration:none;"
+                    >
+                        INTUIFACE
+                    </a>
                 </div>
                 <div class="timeline__event__description">
                     <p>
                         Suite à un stage de 6 mois chez Intuiface, j'ai été embauché en tant qu'Ingénieur R&D.
-                        Depuis 2018, je travaille en équipe sur des nouveaux projets, m'assure de maintenir ceux existants.
+                        Je travail principalement en équipe sur des projets d'application web (plus de détails dans la partie projets).  
                     </p>
                 </div>
             </div>
@@ -37,7 +43,7 @@
             </div>
             <div class="timeline__event__content">
                 <div class="timeline__event__title">
-                    LICENCE PROFESIONNELLE
+                    LICENCE PROFESIONNELLE MIW
                 </div>
                 <div class="timeline__event__description">
                     <p>
@@ -60,11 +66,11 @@
             </div>
             <div class="timeline__event__content">
                 <div class="timeline__event__title">
-                    BTS
+                    BTS SIO
                 </div>
                 <div class="timeline__event__description">
                     <p>
-                        Brevet de technicien supérieur, Services informatiques aux organisations, option b: Solutions Logicielles et Applications Métiers
+                        Obtention du Brevet de technicien supérieur, Services informatiques aux organisations. Option b: Solutions Logicielles et Applications Métiers.
                     </p>
                 </div>
             </div>
@@ -81,11 +87,11 @@
             </div>
             <div class="timeline__event__content">
                 <div class="timeline__event__title">
-                    Bac
+                    Bac STI2D
                 </div>
                 <div class="timeline__event__description">
                     <p>
-                        Obtention du baccalauréat Technologique STI2D: Sciences et technologies de l'industrie et du développement durable Spécialité: Innovation Technique et Eco-conception
+                        Obtention du Baccalauréat Technologique STI2D: Sciences et technologies de l'industrie et du développement durable Spécialité: Innovation Technique et Eco-conception
                     </p>
                 </div>
             </div>
@@ -113,9 +119,7 @@ export default {
         display: flex;
         margin: 20px 0;
         border-radius: 8px;
-        box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-            0 18px 36px -18px rgba(0, 0, 0, 0.3),
-            0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
         z-index: 0;
 
         &__title {
@@ -128,7 +132,7 @@ export default {
             letter-spacing: 1.5px;
         }
         &__content {
-            padding: 20px;
+            padding: 10px 10px 10px 20px;
         }
         &__date {
             color: white;
@@ -142,7 +146,7 @@ export default {
             display: flex;
             align-items: center;
             justify-content: center;
-            min-width: 95px;
+            min-width: 160px;
             font-size: 20px;
             color: var(--v-primary-base);
             padding: 20px;
@@ -166,7 +170,6 @@ export default {
             background: var(--v-primary-base);;
             position: absolute;
             top: 60%;
-            // transform: translateY(-50%);
             left: -3.5rem;
             z-index: -1;
         }
@@ -179,7 +182,6 @@ export default {
             background: var(--v-primary-base);
             border-radius: 100%;
             left: -6rem;
-            // right: 90%;
             top: 50%;
             transform: translateY(-50%);
             border: 2px solid white;

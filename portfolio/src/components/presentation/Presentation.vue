@@ -25,7 +25,11 @@
                     <v-icon class="resume-icon" color="var(--v-primary-base)">
                         mdi-email-outline
                     </v-icon>
-                    <div class="resume-text">mickael.lalanne03@gmail.com</div>
+                    <div class="resume-text">
+                        <a href="mailto:mickael.lalanne03@gmail.com">
+                            mickael.lalanne03@gmail.com
+                        </a>
+                    </div>
                 </div>
                 <div class="resume-category">
                     <v-icon class="resume-icon" color="var(--v-primary-base)">
@@ -36,6 +40,7 @@
                         <a
                             href="https://www.intuiface.com/"
                             target="_blank"
+                            style="font-weight:500;"
                             class="pl-1"
                         >
                             Intuiface
@@ -51,16 +56,21 @@
             </div>
         </div>
         <div class="d-flex align-center keywords-social-container">
-            <div class="keywords-container mt-12">
-                <v-chip
-                    v-for="keyword in KEYWORDS"
-                    :key="keyword"
-                    class="keyword-chip"
-                    text-color="var(--v-dark-base)"
-                    color="var(--v-light2-base)"
+            <div class="keywords-container mt-10">
+                <a
+                    v-for="keyword in randomKeywords"
+                    :key="keyword.name"
+                    :href="keyword.link"
+                    target="_blank"
                 >
-                    {{ keyword }}
-                </v-chip>
+                    <v-chip
+                        class="keyword-chip"
+                        text-color="var(--v-dark-base)"
+                        color="var(--v-light2-base)"
+                    >
+                        {{ keyword.name }}
+                    </v-chip>
+                </a>
             </div>
             <ul class="d-flex justify-center mt-10">
                 <li>
@@ -96,27 +106,65 @@ export default {
     components: { Timeline },
     data: () => ({
         KEYWORDS: [
-            "Vue.js",
-            "Angular",
-            "npm",
-            "Typsecript",
-            "Javascript",
-            "HTML",
-            "CSS",
-            "Vuex",
-            "ngrx",
-            "AWS",
-            "Lambda",
-            "S3",
-            "Jenkins",
-            "Jira",
-            "Git",
-            "MongoDB",
-            "Jest",
-            "Vuetify",
-            "ESLint"
+            { name: "Vue.js", link: "https://vuejs.org/" },
+            { name: "Angular", link: "https://angular.io/" },
+            { name: "npm", link: "https://www.npmjs.com/" },
+            {
+                name: "Typsecript",
+                link: "https://developer.mozilla.org/fr/docs/Web/JavaScript",
+            },
+            { name: "Javascript", link: "https://www.typescriptlang.org/" },
+            {
+                name: "HTML",
+                link: "https://developer.mozilla.org/fr/docs/Web/HTML",
+            },
+            {
+                name: "CSS",
+                link: "https://developer.mozilla.org/fr/docs/Web/css",
+            },
+            { name: "Vuex", link: "https://vuex.vuejs.org/" },
+            { name: "ngrx", link: "https://ngrx.io/" },
+            { name: "AWS", link: "https://aws.amazon.com/fr/" },
+            { name: "Lambda", link: "https://aws.amazon.com/fr/lambda/" },
+            { name: "S3", link: "https://aws.amazon.com/fr/s3/" },
+            { name: "Jenkins", link: "https://www.jenkins.io/" },
+            {
+                name: "Jira",
+                link: "https://www.atlassian.com/fr/software/jira",
+            },
+            { name: "Git", link: "https://git-scm.com/" },
+            { name: "MongoDB", link: "https://www.mongodb.com/fr" },
+            { name: "Jest", link: "https://jestjs.io/" },
+            { name: "Vuetify", link: "https://vuetifyjs.com/en/" },
+            { name: "ESLint", link: "https://eslint.org/" },
+            {
+                name: "Lighthouse",
+                link: "https://developers.google.com/web/tools/lighthouse",
+            },
         ],
     }),
+    computed: {
+        randomKeywords: function() {
+            const array = [...this.KEYWORDS];
+            let currentIndex = array.length,
+                temporaryValue,
+                randomIndex;
+
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) {
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                // And swap it with the current element.
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+
+            return array;
+        },
+    },
 };
 </script>
 
@@ -159,7 +207,6 @@ export default {
     & a {
         text-decoration: none;
         color: unset;
-        font-weight: 500;
         &:hover {
             color: var(--v-primary-base);
         }
@@ -169,9 +216,14 @@ export default {
     margin-top: 20px;
     text-align: center;
     margin: auto;
+    a {
+        text-decoration: none;
+        color: unset;
+    }
 }
 .keyword-chip {
     margin: 5px;
+    cursor: pointer;
 }
 .title-separator {
     width: 100px;
@@ -181,6 +233,7 @@ export default {
     margin: auto;
 }
 
+// Github icon
 ul li {
     list-style: none;
 }
