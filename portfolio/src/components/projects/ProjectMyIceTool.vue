@@ -17,7 +17,7 @@
                 Présentation
             </div>
             <div class="section-content">
-                <b>My Ice Tool</b> est un projet étudiant que j'ai du réalisé durant ma licence professionnelle à Gap.
+                <b>My Ice Tool</b> est un projet étudiant que j'ai dû réalisé durant ma licence professionnelle à Gap.
                 L'objectif était de réaliser un site web permettant de visualiser les conditions d'escalades sur des cascades de glaces dans des zones spécifiques.
                 Notre équipe a notamment dû:
                 <div class="pl-10"> 
