@@ -40,7 +40,6 @@
             />
             <Presentation ref="presentationCategory" />
             <Projects ref="projectsCategory" />
-            <!-- <Hobbies ref="hobbiesCategory"/> -->
             <CategorySeparator />
             <Contact ref="contactCategory" />
         </div>
@@ -105,7 +104,7 @@ export default {
             var elementPosition = categoryElt.getBoundingClientRect().top;
 
             window.scrollTo({
-                top: elementPosition,
+                top: elementPosition - 30,
                 behavior: "smooth",
             });
         },
@@ -118,9 +117,6 @@ export default {
                     const projectsPercent = this.getViewPercentage(
                         this.$refs["projectsCategory"].$el
                     );
-                    const hobbiesPercent = this.getViewPercentage(
-                        this.$refs["hobbiesCategory"].$el
-                    );
                     const contactPercent = this.getViewPercentage(
                         this.$refs["contactCategory"].$el
                     );
@@ -130,8 +126,6 @@ export default {
                         this.selectedCategory = "presentation";
                     } else if (projectsPercent > percentageValue) {
                         this.selectedCategory = "projects";
-                    } else if (hobbiesPercent > percentageValue) {
-                        this.selectedCategory = "hobbies";
                     } else if (contactPercent > percentageValue) {
                         this.selectedCategory = "contact";
                     }
