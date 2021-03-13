@@ -10,7 +10,10 @@
             <CloseButton @click="$emit('close')" />
             <!-- TITLE -->
             <div class="project-title">
-                <img src="@/assets/images/projects/apx/logo.png" />
+                <img
+                    alt="API Explorer logo"
+                    src="@/assets/images/projects/apx/logo.png"
+                />
             </div>
             <!-- Présentation -->
             <div class="section-title">
@@ -25,7 +28,11 @@
                 Certains peuvent être privés et internes à votre organisation.
                 Peu importe, tous sont accessibles dans Intuiface.
             </div>
-            <img class="pt-3" src="@/assets/images/projects/apx/apx.png"/>
+            <img
+                alt="API Explorer"
+                class="pt-3"
+                src="@/assets/images/projects/apx/apx.png"
+            />
 
             <!-- Objectif -->
             <div class="section-title">Objectif du stage</div>
@@ -46,7 +53,11 @@
             <!-- Technologies -->
             <div class="section-title">Technologies utilisées</div>
             <div style="width: 400px; margin: auto">
-                <img class="pb-3" src="@/assets/images/projects/apx/jquery.png"/>
+                <img
+                    alt="jQuery logo"
+                    class="pb-3"
+                    src="@/assets/images/projects/apx/jquery.png"
+                />
             </div>
             <div class="section-content">
                 <b>HTML5</b>, <b>CSS</b> avec <b>less.js</b>, <b>Javascript</b>, <b>jQuery</b>.<br>
@@ -77,13 +88,20 @@
                     - l'ajout d'un <b>bouton previous</b><br>
                     - de nouveaux <b>effets de transitions</b> entre les étapes importantes (transition sur le côté) et entre les tooltips (transitions d'opacité) <br>
                     - un <b>effet d'animation</b> (scale et surbrillance) mis en place pour attirer le regard de l'utilisateur<br>
-                    <img class="pb-3" src="@/assets/images/projects/apx/highlight.png"/>
+                    <img
+                        alt="API Explorer effet de surbrillance"
+                        class="pb-3"
+                        src="@/assets/images/projects/apx/highlight.png"
+                    />
                 </div>
                 Pour ce qui est du positionnement de l'étape, il se fait par rapport à l'élément qui doit être expliqué.<br>
                 Pour se faire, je suis passé par le framework <b>jQueryUI</b>, et notamment sa fonction <b>position()</b>.
             </div>
             <div style="margin: auto" class="pt-3">
-                <img src="@/assets/images/projects/apx/design.png"/>
+                <img
+                    alt="API Explorer maquettes"
+                    src="@/assets/images/projects/apx/design.png"
+                />
             </div>
 
             <!-- Tests -->
@@ -118,7 +136,11 @@
                 le code grâce à une base de données et qui n’est plus dépendant d’Appcues.<br>
                 Côté client, le tutoriel est désormais plus réactif et permet aux utilisateurs de revenir à une étape précédente.
             </div>
-            <img class="pt-3" src="@/assets/images/projects/apx/step.png"/>
+            <img
+                alt="API Explorer tutoriel"
+                class="pt-3"
+                src="@/assets/images/projects/apx/step.png"
+            />
         </v-card>
     </v-dialog>
 </template>

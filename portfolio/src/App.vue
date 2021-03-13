@@ -1,5 +1,6 @@
 <template>
     <div>
+        <link rel="icon" href="@assets/logo.png">
         <Home />
     </div>
 </template>

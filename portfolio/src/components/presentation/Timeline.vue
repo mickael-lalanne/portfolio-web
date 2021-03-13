@@ -4,7 +4,10 @@
             class="timeline__event  animated fadeInUp delay-3s timeline__event--type1"
         >
             <div class="timeline__event__icon ">
-                <img src="@/assets/images/timeline/intuifaceLogo.png" />
+                <img
+                    alt="Intuiface Logo"
+                    src="@/assets/images/timeline/intuifaceLogo.png"
+                />
                 <div class="timeline__event__date">
                     2018
                 </div>
@@ -25,7 +28,9 @@
             class="timeline__event animated fadeInUp delay-2s timeline__event--type2"
         >
             <div class="timeline__event__icon">
-                <img src="@/assets/images/timeline/diplomeLogo+3.png" />
+                <img
+                    alt="Logo diplôme bac +3"
+                    src="@/assets/images/timeline/diplomeLogo+3.png" />
                 <div class="timeline__event__date">
                     2018
                 </div>
@@ -46,7 +51,9 @@
             class="timeline__event animated fadeInUp delay-1s timeline__event--type1"
         >
             <div class="timeline__event__icon">
-                <img src="@/assets/images/timeline/diplomeLogo+2.png" />
+                <img
+                    alt="Logo diplôme bac +2"
+                    src="@/assets/images/timeline/diplomeLogo+2.png" />
                 <div class="timeline__event__date">
                     2017
                 </div>
@@ -64,7 +71,10 @@
         </div>
         <div class="timeline__event animated fadeInUp timeline__event--type2">
             <div class="timeline__event__icon">
-                <img src="@/assets/images/timeline/diplomeLogo.png" />
+                <img
+                    alt="Logo diplôme"
+                    src="@/assets/images/timeline/diplomeLogo.png"
+                />
                 <div class="timeline__event__date">
                     2014
                 </div>

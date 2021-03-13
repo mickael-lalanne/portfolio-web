@@ -1,6 +1,6 @@
 <template>
     <div class="project-container">
-        <div class="section-title">Projets</div>
+        <h2 class="section-title">Projets</h2>
         <div class="title-separator"></div>
         <!-- Intuiface Analytics -->
         <ProjectPreview

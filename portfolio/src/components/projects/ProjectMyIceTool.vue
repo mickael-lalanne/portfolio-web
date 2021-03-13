@@ -10,7 +10,9 @@
             <CloseButton @click="$emit('close')" />
             <!-- TITLE -->
             <div class="project-title">
-                <img src="@/assets/images/projects/myIceTool/logoName.png" />
+                <img
+                alt="My Ice Tool logo"
+                src="@/assets/images/projects/myIceTool/logoName.png" />
             </div>
             <!-- PRESENTATION -->
             <div class="section-title">
@@ -33,7 +35,11 @@
 
             <!-- Page d'inscription -->
             <div class="section-title">Page d'inscription</div>
-            <img class="pb-3" src="@/assets/images/projects/myIceTool/home.jpg"/>
+            <img
+                alt="My Ice Tool page d'accueil"
+                class="pb-3"
+                src="@/assets/images/projects/myIceTool/home.jpg"
+            />
             <div class="section-content">
                 <div class="section-content-title">
                     - Connexion/inscription avec validation du compte:
@@ -61,7 +67,11 @@
 
             <!-- Page principale -->
             <div class="section-title">Page Principale</div>
-            <img class="pb-3" src="@/assets/images/projects/myIceTool/main.jpg"/>
+            <img
+                alt="My Ice Tool page principale"
+                class="pb-3"
+                src="@/assets/images/projects/myIceTool/main.jpg"
+            />
             <div class="section-content">
                 <div class="section-content-title">
                     - API Google Map, Afficher les zones et les cascades:
@@ -76,14 +86,22 @@
 
             <!-- Historique des températures -->
             <div class="section-title">Historique des températures</div>
-            <img class="pb-3" src="@/assets/images/projects/myIceTool/history.jpg"/>
+            <img
+                alt="My Ice Tool historique"
+                class="pb-3"
+                src="@/assets/images/projects/myIceTool/history.jpg"
+            />
             <div class="section-content">
                 Quand l’utilisateur cliquera sur ‘Historique des températures’, on ira récupérer dans la base de données l’historique de la cascade sélectionnée et on affichera les résultats sous forme de tableau.
             </div>
 
             <!-- Commentaires -->
             <div class="section-title">Commentaires</div>
-            <img class="pb-3" src="@/assets/images/projects/myIceTool/main.jpg"/>
+            <img
+                alt="My Ice Tool commentaires"
+                class="pb-3"
+                src="@/assets/images/projects/myIceTool/comment.jpg"
+            />
             <div class="section-content">
                 <div class="section-content-title">
                     - Affichage des commentaires:
@@ -99,7 +117,11 @@
 
             <!-- A proos -->
             <div class="section-title">Page à propops</div>
-            <img class="pb-3" src="@/assets/images/projects/myIceTool/about.jpg"/>
+            <img
+                alt="My Ice Tool page à propos"
+                class="pb-3"
+                src="@/assets/images/projects/myIceTool/about.jpg"
+            />
         </v-card>
     </v-dialog>
 </template>

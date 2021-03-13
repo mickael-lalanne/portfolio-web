@@ -1,9 +1,10 @@
 <template>
     <div class="presentation-container">
-        <div class="resume-name pt-12">Qui va là ?</div>
+        <h2 class="resume-name pt-12">Qui va là ?</h2>
         <div class="title-separator mb-12"></div>
         <div class="profile-container">
             <img
+                alt="Profile Picture"
                 class="profile-picture"
                 src="@/assets/images/profilePicture.png"
             />
@@ -31,7 +32,10 @@
                         mdi-briefcase-outline
                     </v-icon>
                     <div class="resume-text">
-                        Ingénieur R&D pour <i class="ml-1">Intuiface</i>
+                        Ingénieur R&D pour
+                        <a href="https://www.intuiface.com/" target="_blank" class="pl-1">
+                            Intuiface
+                        </a>
                     </div>
                 </div>
                 <div class="resume-category">
@@ -123,6 +127,14 @@ export default {
     display: flex;
     align-items: center;
     color: black;
+    & a {
+        text-decoration: none;
+        color: unset;
+        font-weight: 500;
+        &:hover {
+            color: var(--v-primary-base);
+        }
+    }
 }
 .keywords-container {
     margin-top: 20px;

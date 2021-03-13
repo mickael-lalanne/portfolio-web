@@ -1,6 +1,6 @@
 <template>
     <div class="contact-container">
-        <div class="section-title">Contact</div>
+        <h2 class="section-title">Contact</h2>
         <div class="title-separator"></div>
         <div class="section-subtitle">
             Tu as une question ? N'hésite pas à m'envoyer un message !

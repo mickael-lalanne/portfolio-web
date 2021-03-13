@@ -10,7 +10,10 @@
             <CloseButton @click="$emit('close')" />
             <!-- TITLE -->
             <div class="project-title">
-                <img src="@/assets/images/projects/analytics/logo.png" />
+                <img
+                    alt="Logo Intuiface Analytics"
+                    src="@/assets/images/projects/analytics/logo.png"
+                />
             </div>
             <!-- Présentation -->
             <div class="section-title">
@@ -59,8 +62,9 @@
                 dans plusieurs formats: png, jpeg, svg, pdf, csv, xls.
             </div>
             <img
+                alt="Dashboard"
                 class="pt-3"
-                src="@/assets/images/projects/analytics/chartTemplateLibrary.png"
+                src="@/assets/images/projects/analytics/dashboard.png"
             />
 
             <!-- Chart Editor -->
@@ -78,6 +82,7 @@
                 sépcifique au type de chart.
             </div>
             <img
+                alt="Chart Editor"
                 class="pt-3"
                 src="@/assets/images/projects/analytics/chartEditor.png"
             />
@@ -95,6 +100,7 @@
             </div>
             <div style="margin: auto" class="pt-3">
                 <img
+                    alt="Chart Template Library"
                     src="@/assets/images/projects/analytics/chartTemplateLibrary.png"
                 />
             </div>
@@ -111,6 +117,7 @@
                 à une version readonly du dashboard.
             </div>
             <img
+                alt="Dashboard options de partage"
                 class="pt-3"
                 src="@/assets/images/projects/analytics/sharedOptions.png"
             />

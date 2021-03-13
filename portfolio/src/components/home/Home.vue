@@ -4,7 +4,7 @@
             <div class="home-content-container">
                 <div>
                     Salut, moi c'est
-                    <span class="highlight">Mickaël Lalanne</span>.
+                    <h1 class="highlight">Mickaël Lalanne</h1>.
                     <br />
                     Je suis développeur web full-stack.
                     <CustomButton
@@ -219,6 +219,9 @@ export default {
 }
 .highlight {
     color: var(--v-primary-base);
+    display: inline;
+    font-weight: 400;
+    font-size: inherit;
 }
 .particles-container {
     position: absolute;

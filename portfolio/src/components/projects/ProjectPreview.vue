@@ -14,13 +14,18 @@
                     :key="skill"
                     class="skill-container"
                 >
-                    <img class="skill-icon" src="@/assets/images/check.png" />
+                    <img
+                        alt="Check icone"
+                        class="skill-icon"
+                        src="@/assets/images/check.png"
+                    />
                     {{ skill }}
                 </div>
             </div>
         </div>
         <div>
             <img
+                :alt="`Image de preview ${imgName}`"
                 class="project-img"
                 :src="require(`@/assets/images/${imgName}.png`)"
             />
