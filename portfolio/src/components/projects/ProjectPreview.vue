@@ -92,6 +92,7 @@ export default {
     text-decoration: underline;
     padding-top: 10px;
     color: var(--v-primary-base);
+    font-weight: bold;
 }
 .project-img {
     display: block;

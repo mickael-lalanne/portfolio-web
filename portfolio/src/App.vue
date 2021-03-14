@@ -17,13 +17,13 @@ export default {
     }),
 };
 </script>
-<style></style>
-<style>
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
-
+<style lang="scss">
+$font-family: 'Raleway', sans-serif;
 html,
 body {
-    font-family: "Lato", sans-serif;
     scroll-behavior: smooth;
+}
+.v-application {
+    font-family: 'Raleway', sans-serif;
 }
 </style>

@@ -42,6 +42,7 @@
             <Projects ref="projectsCategory" />
             <CategorySeparator />
             <Contact ref="contactCategory" />
+            <Footer />
         </div>
     </v-app>
 </template>
@@ -53,6 +54,7 @@ import Projects from "@/components/projects/Projects.vue";
 import Contact from "@/components/contact/Contact.vue";
 import CategorySeparator from "@/components/home/CategorySeparator.vue";
 import CustomButton from "@/components/shared/CustomButton.vue";
+import Footer from "@/components/home/Footer.vue";
 
 export default {
     name: "Home",
@@ -63,6 +65,7 @@ export default {
         Projects,
         CategorySeparator,
         CustomButton,
+        Footer
     },
     data: () => ({
         selectedCategory: "presentation",
@@ -94,6 +97,7 @@ export default {
       `);
     },
     methods: {
+
         scrollToCategory: function(categoryName = "presentation") {
             this.selectedCategory = categoryName;
             const categoryElt = this.$refs[categoryName + "Category"].$el;
@@ -207,9 +211,10 @@ export default {
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 4em;
+    font-size: 42px;
     padding: 10%;
     color: #fcf1f1;
+    font-family: 'Raleway', sans-serif;
 }
 .highlight {
     color: var(--v-primary-base);
@@ -231,13 +236,13 @@ export default {
 
 @media (max-width: 1600px) {
     .home-content-container {
-        font-size: 60px;
+        font-size: 42px;
     }
 }
 
 @media (max-width: 1200px) {
     .home-content-container {
-        font-size: 44px;
+        font-size: 42px;
     }
 }
 

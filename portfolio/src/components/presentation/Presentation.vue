@@ -141,6 +141,7 @@ export default {
                 name: "Lighthouse",
                 link: "https://developers.google.com/web/tools/lighthouse",
             },
+            { name: "Node.js", link: "https://nodejs.org/en/" },
         ],
     }),
     computed: {
@@ -216,6 +217,7 @@ export default {
     margin-top: 20px;
     text-align: center;
     margin: auto;
+    font-family: 'Roboto';
     a {
         text-decoration: none;
         color: unset;

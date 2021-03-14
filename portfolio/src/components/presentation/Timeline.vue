@@ -132,7 +132,7 @@ export default {
             letter-spacing: 1.5px;
         }
         &__content {
-            padding: 10px 10px 10px 20px;
+            padding: 10px 10px 0px 20px;
         }
         &__date {
             color: white;

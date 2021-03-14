@@ -142,6 +142,7 @@ export default {
     background-color: var(--v-light-base);
     padding: 5vh 30vw !important;
     text-align: justify;
+    font-family: 'Roboto';
 }
 .project-title {
     text-align: center;

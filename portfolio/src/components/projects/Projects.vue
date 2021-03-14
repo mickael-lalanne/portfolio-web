@@ -64,9 +64,9 @@ export default {
 
 <style lang="scss" scoped>
 .project-container {
-    /* height: 100vh; */
     background-color: #1a1c20;
     padding: 100px 5%;
+    padding-top: 70px;
 }
 .section-title {
     color: var(--v-primary-base);
