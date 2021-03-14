@@ -58,7 +58,7 @@ export default {
                 `mailto:mickael.lalanne03@gmail.com?subject=${encodeURIComponent(this.subject)}&body=${encodeURIComponent(this.message)}`
             );
         }
-    },
+    }
 };
 </script>
 
@@ -121,7 +121,7 @@ export default {
 
 .send-message-btn:hover,
 .send-message-btn:focus {
-    box-shadow: inset 7.5em 0 0 0 var(--v-secondary-base);
+    box-shadow: inset 130px 0 0 0 var(--v-secondary-base);
 }
 
 // RESPONSIVE

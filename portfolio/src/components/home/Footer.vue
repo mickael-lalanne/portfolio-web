@@ -8,7 +8,7 @@
         >
             <v-icon
                 size="34"
-                class="pl-2 github-icon"
+                class="pl-1 github-icon"
             >
                 mdi-github
             </v-icon>

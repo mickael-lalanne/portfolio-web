@@ -48,6 +48,7 @@ export default {
         width: auto;
         height: auto;
         max-width: 100%;
+        max-height: 100%;
         cursor: pointer;
         z-index: 1;
     }

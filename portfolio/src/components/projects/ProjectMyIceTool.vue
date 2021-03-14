@@ -139,20 +139,13 @@
 </template>
 
 <script>
-import CloseButton from "@/components/shared/CloseButton.vue";
-import ImageExtend from "@/components/shared/ImageExtend.vue";
+import Vue from 'vue';
+import { ProjectMixin } from '@/mixins/projectMixin.js';
 
-export default {
-    name: "ProjectMyIceTool",
-    components: { CloseButton, ImageExtend },
-    props: {
-        showDialog: { type: Boolean },
-    },
-    data: () => ({
-        dialog: false,
-        imageToExtend: null
-    }),
-};
+export default Vue.extend({
+    mixins: [ProjectMixin],
+    name: "ProjectMyIceTool"
+});
 </script>
 
 <style lang="scss" scoped>
