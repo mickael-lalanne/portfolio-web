@@ -52,7 +52,7 @@ export default {
         P2_DIALOG: "ProjectApiExplorer",
         P2_SKILLS: ["S'adapter à un projet existant", "Javascript, jQuery", "Tests end to end"],
         P3_TITLE: "MY ICE TOOL - PROJET TUTEURÉ",
-        P3_DESCRIPTION: `My Ice Tool est un projet étudiant que j'ai dû réalisé durant ma licence professionnelle à Gap.
+        P3_DESCRIPTION: `My Ice Tool est un projet étudiant que j'ai dû réaliser durant ma licence professionnelle à Gap.
             L'objectif était de réaliser un site web permettant de visualiser les conditions d'escalades sur des cascades de glaces dans des zones spécifiques.
             Notre équipe a notamment dû créer l'identité graphique du site, gérer l'authentification, l'ajout de commentaires, utiliser l'api de Google Maps afin de tracer des zones et des points d'intérêts, stocker l'historique des températures en base à l'aide d'un cron, ...`,
         P3_IMG: "myIceTool",

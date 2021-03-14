@@ -5,21 +5,28 @@
         hide-overlay
         transition="dialog-bottom-transition"
     >
+        <ImageExtend
+            v-if="imageToExtend"
+            :imgId="imageToExtend"
+            @close="imageToExtend = null"
+        />
         <v-card class="project-container">
             <!-- CLOSE BUTTON -->
             <CloseButton @click="$emit('close')" />
             <!-- TITLE -->
             <div class="project-title">
                 <img
-                alt="My Ice Tool logo"
-                src="@/assets/images/projects/myIceTool/logoName.png" />
+                    alt="My Ice Tool logo"
+                    src="@/assets/images/projects/myIceTool/logoName.png"
+                    @click="imageToExtend = '1fcPouJ9962rpZcaSJFUWhdKevxui6rZd'"
+                />
             </div>
             <!-- PRESENTATION -->
             <div class="section-title">
                 Présentation
             </div>
             <div class="section-content">
-                <b>My Ice Tool</b> est un projet étudiant que j'ai dû réalisé durant ma licence professionnelle à Gap.
+                <b>My Ice Tool</b> est un projet étudiant que j'ai dû réaliser durant ma licence professionnelle à Gap.
                 L'objectif était de réaliser un site web permettant de visualiser les conditions d'escalades sur des cascades de glaces dans des zones spécifiques.
                 Notre équipe a notamment dû:
                 <div class="pl-10"> 
@@ -39,6 +46,7 @@
                 alt="My Ice Tool page d'accueil"
                 class="pb-3"
                 src="@/assets/images/projects/myIceTool/home.jpg"
+                @click="imageToExtend = '11EcUxr78PyV7wfXfdjtTWsFnh8NPHYV6'"
             />
             <div class="section-content">
                 <div class="section-content-title">
@@ -71,6 +79,7 @@
                 alt="My Ice Tool page principale"
                 class="pb-3"
                 src="@/assets/images/projects/myIceTool/main.jpg"
+                @click="imageToExtend = '1XEeY09d0nVVfpyRStaB2YyhD32x6uWj5'"
             />
             <div class="section-content">
                 <div class="section-content-title">
@@ -90,6 +99,7 @@
                 alt="My Ice Tool historique"
                 class="pb-3"
                 src="@/assets/images/projects/myIceTool/history.jpg"
+                @click="imageToExtend = '1RMKA1y9epaxyxvnnXLXS0tovtMsToNBf'"
             />
             <div class="section-content">
                 Quand l’utilisateur cliquera sur ‘Historique des températures’, on ira récupérer dans la base de données l’historique de la cascade sélectionnée et on affichera les résultats sous forme de tableau.
@@ -101,6 +111,7 @@
                 alt="My Ice Tool commentaires"
                 class="pb-3"
                 src="@/assets/images/projects/myIceTool/comment.jpg"
+                @click="imageToExtend = '1evkNpR6SaDdgUFrLrrCXQXN9Rv6vGOnp'"
             />
             <div class="section-content">
                 <div class="section-content-title">
@@ -121,6 +132,7 @@
                 alt="My Ice Tool page à propos"
                 class="pb-3"
                 src="@/assets/images/projects/myIceTool/about.jpg"
+                @click="imageToExtend = '15Ll-Q1VIJgzBJTaxdd4HgqWCqWuOAYeT'"
             />
         </v-card>
     </v-dialog>
@@ -128,15 +140,17 @@
 
 <script>
 import CloseButton from "@/components/shared/CloseButton.vue";
+import ImageExtend from "@/components/shared/ImageExtend.vue";
 
 export default {
     name: "ProjectMyIceTool",
-    components: { CloseButton },
+    components: { CloseButton, ImageExtend },
     props: {
         showDialog: { type: Boolean },
     },
     data: () => ({
         dialog: false,
+        imageToExtend: null
     }),
 };
 </script>
@@ -155,6 +169,7 @@ export default {
 }
 img {
     max-width: 100%;
+    cursor: pointer;
 }
 .section-title {
     text-transform: uppercase;

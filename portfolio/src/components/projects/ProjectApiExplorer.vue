@@ -5,6 +5,11 @@
         hide-overlay
         transition="dialog-bottom-transition"
     >
+        <ImageExtend
+            v-if="imageToExtend"
+            :imgId="imageToExtend"
+            @close="imageToExtend = null"
+        />
         <v-card class="project-container">
             <!-- CLOSE BUTTON -->
             <CloseButton @click="$emit('close')" />
@@ -13,6 +18,7 @@
                 <img
                     alt="API Explorer logo"
                     src="@/assets/images/projects/apx/logo.png"
+                    @click="imageToExtend = '1-ibbgaIQCTSlm3GhON8B24eV0oHfq4O7'"
                 />
             </div>
             <!-- Présentation -->
@@ -32,6 +38,7 @@
                 alt="API Explorer"
                 class="pt-3"
                 src="@/assets/images/projects/apx/apx.png"
+                @click="imageToExtend = '1077-Hmx6jghLfOxkLnRVw4PtH2p6Rh6j'"
             />
 
             <!-- Objectif -->
@@ -57,6 +64,7 @@
                     alt="jQuery logo"
                     class="pb-3"
                     src="@/assets/images/projects/apx/jquery.png"
+                    @click="imageToExtend = '1LlPvuKe_ygZQppe9qTocxGIQBKREPJLe'"
                 />
             </div>
             <div class="section-content">
@@ -92,6 +100,7 @@
                         alt="API Explorer effet de surbrillance"
                         class="pb-3"
                         src="@/assets/images/projects/apx/highlight.png"
+                        @click="imageToExtend = '17Wmlg7IaIvndWVVkKjC0k9MQVnK3B-MC'"
                     />
                 </div>
                 Pour ce qui est du positionnement de l'étape, il se fait par rapport à l'élément qui doit être expliqué.<br>
@@ -101,6 +110,7 @@
                 <img
                     alt="API Explorer maquettes"
                     src="@/assets/images/projects/apx/design.png"
+                    @click="imageToExtend = '1jfjBbKCvKTDq2EoE6L8bSA1Jd_t-cLY6'"
                 />
             </div>
 
@@ -140,6 +150,7 @@
                 alt="API Explorer tutoriel"
                 class="pt-3"
                 src="@/assets/images/projects/apx/step.png"
+                @click="imageToExtend = '1_gYIBVz9H9pDEryyCTL3DNqb4FTqPFpr'"
             />
         </v-card>
     </v-dialog>
@@ -147,22 +158,24 @@
 
 <script>
 import CloseButton from "@/components/shared/CloseButton.vue";
+import ImageExtend from "@/components/shared/ImageExtend.vue";
 
 export default {
     name: "ProjectApiExplorer",
-    components: { CloseButton },
+    components: { CloseButton, ImageExtend },
     props: {
         showDialog: { type: Boolean },
     },
     data: () => ({
         dialog: false,
+        imageToExtend: null
     }),
 };
 </script>
 
 <style lang="scss" scoped>
 .project-container {
-    background-color: var(--v-light-base);
+    background-color: var(--v-light-base) !important;
     padding: 5vh 30vw !important;
     text-align: justify;
 }
@@ -174,6 +187,7 @@ export default {
 }
 img {
     max-width: 100%;
+    cursor: pointer;
 }
 .section-title {
     text-transform: uppercase;

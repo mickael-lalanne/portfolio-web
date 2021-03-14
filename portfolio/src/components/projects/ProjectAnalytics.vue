@@ -5,6 +5,11 @@
         hide-overlay
         transition="dialog-bottom-transition"
     >
+        <ImageExtend
+            v-if="imageToExtend"
+            :imgId="imageToExtend"
+            @close="imageToExtend = null"
+        />
         <div class="project-container">
             <!-- CLOSE BUTTON -->
             <CloseButton @click="$emit('close')" />
@@ -13,6 +18,7 @@
                 <img
                     alt="Logo Intuiface Analytics"
                     src="@/assets/images/projects/analytics/logo.png"
+                    @click="imageToExtend = '1cZNxQFuvzp4Ondpf6ts5e1kcDkrIWbKZ'"
                 />
             </div>
             <!-- Présentation -->
@@ -64,6 +70,7 @@
                 alt="Dashboard"
                 class="pt-3"
                 src="@/assets/images/projects/analytics/dashboard.png"
+                @click="imageToExtend = '1qLqGPHBLNrHqTXk412IyTjgseRbD3Lww'"
             />
 
             <!-- Chart Editor -->
@@ -84,6 +91,7 @@
                 alt="Chart Editor"
                 class="pt-3"
                 src="@/assets/images/projects/analytics/chartEditor.png"
+                @click="imageToExtend = '1-qFpZ9sSfb6VmlU5AJz7nen6zpd4zl5O'"
             />
 
             <!-- Chart Template Library -->
@@ -101,6 +109,7 @@
                 <img
                     alt="Chart Template Library"
                     src="@/assets/images/projects/analytics/chartTemplateLibrary.png"
+                    @click="imageToExtend = '1sEquxBmMBm15hhfUB__z7tISUzUUoCnu'"
                 />
             </div>
 
@@ -119,6 +128,7 @@
                 alt="Dashboard options de partage"
                 class="pt-3"
                 src="@/assets/images/projects/analytics/sharedOptions.png"
+                @click="imageToExtend = '1T9PUnsEJ_9bnCzFZyA-qaxrlImYc2nAT'"
             />
         </div>
     </v-dialog>
@@ -126,15 +136,17 @@
 
 <script>
 import CloseButton from "@/components/shared/CloseButton.vue";
+import ImageExtend from "@/components/shared/ImageExtend.vue";
 
 export default {
     name: "ProjectAnalytics",
-    components: { CloseButton },
+    components: { CloseButton, ImageExtend },
     props: {
-        showDialog: { type: Boolean },
+        showDialog: { type: Boolean, ImageExtend },
     },
     data: () => ({
         dialog: false,
+        imageToExtend: null
     }),
 };
 </script>
@@ -155,6 +167,7 @@ export default {
 }
 img {
     max-width: 100%;
+    cursor: pointer;
 }
 .section-title {
     text-transform: uppercase;
