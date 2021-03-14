@@ -98,6 +98,7 @@ export default {
     display: block;
     max-width: 80vw;
     width: 800px;
+    height: 100%;
     border: 2px solid white;
 }
 .skills-container {
@@ -109,6 +110,7 @@ export default {
 }
 .skill-icon {
     width: 25px;
+    height: 100%;
     padding-right: 5px;
 }
 

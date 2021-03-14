@@ -215,6 +215,7 @@ export default {
     padding: 10%;
     color: #fcf1f1;
     font-family: 'Raleway', sans-serif;
+    font-display: swap;
 }
 .highlight {
     color: var(--v-primary-base);

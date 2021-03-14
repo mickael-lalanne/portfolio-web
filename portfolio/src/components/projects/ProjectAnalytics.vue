@@ -21,12 +21,14 @@
             </div>
             <div class="section-content">
                 Analytics - Chart & Dashboards est une application web accessible directement sur son compte 
-                <a href="https://my.intuiface.com/" target="_blank">my.intuiface</a>.<br>
+                <a href="https://my.intuiface.com/" target="_blank" rel="noopener">
+                    my.intuiface
+                </a>.<br>
                 C'est mon premier vrai projet professionnel et j'ai eu la chance d'être impliqué dès le début des devs.<br>
                 Même après la release du produit, j'ai continué de travailler sur le projet pour ajouter de nouvelles features comme les charts de type <b>"Gauge"</b> et <b>"Single Value"</b>.<br>
                 L'application a été développé avec le framework <b>Angular</b>.
                 Pour les charts, nous avons utilisé la librairie
-                <a href="https://www.highcharts.com/" target="_blank">
+                <a href="https://www.highcharts.com/" target="_blank" rel="noopener">
                     Highcharts
                 </a >.<br />
                 L'équipe était composée d'un chef de projet qui s'occupait des tests et spécifications UX, d'un designer, de deux développeurs front-end et d'un développeur back-end.
@@ -143,6 +145,7 @@ export default {
     padding: 5vh 30vw !important;
     text-align: justify;
     font-family: 'Roboto';
+    font-display: swap;
 }
 .project-title {
     text-align: center;

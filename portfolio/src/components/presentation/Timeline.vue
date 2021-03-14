@@ -17,6 +17,7 @@
                     <a
                         href="https://www.intuiface.com/"
                         target="_blank"
+                        rel="noopener"
                         style="text-decoration:none;"
                     >
                         INTUIFACE

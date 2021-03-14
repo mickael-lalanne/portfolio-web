@@ -62,6 +62,7 @@ $mediumblu: #1e272d;
 label {
     color: black;
     font-family: Helvetica, Arial, sans-serif;
+    font-display: swap;
     font-size: 0.6em;
     text-transform: uppercase;
     letter-spacing: 2px;

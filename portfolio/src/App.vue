@@ -18,12 +18,14 @@ export default {
 };
 </script>
 <style lang="scss">
-$font-family: 'Raleway', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 html,
 body {
     scroll-behavior: smooth;
 }
 .v-application {
     font-family: 'Raleway', sans-serif;
+    font-display: swap;
 }
 </style>

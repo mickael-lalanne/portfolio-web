@@ -1,7 +1,11 @@
 <template>
     <div class="footer-container d-flex align-center justify-center">
         Par Mickaël Lalanne © <b>Wayne Enterprises</b>
-        <a href="https://github.com/mickael-lalanne" target="_blank">
+        <a
+            href="https://github.com/mickael-lalanne"
+            target="_blank"
+            rel="noopener"
+        >
             <v-icon
                 size="34"
                 class="pl-2 github-icon"
@@ -26,6 +30,7 @@ export default {
 <style lang="scss" scoped>
 .footer-container {
     font-family: 'Roboto';
+    font-display: swap;
     font-size: 16px;
     text-align: center;
     padding: 15px;

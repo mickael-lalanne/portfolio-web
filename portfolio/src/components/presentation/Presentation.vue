@@ -40,6 +40,7 @@
                         <a
                             href="https://www.intuiface.com/"
                             target="_blank"
+                            rel="noopener"
                             style="font-weight:500;"
                             class="pl-1"
                         >
@@ -62,6 +63,7 @@
                     :key="keyword.name"
                     :href="keyword.link"
                     target="_blank"
+                    rel="noopener"
                 >
                     <v-chip
                         class="keyword-chip"
@@ -78,6 +80,7 @@
                         class="resume-social-icon"
                         href="https://github.com/mickael-lalanne"
                         target="_blank"
+                        rel="noopener"
                     >
                         <span></span>
                         <span></span>
@@ -180,6 +183,7 @@ export default {
 }
 .profile-picture {
     width: 400px;
+    height: 100%;
     max-width: 80vw;
 }
 .resume-name {
@@ -218,6 +222,7 @@ export default {
     text-align: center;
     margin: auto;
     font-family: 'Roboto';
+    font-display: swap;
     a {
         text-decoration: none;
         color: unset;
