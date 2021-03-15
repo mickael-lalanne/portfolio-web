@@ -18,7 +18,7 @@
                 <img
                     alt="API Explorer logo"
                     src="@/assets/images/projects/apx/logo.png"
-                    @click="imageToExtend = '1-ibbgaIQCTSlm3GhON8B24eV0oHfq4O7'"
+                    @click="imageToExtend = 'MygysNL.png'"
                 />
             </div>
             <!-- Présentation -->
@@ -31,14 +31,14 @@
                 L’API Explorer permet d’avoir accès à des dizaines de milliers d'API publiques et privées disponibles dans le cloud.
                 Il y a tout : des listes de films, des prévisions météorologiques, les dernières photos de la NASA et tout ce qui est possible de trouver sur Internet.
                 La majorité est gratuite tandis que d'autres peuvent exiger des frais d'accès.
-                Certains peuvent être privés et internes à votre organisation.
+                Certaines peuvent être privées et internes à votre organisation.
                 Peu importe, tous sont accessibles dans Intuiface.
             </div>
             <img
                 alt="API Explorer"
                 class="pt-3"
                 src="@/assets/images/projects/apx/apx.png"
-                @click="imageToExtend = '1077-Hmx6jghLfOxkLnRVw4PtH2p6Rh6j'"
+                @click="imageToExtend = 'BLELnAM.png'"
             />
 
             <!-- Objectif -->
@@ -64,7 +64,7 @@
                     alt="jQuery logo"
                     class="pb-3"
                     src="@/assets/images/projects/apx/jquery.png"
-                    @click="imageToExtend = '1LlPvuKe_ygZQppe9qTocxGIQBKREPJLe'"
+                    @click="imageToExtend = '8aGF3Vu.png'"
                 />
             </div>
             <div class="section-content">
@@ -75,11 +75,11 @@
                 ou disparaître le fond noir, lancer des requêtes, envoyer l'étape actuelle au serveur, ...) que je me retrouvais à réécrire tout le cheminement. <br>
                 De plus, il n'était pas possible de positionner les étapes par rapport à d'autres éléments.
                 J'ai donc décidé d'écrire le cheminement en dur, en essayant de rendre le code le plus court et lisible possible.<br>
-                Pour ce qui est du positionnement, je me suis tourné ver la librairie <b>jQueryUI</b> qui était déjà installé sur le projet.<br>
+                Pour ce qui est du positionnement, je me suis tourné vers la librairie <b>jQueryUI</b> qui était déjà installée sur le projet.<br>
 
                 Pour gérer la base de données <b>MongoDB</b>, j'ai d'abord utilisé <b>Studio3T</b> le temps de sa version d'essai.<br>
 
-                Une fois la version d'essai terminé, je suis passé sur Robo3T. <b>Codeceptjs</b> et <b>Nightmare.js</b> pour les tests end to end.
+                Une fois la version d'essai terminée, je suis passé sur Robo3T. <b>Codeceptjs</b> et <b>Nightmare.js</b> pour les tests end to end.
             </div>
 
             <!-- Design -->
@@ -87,30 +87,30 @@
             <div class="section-content">
                 En ce qui concerne le design du tutoriel, il est resté en grande partie fidèle à celui réalisé avec Appcues.<br>
                 Dans un premier temps, j'ai reproduit exactement le même tutoriel que l'existant.<br>
-                Au fur et à mesure de l'avancée de la mission, des idées et des améliorations ont étés trouvées (agrandissement des tooltips, animations, ajout d'un bouton précédent, ...).
+                Au fur et à mesure de l'avancée de la mission, des idées et des améliorations ont été trouvées (agrandissement des tooltips, animations, ajout d'un bouton précédent, ...).
                 Des maquettes m'ont été fournies par l’UX Designer et se sont vu évoluées avec le temps.<br>
                 Les éléments situés à l'intérieur des étapes ont été positionnés avec <b>flexbox</b>.
-                Les couleurs utilisés pour le tutoriel ont été placées dans le fichier constant.less pour faciliter la maintenance.<br>
-                Comme différences par rapport à l'ancien tutoriel, on trouve :<br>
+                Les couleurs utilisées pour le tutoriel ont été placées dans le fichier constant.less pour faciliter la maintenance.<br>
+                Les différences avec l'ancien tutoriel sont :<br>
                 <div class="pl-10">
                     - l'ajout d'un <b>bouton previous</b><br>
-                    - de nouveaux <b>effets de transitions</b> entre les étapes importantes (transition sur le côté) et entre les tooltips (transitions d'opacité) <br>
+                    - de nouveaux <b>effets de transition</b> entre les étapes importantes (transitions sur le côté) et entre les tooltips (transitions d'opacité) <br>
                     - un <b>effet d'animation</b> (scale et surbrillance) mis en place pour attirer le regard de l'utilisateur<br>
                     <img
                         alt="API Explorer effet de surbrillance"
                         class="pb-3"
                         src="@/assets/images/projects/apx/highlight.png"
-                        @click="imageToExtend = '17Wmlg7IaIvndWVVkKjC0k9MQVnK3B-MC'"
+                        @click="imageToExtend = 'Y4SvFhr.png'"
                     />
                 </div>
                 Pour ce qui est du positionnement de l'étape, il se fait par rapport à l'élément qui doit être expliqué.<br>
-                Pour se faire, je suis passé par le framework <b>jQueryUI</b>, et notamment sa fonction <b>position()</b>.
+                Pour ce faire, je suis passé par le framework <b>jQueryUI</b>, et notamment sa fonction <b>position()</b>.
             </div>
             <div style="margin: auto" class="pt-3">
                 <img
                     alt="API Explorer maquettes"
                     src="@/assets/images/projects/apx/design.png"
-                    @click="imageToExtend = '1jfjBbKCvKTDq2EoE6L8bSA1Jd_t-cLY6'"
+                    @click="imageToExtend = 's5zHoER.png'"
                 />
             </div>
 
@@ -150,7 +150,7 @@
                 alt="API Explorer tutoriel"
                 class="pt-3"
                 src="@/assets/images/projects/apx/step.png"
-                @click="imageToExtend = '1_gYIBVz9H9pDEryyCTL3DNqb4FTqPFpr'"
+                @click="imageToExtend = 'BxbbXlC.png'"
             />
         </v-card>
     </v-dialog>

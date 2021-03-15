@@ -124,5 +124,9 @@ export default {
     .project-img {
         margin-top: 50px;
     }
+    .project-left {
+        margin: 0px 0px;
+        width: 100%;
+    }
 }
 </style>

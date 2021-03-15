@@ -52,7 +52,7 @@
                     <v-icon class="resume-icon" color="var(--v-primary-base)">
                         mdi-gamepad-square-outline
                     </v-icon>
-                    <div class="resume-text">Jeux vidéo, montage vidéo</div>
+                    <div class="resume-text">Jeux vidéo, Montage vidéo</div>
                 </div>
             </div>
         </div>

@@ -18,7 +18,7 @@
                 <img
                     alt="Logo Intuiface Analytics"
                     src="@/assets/images/projects/analytics/logo.png"
-                    @click="imageToExtend = '1cZNxQFuvzp4Ondpf6ts5e1kcDkrIWbKZ'"
+                    @click="imageToExtend = 'lYW0rP7.png'"
                 />
             </div>
             <!-- Présentation -->
@@ -32,7 +32,7 @@
                 </a>.<br>
                 C'est mon premier vrai projet professionnel et j'ai eu la chance d'être impliqué dès le début des devs.<br>
                 Même après la release du produit, j'ai continué de travailler sur le projet pour ajouter de nouvelles features comme les charts de type <b>"Gauge"</b> et <b>"Single Value"</b>.<br>
-                L'application a été développé avec le framework <b>Angular</b>.
+                L'application a été développée avec le framework <b>Angular</b>.
                 Pour les charts, nous avons utilisé la librairie
                 <a href="https://www.highcharts.com/" target="_blank" rel="noopener">
                     Highcharts
@@ -53,7 +53,7 @@
             <div class="section-content">
                 La partie Dahsboard permet la visualition des données client.<br />
                 La première fois qu'un utilisateur se connecte, 2 dashboards lui
-                sont automatiquement créé: <br />
+                sont automatiquement créés: <br />
                 <div class="pl-10">
                     - un dashboard avec des charts par défaut basé sur SES données.<br />
                     - un deuxième dashboard appelé "Tradeshow", basé sur les
@@ -70,35 +70,35 @@
                 alt="Dashboard"
                 class="pt-3"
                 src="@/assets/images/projects/analytics/dashboard.png"
-                @click="imageToExtend = '1qLqGPHBLNrHqTXk412IyTjgseRbD3Lww'"
+                @click="imageToExtend = 'HFpIOts.png'"
             />
 
             <!-- Chart Editor -->
             <div class="section-title">Chart Editor</div>
             <div class="section-content">
                 La partie chart editor permet quant à elle d'éditer le chart. Il
-                est possible de drag & dropper ce que l'on appele des "Data
+                est possible de drag & dropper ce que l'on appelle des "Data
                 Point Parameters" pour filtrer ou afficher des valeurs.
                 Il est notamment possible de:
                 <div class="">
-                    - Spécifier une plage de date (<b>date range</b>) ou d'utiliser celle définit côté Dashboard <br>
-                    - Choisir le <b>type de chart</b> parmis: Line, Area, Bar, Column, Pie, Radar, Single Value et Gauge <br>
+                    - Spécifier une plage de date (<b>date range</b>) ou d'utiliser celle définie côté Dashboard <br>
+                    - Choisir le <b>type de chart</b> parmi: Line, Area, Bar, Column, Pie, Radar, Single Value et Gauge <br>
                     - Changer des options comme le <b>refresh automatique des valeurs</b>, le <b>formatting des valeurs affichées</b> <br>
-                    (préfixe, suffixe, multiplicateur) ou encore des options sépcifique au type de chart
+                    (préfixe, suffixe, multiplicateur) ou encore des options spécifiques au type de chart
                 </div>
             </div>
             <img
                 alt="Chart Editor"
                 class="pt-3"
                 src="@/assets/images/projects/analytics/chartEditor.png"
-                @click="imageToExtend = '1-qFpZ9sSfb6VmlU5AJz7nen6zpd4zl5O'"
+                @click="imageToExtend = 'FZAamGv.png'"
             />
 
             <!-- Chart Template Library -->
             <div class="section-title">Chart Template Library</div>
             <div class="section-content">
                 Le Chart Teplate Library propose à l'utilisateur des
-                configurations de chart toute prête qu'il peut directement
+                configurations de chart toutes prêtes qu'il peut directement
                 utiliser. Il a la possibilité d'ajouter le chart directement
                 dans son dashboard ou d'éditer d'abord le template dans le Chart
                 Editor.<br />
@@ -109,7 +109,7 @@
                 <img
                     alt="Chart Template Library"
                     src="@/assets/images/projects/analytics/chartTemplateLibrary.png"
-                    @click="imageToExtend = '1sEquxBmMBm15hhfUB__z7tISUzUUoCnu'"
+                    @click="imageToExtend = '0kI6hxv.png'"
                 />
             </div>
 
@@ -128,7 +128,7 @@
                 alt="Dashboard options de partage"
                 class="pt-3"
                 src="@/assets/images/projects/analytics/sharedOptions.png"
-                @click="imageToExtend = '1T9PUnsEJ_9bnCzFZyA-qaxrlImYc2nAT'"
+                @click="imageToExtend = 'jSGmmN6.png'"
             />
         </div>
     </v-dialog>

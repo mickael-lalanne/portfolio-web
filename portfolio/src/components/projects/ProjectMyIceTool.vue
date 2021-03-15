@@ -18,7 +18,7 @@
                 <img
                     alt="My Ice Tool logo"
                     src="@/assets/images/projects/myIceTool/logoName.png"
-                    @click="imageToExtend = '1fcPouJ9962rpZcaSJFUWhdKevxui6rZd'"
+                    @click="imageToExtend = 'C6BPSTs.png'"
                 />
             </div>
             <!-- PRESENTATION -->
@@ -35,7 +35,7 @@
                     - Utiliser l'<b>api Google Maps</b> afin de tracer des zones sur une carte et d'y afficher des points d'intérêts. <br>
                     - Gérer l'ajout et la visualisation de commentaires. <br>
                     - Afficher l'historique des dernières températures pour chaque cascade.
-                    Pour se faire, un <b>cron</b> se charge une fois par jour d'appeler une api météo pour récupérer les dernières température et les stocker dans une base de données <b>MySQL</b>.<br>
+                    Pour se faire, un <b>cron</b> se charge une fois par jour d'appeler une api météo pour récupérer les dernières températures et les stocker dans une base de données <b>MySQL</b>.<br>
                 </div>
                 Ce projet a été réalisé à l'aide du framework PHP <b>Laravel</b> et une équipe constituée de 3 développeurs et 1 graphiste.
             </div>
@@ -46,15 +46,15 @@
                 alt="My Ice Tool page d'accueil"
                 class="pb-3"
                 src="@/assets/images/projects/myIceTool/home.jpg"
-                @click="imageToExtend = '11EcUxr78PyV7wfXfdjtTWsFnh8NPHYV6'"
+                @click="imageToExtend = '8TkVFgp.jpg'"
             />
             <div class="section-content">
                 <div class="section-content-title">
                     - Connexion/inscription avec validation du compte:
                 </div>
-                Un formulaire de connexion et d’inscription seront disponible sur la page principale. Une fois le formulaire d’inscription correctement rempli, les informations seront stockées dans la base de données.
+                Un formulaire de connexion et d’inscription seront disponibles sur la page principale. Une fois le formulaire d’inscription correctement rempli, les informations seront stockées dans la base de données.
                 <br>
-                L’utilisateur aura aussi la possibilité de s’inscrire avec Google. Pour cela, on récupérera son nom, prénom et adresse mail directement avec l’API Google+, et on demandera à l’utilisateur s’il souhaite s’inscrire à la newsletter.
+                L’utilisateur aura aussi la possibilité de s’inscrire avec Google. Pour cela, on récupérera ses nom, prénom et adresse mail directement avec l’API Google+, et on demandera à l’utilisateur s’il souhaite s’inscrire à la newsletter.
                 <br>
                 <div class="section-content-title">
                     - Connexion Google/Facebook:
@@ -79,13 +79,13 @@
                 alt="My Ice Tool page principale"
                 class="pb-3"
                 src="@/assets/images/projects/myIceTool/main.jpg"
-                @click="imageToExtend = '1XEeY09d0nVVfpyRStaB2YyhD32x6uWj5'"
+                @click="imageToExtend = '78jfABU.jpg'"
             />
             <div class="section-content">
                 <div class="section-content-title">
                     - API Google Map, Afficher les zones et les cascades:
                 </div>
-                Lors du chargement de la page principale, la carte devra se placer sur la cascade préféré de l’utilisateur connecté. Ensuite, des requêtes AJAX permettront d’afficher les zones et cascades disponibles dans le périmètre.
+                Lors du chargement de la page principale, la carte devra se placer sur la cascade préférée de l’utilisateur connecté. Ensuite, des requêtes AJAX permettront d’afficher les zones et cascades disponibles dans le périmètre.
                 En cliquant sur une cascade, il sera possible de connaître ses coordonnées, sa température, son niveau de danger, et d’afficher l’historique des températures ainsi que les commentaires.
                 <div class="section-content-title">
                     - Recherche de cascades avec autocomplétion:
@@ -99,7 +99,7 @@
                 alt="My Ice Tool historique"
                 class="pb-3"
                 src="@/assets/images/projects/myIceTool/history.jpg"
-                @click="imageToExtend = '1RMKA1y9epaxyxvnnXLXS0tovtMsToNBf'"
+                @click="imageToExtend = 'vnyuxEx.jpg'"
             />
             <div class="section-content">
                 Quand l’utilisateur cliquera sur ‘Historique des températures’, on ira récupérer dans la base de données l’historique de la cascade sélectionnée et on affichera les résultats sous forme de tableau.
@@ -111,28 +111,28 @@
                 alt="My Ice Tool commentaires"
                 class="pb-3"
                 src="@/assets/images/projects/myIceTool/comment.jpg"
-                @click="imageToExtend = '1evkNpR6SaDdgUFrLrrCXQXN9Rv6vGOnp'"
+                @click="imageToExtend = 'tbku7yV.jpg'"
             />
             <div class="section-content">
                 <div class="section-content-title">
                     - Affichage des commentaires:
                 </div>
                 Quand l’utilisateur cliquera sur ‘Commentaires’, on ira récupérer dans la base de données les commentaires de la cascade sélectionnée et on les affichera sous forme de liste comme ci-dessus.
-                On affichera : le nom de l’utilisateur, la date à laquelle il a posté le commentaire, le contenu, la ou les photos disponibles.
+                On affichera : le nom de l’utilisateur, la date à laquelle il a posté le commentaire, le contenu, la / les photos disponibles.
                 <div class="section-content-title">
                     - Recherche de cascades avec autocomplétion:
                 </div>
-                    Quand l’utilisateur cliquera sur ‘Commentaires’, il aura la possibilité d’ajouter un commentaire en indiquant le commentaire, et en ajoutant ou non une ou plusieurs photos.
+                    Quand l’utilisateur cliquera sur ‘Commentaires’, il aura la possibilité d’ajouter un commentaire, accompagné ou non d'une ou plusieurs photos.
                     Son nom et la date à laquelle le commentaire a été posté seront récupérés automatiquement.
             </div>
 
             <!-- A proos -->
-            <div class="section-title">Page à propops</div>
+            <div class="section-title">Page à propos</div>
             <img
                 alt="My Ice Tool page à propos"
                 class="pb-3"
                 src="@/assets/images/projects/myIceTool/about.jpg"
-                @click="imageToExtend = '15Ll-Q1VIJgzBJTaxdd4HgqWCqWuOAYeT'"
+                @click="imageToExtend = 'MiMw4FZ.jpg'"
             />
         </v-card>
     </v-dialog>

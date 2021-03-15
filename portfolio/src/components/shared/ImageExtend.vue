@@ -16,7 +16,7 @@
             @click="$emit('close')"
         ></v-progress-circular>
         <img
-            :src="'https://drive.google.com/uc?id=' + imgId"
+            :src="'https://i.imgur.com/' + imgId"
             @click="$emit('close')"
             @load="showLoading = false" />
     </v-dialog>

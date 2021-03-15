@@ -136,7 +136,7 @@ export default {
 // Medium devices (tablets, max 768px and less)
 @media (max-width: 768px) {
     .contact-form {
-        width: 70vw;
+        width: 90vw;
     }
 }
 
