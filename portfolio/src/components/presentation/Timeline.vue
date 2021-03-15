@@ -223,6 +223,7 @@ export default {
     }
     .timeline__event__icon {
         border-radius: 4px 4px 0 0;
+        padding: 5px;
     }
 }
 </style>

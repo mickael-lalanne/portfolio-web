@@ -363,7 +363,7 @@ ul li a:hover span:nth-child(4) {
 @media (max-width: 576px) {
     .keywords-social-container,
     .timeline-container {
-        padding: 0 5px;
+        padding: 0 10px;
     }
 }
 </style>
