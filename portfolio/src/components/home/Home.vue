@@ -4,7 +4,7 @@
             <div class="home-content-container">
                 <div>
                     Salut, moi c'est
-                    <h1 class="highlight">Mickaël Lalanne</h1>.
+                    <div class="name-container"><h1 class="highlight">Mickaël Lalanne</h1>.</div>
                     <br />
                     Je suis développeur web full-stack.
                     <CustomButton
@@ -105,7 +105,7 @@ export default {
         },
         onSeeWorkButtonClick: function() {
             const categoryElt = this.$refs.presentationCategory.$el;
-            var elementPosition = categoryElt.getBoundingClientRect().top;
+            var elementPosition = categoryElt.offsetTop;
 
             window.scrollTo({
                 top: elementPosition - 30,
@@ -135,7 +135,7 @@ export default {
                     }
 
                     this.scrollTimeout = null;
-                }, 300);
+                }, 1000);
             }
         },
         getViewPercentage(element) {
@@ -200,8 +200,6 @@ export default {
 
 <style lang="scss" scoped>
 .home-container {
-    height: 100vh;
-    width: 100vw;
     background-color: #1a1c20;
 }
 .home-content-container {
@@ -216,6 +214,9 @@ export default {
     color: #fcf1f1;
     font-family: 'Raleway', sans-serif;
     font-display: swap;
+}
+.name-container {
+    display: inline;
 }
 .highlight {
     color: var(--v-primary-base);
@@ -258,6 +259,9 @@ export default {
 @media (max-width: 576px) {
     .home-content-container {
         font-size: 26px;
+    }
+    .name-container {
+        display: block;
     }
 }
 </style>

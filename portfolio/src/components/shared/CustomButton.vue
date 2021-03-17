@@ -1,6 +1,6 @@
 <template>
     <div @click="$emit('click')">
-        <a href="#">
+        <a>
             <p>
                 <span class="bg"></span>
                 <span class="base"></span>
