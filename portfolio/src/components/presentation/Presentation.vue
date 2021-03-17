@@ -74,7 +74,7 @@
                     </v-chip>
                 </a>
             </div>
-            <ul class="d-flex justify-center mt-10">
+            <ul class="d-flex justify-center mt-10 pa-0">
                 <li>
                     <a
                         class="resume-social-icon"

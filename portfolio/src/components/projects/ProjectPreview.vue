@@ -129,4 +129,10 @@ export default {
         width: 100%;
     }
 }
+// Small devices (landscape phones, max 576px and less)
+@media (max-width: 576px) {
+    .project-img {
+        max-width: 95vw;
+    }
+}
 </style>

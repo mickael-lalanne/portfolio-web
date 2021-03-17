@@ -115,10 +115,9 @@ export default {
 
     &__event {
         background: #fff;
-        margin-bottom: 20px;
         position: relative;
         display: flex;
-        margin: 20px 0;
+        margin: 10px 0;
         border-radius: 8px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
         z-index: 0;

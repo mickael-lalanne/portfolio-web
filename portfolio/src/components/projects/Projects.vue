@@ -85,6 +85,6 @@ export default {
     background-color: var(--v-primary-base);
     text-align: center;
     margin: auto;
-    margin-bottom: 100px;
+    margin-bottom: 65px;
 }
 </style>
