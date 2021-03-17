@@ -5,8 +5,7 @@
                 <div>
                     Salut, moi c'est
                     <div class="name-container"><h1 class="highlight">Mickaël Lalanne</h1>.</div>
-                    <br />
-                    Je suis développeur web full-stack.
+                    <div>Je suis développeur web full-stack.</div>
                     <CustomButton
                         class="see-work-button"
                         text="Voir mon travail"
@@ -253,15 +252,15 @@ export default {
     .home-content-container {
         font-size: 39px;
     }
+    .name-container {
+        display: block;
+    }
 }
 
 // Small devices (landscape phones, max 576px and less)
 @media (max-width: 576px) {
     .home-content-container {
         font-size: 26px;
-    }
-    .name-container {
-        display: block;
     }
 }
 </style>
