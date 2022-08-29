@@ -2,6 +2,39 @@
     <div class="project-container">
         <h2 class="section-title">Projets</h2>
         <div class="title-separator"></div>
+        <!-- Intuiface Player Next Gen -->
+        <ProjectPreview
+            :title="PLN_TITLE"
+            :description="PLN_DESCRIPTION"
+            :skills="PLN_SKILLS"
+            :imgName="PLN_IMG"
+            :dialogComponent="PLN_DIALOG"
+            reverse
+        />
+        <v-divider class="project-divider"></v-divider>
+        <!-- Journal du capitaine -->
+        <ProjectPreview
+            :title="JOURNAL_TITLE"
+            :description="JOURNAL_DESCRIPTION"
+            :skills="JOURNAL_SKILLS"
+            :imgName="JOURNAL_IMG"
+            :dialogComponent="JOURNAL_DIALOG"
+        >
+            <template v-slot:projectLink>
+                <a href="https://journalducapitaine.fr/" target="_blank">journalducapitaine.fr</a>
+            </template>
+        </ProjectPreview>
+        <v-divider class="project-divider"></v-divider>
+        <!-- Intuiface HCMS -->
+        <ProjectPreview
+            :title="HCMS_TITLE"
+            :description="HCMS_DESCRIPTION"
+            :skills="HCMS_SKILLS"
+            :imgName="HCMS_IMG"
+            :dialogComponent="HCMS_DIALOG"
+            reverse
+        />
+        <v-divider class="project-divider"></v-divider>
         <!-- Intuiface Analytics -->
         <ProjectPreview
             :title="P1_TITLE"
@@ -57,7 +90,26 @@ export default {
             Notre équipe a notamment dû créer l'identité graphique du site, gérer l'authentification, l'ajout de commentaires, utiliser l'api de Google Maps afin de tracer des zones et des points d'intérêts, stocker l'historique des températures en base à l'aide d'un cron, ...`,
         P3_IMG: "myIceTool",
         P3_DIALOG: "ProjectMyIceTool",
-        P3_SKILLS: ["Framework PHP Laravel", "Google Maps API", "Cron et Base de données MySQL"]
+        P3_SKILLS: ["Framework PHP Laravel", "Google Maps API", "Cron et Base de données MySQL"],
+        HCMS_TITLE: "INTUIFACE HCMS",
+        HCMS_DESCRIPTION: `Application web développée avec Vue.js permettant aux utilisateurs d'uploader et d'éditer du contenu pour leurs expériences. Entre autre, HCMS permet de:
+            - Créer un contenu bien structuré pour une variété de formats de médias (images, vidéos, documents, couleurs, date, …)
+            - Utiliser la notion de “variant” pour identifier les champs qui varient selon le contexte
+            - Gérer les utilisateurs et le workflow pour contrôler l'édition et la publication des données
+        `,
+        HCMS_IMG: "hcms",
+        HCMS_SKILLS: ["Travail en équipe", "Vues.js, Vuetify, Vuex", "Backend avec AWS (Lambda, S3)", "Tests unitaires avec jest, tests end to end avec cypress"],
+        HCMS_DIALOG: "ProjectHCMS",
+        PLN_TITLE: "INTUIFACE PLAYER NEXT GEN",
+        PLN_DESCRIPTION: "Le Player Next Gen permet aux utilisateurs de visualiser des expériences créées depuis le Composer. L'application est développée sur la dernière version d'Angular. Sur ce grand projet que j'ai rejoint en cours de route, je me suis occupé du développement des assets Youtube, Webcam et Linear Gauge.",
+        PLN_IMG: "player",
+        PLN_SKILLS: ["Angular", "Développement multiplateforme: web, android, iOS, Brightsign, Samsung Kiosk, …", "Tests unitaires avec jest"],
+        PLN_DIALOG: "ProjectHCMS",
+        JOURNAL_TITLE: "JOURNAL DU CAPITAINE",
+        JOURNAL_DESCRIPTION: "Ma première passion, ce sont les jeux vidéo. Ma deuxième, c'est écrire. J'ai donc décidé de réaliser un site web me permettant de réunir ces deux passions. Réalisé sous Wordpress, ce site me permet de publier des articles en rapport avec le jeu vidéo.",
+        JOURNAL_IMG: "journal",
+        JOURNAL_SKILLS: ["Projet personnel", "Wordpress", "Responsive"],
+        JOURNAL_DIALOG: "ProjectHCMS"
     }),
 };
 </script>

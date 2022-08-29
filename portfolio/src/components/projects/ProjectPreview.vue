@@ -6,8 +6,12 @@
         <div class="project-left">
             <div class="project-title">{{ title }}</div>
             <div class="project-description">{{ description }}</div>
-            <div class="project-link" @click="showDialog = true">DÉTAIL</div>
-            <!-- <div class="project-link">LIEN VERS LE SITE</div> -->
+            <!-- By default, the link open a new dialog to see more details -->
+            <div v-if="!this.$slots.projectLink" class="project-link" @click="showDialog = true">DÉTAIL</div>
+            <!-- Otherwise, display custom link -->
+            <div v-else class="project-link">
+                <slot name="projectLink" class="project-link"></slot>
+            </div>
             <div class="skills-container">
                 <div
                     v-for="skill in skills"
