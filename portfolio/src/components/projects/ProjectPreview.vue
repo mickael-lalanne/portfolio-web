@@ -5,7 +5,7 @@
     >
         <div class="project-left">
             <div class="project-title">{{ title }}</div>
-            <div class="project-description">{{ description }}</div>
+            <div class="project-description" v-html="description"></div>
             <!-- By default, the link open a new dialog to see more details -->
             <div v-if="!this.$slots.projectLink" class="project-link" @click="showDialog = true">DÉTAIL</div>
             <!-- Otherwise, display custom link -->
@@ -46,13 +46,17 @@
 import ProjectAnalytics from "@/components/projects/ProjectAnalytics.vue";
 import ProjectApiExplorer from "@/components/projects/ProjectApiExplorer.vue";
 import ProjectMyIceTool from "@/components/projects/ProjectMyIceTool.vue";
+import ProjectHCMS from "@/components/projects/ProjectHCMS.vue";
+import ProjectPLN from "@/components/projects/ProjectPLN.vue";
 
 export default {
     name: "ProjectPreview",
     components: {
         ProjectAnalytics,
         ProjectApiExplorer,
-        ProjectMyIceTool
+        ProjectMyIceTool,
+        ProjectHCMS,
+        ProjectPLN
     },
     props: {
         title: { type: String },
