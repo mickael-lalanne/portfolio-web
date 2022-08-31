@@ -13,7 +13,7 @@
                     <v-icon class="resume-icon" color="var(--v-primary-base)">
                         mdi-account-circle-outline
                     </v-icon>
-                    <div class="resume-text">Mickaël Lalanne, 24 ans</div>
+                    <div class="resume-text">Mickaël Lalanne, 26 ans</div>
                 </div>
                 <div class="resume-category">
                     <v-icon class="resume-icon" color="var(--v-primary-base)">
