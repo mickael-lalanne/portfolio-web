@@ -113,6 +113,15 @@ export default {
         onHomeContainerScroll: function() {
             if (!this.scrollTimeout) {
                 this.scrollTimeout = setTimeout(() => {
+                    // Fix "Cannot read property .$el of undefined" error
+                    if (
+                        !this.$refs["presentationCategory"] ||
+                        !this.$refs["projectsCategory"] ||
+                        !this.$refs["contactCategory"]
+                    ) {
+                        return;
+                    }
+
                     const presentationPercent = this.getViewPercentage(
                         this.$refs["presentationCategory"].$el
                     );
