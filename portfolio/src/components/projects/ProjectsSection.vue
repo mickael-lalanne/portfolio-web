@@ -1,5 +1,5 @@
 <template>
-    <div class="project-container">
+    <div class="all-projects-container">
         <h2 class="section-title">Projets</h2>
         <div class="title-separator"></div>
         <!-- Intuiface HCMS -->
@@ -113,7 +113,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.project-container {
+.all-projects-container {
     background-color: #1a1c20;
     padding: 100px 5%;
     padding-top: 70px;

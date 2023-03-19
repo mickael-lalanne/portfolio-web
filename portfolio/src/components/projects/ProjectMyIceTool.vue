@@ -149,11 +149,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.project-container {
-    background-color: rgb(var(--v-theme-light));
-    padding: 5vh 30vw !important;
-    text-align: justify;
-}
 .project-title {
     text-align: center;
     img {
@@ -175,22 +170,5 @@ img {
     padding-top: 10px;
     padding-bottom: 5px;
     text-decoration: underline;
-}
-
-// RESPONSIVE
-
-@media (max-width: 1200px) {
-    .project-container {
-        padding: 5vh 15vw !important;
-    }
-}
-// Medium devices (tablets, max 768px and less)
-@media (max-width: 768px) {
-    .project-container {
-        padding: 5vh 3vw !important;
-    }
-    .project-title {
-        padding-top: 50px;
-    }
 }
 </style>

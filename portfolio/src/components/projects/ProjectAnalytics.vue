@@ -145,13 +145,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.project-container {
-    background-color: rgb(var(--v-theme-light));
-    padding: 5vh 30vw !important;
-    text-align: justify;
-    font-family: 'Roboto';
-    font-display: swap;
-}
 .project-title {
     text-align: center;
     img {
@@ -180,23 +173,6 @@ a {
     color: unset !important;
     &:hover {
         color: rgb(var(--v-theme-secondary)) !important;
-    }
-}
-
-// RESPONSIVE
-
-@media (max-width: 1200px) {
-    .project-container {
-        padding: 5vh 15vw !important;
-    }
-}
-// Medium devices (tablets, max 768px and less)
-@media (max-width: 768px) {
-    .project-container {
-        padding: 5vh 3vw !important;
-    }
-    .project-title {
-        padding-top: 50px;
     }
 }
 </style>

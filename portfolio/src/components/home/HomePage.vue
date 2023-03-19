@@ -208,6 +208,7 @@ export default {
 <style lang="scss" scoped>
 .home-container {
     background-color: #1a1c20;
+    overflow: hidden;
 }
 .home-content-container {
     width: 100vw;
@@ -217,7 +218,6 @@ export default {
     justify-content: center;
     text-align: center;
     font-size: 42px;
-    padding: 10%;
     color: #fcf1f1;
     font-family: 'Raleway', sans-serif;
     font-display: swap;
@@ -234,7 +234,6 @@ export default {
 .particles-container {
     position: absolute;
     top: 0;
-    width: 100vw;
     height: 100vh;
 }
 .see-work-button {
