@@ -1,12 +1,12 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify';
 import VueParticles from 'vue-particles';
 
-Vue.use(VueParticles)
-Vue.config.productionTip = false
+const vue = createApp(App);
 
-new Vue({
-  vuetify,
-  render: h => h(App)
-}).$mount('#app')
+vue.use(VueParticles);
+vue.use(vuetify);
+vue.config.productionTip = false;
+
+vue.mount('#app');
