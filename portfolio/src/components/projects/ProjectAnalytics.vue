@@ -17,7 +17,7 @@
             <div class="project-title">
                 <img
                     alt="Logo Intuiface Analytics"
-                    src="@/assets/images/projects/analytics/logo.png"
+                    :src="require('@/assets/images/projects/analytics/logo.png')"
                     @click="imageToExtend = 'lYW0rP7.png'"
                 />
             </div>
@@ -69,7 +69,7 @@
             <img
                 alt="Dashboard"
                 class="pt-3"
-                src="@/assets/images/projects/analytics/dashboard.png"
+                :src="require('@/assets/images/projects/analytics/dashboard.png')"
                 @click="imageToExtend = 'HFpIOts.png'"
             />
 
@@ -90,7 +90,7 @@
             <img
                 alt="Chart Editor"
                 class="pt-3"
-                src="@/assets/images/projects/analytics/chartEditor.png"
+                :src="require('@/assets/images/projects/analytics/chartEditor.png')"
                 @click="imageToExtend = 'FZAamGv.png'"
             />
 
@@ -108,7 +108,7 @@
             <div style="margin: auto" class="pt-3">
                 <img
                     alt="Chart Template Library"
-                    src="@/assets/images/projects/analytics/chartTemplateLibrary.png"
+                    :src="require('@/assets/images/projects/analytics/chartTemplateLibrary.png')"
                     @click="imageToExtend = '0kI6hxv.png'"
                 />
             </div>
@@ -127,7 +127,7 @@
             <img
                 alt="Dashboard options de partage"
                 class="pt-3"
-                src="@/assets/images/projects/analytics/sharedOptions.png"
+                :src="require('@/assets/images/projects/analytics/sharedOptions.png')"
                 @click="imageToExtend = 'jSGmmN6.png'"
             />
         </div>

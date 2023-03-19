@@ -17,7 +17,7 @@
             <div class="project-title">
                 <img
                     alt="API Explorer logo"
-                    src="@/assets/images/projects/apx/logo.png"
+                    :src="require('@/assets/images/projects/apx/logo.png')"
                     @click="imageToExtend = 'MygysNL.png'"
                 />
             </div>
@@ -37,7 +37,7 @@
             <img
                 alt="API Explorer"
                 class="pt-3"
-                src="@/assets/images/projects/apx/apx.png"
+                :src="require('@/assets/images/projects/apx/apx.png')"
                 @click="imageToExtend = 'BLELnAM.png'"
             />
 
@@ -63,7 +63,7 @@
                 <img
                     alt="jQuery logo"
                     class="pb-3"
-                    src="@/assets/images/projects/apx/jquery.png"
+                    :src="require('@/assets/images/projects/apx/jquery.png')"
                     @click="imageToExtend = '8aGF3Vu.png'"
                 />
             </div>
@@ -99,7 +99,7 @@
                     <img
                         alt="API Explorer effet de surbrillance"
                         class="pb-3"
-                        src="@/assets/images/projects/apx/highlight.png"
+                        :src="require('@/assets/images/projects/apx/highlight.png')"
                         @click="imageToExtend = 'Y4SvFhr.png'"
                     />
                 </div>
@@ -109,7 +109,7 @@
             <div style="margin: auto" class="pt-3">
                 <img
                     alt="API Explorer maquettes"
-                    src="@/assets/images/projects/apx/design.png"
+                    :src="require('@/assets/images/projects/apx/design.png')"
                     @click="imageToExtend = 's5zHoER.png'"
                 />
             </div>
@@ -149,7 +149,7 @@
             <img
                 alt="API Explorer tutoriel"
                 class="pt-3"
-                src="@/assets/images/projects/apx/step.png"
+                :src="require('@/assets/images/projects/apx/step.png')"
                 @click="imageToExtend = 'BxbbXlC.png'"
             />
         </v-card>

@@ -21,7 +21,7 @@
                     <img
                         alt="Check icone"
                         class="skill-icon"
-                        src="@/assets/images/check.png"
+                        :src="require('@/assets/images/check.png')"
                     />
                     {{ skill }}
                 </div>

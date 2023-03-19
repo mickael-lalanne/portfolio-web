@@ -6,7 +6,7 @@
             <div class="timeline__event__icon ">
                 <img
                     alt="Intuiface Logo"
-                    src="@/assets/images/timeline/intuifaceLogo.png"
+                    :src="require('@/assets/images/timeline/intuifaceLogo.png')"
                 />
                 <div class="timeline__event__date">
                     Depuis 2018
@@ -37,7 +37,7 @@
             <div class="timeline__event__icon">
                 <img
                     alt="Logo diplôme bac +3"
-                    src="@/assets/images/timeline/diplomeLogo+3.png" />
+                    :src="require('@/assets/images/timeline/diplomeLogo+3.png')" />
                 <div class="timeline__event__date">
                     2018
                 </div>
@@ -60,7 +60,7 @@
             <div class="timeline__event__icon">
                 <img
                     alt="Logo diplôme bac +2"
-                    src="@/assets/images/timeline/diplomeLogo+2.png" />
+                    :src="require('@/assets/images/timeline/diplomeLogo+2.png')" />
                 <div class="timeline__event__date">
                     2017
                 </div>
@@ -80,7 +80,7 @@
             <div class="timeline__event__icon">
                 <img
                     alt="Logo diplôme"
-                    src="@/assets/images/timeline/diplomeLogo.png"
+                    :src="require('@/assets/images/timeline/diplomeLogo.png')"
                 />
                 <div class="timeline__event__date">
                     2014

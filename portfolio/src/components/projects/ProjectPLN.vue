@@ -17,7 +17,7 @@
             <div class="project-title">
                 <img
                     alt="Player logo"
-                    src="@/assets/images/projects/player/logo.png"
+                    :src="require('@/assets/images/projects/player/logo.png')"
                     @click="imageToExtend = '.png'"
                 />
             </div>
@@ -84,7 +84,7 @@
                 <img
                     alt="Player Next Gen - Asset Youtube"
                     class="pt-5"
-                    src="@/assets/images/projects/player/youtube.png"
+                    :src="require('@/assets/images/projects/player/youtube.png')"
                     @click="imageToExtend = '.png'"
                 />
             </div>
@@ -105,7 +105,7 @@
                 <img
                     alt="Player Next Gen - Asset Linear Gauge"
                     class="pt-5"
-                    src="@/assets/images/projects/player/linear-gauge.png"
+                    :src="require('@/assets/images/projects/player/linear-gauge.png')"
                     @click="imageToExtend = '.png'"
                 />
 
@@ -114,7 +114,7 @@
 
                 <img
                     alt="Player Next Gen - Asset Linear Gauge"
-                    src="@/assets/images/projects/player/linear-gauge2.png"
+                    :src="require('@/assets/images/projects/player/linear-gauge2.png')"
                     @click="imageToExtend = '.png'"
                 />
 

@@ -6,7 +6,7 @@
             <img
                 alt="Profile Picture"
                 class="profile-picture"
-                src="@/assets/images/profilePicture.png"
+                :src="require('@/assets/images/profilePicture.png')"
             />
             <div>
                 <div class="resume-category">

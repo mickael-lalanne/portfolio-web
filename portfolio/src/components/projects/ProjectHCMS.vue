@@ -17,7 +17,7 @@
             <div class="project-title">
                 <img
                     alt="HCMS logo"
-                    src="@/assets/images/projects/hcms/logo.png"
+                    :src="require('@/assets/images/projects/hcms/logo.png')"
                     @click="imageToExtend = 'aLJYtCt.png'"
                 />
             </div>
@@ -25,7 +25,7 @@
             <img
                 alt="HCMS - Overview"
                 class="pb-3"
-                src="@/assets/images/projects/hcms/overview.gif"
+                :src="require('@/assets/images/projects/hcms/overview.gif')"
                 @click="imageToExtend = 's0Si75U.gif'"
             />
 
@@ -46,7 +46,7 @@
                 <img
                     alt="HCMS - Add new user"
                     class="pt-5"
-                    src="@/assets/images/projects/hcms/addUser.gif"
+                    :src="require('@/assets/images/projects/hcms/addUser.gif')"
                     @click="imageToExtend = 'Fei1g5x.gif'"
                 />
             </div>
@@ -65,7 +65,7 @@
                 <img
                     alt="HCMS - Property"
                     class="pb-3 pt-5"
-                    src="@/assets/images/projects/hcms/property.gif"
+                    :src="require('@/assets/images/projects/hcms/property.gif')"
                     @click="imageToExtend = 'o8poIbC.gif'"
                 />
 
@@ -87,7 +87,7 @@
                 <img
                     alt="HCMS - Variant"
                     class="pb-3 pt-5"
-                    src="@/assets/images/projects/hcms/variant.gif"
+                    :src="require('@/assets/images/projects/hcms/variant.gif')"
                     @click="imageToExtend = 't1jdb7C.gif'"
                 />
             </div>
@@ -114,7 +114,7 @@
                 <img
                     alt="HCMS - Workflow"
                     class="pb-3 pt-5"
-                    src="@/assets/images/projects/hcms/workflow.gif"
+                    :src="require('@/assets/images/projects/hcms/workflow.gif')"
                     @click="imageToExtend = 'wvYM7fm.gif'"
                 />
 

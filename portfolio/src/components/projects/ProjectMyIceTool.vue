@@ -17,7 +17,7 @@
             <div class="project-title">
                 <img
                     alt="My Ice Tool logo"
-                    src="@/assets/images/projects/myIceTool/logoName.png"
+                    :src="require('@/assets/images/projects/myIceTool/logoName.png')"
                     @click="imageToExtend = 'C6BPSTs.png'"
                 />
             </div>
@@ -45,7 +45,7 @@
             <img
                 alt="My Ice Tool page d'accueil"
                 class="pb-3"
-                src="@/assets/images/projects/myIceTool/home.jpg"
+                :src="require('@/assets/images/projects/myIceTool/home.jpg')"
                 @click="imageToExtend = '8TkVFgp.jpg'"
             />
             <div class="section-content">
@@ -78,7 +78,7 @@
             <img
                 alt="My Ice Tool page principale"
                 class="pb-3"
-                src="@/assets/images/projects/myIceTool/main.jpg"
+                :src="require('@/assets/images/projects/myIceTool/main.jpg')"
                 @click="imageToExtend = '78jfABU.jpg'"
             />
             <div class="section-content">
@@ -98,7 +98,7 @@
             <img
                 alt="My Ice Tool historique"
                 class="pb-3"
-                src="@/assets/images/projects/myIceTool/history.jpg"
+                :src="require('@/assets/images/projects/myIceTool/history.jpg')"
                 @click="imageToExtend = 'vnyuxEx.jpg'"
             />
             <div class="section-content">
@@ -110,7 +110,7 @@
             <img
                 alt="My Ice Tool commentaires"
                 class="pb-3"
-                src="@/assets/images/projects/myIceTool/comment.jpg"
+                :src="require('@/assets/images/projects/myIceTool/comment.jpg')"
                 @click="imageToExtend = 'tbku7yV.jpg'"
             />
             <div class="section-content">
@@ -131,7 +131,7 @@
             <img
                 alt="My Ice Tool page à propos"
                 class="pb-3"
-                src="@/assets/images/projects/myIceTool/about.jpg"
+                :src="require('@/assets/images/projects/myIceTool/about.jpg')"
                 @click="imageToExtend = 'MiMw4FZ.jpg'"
             />
         </v-card>
