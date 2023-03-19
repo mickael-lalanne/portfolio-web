@@ -146,7 +146,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .project-container {
-    background-color: var(--v-light-base);
+    background-color: rgb(var(--v-theme-light));
     padding: 5vh 30vw !important;
     text-align: justify;
     font-family: 'Roboto';
@@ -179,7 +179,7 @@ a {
     text-decoration: underline;
     color: unset !important;
     &:hover {
-        color: var(--v-secondary-base) !important;
+        color: rgb(var(--v-theme-secondary)) !important;
     }
 }
 

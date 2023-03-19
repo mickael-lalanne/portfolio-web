@@ -10,19 +10,19 @@
             />
             <div>
                 <div class="resume-category">
-                    <v-icon class="resume-icon" color="var(--v-primary-base)">
+                    <v-icon class="resume-icon" color="rgb(var(--v-theme-primary))">
                         mdi-account-circle-outline
                     </v-icon>
                     <div class="resume-text">Mickaël Lalanne, 26 ans</div>
                 </div>
                 <div class="resume-category">
-                    <v-icon class="resume-icon" color="var(--v-primary-base)">
+                    <v-icon class="resume-icon" color="rgb(var(--v-theme-primary))">
                         mdi-pin-outline
                     </v-icon>
                     <div class="resume-text">Toulouse, France</div>
                 </div>
                 <div class="resume-category">
-                    <v-icon class="resume-icon" color="var(--v-primary-base)">
+                    <v-icon class="resume-icon" color="rgb(var(--v-theme-primary))">
                         mdi-email-outline
                     </v-icon>
                     <div class="resume-text">
@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="resume-category">
-                    <v-icon class="resume-icon" color="var(--v-primary-base)">
+                    <v-icon class="resume-icon" color="rgb(var(--v-theme-primary))">
                         mdi-briefcase-outline
                     </v-icon>
                     <div class="resume-text">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="resume-category">
-                    <v-icon class="resume-icon" color="var(--v-primary-base)">
+                    <v-icon class="resume-icon" color="rgb(var(--v-theme-primary))">
                         mdi-gamepad-square-outline
                     </v-icon>
                     <div class="resume-text">Jeux vidéo, Montage vidéo</div>
@@ -65,11 +65,7 @@
                     target="_blank"
                     rel="noopener"
                 >
-                    <v-chip
-                        class="keyword-chip"
-                        text-color="var(--v-dark-base)"
-                        color="var(--v-light2-base)"
-                    >
+                    <v-chip class="keyword-chip" color="secondary">
                         {{ keyword.name }}
                     </v-chip>
                 </a>
@@ -87,7 +83,7 @@
                         <span></span>
                         <span></span>
                         <v-icon
-                            color="var(--v-dark-base)"
+                            color="rgb(var(--v-theme-dark))"
                             size="70"
                             class="resume-social-network-icon"
                         >
@@ -187,7 +183,7 @@ export default {
     max-width: 80vw;
 }
 .resume-name {
-    color: var(--v-primary-base);
+    color: rgb(var(--v-theme-primary));
     text-align: center;
     font-size: 32px;
     text-transform: uppercase;
@@ -196,7 +192,7 @@ export default {
 .resume-icon {
     font-weight: bold;
     margin-right: 10px;
-    background-color: var(--v-dark-base);
+    background-color: rgb(var(--v-theme-dark));
     padding: 10px;
     border-radius: 10%;
 }
@@ -213,7 +209,7 @@ export default {
         text-decoration: none;
         color: unset;
         &:hover {
-            color: var(--v-primary-base);
+            color: rgb(var(--v-theme-primary));
         }
     }
 }
@@ -235,7 +231,7 @@ export default {
 .title-separator {
     width: 100px;
     height: 4px;
-    background-color: var(--v-primary-base);
+    background-color: rgb(var(--v-theme-primary));
     text-align: center;
     margin: auto;
 }
@@ -253,7 +249,7 @@ ul li a {
     font-size: 40px;
     text-align: center;
     text-decoration: none;
-    color: var(--v-dark-base);
+    color: rgb(var(--v-theme-dark));
     margin: 0 30px;
     transition: 0.5s;
 }
@@ -265,7 +261,7 @@ ul li a span:nth-child(1),
 ul li a span:nth-child(3) {
     width: 100%;
     height: 3px;
-    background: var(--v-dark-base);
+    background: rgb(var(--v-theme-dark));
 }
 ul li a span:nth-child(1) {
     top: 0;
@@ -293,7 +289,7 @@ ul li a span:nth-child(2),
 ul li a span:nth-child(4) {
     width: 3px;
     height: 100%;
-    background: var(--v-dark-base);
+    background: rgb(var(--v-theme-dark));
 }
 ul li a span:nth-child(2) {
     top: 0;
@@ -320,10 +316,10 @@ ul li a:hover span:nth-child(4) {
 
 .resume-social-icon:hover {
     span {
-        background: var(--v-primary-base);
+        background: rgb(var(--v-theme-primary));
     }
     .resume-social-network-icon {
-        color: var(--v-primary-base) !important;
+        color: rgb(var(--v-theme-primary)) !important;
     }
 }
 

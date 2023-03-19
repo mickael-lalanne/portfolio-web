@@ -226,7 +226,7 @@ export default {
     display: inline;
 }
 .highlight {
-    color: var(--v-primary-base);
+    color: rgb(var(--v-theme-primary));
     display: inline;
     font-weight: 400;
     font-size: inherit;

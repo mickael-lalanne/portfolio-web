@@ -128,7 +128,7 @@ export default {
             text-transform: uppercase;
 
             font-weight: 600;
-            color: var(--v-primary-base);
+            color: rgb(var(--v-theme-primary));
             letter-spacing: 1.5px;
         }
         &__content {
@@ -142,13 +142,13 @@ export default {
         }
         &__icon {
             border-radius: 8px 0 0 8px;
-            background: var(--v-primary-base);;
+            background: rgb(var(--v-theme-primary));;
             display: flex;
             align-items: center;
             justify-content: center;
             min-width: 160px;
             font-size: 20px;
-            color: var(--v-primary-base);
+            color: rgb(var(--v-theme-primary));
             padding: 20px;
 
             img {
@@ -167,7 +167,7 @@ export default {
             content: "";
             width: 2px;
             height: 100%;
-            background: var(--v-primary-base);;
+            background: rgb(var(--v-theme-primary));;
             position: absolute;
             top: 60%;
             left: -3.5rem;
@@ -179,7 +179,7 @@ export default {
             width: 5rem;
             height: 5rem;
             position: absolute;
-            background: var(--v-primary-base);
+            background: rgb(var(--v-theme-primary));
             border-radius: 100%;
             left: -6rem;
             top: 50%;
@@ -188,22 +188,22 @@ export default {
         }
         &--type2 {
             &:before {
-                background: var(--v-secondary-base);
+                background: rgb(var(--v-theme-secondary));
                 border-color: white;
             }
             &:after {
-                background: var(--v-secondary-base);
+                background: rgb(var(--v-theme-secondary));
             }
             .timeline__event__date {
                 color: white;
             }
 
             .timeline__event__icon {
-                background: var(--v-secondary-base);
-                color: var(--v-secondary-base);
+                background: rgb(var(--v-theme-secondary));
+                color: rgb(var(--v-theme-secondary));
             }
             .timeline__event__title {
-                color: var(--v-secondary-base);
+                color: rgb(var(--v-theme-secondary));
             }
             .timeline__event__title {
             }

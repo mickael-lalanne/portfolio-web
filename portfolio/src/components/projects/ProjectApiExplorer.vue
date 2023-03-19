@@ -168,7 +168,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .project-container {
-    background-color: var(--v-light-base) !important;
+    background-color: rgb(var(--v-theme-light)) !important;
     padding: 5vh 30vw !important;
     text-align: justify;
 }

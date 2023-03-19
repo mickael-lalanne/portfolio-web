@@ -28,8 +28,8 @@ svg#bigTriangleColor {
 }
 
 #bigTriangleColor path {
-    fill: var(--v-dark-base);
-    stroke: var(--v-dark-base);
+    fill: rgb(var(--v-theme-dark));
+    stroke: rgb(var(--v-theme-dark));
     stroke-width: 2;
 }
 </style>

@@ -64,7 +64,7 @@ export default {
 
 <style lang="scss" scoped>
 .contact-container {
-    background-color: var(--v-light-base);
+    background-color: rgb(var(--v-theme-light));
     padding: 175px 0;
 }
 .form-container {
@@ -80,20 +80,20 @@ export default {
 .title-separator {
     width: 100px;
     height: 4px;
-    background-color: var(--v-primary-base);
+    background-color: rgb(var(--v-theme-primary));
     text-align: center;
     margin: auto;
     margin-bottom: 65px;
 }
 .section-title {
-    color: var(--v-primary-base);
+    color: rgb(var(--v-theme-primary));
     font-size: 40px;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
 }
 .section-subtitle {
-    color: var(--v-dark-base);
+    color: rgb(var(--v-theme-dark));
     font-size: 20px;
     margin-bottom: 65px;
     text-align: center;
@@ -109,19 +109,19 @@ export default {
     padding: 1em 2em;
     cursor: pointer;
 
-    color: var(--v-secondary-base);
+    color: rgb(var(--v-theme-secondary));
     transition: 0.25s;
 
     &:hover,
     &:focus {
-        border-color: var(--v-secondary-base);
+        border-color: rgb(var(--v-theme-secondary));
         color: #fff;
     }
 }
 
 .send-message-btn:hover,
 .send-message-btn:focus {
-    box-shadow: inset 130px 0 0 0 var(--v-secondary-base);
+    box-shadow: inset 130px 0 0 0 rgb(var(--v-theme-secondary));
 }
 
 // RESPONSIVE

@@ -14,9 +14,9 @@ export default createVuetify({
         variations: {
             colors: ['primary', 'secondary'],
         },
-        defaultTheme: 'customLightTheme',
+        defaultTheme: 'portfolioTheme',
         themes: {
-            customLightTheme: {
+            portfolioTheme: {
                 colors: {
                     primary: '#f9813a',
                     secondary: '#956CF0',

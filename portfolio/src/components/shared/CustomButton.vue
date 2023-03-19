@@ -24,7 +24,7 @@ export default {
 <style lang="scss" scoped>
 $base: #1a1c20;
 $white: #fcf1f1;
-$pink: var(--v-primary-base);
+$pink: rgb(var(--v-theme-primary));
 $height: 54px;
 $transition: 0.3s ease-out all;
 

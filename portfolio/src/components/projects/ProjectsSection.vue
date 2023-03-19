@@ -119,7 +119,7 @@ export default {
     padding-top: 70px;
 }
 .section-title {
-    color: var(--v-primary-base);
+    color: rgb(var(--v-theme-primary));
     font-size: 40px;
     text-align: center;
     text-transform: uppercase;
@@ -132,7 +132,7 @@ export default {
 .title-separator {
     width: 100px;
     height: 4px;
-    background-color: var(--v-primary-base);
+    background-color:rgb(var(--v-theme-primary));
     text-align: center;
     margin: auto;
     margin-bottom: 65px;

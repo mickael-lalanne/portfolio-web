@@ -99,6 +99,6 @@ export default {
     bottom: 0;
     width: 100px;
     height: 4px;
-    background-color: var(--v-primary-base);
+    background-color: rgb(var(--v-theme-primary));
 }
 </style>

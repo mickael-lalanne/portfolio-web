@@ -34,23 +34,23 @@ export default {
     font-size: 16px;
     text-align: center;
     padding: 15px;
-    background-color: var(--v-light-base);
+    background-color: rgb(var(--v-theme-light));
 }
 b {
     font-weight: 500;
     padding-left: 5px;
 }
 .github-icon {
-    color: var(--v-dark-base);
+    color: rgb(var(--v-theme-dark));
     &:hover {
-        color: var(--v-primary-base);
+        color: rgb(var(--v-theme-primary));
     }
 }
 a {
     text-decoration: none;
     &:hover {
         .github-icon {
-            color: var(--v-primary-base);
+            color: rgb(var(--v-theme-primary));
         }
     }
 }

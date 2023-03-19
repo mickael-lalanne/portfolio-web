@@ -17,7 +17,7 @@ export default {
 <style lang="scss" scoped>
 // COLORS
 $softorange: white;
-$tomatored: var(--v-primary-base);
+$tomatored: rgb(var(--v-theme-primary));
 $mediumblu: #1e272d;
 
 .close-container {
@@ -26,7 +26,7 @@ $mediumblu: #1e272d;
     width: 50px;
     height: 50px;
     cursor: pointer;
-    background-color: var(--v-dark-base);
+    background-color: rgb(var(--v-theme-dark));
     border-radius: 50%;
     border-top-left-radius: 50% !important;
     border-top-right-radius: 50% !important;

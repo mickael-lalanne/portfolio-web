@@ -99,7 +99,7 @@ export default {
     cursor: pointer;
     text-decoration: underline;
     padding-top: 10px;
-    color: var(--v-primary-base);
+    color: rgb(var(--v-theme-primary));
     font-weight: bold;
 }
 .project-img {
