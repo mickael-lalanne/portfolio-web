@@ -139,10 +139,10 @@
 </template>
 
 <script>
-import Vue from 'vue';
+import { defineComponent } from 'vue';
 import { ProjectMixin } from '@/mixins/projectMixin.js';
 
-export default Vue.extend({
+export default defineComponent({
     mixins: [ProjectMixin],
     name: "ProjectMyIceTool"
 });
