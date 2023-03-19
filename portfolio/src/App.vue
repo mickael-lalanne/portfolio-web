@@ -1,17 +1,17 @@
 <template>
     <div>
         <link rel="icon" href="@assets/logo.png">
-        <Home />
+        <HomePage />
     </div>
 </template>
 
 <script>
-import Home from "@/components/home/Home.vue";
+import HomePage from "@/components/home/HomePage.vue";
 
 export default {
     name: "App",
 
-    components: { Home },
+    components: { HomePage },
 
     data: () => ({
     }),

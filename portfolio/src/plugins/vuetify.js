@@ -4,9 +4,6 @@ import { aliases, mdi } from 'vuetify/iconsets/mdi';
 
 export default createVuetify({
     icons: {
-        iconfont: 'mdi', // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
-    },
-    icons: {
         defaultSet: 'mdi',
         aliases,
         sets: {
