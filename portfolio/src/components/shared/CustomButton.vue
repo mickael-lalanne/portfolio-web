@@ -1,6 +1,6 @@
 <template>
     <div @click="$emit('click')">
-        <a>
+        <a style="cursor: pointer;">
             <p>
                 <span class="bg"></span>
                 <span class="base"></span>

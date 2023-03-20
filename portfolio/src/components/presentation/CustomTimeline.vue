@@ -18,7 +18,7 @@
                         href="https://www.intuiface.com/"
                         target="_blank"
                         rel="noopener"
-                        style="text-decoration:none;"
+                        style="text-decoration:none; color: unset;"
                     >
                         INTUIFACE
                     </a>
@@ -133,6 +133,9 @@ export default {
         }
         &__content {
             padding: 10px 10px 0px 20px;
+            p {
+                margin-bottom: 16px;
+            }
         }
         &__date {
             color: white;

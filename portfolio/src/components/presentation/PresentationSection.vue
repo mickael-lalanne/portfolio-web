@@ -193,7 +193,8 @@ export default {
     font-weight: bold;
     margin-right: 10px;
     background-color: rgb(var(--v-theme-dark));
-    padding: 10px;
+    height: 44px;
+    width: 44px;
     border-radius: 10%;
 }
 .resume-category {
@@ -227,6 +228,9 @@ export default {
 .keyword-chip {
     margin: 5px;
     cursor: pointer;
+    &:hover {
+        color: rgb(var(--v-theme-secondaryHover)) !important;
+    }
 }
 .title-separator {
     width: 100px;

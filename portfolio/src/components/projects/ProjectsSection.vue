@@ -39,7 +39,7 @@
             :imgName="JOURNAL_IMG"
         >
             <template v-slot:projectLink>
-                <a href="https://journalducapitaine.fr/" target="_blank">journalducapitaine.fr</a>
+                <a href="https://journalducapitaine.fr/" target="_blank" style="color: rgb(var(--v-theme-primary));">journalducapitaine.fr</a>
             </template>
         </ProjectPreview>
         <v-divider class="project-divider"></v-divider>
@@ -126,7 +126,8 @@ export default {
     font-weight: bold;
 }
 .project-divider {
-    background-color: white;
+    opacity: 100;
+    color: white;
     margin: 7vh 0;
 }
 .title-separator {

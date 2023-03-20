@@ -16,6 +16,8 @@
                 <v-text-field
                     v-model="subject"
                     label="Sujet"
+                    color="secondary"
+                    variant="underlined"
                 ></v-text-field>
 
                 <!-- Message field -->
@@ -23,6 +25,8 @@
                     v-model="message"
                     label="Message"
                     rows="8"
+                    color="secondary"
+                    variant="underlined"
                 ></v-textarea>
 
                 <!-- Send message button -->
