@@ -235,6 +235,7 @@ export default {
     position: absolute;
     top: 0;
     height: 100vh;
+    width: 100vw;
 }
 .see-work-button {
     margin-top: 20px;
