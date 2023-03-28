@@ -9,7 +9,7 @@
                     :src="require('@/assets/images/timeline/intuifaceLogo.png')"
                 />
                 <div class="timeline__event__date">
-                    Depuis 2018
+                    {{ $vuetify.locale.t('$vuetify.homepage.career.intuiface.date') }}
                 </div>
             </div>
             <div class="timeline__event__content ">
@@ -20,14 +20,11 @@
                         rel="noopener"
                         style="text-decoration:none; color: unset;"
                     >
-                        INTUIFACE
+                        {{ $vuetify.locale.t('$vuetify.homepage.career.intuiface.title') }}
                     </a>
                 </div>
                 <div class="timeline__event__description">
-                    <p>
-                        Suite à un stage de 6 mois chez Intuiface, j'ai été embauché en tant qu'Ingénieur R&D.
-                        Je travail principalement en équipe sur des projets d'application web (plus de détails dans la partie projets).  
-                    </p>
+                    <p>{{ $vuetify.locale.t('$vuetify.homepage.career.intuiface.description') }}</p>
                 </div>
             </div>
         </div>
@@ -39,18 +36,16 @@
                     alt="Logo diplôme bac +3"
                     :src="require('@/assets/images/timeline/diplomeLogo+3.png')" />
                 <div class="timeline__event__date">
-                    2018
+                    {{ $vuetify.locale.t('$vuetify.homepage.career.licence.date') }}
                 </div>
             </div>
             <div class="timeline__event__content">
-                <div class="timeline__event__title">
-                    LICENCE PROFESIONNELLE MIW
-                </div>
+                <div
+                    class="timeline__event__title"
+                    v-html="$vuetify.locale.t('$vuetify.homepage.career.licence.title')"
+                ></div>
                 <div class="timeline__event__description">
-                    <p>
-                        Obtention de la licence professionnelle Activités et Techniques de Communication, spécialité Multimédia- Internet - Webmaster
-                        à l'IUT de Gap.
-                    </p>
+                    <p>{{ $vuetify.locale.t('$vuetify.homepage.career.licence.description') }}</p>
                 </div>
             </div>
         </div>
@@ -62,17 +57,16 @@
                     alt="Logo diplôme bac +2"
                     :src="require('@/assets/images/timeline/diplomeLogo+2.png')" />
                 <div class="timeline__event__date">
-                    2017
+                    {{ $vuetify.locale.t('$vuetify.homepage.career.bts.date') }}
                 </div>
             </div>
             <div class="timeline__event__content">
-                <div class="timeline__event__title">
-                    BTS SIO
-                </div>
+                <div
+                    class="timeline__event__title"
+                    v-html="$vuetify.locale.t('$vuetify.homepage.career.bts.title')"
+                ></div>
                 <div class="timeline__event__description">
-                    <p>
-                        Obtention du Brevet de technicien supérieur, Services informatiques aux organisations. Option b: Solutions Logicielles et Applications Métiers.
-                    </p>
+                    <p>{{ $vuetify.locale.t('$vuetify.homepage.career.bts.description') }}</p>
                 </div>
             </div>
         </div>
@@ -83,17 +77,16 @@
                     :src="require('@/assets/images/timeline/diplomeLogo.png')"
                 />
                 <div class="timeline__event__date">
-                    2014
+                    {{ $vuetify.locale.t('$vuetify.homepage.career.bac.date') }}
                 </div>
             </div>
             <div class="timeline__event__content">
-                <div class="timeline__event__title">
-                    Bac STI2D
-                </div>
+                <div
+                    class="timeline__event__title"
+                    v-html="$vuetify.locale.t('$vuetify.homepage.career.bac.title')"
+                ></div>
                 <div class="timeline__event__description">
-                    <p>
-                        Obtention du Baccalauréat Technologique STI2D: Sciences et technologies de l'industrie et du développement durable Spécialité: Innovation Technique et Eco-conception
-                    </p>
+                    <p>{{ $vuetify.locale.t('$vuetify.homepage.career.bac.description') }}</p>
                 </div>
             </div>
         </div>
@@ -189,6 +182,11 @@ export default {
             transform: translateY(-50%);
             border: 2px solid white;
         }
+        .timeline__event__title ::v-deep i {
+            font-size: 10px;
+            display: block;
+            margin-bottom: 5px;
+        }
         &--type2 {
             &:before {
                 background: rgb(var(--v-theme-secondary));
@@ -207,8 +205,6 @@ export default {
             }
             .timeline__event__title {
                 color: rgb(var(--v-theme-secondary));
-            }
-            .timeline__event__title {
             }
         }
         &:last-child {

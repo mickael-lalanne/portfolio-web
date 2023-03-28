@@ -30,85 +30,81 @@
             />
 
             <!-- Dashboard -->
-            <div class="section-title">Dashboard</div>
-            <div class="section-content">
-                Depuis le dashboard, l'administrateur peut modifier le nom de sa base, sa description ou son image.
-                Il peut aussi ajouter ou supprimer des utilisateurs à sa base, et gérer leurs permissions.
-                Pour chaque utilisateur, l'administrateur peut définir les 4 permissions suivantes:
-
-                <div class="pl-10">
-                    - Dashboard: modifiez les paramètres de la base et invitez des utilisateurs supplémentaires à la base. <br>
-                    - Structure : modifiez la structure de données de la base, y compris l'utilisation de variantes. <br>
-                    - Content: Ajouter / modifier / supprimer du contenu de la base. <br>
-                    - Use in experience: utilisez cette base dans Composer.
-                </div>
-
-                <img
-                    alt="HCMS - Add new user"
-                    class="pt-5"
-                    :src="require('@/assets/images/projects/hcms/addUser.gif')"
-                    @click="imageToExtend = 'Fei1g5x.gif'"
-                />
+            <div class="section-title">
+                {{ $vuetify.locale.t('$vuetify.projects.hcms.details.dashboardTitle') }}
             </div>
+            <div
+                class="section-content"
+                v-html="$vuetify.locale.t('$vuetify.projects.hcms.details.dashboardContent')"
+            ></div>
+
+            <img
+                alt="HCMS - Add new user"
+                class="pt-5"
+                :src="require('@/assets/images/projects/hcms/addUser.gif')"
+                @click="imageToExtend = 'Fei1g5x.gif'"
+            />
 
             <!-- Structure -->
-            <div class="section-title">Structure</div>
-            <div class="section-content">
-                La structure permet à l'utilisateur de définir le type de contenu à utiliser dans son expérience et la manière dont il souhaite l'organiser.
-                Il peut ajouter autant de composants qu'il le souhaite. Cela peut être:
-
-                <div class="pl-10 pb-5">
-                    - Un groupe: une instance unique de propriétés associées <br>
-                    - Une collection: une liste d'éléments qui partageront le même ensemble de propriétés
-                </div>
-
-                <img
-                    alt="HCMS - Property"
-                    class="pb-3 pt-5"
-                    :src="require('@/assets/images/projects/hcms/property.gif')"
-                    @click="imageToExtend = 'o8poIbC.gif'"
-                />
-
-                <p>
-                    <a href="https://support.intuiface.com/hc/en-us/articles/4406850589458-Property-Types" target="_blank">
-                        Plus d'infos sur la liste des types de propriétés ici
-                    </a>
-                </p>
-
-                <div class="py-5 font-weight-bold">La notion de variant</div>
-
-                <p>
-                    Dans sa structure, l'utilisateur peut aussi définir des variants.
-                    Un Variant est un contexte qui peut modifier la valeur d'une ou plusieurs propriétés.
-                    Pour chaque variation d'une variant donnée, l'utilisateur peut spécifier une nouvelle valeur pour une propriété.<br>
-                    Par exemple, un variant <i>Langue</i> peut avoir comme variation: <i>Anglais</i>, <i>Français</i>, …
-                </p>
-
-                <img
-                    alt="HCMS - Variant"
-                    class="pb-3 pt-5"
-                    :src="require('@/assets/images/projects/hcms/variant.gif')"
-                    @click="imageToExtend = 't1jdb7C.gif'"
-                />
+            <div class="section-title">
+                {{ $vuetify.locale.t('$vuetify.projects.hcms.details.structureTitle') }}
             </div>
+            <div
+                class="section-content"
+                v-html="$vuetify.locale.t('$vuetify.projects.hcms.details.structureContent')"
+            ></div>
+
+            <img
+                alt="HCMS - Property"
+                class="pb-3 pt-5"
+                :src="require('@/assets/images/projects/hcms/property.gif')"
+                @click="imageToExtend = 'o8poIbC.gif'"
+            />
+
+            <p>
+                <a href="https://support.intuiface.com/hc/en-us/articles/4406850589458-Property-Types" target="_blank">
+                    {{ $vuetify.locale.t('$vuetify.projects.hcms.details.propertyDetails') }}
+                </a>
+            </p>
+
+            <div class="section-title">
+                {{ $vuetify.locale.t('$vuetify.projects.hcms.details.variantTitle') }}
+            </div>
+            <div
+                class="section-content"
+                v-html="$vuetify.locale.t('$vuetify.projects.hcms.details.variantContent')"
+            ></div>
+
+            <img
+                alt="HCMS - Variant"
+                class="pb-3 pt-5"
+                :src="require('@/assets/images/projects/hcms/variant.gif')"
+                @click="imageToExtend = 't1jdb7C.gif'"
+            />
 
             <!-- Content -->
-            <div class="section-title">Content</div>
+            <div class="section-title">
+                {{ $vuetify.locale.t('$vuetify.projects.hcms.details.contentTitle') }}
+            </div>
+
             <div class="section-content">
-                <div class="font-weight-bold pb-5">Import</div>
+                <div class="font-weight-bold pb-5">
+                    {{ $vuetify.locale.t('$vuetify.projects.hcms.details.importTitle') }}
+                </div>
                 <div class="pb-5">
-                    Plusieurs items d'une collection peuvent être créés en une seule étape grâce à l'utilisation d'un mécanisme d'import.
+                    {{ $vuetify.locale.t('$vuetify.projects.hcms.details.importContent') }}
                 </div>
 
                 <a href="https://support.intuiface.com/hc/en-us/articles/4417928218642-Import-content-into-a-collection" target="_blank">
-                    Plus d'infos sur l'import ici
+                    {{ $vuetify.locale.t('$vuetify.projects.hcms.details.importDetails') }}
                 </a>
 
-                <div class="font-weight-bold py-5">La notion de workflow</div>
+                <div class="font-weight-bold py-5">
+                    {{ $vuetify.locale.t('$vuetify.projects.hcms.details.workflowTitle') }}
+                </div>
 
                 <p>
-                    La notion de workflow permet à l'utilisateur de travailler à son propre rythme, garantissant que seul le contenu terminé est mis à la disposition d'une expérience Intuiface.
-                    Cela peut également être un moyen pour un utilisateur de préparer tout le contenu, de le mettre dans l'état Stage for publishing pour le faire relire ou valider par un autre utilisateur avant de le publier.
+                    {{ $vuetify.locale.t('$vuetify.projects.hcms.details.workflowContent') }}
                 </p>
 
                 <img
@@ -121,7 +117,7 @@
                 <div></div>
 
                 <a href="https://support.intuiface.com/hc/en-us/articles/4406850770834-Content-publication-workflow" target="_blank">
-                    Plus d'infos sur la notion de workflow ici
+                     {{ $vuetify.locale.t('$vuetify.projects.hcms.details.workflowDetails') }}
                 </a>
             </div>
         </v-card>

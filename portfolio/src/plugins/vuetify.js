@@ -3,7 +3,15 @@ import '@mdi/font/css/materialdesignicons.css'; // Ensure you are using css-load
 import { aliases, mdi } from 'vuetify/iconsets/mdi';
 import 'vuetify/styles';
 
+// Your own translation file
+import en from '@/locales/en';
+import fr from '@/locales/fr';
+
 export default createVuetify({
+    locale: {
+        locale: 'fr',
+        messages: { fr, en }
+    },
     icons: {
         defaultSet: 'mdi',
         aliases,

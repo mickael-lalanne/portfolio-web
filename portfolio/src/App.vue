@@ -60,6 +60,18 @@ body {
     min-height: unset !important;
     min-width: unset !important;
     overflow-x: auto;
+
+    a {
+        text-decoration: underline;
+        color: rgb(var(--v-theme-primary));
+        &:hover {
+            color: rgb(var(--v-theme-secondary));
+        }
+    }
+}
+
+.section-content {
+    white-space: pre-line;
 }
 
 // RESPONSIVE

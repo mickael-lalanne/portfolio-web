@@ -4,7 +4,7 @@
             class="menu-item text-center"
             @click="$emit('itemClick', 'presentation')"
         >
-            Présentation
+            {{ $vuetify.locale.t('$vuetify.menu.presentation') }}
             <div
                 v-if="selectedCategory === 'presentation'"
                 class="menu-item-highlight"
@@ -14,7 +14,7 @@
             class="menu-item text-center"
             @click="$emit('itemClick', 'projects')"
         >
-            Projets
+            {{ $vuetify.locale.t('$vuetify.menu.projects') }}
             <div
                 v-if="selectedCategory === 'projects'"
                 class="menu-item-highlight"
@@ -24,7 +24,7 @@
             class="menu-item text-center"
             @click="$emit('itemClick', 'contact')"
         >
-            Contact
+            {{ $vuetify.locale.t('$vuetify.menu.contact') }}
             <div
                 v-if="selectedCategory === 'contact'"
                 class="menu-item-highlight"

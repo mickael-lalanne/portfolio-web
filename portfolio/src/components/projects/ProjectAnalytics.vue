@@ -23,22 +23,12 @@
             </div>
             <!-- Présentation -->
             <div class="section-title">
-                Présentation
+                {{ $vuetify.locale.t('$vuetify.projects.analytics.details.presentationTitle') }}
             </div>
-            <div class="section-content">
-                Analytics - Chart & Dashboards est une application web accessible directement sur son compte 
-                <a href="https://my.intuiface.com/" target="_blank" rel="noopener">
-                    my.intuiface
-                </a>.<br>
-                C'est mon premier vrai projet professionnel et j'ai eu la chance d'être impliqué dès le début des devs.<br>
-                Même après la release du produit, j'ai continué de travailler sur le projet pour ajouter de nouvelles features comme les charts de type <b>"Gauge"</b> et <b>"Single Value"</b>.<br>
-                L'application a été développée avec le framework <b>Angular</b>.
-                Pour les charts, nous avons utilisé la librairie
-                <a href="https://www.highcharts.com/" target="_blank" rel="noopener">
-                    Highcharts
-                </a >.<br />
-                L'équipe était composée d'un chef de projet qui s'occupait des tests et spécifications UX, d'un designer, de deux développeurs front-end et d'un développeur back-end.
-            </div>
+            <div
+                class="section-content"
+                v-html="$vuetify.locale.t('$vuetify.projects.analytics.details.presentationContent')"
+            ></div>
             <div style="text-align: center;" class="pt-3">
                 <iframe
                     style="max-width: 100%;"
@@ -49,23 +39,13 @@
             </div>
 
             <!-- Dashboard -->
-            <div class="section-title">Partie Dashboard</div>
-            <div class="section-content">
-                La partie Dahsboard permet la visualition des données client.<br />
-                La première fois qu'un utilisateur se connecte, 2 dashboards lui
-                sont automatiquement créés: <br />
-                <div class="pl-10">
-                    - un dashboard avec des charts par défaut basé sur SES données.<br />
-                    - un deuxième dashboard appelé "Tradeshow", basé sur les
-                    données d'Intuiface sur une plage de date spécifique et qui
-                    aura toujours des données.<br />
-                </div>
-                Il est possible d'agencer les charts de la manière que l'on
-                souhaite avec du <b>drag & drop</b>, mais aussi de les <b>redimensionner</b>.
-                Pour chaque chart, nous avons la possibilité de les <b>télécharger
-                dans plusieurs formats</b>: png, jpeg, svg, pdf, csv, xls.<br>
-                Il est à noter qu'il existe des règles de tarifications pouvant impacter le nombre de dashboard et le nombre de charts à l'intérieur.
+            <div class="section-title">
+                {{ $vuetify.locale.t('$vuetify.projects.analytics.details.dashboardTitle') }}
             </div>
+            <div
+                class="section-content"
+                v-html="$vuetify.locale.t('$vuetify.projects.analytics.details.dashboardContent')"
+            ></div>
             <img
                 alt="Dashboard"
                 class="pt-3"
@@ -74,19 +54,13 @@
             />
 
             <!-- Chart Editor -->
-            <div class="section-title">Chart Editor</div>
-            <div class="section-content">
-                La partie chart editor permet quant à elle d'éditer le chart. Il
-                est possible de drag & dropper ce que l'on appelle des "Data
-                Point Parameters" pour filtrer ou afficher des valeurs.
-                Il est notamment possible de:
-                <div class="">
-                    - Spécifier une plage de date (<b>date range</b>) ou d'utiliser celle définie côté Dashboard <br>
-                    - Choisir le <b>type de chart</b> parmi: Line, Area, Bar, Column, Pie, Radar, Single Value et Gauge <br>
-                    - Changer des options comme le <b>refresh automatique des valeurs</b>, le <b>formatting des valeurs affichées</b> <br>
-                    (préfixe, suffixe, multiplicateur) ou encore des options spécifiques au type de chart
-                </div>
+            <div class="section-title">
+                {{ $vuetify.locale.t('$vuetify.projects.analytics.details.chartEditorTitle') }}
             </div>
+            <div
+                class="section-content"
+                v-html="$vuetify.locale.t('$vuetify.projects.analytics.details.chartEditorContent')"
+            ></div>
             <img
                 alt="Chart Editor"
                 class="pt-3"
@@ -95,16 +69,13 @@
             />
 
             <!-- Chart Template Library -->
-            <div class="section-title">Chart Template Library</div>
-            <div class="section-content">
-                Le Chart Teplate Library propose à l'utilisateur des
-                configurations de chart toutes prêtes qu'il peut directement
-                utiliser. Il a la possibilité d'ajouter le chart directement
-                dans son dashboard ou d'éditer d'abord le template dans le Chart
-                Editor.<br />
-                Chaque template est <b>stocké en base de données</b> avec un numéro de
-                version.
+            <div class="section-title">
+                {{ $vuetify.locale.t('$vuetify.projects.analytics.details.templateLibraryTitle') }}
             </div>
+            <div
+                class="section-content"
+                v-html="$vuetify.locale.t('$vuetify.projects.analytics.details.templateLibraryContent')"
+            ></div>
             <div style="margin: auto" class="pt-3">
                 <img
                     alt="Chart Template Library"
@@ -114,16 +85,13 @@
             </div>
 
             <!-- Partage de Dashboard -->
-            <div class="section-title">Partage de dashboard</div>
-            <div class="section-content">
-                Une autre fonctionnalité est le partage des dashboards, via
-                <b> URL</b> ou <b>iframe</b>. La popup d'options permet de
-                sélectionner les options à afficher comme le nom, la description
-                ou le logo du dashboard. Mais aussi de définir une plage de date
-                spécifique ou les charts à partager.<br />
-                N'importe quelle personne disposant du lien pourra alors accéder
-                à une version readonly du dashboard.
+            <div class="section-title">
+                {{ $vuetify.locale.t('$vuetify.projects.analytics.details.shareTitle') }}
             </div>
+            <div
+                class="section-content"
+                v-html="$vuetify.locale.t('$vuetify.projects.analytics.details.shareContent')"
+            ></div>
             <img
                 alt="Dashboard options de partage"
                 class="pt-3"

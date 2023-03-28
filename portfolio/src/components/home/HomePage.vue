@@ -3,15 +3,28 @@
         <div ref="homeContainer" class="home-container" data-app>
             <div class="home-content-container">
                 <div>
-                    Salut, moi c'est
-                    <div class="name-container"><h1 class="highlight">Mickaël Lalanne</h1>.</div>
-                    <div>Je suis développeur web full-stack.</div>
+                    <div
+                        class="short-presentation"
+                        v-html="$vuetify.locale.t('$vuetify.homepage.shortPresentation')"
+                    ></div>
                     <CustomButton
                         class="see-work-button"
-                        text="Voir mon travail"
+                        :text="$vuetify.locale.t('$vuetify.homepage.workButton')"
                         @click="onSeeWorkButtonClick"
                     />
                 </div>
+            </div>
+            <div class="flag-container mt-5 mr-5">
+                <img
+                    alt="France flag"
+                    :src="require('@/assets/images/france_flag.png')"
+                    @click="changeLocale('fr')"
+                />
+                <img
+                    alt="Canada flag"
+                    :src="require('@/assets/images/canada_flag.png')"
+                    @click="changeLocale('en')"
+                />
             </div>
             <vue-particles
                 class="particles-container"
@@ -109,6 +122,11 @@ export default {
                 top: elementPosition - 30,
                 behavior: "smooth",
             });
+        },
+        changeLocale: function(lang) {
+            console.log('#changeLocale#');
+            console.log(this.$vuetify.locale.current);
+            this.$vuetify.locale.current = lang;
         },
         onHomeContainerScroll: function() {
             if (!this.scrollTimeout) {
@@ -209,6 +227,7 @@ export default {
 .home-container {
     background-color: #1a1c20;
     overflow: hidden;
+    position: relative;
 }
 .home-content-container {
     width: 100vw;
@@ -222,10 +241,20 @@ export default {
     font-family: 'Raleway', sans-serif;
     font-display: swap;
 }
-.name-container {
-    display: inline;
+.flag-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    img {
+        cursor: pointer;
+        transition: all .2s ease-in-out;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
 }
-.highlight {
+.short-presentation ::v-deep h1 {
     color: rgb(var(--v-theme-primary));
     display: inline;
     font-weight: 400;

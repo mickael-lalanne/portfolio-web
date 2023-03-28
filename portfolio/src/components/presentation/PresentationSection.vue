@@ -1,6 +1,6 @@
 <template>
     <div class="presentation-container">
-        <h2 class="resume-name pt-12">Qui va là ?</h2>
+        <h2 class="resume-name pt-12">{{ $vuetify.locale.t('$vuetify.homepage.presentationTitle') }}</h2>
         <div class="title-separator mb-12"></div>
         <div class="profile-container">
             <img
@@ -13,13 +13,13 @@
                     <v-icon class="resume-icon" color="rgb(var(--v-theme-primary))">
                         mdi-account-circle-outline
                     </v-icon>
-                    <div class="resume-text">Mickaël Lalanne, 26 ans</div>
+                    <div class="resume-text">{{ $vuetify.locale.t('$vuetify.homepage.nameAndAge') }}</div>
                 </div>
                 <div class="resume-category">
                     <v-icon class="resume-icon" color="rgb(var(--v-theme-primary))">
                         mdi-pin-outline
                     </v-icon>
-                    <div class="resume-text">Toulouse, France</div>
+                    <div class="resume-text">{{ $vuetify.locale.t('$vuetify.homepage.place') }}</div>
                 </div>
                 <div class="resume-category">
                     <v-icon class="resume-icon" color="rgb(var(--v-theme-primary))">
@@ -27,7 +27,7 @@
                     </v-icon>
                     <div class="resume-text">
                         <a href="mailto:mickael.lalanne03@gmail.com">
-                            mickael.lalanne03@gmail.com
+                            {{ $vuetify.locale.t('$vuetify.homepage.mail') }}
                         </a>
                     </div>
                 </div>
@@ -35,24 +35,18 @@
                     <v-icon class="resume-icon" color="rgb(var(--v-theme-primary))">
                         mdi-briefcase-outline
                     </v-icon>
-                    <div class="resume-text">
-                        Ingénieur R&D pour
-                        <a
-                            href="https://www.intuiface.com/"
-                            target="_blank"
-                            rel="noopener"
-                            style="font-weight:500;"
-                            class="pl-1"
-                        >
-                            Intuiface
-                        </a>
+                    <div class="resume-text resume-work">
+                        {{ $vuetify.locale.t('$vuetify.homepage.work') }}
+                        <div class="resume-work-previous">
+                            {{ $vuetify.locale.t('$vuetify.homepage.workPrevious') }}
+                        </div>
                     </div>
                 </div>
                 <div class="resume-category">
                     <v-icon class="resume-icon" color="rgb(var(--v-theme-primary))">
                         mdi-gamepad-square-outline
                     </v-icon>
-                    <div class="resume-text">Jeux vidéo, Montage vidéo</div>
+                    <div class="resume-text">{{ $vuetify.locale.t('$vuetify.homepage.hobbies') }}</div>
                 </div>
             </div>
         </div>
@@ -195,6 +189,7 @@ export default {
     background-color: rgb(var(--v-theme-dark));
     height: 44px;
     width: 44px;
+    min-width: 44px;
     border-radius: 10%;
 }
 .resume-category {
@@ -212,6 +207,13 @@ export default {
         &:hover {
             color: rgb(var(--v-theme-primary));
         }
+    }
+}
+.resume-work {
+    display: block;
+    .resume-work-previous {
+        font-size: 14px;
+        font-style: italic;
     }
 }
 .keywords-container {

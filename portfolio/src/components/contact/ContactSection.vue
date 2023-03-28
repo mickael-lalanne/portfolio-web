@@ -3,7 +3,7 @@
         <h2 class="section-title">Contact</h2>
         <div class="title-separator"></div>
         <div class="section-subtitle">
-            Tu as une question ? N'hésite pas à m'envoyer un message !
+            {{ $vuetify.locale.t('$vuetify.contact.text') }}
         </div>
         <div class="form-container">
             <v-form
@@ -15,7 +15,7 @@
                 <!-- Subject field -->
                 <v-text-field
                     v-model="subject"
-                    label="Sujet"
+                    :label="$vuetify.locale.t('$vuetify.contact.subject')"
                     color="secondary"
                     variant="underlined"
                 ></v-text-field>
@@ -23,7 +23,7 @@
                 <!-- Message field -->
                 <v-textarea
                     v-model="message"
-                    label="Message"
+                    :label="$vuetify.locale.t('$vuetify.contact.message')"
                     rows="8"
                     color="secondary"
                     variant="underlined"
@@ -31,7 +31,9 @@
 
                 <!-- Send message button -->
                 <div class="d-flex justify-end">
-                    <div class="send-message-btn" @click="sendMessage">Envoyer</div>
+                    <div class="send-message-btn" @click="sendMessage">  
+                        {{ $vuetify.locale.t('$vuetify.contact.send') }}
+                    </div>
                 </div>
             </v-form>
         </div>

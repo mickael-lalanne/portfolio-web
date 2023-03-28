@@ -1,6 +1,6 @@
 <template>
     <div class="footer-container d-flex align-center justify-center">
-        Par Mickaël Lalanne © <b>Wayne Enterprises</b>
+        {{ $vuetify.locale.t('$vuetify.shared.by') }} Mickaël Lalanne © <b>Wayne Enterprises</b>
         <a
             href="https://github.com/mickael-lalanne"
             target="_blank"

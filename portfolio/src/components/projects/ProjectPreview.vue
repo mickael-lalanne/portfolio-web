@@ -93,6 +93,7 @@ export default {
     margin-bottom: 10px;
     font-size: 20px;
     text-align: justify;
+    white-space: pre-line;
 }
 .project-link {
     font-size: 16px;
