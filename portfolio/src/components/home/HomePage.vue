@@ -7,6 +7,10 @@
                         class="short-presentation"
                         v-html="$vuetify.locale.t('$vuetify.homepage.shortPresentation')"
                     ></div>
+                    <div v-if="$vuetify.locale.current === 'en'" class="english-warning mx-12 mt-5">
+                        FYI, I am not a native english speaker, so it may have some spelling errors.
+                        <br>I hope you'll be indulgent 😇
+                    </div>
                     <CustomButton
                         class="see-work-button"
                         :text="$vuetify.locale.t('$vuetify.homepage.workButton')"
@@ -18,12 +22,12 @@
                 <img
                     alt="France flag"
                     :src="require('@/assets/images/france_flag.png')"
-                    @click="changeLocale('fr')"
+                    @click="onLanguageFlagClick('fr')"
                 />
                 <img
                     alt="Canada flag"
                     :src="require('@/assets/images/canada_flag.png')"
-                    @click="changeLocale('en')"
+                    @click="onLanguageFlagClick('en')"
                 />
             </div>
             <vue-particles
@@ -66,6 +70,7 @@ import ContactSection from "@/components/contact/ContactSection.vue";
 import CategorySeparator from "@/components/home/CategorySeparator.vue";
 import CustomButton from "@/components/shared/CustomButton.vue";
 import CustomFooter from "@/components/home/CustomFooter.vue";
+import { useRouter } from 'vue-router'
 
 export default {
     name: "HomePage",
@@ -82,6 +87,11 @@ export default {
         selectedCategory: "presentation",
         scrollTimeout: null,
     }),
+    setup() {
+        const router = useRouter();
+
+        return { router };
+    },
     mounted: function() {
         this.$refs.homeContainer.addEventListener(
             "scroll",
@@ -123,10 +133,13 @@ export default {
                 behavior: "smooth",
             });
         },
-        changeLocale: function(lang) {
-            console.log('#changeLocale#');
-            console.log(this.$vuetify.locale.current);
-            this.$vuetify.locale.current = lang;
+        /**
+         * Called when the french or canadian flag has been clicked
+         * Update route to set the "lang" query parameter
+         * @param {string} lang 'fr' or 'en'
+         */
+        onLanguageFlagClick: function(lang) {
+            this.router.push({ path: '/', query: { lang } });
         },
         onHomeContainerScroll: function() {
             if (!this.scrollTimeout) {
@@ -253,6 +266,9 @@ export default {
             transform: scale(1.1);
         }
     }
+}
+.english-warning {
+    font-size: 16px;
 }
 .short-presentation ::v-deep h1 {
     color: rgb(var(--v-theme-primary));

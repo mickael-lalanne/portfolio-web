@@ -7,14 +7,22 @@
 
 <script>
 import HomePage from "@/components/home/HomePage.vue";
+import { computed, watch } from 'vue';
+import { useRoute } from 'vue-router'
 
 export default {
     name: "App",
-
     components: { HomePage },
+    beforeCreate: function() {
+        // Check query params to set the lang if necessary
+        const route = useRoute();
+        const langQuery = computed(() => route.query.lang);
 
-    data: () => ({
-    }),
+        // Called when the query parameter "lang" has changed
+        watch(langQuery, newLangQuery => {
+            this.$vuetify.locale.current = newLangQuery;
+        });
+    },
 };
 </script>
 <style lang="scss">
