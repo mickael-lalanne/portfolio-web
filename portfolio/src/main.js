@@ -21,7 +21,17 @@ const routes = [
 ];
 const router = createRouter({
     history: createWebHistory('/'),
-    routes
+    routes,
+    scrollBehavior (to) {
+        // Scroll to a section part if anchor is present in the url
+        if (to.hash) {
+            console.log(to.hash);
+            return {
+                el: to.hash,
+                behavior: 'smooth'
+            }
+        }
+    }
 });
 
 vue.use(VueParticles);

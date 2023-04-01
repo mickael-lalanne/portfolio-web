@@ -4,7 +4,9 @@
             class="menu-item text-center"
             @click="$emit('itemClick', 'presentation')"
         >
-            {{ $vuetify.locale.t('$vuetify.menu.presentation') }}
+            <a href="#presentation">
+                {{ $vuetify.locale.t('$vuetify.menu.presentation') }}
+            </a>
             <div
                 v-if="selectedCategory === 'presentation'"
                 class="menu-item-highlight"
@@ -14,7 +16,9 @@
             class="menu-item text-center"
             @click="$emit('itemClick', 'projects')"
         >
-            {{ $vuetify.locale.t('$vuetify.menu.projects') }}
+            <a href="#projects">
+                {{ $vuetify.locale.t('$vuetify.menu.projects') }}
+            </a>
             <div
                 v-if="selectedCategory === 'projects'"
                 class="menu-item-highlight"
@@ -24,7 +28,9 @@
             class="menu-item text-center"
             @click="$emit('itemClick', 'contact')"
         >
-            {{ $vuetify.locale.t('$vuetify.menu.contact') }}
+            <a href="#contact">
+                {{ $vuetify.locale.t('$vuetify.menu.contact') }}
+            </a>
             <div
                 v-if="selectedCategory === 'contact'"
                 class="menu-item-highlight"
@@ -65,7 +71,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .main-menu-container {
     /* position: fixed; */
     display: flex;
@@ -75,6 +81,10 @@ export default {
     height: 30px;
     background-color: #1a1c20;
     z-index: 1;
+    a {
+        text-decoration: inherit;
+        color: inherit;
+    }
 }
 .main-menu-container-sticky {
     position: fixed;

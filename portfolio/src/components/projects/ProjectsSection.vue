@@ -1,5 +1,5 @@
 <template>
-    <div class="all-projects-container">
+    <div id="projects" class="all-projects-container">
         <h2 class="section-title">{{ $vuetify.locale.t('$vuetify.projects.title') }}</h2>
         <div class="title-separator"></div>
         <!-- Intuiface HCMS -->

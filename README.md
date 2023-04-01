@@ -54,7 +54,9 @@ The portfolio consists of 4 parts:
 
 Vuetify components are used for the design part, but also for the translation.
 
-Vue router library is used to have a url which redirects to the English version.
+Vue router library is used to:
+* have a url which redirects to the English version.
+* scroll to a section part if anchor is present in the url.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

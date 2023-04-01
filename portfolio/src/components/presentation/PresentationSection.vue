@@ -1,5 +1,5 @@
 <template>
-    <div class="presentation-container">
+    <div id="presentation" class="presentation-container">
         <h2 class="resume-name pt-12">{{ $vuetify.locale.t('$vuetify.homepage.presentationTitle') }}</h2>
         <div class="title-separator mb-12"></div>
         <div class="profile-container">

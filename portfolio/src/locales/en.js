@@ -45,7 +45,7 @@ export default {
         by: 'By'
     },
     projects: {
-        title: 'Projets',
+        title: 'Projects',
         hcms: {
             title: 'INTUIFACE HCMS',
             description: `Web application developed with Vue.js allowing users to upload and edit content for their experiences. In short, HCMS allows you to:
