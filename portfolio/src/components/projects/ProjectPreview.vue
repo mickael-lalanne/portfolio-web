@@ -4,7 +4,7 @@
         :style="`flex-direction: ${reverse ? 'row-reverse' : 'row'}`"
     >
         <div class="project-left">
-            <div class="project-title">{{ title }}</div>
+            <div class="project-preview-title">{{ title }}</div>
             <div class="project-description" v-html="description"></div>
             <!-- By default, the link open a new dialog to see more details -->
             <div v-if="!this.$slots.projectLink" class="project-link" @click="showDialog = true">DÉTAIL</div>
@@ -84,7 +84,7 @@ export default {
     max-width: 770px;
     margin: 0px 50px;
 }
-.project-title {
+.project-preview-title {
     font-size: 40px;
     font-weight: bold;
     padding-bottom: 15px;

@@ -8,7 +8,7 @@
                 class="profile-picture"
                 :src="require('@/assets/images/profilePicture.png')"
             />
-            <div>
+            <div class="resume-categories-container">
                 <div class="resume-category">
                     <v-icon class="resume-icon" color="rgb(var(--v-theme-primary))">
                         mdi-account-circle-outline
@@ -338,6 +338,9 @@ ul li a:hover span:nth-child(4) {
     }
     .keywords-social-container {
         flex-direction: column-reverse;
+    }
+    .resume-categories-container {
+        margin: 0 10%;
     }
 }
 
