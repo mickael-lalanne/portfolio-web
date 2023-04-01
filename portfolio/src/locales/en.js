@@ -31,7 +31,7 @@ export default {
             bac: {
                 date: '2014',
                 title: 'BAC STI2D <br> <i>(equivalent to High School Diploma or A-level)</i>',
-                description: 'Baccalauréat Technologique STI2D: Science and technology for industry and sustainable development Option: Technical Innovation and Eco-design'
+                description: 'Baccalauréat Technologique STI2D: Science and technology for industry and sustainable development. Option: Technical Innovation and Eco-design'
             }
         }
     },

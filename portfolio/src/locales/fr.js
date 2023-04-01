@@ -31,7 +31,7 @@ export default {
             bac: {
                 date: '2014',
                 title: 'BAC STI2D',
-                description: 'Obtention du Baccalauréat Technologique STI2D: Sciences et technologies de l\'industrie et du développement durable Spécialité: Innovation Technique et Éco-conception'
+                description: 'Obtention du Baccalauréat Technologique STI2D: Sciences et technologies de l\'industrie et du développement durable. Spécialité: Innovation Technique et Éco-conception'
             }
         }
     },
