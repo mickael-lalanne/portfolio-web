@@ -64,8 +64,6 @@ Vue router library is used to:
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 * [![Vue][Vue.js]][Vue-url]
 * [![Vuetify][Vuetify.js]][Vuetify-url]
 
@@ -110,8 +108,8 @@ This section should list any major frameworks/libraries used to bootstrap your p
     - [x] French
     - [x] English
 - [x] Add vue router to select a language
-- [] Projects sorting and filtering
-- [] Typescript support
+- [ ] Projects sorting and filtering
+- [ ] Typescript support
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
