@@ -2,6 +2,24 @@
     <div id="projects" class="all-projects-container">
         <h2 class="section-title">{{ $vuetify.locale.t('$vuetify.projects.title') }}</h2>
         <div class="title-separator"></div>
+        <!-- Triple Triad -->
+        <ProjectPreview
+            :title="$vuetify.locale.t('$vuetify.projects.tripleTriad.title')"
+            :description="$vuetify.locale.t('$vuetify.projects.tripleTriad.description')"
+            :skills="[
+                $vuetify.locale.t('$vuetify.projects.tripleTriad.skills.one'),
+                $vuetify.locale.t('$vuetify.projects.tripleTriad.skills.two'),
+                $vuetify.locale.t('$vuetify.projects.tripleTriad.skills.three')
+            ]"
+            imgName="tripleTriad.gif"
+        >
+            <template v-slot:projectLink>
+                <a href="https://www.mickael-lalanne.fr/triple-triad/" target="_blank" style="color: rgb(var(--v-theme-primary));">
+                    {{ $vuetify.locale.t('$vuetify.projects.tripleTriad.link') }}
+                </a>
+            </template>
+        </ProjectPreview>
+        <v-divider class="project-divider"></v-divider>
         <!-- Intuiface HCMS -->
         <ProjectPreview
             :title="$vuetify.locale.t('$vuetify.projects.hcms.title')"
@@ -12,7 +30,7 @@
                 $vuetify.locale.t('$vuetify.projects.hcms.skills.three'),
                 $vuetify.locale.t('$vuetify.projects.hcms.skills.four')
             ]"
-            imgName="hcms"
+            imgName="hcms.png"
             dialogComponent="ProjectHCMS"
             reverse
         />
@@ -27,7 +45,7 @@
                 $vuetify.locale.t('$vuetify.projects.analytics.skills.three'),
                 $vuetify.locale.t('$vuetify.projects.analytics.skills.four')
             ]"
-            imgName="analytics"
+            imgName="analytics.png"
             dialogComponent="ProjectAnalytics"
         />
         <v-divider class="project-divider"></v-divider>
@@ -40,7 +58,7 @@
                 $vuetify.locale.t('$vuetify.projects.playerNextGen.skills.two'),
                 $vuetify.locale.t('$vuetify.projects.playerNextGen.skills.three')
             ]"
-            imgName="player"
+            imgName="player.png"
             dialogComponent="ProjectPLN"
             reverse
         />
@@ -54,7 +72,7 @@
                 $vuetify.locale.t('$vuetify.projects.journal.skills.two'),
                 $vuetify.locale.t('$vuetify.projects.journal.skills.three')
             ]"
-            imgName="journal"
+            imgName="journal.png"
         >
             <template v-slot:projectLink>
                 <a href="https://journalducapitaine.fr/" target="_blank" style="color: rgb(var(--v-theme-primary));">journalducapitaine.fr</a>
@@ -70,7 +88,7 @@
                 $vuetify.locale.t('$vuetify.projects.apiExplorer.skills.two'),
                 $vuetify.locale.t('$vuetify.projects.apiExplorer.skills.three')
             ]"
-            imgName="apiExplorer"
+            imgName="apiExplorer.png"
             dialogComponent="ProjectApiExplorer"
             reverse
         />
@@ -84,7 +102,7 @@
                 $vuetify.locale.t('$vuetify.projects.myIceTool.skills.two'),
                 $vuetify.locale.t('$vuetify.projects.myIceTool.skills.three')
             ]"
-            imgName="myIceTool"
+            imgName="myIceTool.png"
             dialogComponent="ProjectMyIceTool"
         />
     </div>

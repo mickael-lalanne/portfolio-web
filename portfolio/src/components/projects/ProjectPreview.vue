@@ -31,7 +31,7 @@
             <img
                 :alt="`Image de preview ${imgName}`"
                 class="project-img"
-                :src="require(`@/assets/images/${imgName}.png`)"
+                :src="require(`@/assets/images/${imgName}`)"
             />
         </div>
         <component
@@ -142,6 +142,17 @@ export default {
 @media (max-width: 576px) {
     .project-img {
         max-width: 95vw;
+    }
+}
+</style>
+
+<style lang="scss">
+
+.project-preview-container .project-description a {
+    color: rgb(var(--v-theme-secondary));
+    text-decoration: none;
+    &:hover {
+        color: rgb(var(--v-theme-primary));
     }
 }
 </style>

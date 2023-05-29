@@ -46,6 +46,20 @@ export default {
     },
     projects: {
         title: 'Projects',
+        tripleTriad: {
+            title: 'TRIPLE TRIAD',
+            description: `Reproduction of the <i>“Triple Triad”</i> minigame from the <i>Final Fantasy</i> universe. Developed in typescript with Vue.js, this version of the game allows you to:
+            - Play in local mode, where two players choose their deck before playing on the same screen.
+            Later, the player will have the possibility to play online or against an AI. Take a look at the <a href="https://www.mickael-lalanne.fr/triple-triad/roadmap" target="_blank">roadmap</a> to see more!
+            - Manage your own decks: create, edit and delete your decks as you wish.
+            Code is public and available here: <a href="https://github.com/mickael-lalanne/triple-triad" target="_blank">github.com/mickael-lalanne/triple-triad</a>`,
+            link: 'Try the game yourself by clicking here!',
+            skills: {
+                one: 'Personal project',
+                two: 'Deck management in GraphQL and authentication with AWS Amplify',
+                three: 'Typescript, Vue.js, Vuetify, Vue Router, Pinia'
+            }
+        },
         hcms: {
             title: 'INTUIFACE HCMS',
             description: `Web application developed with Vue.js allowing users to upload and edit content for their experiences. In short, HCMS allows you to:

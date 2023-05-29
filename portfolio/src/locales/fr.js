@@ -46,6 +46,20 @@ export default {
     },
     projects: {
         title: 'Projets',
+        tripleTriad: {
+            title: 'TRIPLE TRIAD',
+            description: `Reproduction du mini jeu <i>“Triple Triad”</i> issu de l'univers de <i>Final Fantasy</i>. Développée en typescript avec Vue.js, cette version du jeu permet de:
+            - Jouer en mode local, où deux joueurs choisissent leur deck avant de jouer sur le même écran.
+            Plus tard, le joueur aura la possibilité de jouer en ligne ou contre une intelligence artificielle. Jetez un coup d'œil à la <a href="https://www.mickael-lalanne.fr/triple-triad/roadmap" target="_blank">roadmap</a> pour en savoir plus !
+            - Gérer ses propres decks: créez, éditez et supprimez vos decks comme bon vous semble.
+            Le code est publique et disponible ici: <a href="https://github.com/mickael-lalanne/triple-triad" target="_blank">github.com/mickael-lalanne/triple-triad</a>`,
+            link: 'Essayez le jeu vous même en cliquant ici !',
+            skills: {
+                one: 'Projet personnel',
+                two: 'Gestion des decks en GraphQL et authentification avec AWS Amplify',
+                three: 'Typescript, Vue.js, Vuetify, Vue Router, Pinia'
+            }
+        },
         hcms: {
             title: 'INTUIFACE HCMS',
             description: `Application web développée avec Vue.js permettant aux utilisateurs d'uploader et d'éditer du contenu pour leurs expériences. Entre autre, HCMS permet de:
