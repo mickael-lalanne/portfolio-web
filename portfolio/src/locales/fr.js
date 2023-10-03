@@ -67,7 +67,7 @@ export default {
             - Utiliser la notion de “variant” pour identifier les champs qui varient selon le contexte
             - Gérer les utilisateurs et le workflow pour contrôler l'édition et la publication de données`,
             skills: {
-                one: 'Projet de presque 3 ans, 2 développeurs front, 1 développeur back',
+                one: 'Travail en équipe',
                 two: 'Vues.js, Vuetify, Vuex',
                 three: 'Backend avec AWS (Lambda, S3)',
                 four: 'Tests unitaires avec jest, tests end to end avec cypress'
@@ -98,7 +98,7 @@ export default {
         },
         analytics: {
             title: 'INTUIFACE ANALYTICS - CHART & DASHBOARDS',
-            description: `Application web développée avec Angular permettant la visualisation de données client via des charts. Les charts sont entièrement personnalisables et peuvent être affichés de n'importe quelle façon dans des dashboards par drag & drop et redimensionnement. Il est aussi possible de partager ces dashboards par lien pour accéder à une version readonly. Pour ce projet, nous étions une équipe de 5 personnes: 1 chef de projet, 1 designer, 2 développeurs front et 1 développeur back.`,
+            description: `Application web développée avec Angular permettant la visualisation de données client via des charts. Les charts sont entièrement personnalisables et peuvent être affichés de n'importe quelle façon dans des dashboards par drag & drop et redimensionnement. Il est aussi possible de partager ces dashboards par lien pour accéder à une version readonly.`,
             skills: {
                 one: 'Travail en équipe',
                 two: 'Angular, Highcharts',
@@ -110,8 +110,7 @@ export default {
                 presentationContent: `Analytics - Chart & Dashboards est une application web accessible directement sur son compte <a href="https://my.intuiface.com/" target="_blank">my.intuiface</a>.
                 C'est mon premier vrai projet professionnel et j'ai eu la chance d'être impliqué dès le début des devs.
                 Même après la release du produit, j'ai continué de travailler sur le projet pour ajouter de nouvelles features comme les charts de type <b>"Gauge"</b> et <b>"Single Value"</b>.
-                L'application a été développée avec le framework <b>Angular</b>. Pour les charts, nous avons utilisé la librairie <a href="https://www.highcharts.com/" target="_blank">Highcharts</a>.
-                L'équipe était composée d'un chef de projet qui s'occupait des tests et spécifications UX, d'un designer, de deux développeurs front-end et d'un développeur back-end.`,
+                L'application a été développée avec le framework <b>Angular</b>. Pour les charts, nous avons utilisé la librairie <a href="https://www.highcharts.com/" target="_blank">Highcharts</a>.`,
                 dashboardTitle: 'PARTIE DASHBOARD',
                 dashboardContent: `La partie Dashboard permet la visualisation des données client.
                 La première fois qu'un utilisateur se connecte, 2 dashboards lui sont automatiquement créés:

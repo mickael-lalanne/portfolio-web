@@ -67,7 +67,7 @@ export default {
             - Use the “variant” notion to identify fields that change according to their context
             - Handle users and workflow to control the edition and the publication of data`,
             skills: {
-                one: 'Almost a 3 year project, 2 front end developers, 1 back end developer',
+                one: 'Team work',
                 two: 'Vues.js, Vuetify, Vuex',
                 three: 'Backend with AWS (Lambda, S3)',
                 four: 'Unit tests with jest, end to end tests with cypress'
@@ -99,7 +99,7 @@ export default {
         },
         analytics: {
             title: 'INTUIFACE ANALYTICS - CHART & DASHBOARDS',
-            description: `Web application developed with Angular allowing users to compare performance and visualize trends in charts using the data collected by their Intuiface experiences. Charts are entirely customizable and can be displayed in any way in the dashboard with drag & drop or resizing. You can also share your dashboards with a link to access them in a readonly version. For this project, we were a team of 5 people: 1 product owner, 1 designer, 2 front-end developers and 1 back-end developer.`,
+            description: `Web application developed with Angular allowing users to compare performance and visualize trends in charts using the data collected by their Intuiface experiences. Charts are entirely customizable and can be displayed in any way in the dashboard with drag & drop or resizing. You can also share your dashboards with a link to access them in a readonly version.`,
             skills: {
                 one: 'Team work',
                 two: 'Angular, Highcharts',
@@ -111,8 +111,7 @@ export default {
                 presentationContent: `Analytics - Chart & Dashboards is a web application directly  accessible on his <a href="https://my.intuiface.com/" target="_blank">my.intuiface</a> account.
                 This is my first professional project and I had the opportunity to be involved from the start of the development.
                 Even after the release, I kept working on the project to add new features like <b>“Gauge”</b> and <b>“Single Value”</b> charts.
-                The application was developed with the <b>Angular</b> framework. For the charts, we used the <a href="https://www.highcharts.com/" target="_blank">Highcharts</a> library.
-                The team consisted of a project manager who took care of testing and UX specifications, a designer, two front-end developers and one back-end developer.`,
+                The application was developed with the <b>Angular</b> framework. For the charts, we used the <a href="https://www.highcharts.com/" target="_blank">Highcharts</a> library.`,
                 dashboardTitle: 'DASHBOARD PART',
                 dashboardContent: `The dashboard allows the visualization of customer data. The first time an user logs in, 2 dashboards are automatically created:
                 <span class="ml-10">- one dashboard with default charts based on THEIR data.</span>
