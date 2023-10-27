@@ -7,7 +7,7 @@ export default {
         workButton: 'SEE MY WORK',
         presentationTitle: 'WHO\'S THERE ?',
         nameAndAge: 'Mickaël Lalanne, 26 years old',
-        place: 'Tarbes, France',
+        place: 'Québec, Canada',
         mail: 'mickael.lalanne03@gmail.com',
         work: 'Looking in Quebec.',
         workPrevious: 'Previously R&D Engineer for Intuiface.',

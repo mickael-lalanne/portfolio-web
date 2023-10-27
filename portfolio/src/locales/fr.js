@@ -7,7 +7,7 @@ export default {
         workButton: 'VOIR MON TRAVAIL',
         presentationTitle: 'QUI VA LÀ ?',
         nameAndAge: 'Mickaël Lalanne, 26 ans',
-        place: 'Tarbes, France',
+        place: 'Québec, Canada',
         mail: 'mickael.lalanne03@gmail.com',
         work: 'En cours de recherche au Québec.',
         workPrevious: 'Précédemment Ingénieur R&D pour Intuiface.',
