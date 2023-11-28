@@ -13,6 +13,11 @@ export default {
         workPrevious: 'Previously R&D Engineer for Intuiface.',
         hobbies: 'Video games, Video montage, Writing',
         career: {
+            stratejia: {
+                date: 'Since 2023',
+                title: 'STRATEJIA',
+                description: 'Arrived in Quebec City after obtaining a Working Holiday Permit, I was hired as a Full-stack Developer at Stratejia and worked in a team on .NET, Azure DevOps and Docker projects.'
+            },
             intuiface: {
                 date: '2018 - 2023',
                 title: 'INTUIFACE',

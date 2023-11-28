@@ -1,5 +1,35 @@
 <template>
     <div class="timeline pb-12 pt-6">
+        <!-- STRATEJIA -->
+        <div
+            class="timeline__event  animated fadeInUp delay-3s timeline__event--type2"
+        >
+            <div class="timeline__event__icon ">
+                <img
+                    alt="Stratejia Logo"
+                    :src="require('@/assets/images/timeline/stratejiaLogo.png')"
+                />
+                <div class="timeline__event__date">
+                    {{ $vuetify.locale.t('$vuetify.homepage.career.stratejia.date') }}
+                </div>
+            </div>
+            <div class="timeline__event__content ">
+                <div class="timeline__event__title">
+                    <a
+                        href="https://www.stratejia.ca/"
+                        target="_blank"
+                        rel="noopener"
+                        style="text-decoration:none; color: unset;"
+                    >
+                        {{ $vuetify.locale.t('$vuetify.homepage.career.stratejia.title') }}
+                    </a>
+                </div>
+                <div class="timeline__event__description">
+                    <p>{{ $vuetify.locale.t('$vuetify.homepage.career.stratejia.description') }}</p>
+                </div>
+            </div>
+        </div>
+        <!-- INTUIFACE -->
         <div
             class="timeline__event  animated fadeInUp delay-3s timeline__event--type1"
         >
@@ -28,6 +58,7 @@
                 </div>
             </div>
         </div>
+        <!-- LICENCE PRO -->
         <div
             class="timeline__event animated fadeInUp delay-2s timeline__event--type2"
         >
@@ -49,6 +80,7 @@
                 </div>
             </div>
         </div>
+        <!-- BTS -->
         <div
             class="timeline__event animated fadeInUp delay-1s timeline__event--type1"
         >
@@ -70,6 +102,7 @@
                 </div>
             </div>
         </div>
+        <!-- BAC -->
         <div class="timeline__event animated fadeInUp timeline__event--type2">
             <div class="timeline__event__icon">
                 <img

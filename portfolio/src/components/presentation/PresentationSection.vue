@@ -135,6 +135,8 @@ export default {
                 link: "https://developers.google.com/web/tools/lighthouse",
             },
             { name: "Node.js", link: "https://nodejs.org/en/" },
+            { name: ".NET", link: "https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet/" },
+            { name: "React", link: "https://fr.react.dev/" }
         ],
     }),
     computed: {
