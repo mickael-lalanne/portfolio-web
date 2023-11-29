@@ -9,14 +9,14 @@ export default {
         nameAndAge: 'Mickaël Lalanne, 26 ans',
         place: 'Québec, Canada',
         mail: 'mickael.lalanne03@gmail.com',
-        work: 'En cours de recherche au Québec.',
+        work: 'Développeur Full Stack pour Stratéjia',
         workPrevious: 'Précédemment Ingénieur R&D pour Intuiface.',
         hobbies: 'Jeux vidéos, Montage vidéo, Écriture',
         career: {
             stratejia: {
                 date: 'Depuis 2023',
                 title: 'STRATEJIA',
-                description: 'Arrivé dans la ville de Québec après avoir obtenu un Permis Vacances Travail, j\'ai été embauché en tant que Développer Full-stack chez Stratejia et travaille en équipe sur des projets .NET, Azure DevOps et Docker.'
+                description: 'Arrivé dans la ville de Québec après avoir obtenu un Permis Vacances Travail, j\'ai été embauché en tant que Développer Full-stack chez Stratejia et travaille en équipe sur un projet .NET, Azure DevOps et Docker.'
             },
             intuiface: {
                 date: '2018 - 2023',

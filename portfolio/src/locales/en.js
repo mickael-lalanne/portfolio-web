@@ -9,14 +9,14 @@ export default {
         nameAndAge: 'Mickaël Lalanne, 26 years old',
         place: 'Québec, Canada',
         mail: 'mickael.lalanne03@gmail.com',
-        work: 'Looking in Quebec.',
+        work: 'Full Stack Developer for Stratéjia',
         workPrevious: 'Previously R&D Engineer for Intuiface.',
         hobbies: 'Video games, Video montage, Writing',
         career: {
             stratejia: {
                 date: 'Since 2023',
                 title: 'STRATEJIA',
-                description: 'Arrived in Quebec City after obtaining a Working Holiday Permit, I was hired as a Full-stack Developer at Stratejia and worked in a team on .NET, Azure DevOps and Docker projects.'
+                description: 'Arrived in Quebec City after obtaining a Working Holiday Permit, I was hired as a Full-stack Developer at Stratejia and worked in a team on a .NET, Azure DevOps and Docker project.'
             },
             intuiface: {
                 date: '2018 - 2023',
