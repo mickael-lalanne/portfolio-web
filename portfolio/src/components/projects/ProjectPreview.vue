@@ -1,44 +1,47 @@
 <template>
-    <div
-        class="project-preview-container"
-        :style="`flex-direction: ${reverse ? 'row-reverse' : 'row'}`"
-    >
-        <div class="project-left">
-            <div class="project-preview-title">{{ title }}</div>
-            <div class="project-description" v-html="description"></div>
-            <!-- By default, the link open a new dialog to see more details -->
-            <div v-if="!this.$slots.projectLink" class="project-link" @click="showDialog = true">DÉTAIL</div>
-            <!-- Otherwise, display custom link -->
-            <div v-else class="project-link">
-                <slot name="projectLink" class="project-link"></slot>
-            </div>
-            <div class="skills-container">
-                <div
-                    v-for="skill in skills"
-                    :key="skill"
-                    class="skill-container"
-                >
-                    <img
-                        alt="Check icone"
-                        class="skill-icon"
-                        :src="require('@/assets/images/check.png')"
-                    />
-                    {{ skill }}
+    <div>
+        <div
+            class="project-preview-container"
+            :style="`flex-direction: ${reverse ? 'row-reverse' : 'row'}`"
+        >
+            <div class="project-left">
+                <div class="project-preview-title">{{ title }}</div>
+                <div class="project-description" v-html="description"></div>
+                <!-- By default, the link open a new dialog to see more details -->
+                <div v-if="!this.$slots.projectLink" class="project-link" @click="showDialog = true">DÉTAIL</div>
+                <!-- Otherwise, display custom link -->
+                <div v-else class="project-link">
+                    <slot name="projectLink" class="project-link"></slot>
+                </div>
+                <div class="skills-container">
+                    <div
+                        v-for="skill in skills"
+                        :key="skill"
+                        class="skill-container"
+                    >
+                        <img
+                            alt="Check icone"
+                            class="skill-icon"
+                            :src="require('@/assets/images/check.png')"
+                        />
+                        {{ skill }}
+                    </div>
                 </div>
             </div>
+            <div>
+                <img
+                    :alt="`Image de preview ${imgName}`"
+                    class="project-img"
+                    :src="require(`@/assets/images/${imgName}`)"
+                />
+            </div>
+            <component
+                :is="dialogComponent"
+                :showDialog="showDialog"
+                @close="showDialog = false"
+            ></component>
         </div>
-        <div>
-            <img
-                :alt="`Image de preview ${imgName}`"
-                class="project-img"
-                :src="require(`@/assets/images/${imgName}`)"
-            />
-        </div>
-        <component
-            :is="dialogComponent"
-            :showDialog="showDialog"
-            @close="showDialog = false"
-        ></component>
+        <slot name="append"></slot>
     </div>
 </template>
 

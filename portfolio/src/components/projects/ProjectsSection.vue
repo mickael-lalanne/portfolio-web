@@ -2,118 +2,111 @@
     <div id="projects" class="all-projects-container">
         <h2 class="section-title">{{ $vuetify.locale.t('$vuetify.projects.title') }}</h2>
         <div class="title-separator"></div>
-        <!-- Triple Triad -->
+
+        <!-- FILTERING -->
+        <div class="projects-filtering">
+            <v-text-field
+                v-model="searchFilter"
+                :label="$vuetify.locale.t('$vuetify.projects.filtering.searchLabel')"
+                :placeholder="$vuetify.locale.t('$vuetify.projects.filtering.searchPlaceholder')"
+                persistent-placeholder
+                color="primary"
+                variant="underlined"
+                class="text-white search-field"
+                clearable
+            ></v-text-field>
+            <v-select
+                chips
+                :label="$vuetify.locale.t('$vuetify.projects.filtering.typeLabel')"
+                :items="projectTypes"
+                item-title="hey"
+                v-model="projectTypesValues"
+                class="text-white project-types-select"
+                multiple
+            >
+                <template v-slot:chip="{ item }">
+                    <v-chip>{{ $vuetify.locale.t(item.value) }}</v-chip>
+                </template>
+
+                <template v-slot:item="{ item, props }">
+                    <v-list-item v-bind="props" title="">
+                        {{ $vuetify.locale.t(item.value) }}
+
+                        <template v-slot:prepend="{ isSelected }">
+                            <v-checkbox :model-value="isSelected" hide-details></v-checkbox>
+                        </template>
+                    </v-list-item>
+                </template>
+            </v-select>
+            <v-spacer></v-spacer>
+            <div class="view-mode">
+                <!-- Grid -->
+                <v-btn
+                    variant="text"
+                    icon="mdi-view-grid"
+                    :color="viewMode === 'grid' ? 'primary' : 'white'"
+                    @click="viewMode = 'grid'"
+                ></v-btn>
+                <!-- Line -->
+                <v-btn
+                    variant="text"
+                    icon="mdi-view-headline"
+                    :color="viewMode === 'line' ? 'primary' : 'white'"
+                    @click="viewMode = 'line'"
+                ></v-btn>
+            </div>
+        </div>
+
+        <!-- PROJECTS -->
         <ProjectPreview
-            :title="$vuetify.locale.t('$vuetify.projects.tripleTriad.title')"
-            :description="$vuetify.locale.t('$vuetify.projects.tripleTriad.description')"
-            :skills="[
-                $vuetify.locale.t('$vuetify.projects.tripleTriad.skills.one'),
-                $vuetify.locale.t('$vuetify.projects.tripleTriad.skills.two'),
-                $vuetify.locale.t('$vuetify.projects.tripleTriad.skills.three')
-            ]"
-            imgName="tripleTriad.gif"
+            v-for="(project, i) in filteredProjects"
+            :key="i"
+            :reverse="!!(i % 2)"
+            :title="$vuetify.locale.t(project.title)"
+            :description="$vuetify.locale.t(project.description)"
+            :skills="project.skills"
+            :imgName="project.imgName"
+            :dialogComponent="project.dialogComponent"
         >
-            <template v-slot:projectLink>
-                <a href="https://www.mickael-lalanne.fr/triple-triad/" target="_blank" style="color: rgb(var(--v-theme-primary));">
-                    {{ $vuetify.locale.t('$vuetify.projects.tripleTriad.link') }}
-                </a>
+            <template v-slot:projectLink v-if="project.projectLink">
+                <a :href="project.projectLink" target="_blank" style="color: rgb(var(--v-theme-primary));">{{ project.projectLinkText}}</a>
+            </template>
+
+            <template v-slot:append>
+                <v-divider class="project-divider"></v-divider>
             </template>
         </ProjectPreview>
-        <v-divider class="project-divider"></v-divider>
-        <!-- Intuiface HCMS -->
-        <ProjectPreview
-            :title="$vuetify.locale.t('$vuetify.projects.hcms.title')"
-            :description="$vuetify.locale.t('$vuetify.projects.hcms.description')"
-            :skills="[
-                $vuetify.locale.t('$vuetify.projects.hcms.skills.one'),
-                $vuetify.locale.t('$vuetify.projects.hcms.skills.two'),
-                $vuetify.locale.t('$vuetify.projects.hcms.skills.three'),
-                $vuetify.locale.t('$vuetify.projects.hcms.skills.four')
-            ]"
-            imgName="hcms.png"
-            dialogComponent="ProjectHCMS"
-            reverse
-        />
-        <v-divider class="project-divider"></v-divider>
-        <!-- Intuiface Analytics -->
-        <ProjectPreview
-            :title="$vuetify.locale.t('$vuetify.projects.analytics.title')"
-            :description="$vuetify.locale.t('$vuetify.projects.analytics.description')"
-            :skills="[
-                $vuetify.locale.t('$vuetify.projects.analytics.skills.one'),
-                $vuetify.locale.t('$vuetify.projects.analytics.skills.two'),
-                $vuetify.locale.t('$vuetify.projects.analytics.skills.three'),
-                $vuetify.locale.t('$vuetify.projects.analytics.skills.four')
-            ]"
-            imgName="analytics.png"
-            dialogComponent="ProjectAnalytics"
-        />
-        <v-divider class="project-divider"></v-divider>
-        <!-- Intuiface Player Next Gen -->
-        <ProjectPreview
-            :title="$vuetify.locale.t('$vuetify.projects.playerNextGen.title')"
-            :description="$vuetify.locale.t('$vuetify.projects.playerNextGen.description')"
-            :skills="[
-                $vuetify.locale.t('$vuetify.projects.playerNextGen.skills.one'),
-                $vuetify.locale.t('$vuetify.projects.playerNextGen.skills.two'),
-                $vuetify.locale.t('$vuetify.projects.playerNextGen.skills.three')
-            ]"
-            imgName="player.png"
-            dialogComponent="ProjectPLN"
-            reverse
-        />
-        <v-divider class="project-divider"></v-divider>
-        <!-- Journal du capitaine -->
-        <ProjectPreview
-            :title="$vuetify.locale.t('$vuetify.projects.journal.title')"
-            :description="$vuetify.locale.t('$vuetify.projects.journal.description')"
-            :skills="[
-                $vuetify.locale.t('$vuetify.projects.journal.skills.one'),
-                $vuetify.locale.t('$vuetify.projects.journal.skills.two'),
-                $vuetify.locale.t('$vuetify.projects.journal.skills.three')
-            ]"
-            imgName="journal.png"
-        >
-            <template v-slot:projectLink>
-                <a href="https://journalducapitaine.fr/" target="_blank" style="color: rgb(var(--v-theme-primary));">journalducapitaine.fr</a>
-            </template>
-        </ProjectPreview>
-        <v-divider class="project-divider"></v-divider>
-        <!-- Tutoriel API Explorer -->
-        <ProjectPreview
-            :title="$vuetify.locale.t('$vuetify.projects.apiExplorer.title')"
-            :description="$vuetify.locale.t('$vuetify.projects.apiExplorer.description')"
-            :skills="[
-                $vuetify.locale.t('$vuetify.projects.apiExplorer.skills.one'),
-                $vuetify.locale.t('$vuetify.projects.apiExplorer.skills.two'),
-                $vuetify.locale.t('$vuetify.projects.apiExplorer.skills.three')
-            ]"
-            imgName="apiExplorer.png"
-            dialogComponent="ProjectApiExplorer"
-            reverse
-        />
-        <v-divider class="project-divider"></v-divider>
-        <!-- My Ice Tool -->
-        <ProjectPreview
-            :title="$vuetify.locale.t('$vuetify.projects.myIceTool.title')"
-            :description="$vuetify.locale.t('$vuetify.projects.myIceTool.description')"
-            :skills="[
-                $vuetify.locale.t('$vuetify.projects.myIceTool.skills.one'),
-                $vuetify.locale.t('$vuetify.projects.myIceTool.skills.two'),
-                $vuetify.locale.t('$vuetify.projects.myIceTool.skills.three')
-            ]"
-            imgName="myIceTool.png"
-            dialogComponent="ProjectMyIceTool"
-        />
     </div>
 </template>
 
 <script>
 import ProjectPreview from "@/components/projects/ProjectPreview.vue";
+import { PROJECTS } from './projectsList.js';
+
+const DEFAULT_TYPES = [
+    '$vuetify.projects.filtering.types.personal',
+    '$vuetify.projects.filtering.types.professional',
+    '$vuetify.projects.filtering.types.student'
+];
 
 export default {
     name: "ProjectsSection",
-    components: { ProjectPreview }
+    components: { ProjectPreview },
+    computed: {
+        filteredProjects: function() {
+            const projects = PROJECTS;
+
+            return projects;
+        },
+    },
+    data: () => ({
+        searchFilter: '',
+        viewMode: 'line',
+        projectTypes: DEFAULT_TYPES,
+        projectTypesValues: DEFAULT_TYPES,
+        technologies: ['Front-end', 'Back-end', 'Full-stack'],
+        sortOptions: ['Date', 'Alphabetical']
+    }),
 };
 </script>
 
@@ -141,6 +134,32 @@ export default {
     background-color:rgb(var(--v-theme-primary));
     text-align: center;
     margin: auto;
+    margin-bottom: 30px;
+}
+
+.projects-filtering {
+    display: flex;
+    align-items: flex-end;
     margin-bottom: 65px;
+    .search-field {
+        margin-right: 20px;
+        max-width: 300px;
+    }
+    .project-types-select {
+        max-width: 315px;
+        width: 315px;
+        min-height: 82px;
+    }
+    .view-mode {
+        align-self: baseline;
+        margin-top: 8px;
+    }
+}
+</style>
+<style lang="scss">
+.projects-filtering {
+    .project-types-select .v-input__control {
+        height: 60px;
+    }
 }
 </style>

@@ -51,6 +51,16 @@ export default {
     },
     projects: {
         title: 'Projects',
+        filtering: {
+            searchLabel: 'Search',
+            searchPlaceholder: 'Ex: front-end, AWS, .NET, Intuiface, ...',
+            typeLabel: 'Project',
+            types: {
+                personal: 'Personal',
+                professional: 'Professional',
+                student: 'Student'
+            }
+        },
         tripleTriad: {
             title: 'TRIPLE TRIAD',
             description: `Reproduction of the <i>“Triple Triad”</i> minigame from the <i>Final Fantasy</i> universe. Developed in typescript with Vue.js, this version of the game allows you to:
@@ -184,7 +194,8 @@ export default {
                 one: 'Personal project',
                 two: 'Wordpress',
                 three: 'Responsive'
-            }
+            },
+            link: 'journalducapitaine.fr'
         },
         apiExplorer: {
             title: 'API EXPLORER - TUTORIAL',
