@@ -51,6 +51,11 @@ export default {
     },
     projects: {
         title: 'Projets',
+        detail: 'DÉTAIL',
+        noProject: {
+            title: 'Il semblerait qu\'aucun projet ne corresponde à vos filtres.',
+            subtitle: 'Faites plaisir à Mario en modifiant ou en effaçant vos filtres !'
+        },
         filtering: {
             searchLabel: 'Recherche',
             searchPlaceholder: 'Ex: front-end, AWS, .NET, Intuiface ...',

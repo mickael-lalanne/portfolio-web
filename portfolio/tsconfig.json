@@ -6,6 +6,7 @@
     "jsx": "preserve",
     "moduleResolution": "node",
     "experimentalDecorators": false,
+    "noImplicitThis": false,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,

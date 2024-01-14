@@ -8,7 +8,9 @@
                 <div class="project-preview-title">{{ title }}</div>
                 <div class="project-description" v-html="description"></div>
                 <!-- By default, the link open a new dialog to see more details -->
-                <div v-if="!this.$slots.projectLink" class="project-link" @click="showDialog = true">DÉTAIL</div>
+                <div v-if="!this.$slots.projectLink" class="project-link" @click="showDialog = true">
+                    {{ $vuetify.locale.t('$vuetify.projects.detail') }}
+                </div>
                 <!-- Otherwise, display custom link -->
                 <div v-else class="project-link">
                     <slot name="projectLink" class="project-link"></slot>
@@ -24,7 +26,7 @@
                             class="skill-icon"
                             :src="require('@/assets/images/check.png')"
                         />
-                        {{ skill }}
+                        {{ $vuetify.locale.t(skill) }}
                     </div>
                 </div>
             </div>

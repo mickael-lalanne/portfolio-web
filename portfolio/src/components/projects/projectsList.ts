@@ -1,4 +1,21 @@
-export const PROJECTS = [
+export enum EProjectType {
+    personal = '$vuetify.projects.filtering.types.personal',
+    professional = '$vuetify.projects.filtering.types.professional',
+    student = '$vuetify.projects.filtering.types.student'
+};
+
+export interface Project {
+    title: string;
+    description: string;
+    skills: string[];
+    imgName: string;
+    projectLink?: string;
+    projectLinkText?: string;
+    type: EProjectType;
+    dialogComponent?: string;
+};
+
+export const PROJECTS: Project[] = [
     // Triple Triad
     {
         title: '$vuetify.projects.tripleTriad.title',
@@ -11,7 +28,7 @@ export const PROJECTS = [
         imgName: 'tripleTriad.gif',
         projectLink: 'https://www.mickael-lalanne.fr/triple-triad/',
         projectLinkText: '$vuetify.projects.tripleTriad.link',
-        type: 'personal'
+        type: EProjectType.personal
     },
     // Intuiface HCMS
     {
@@ -24,20 +41,22 @@ export const PROJECTS = [
             '$vuetify.projects.hcms.skills.four'
         ],
         imgName: 'hcms.png',
-        dialogComponent: 'ProjectHCMS'
+        dialogComponent: 'ProjectHCMS',
+        type: EProjectType.professional
     },
     // Intuiface Analytics
     {
         title: '$vuetify.projects.analytics.title',
         description: '$vuetify.projects.analytics.description',
         skills: [
-            '$vuetify.projects.hcms.analytics.one',
-            '$vuetify.projects.hcms.analytics.two',
-            '$vuetify.projects.hcms.analytics.three',
-            '$vuetify.projects.hcms.analytics.four'
+            '$vuetify.projects.analytics.skills.one',
+            '$vuetify.projects.analytics.skills.two',
+            '$vuetify.projects.analytics.skills.three',
+            '$vuetify.projects.analytics.skills.four'
         ],
         imgName: 'analytics.png',
-        dialogComponent: 'ProjectAnalytics'
+        dialogComponent: 'ProjectAnalytics',
+        type: EProjectType.professional
     },
     // Intuiface Player Next Gen
     {
@@ -49,7 +68,8 @@ export const PROJECTS = [
             '$vuetify.projects.playerNextGen.skills.three'
         ],
         imgName: 'player.png',
-        dialogComponent: 'ProjectPLN'
+        dialogComponent: 'ProjectPLN',
+        type: EProjectType.professional
     },
     // Journal du capitaine
     {
@@ -62,7 +82,8 @@ export const PROJECTS = [
         ],
         imgName: 'journal.png',
         projectLink: 'https://journalducapitaine.fr/',
-        projectLinkText: '$vuetify.projects.journal.link'
+        projectLinkText: '$vuetify.projects.journal.link',
+        type: EProjectType.personal
     },
     // Tutoriel API Explorer
     {
@@ -74,7 +95,8 @@ export const PROJECTS = [
             '$vuetify.projects.apiExplorer.skills.three'
         ],
         imgName: 'apiExplorer.png',
-        dialogComponent: 'ProjectApiExplorer'
+        dialogComponent: 'ProjectApiExplorer',
+        type: EProjectType.professional
     },
     // My Ice Tool
     {
@@ -86,6 +108,7 @@ export const PROJECTS = [
             '$vuetify.projects.myIceTool.skills.three'
         ],
         imgName: 'myIceTool.png',
-        dialogComponent: 'ProjectMyIceTool'
+        dialogComponent: 'ProjectMyIceTool',
+        type: EProjectType.student
     },
 ]
