@@ -1,20 +1,4 @@
-export enum EProjectType {
-    personal = '$vuetify.projects.filtering.types.personal',
-    professional = '$vuetify.projects.filtering.types.professional',
-    student = '$vuetify.projects.filtering.types.student'
-};
-
-export interface Project {
-    title: string;
-    description: string;
-    skills: string[];
-    imgName: string;
-    projectLink?: string;
-    projectLinkText?: string;
-    type: EProjectType;
-    dialogComponent?: string;
-    tags: string[]
-};
+import { EProjectType, Project } from "@/models/Project";
 
 const frontTags: string[] = ['front-end', 'front end', 'frontend', 'javascript', 'html', 'css'];
 const vueTags: string[] = ['vue.js', 'vue', 'vue js', 'vuejs', 'vuetify'];
