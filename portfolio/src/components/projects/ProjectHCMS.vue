@@ -126,7 +126,7 @@
 
 <script>
 import { defineComponent } from 'vue';
-import { ProjectMixin } from '@/mixins/projectMixin.js';
+import { ProjectMixin } from '@/mixins/projectMixin.ts';
 
 export default defineComponent({
     mixins: [ProjectMixin],

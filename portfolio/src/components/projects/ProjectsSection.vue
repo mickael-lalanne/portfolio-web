@@ -81,7 +81,7 @@
 
 <script>
 import ProjectPreview from "@/components/projects/ProjectPreview.vue";
-import { PROJECTS } from './projectsList.js';
+import { PROJECTS } from './projectsList.ts';
 
 const DEFAULT_TYPES = [
     '$vuetify.projects.filtering.types.personal',
