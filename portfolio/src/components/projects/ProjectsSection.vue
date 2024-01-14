@@ -19,7 +19,6 @@
                 chips
                 :label="$vuetify.locale.t('$vuetify.projects.filtering.typeLabel')"
                 :items="projectTypes"
-                item-title="hey"
                 v-model="projectTypesValues"
                 class="text-white project-types-select"
                 multiple
@@ -122,13 +121,18 @@ export default {
     computed: {
         filteredProjects(): Project[] {
             let filteredProjects: Project[] = PROJECTS.slice();
+            const filter: string = this.searchFilter?.toLowerCase();
 
-            // Filter by type (personal, professional, student)
-            filteredProjects = filteredProjects.filter(
-                p => this.projectTypesValues.includes(p.type)
+            return filteredProjects.filter(p => 
+                // Filter by text
+                (
+                    !filter ||
+                    p.tags.some(tag => tag.includes(filter)) ||
+                    this.$vuetify.locale.t(p.title).toLowerCase().includes(filter)
+                ) &&
+                // Filter by type (personal, professional, student)
+                this.projectTypesValues.includes(p.type)
             );
-
-            return filteredProjects;
         },
     },
     data: () => ({

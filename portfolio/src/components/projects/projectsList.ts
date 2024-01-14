@@ -13,7 +13,13 @@ export interface Project {
     projectLinkText?: string;
     type: EProjectType;
     dialogComponent?: string;
+    tags: string[]
 };
+
+const frontTags: string[] = ['front-end', 'front end', 'frontend', 'javascript', 'html', 'css'];
+const vueTags: string[] = ['vue.js', 'vue', 'vue js', 'vuejs', 'vuetify'];
+const backEndTags: string[] = ['back-end', 'backend', 'back end'];
+const fullStackTags: string[] = ['full stack', 'full-stack', 'fullstack', ...frontTags, ...backEndTags];
 
 export const PROJECTS: Project[] = [
     // Triple Triad
@@ -28,7 +34,8 @@ export const PROJECTS: Project[] = [
         imgName: 'tripleTriad.gif',
         projectLink: 'https://www.mickael-lalanne.fr/triple-triad/',
         projectLinkText: '$vuetify.projects.tripleTriad.link',
-        type: EProjectType.personal
+        type: EProjectType.personal,
+        tags: [...vueTags, ...fullStackTags, 'typescript', 'aws', 'amplify', 'graphql', 'vue router', 'pinia']
     },
     // Intuiface HCMS
     {
@@ -42,7 +49,8 @@ export const PROJECTS: Project[] = [
         ],
         imgName: 'hcms.png',
         dialogComponent: 'ProjectHCMS',
-        type: EProjectType.professional
+        type: EProjectType.professional,
+        tags: [...vueTags, ...fullStackTags, 'typescript', 'aws', 'end to end', 'e2e', 'lambda', 's3', 'jest', 'cypress', 'jenkins', 'vuex']
     },
     // Intuiface Analytics
     {
@@ -56,7 +64,8 @@ export const PROJECTS: Project[] = [
         ],
         imgName: 'analytics.png',
         dialogComponent: 'ProjectAnalytics',
-        type: EProjectType.professional
+        type: EProjectType.professional,
+        tags: [...fullStackTags, 'typescript', 'angular', 'highcharts', 'mongodb', 'mongo', 'end to end', 'e2e']
     },
     // Intuiface Player Next Gen
     {
@@ -69,7 +78,8 @@ export const PROJECTS: Project[] = [
         ],
         imgName: 'player.png',
         dialogComponent: 'ProjectPLN',
-        type: EProjectType.professional
+        type: EProjectType.professional,
+        tags: [...frontTags, 'angular', 'typescript', 'jest', 'ios', 'android', 'brightsign', 'samsung']
     },
     // Journal du capitaine
     {
@@ -83,7 +93,8 @@ export const PROJECTS: Project[] = [
         imgName: 'journal.png',
         projectLink: 'https://journalducapitaine.fr/',
         projectLinkText: '$vuetify.projects.journal.link',
-        type: EProjectType.personal
+        type: EProjectType.personal,
+        tags: [...frontTags, 'wordpress', 'cms', 'responsive']
     },
     // Tutoriel API Explorer
     {
@@ -96,7 +107,8 @@ export const PROJECTS: Project[] = [
         ],
         imgName: 'apiExplorer.png',
         dialogComponent: 'ProjectApiExplorer',
-        type: EProjectType.professional
+        type: EProjectType.professional,
+        tags: [...frontTags, 'e2e', 'end to end', 'jquery', 'stage', 'internship']
     },
     // My Ice Tool
     {
@@ -109,6 +121,7 @@ export const PROJECTS: Project[] = [
         ],
         imgName: 'myIceTool.png',
         dialogComponent: 'ProjectMyIceTool',
-        type: EProjectType.student
+        type: EProjectType.student,
+        tags: [...fullStackTags, 'php', 'laravel', 'cron', 'sql', 'mysql', 'api']
     },
 ]
