@@ -13,7 +13,8 @@ export interface Project {
     projectLinkText?: string;
     type: EProjectType;
     dialogComponent?: string;
-    tags: string[]
+    tags: string[],
+    resume: string
 };
 
 export enum EViewMode {

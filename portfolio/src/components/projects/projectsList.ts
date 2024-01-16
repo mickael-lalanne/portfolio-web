@@ -10,6 +10,7 @@ export const PROJECTS: Project[] = [
     {
         title: '$vuetify.projects.tripleTriad.title',
         description: '$vuetify.projects.tripleTriad.description',
+        resume: '$vuetify.projects.tripleTriad.resume',
         skills: [
             '$vuetify.projects.tripleTriad.skills.one',
             '$vuetify.projects.tripleTriad.skills.two',
@@ -25,6 +26,7 @@ export const PROJECTS: Project[] = [
     {
         title: '$vuetify.projects.hcms.title',
         description: '$vuetify.projects.hcms.description',
+        resume: '$vuetify.projects.hcms.resume',
         skills: [
             '$vuetify.projects.hcms.skills.one',
             '$vuetify.projects.hcms.skills.two',
@@ -40,6 +42,7 @@ export const PROJECTS: Project[] = [
     {
         title: '$vuetify.projects.analytics.title',
         description: '$vuetify.projects.analytics.description',
+        resume: '$vuetify.projects.analytics.resume',
         skills: [
             '$vuetify.projects.analytics.skills.one',
             '$vuetify.projects.analytics.skills.two',
@@ -55,6 +58,7 @@ export const PROJECTS: Project[] = [
     {
         title: '$vuetify.projects.playerNextGen.title',
         description: '$vuetify.projects.playerNextGen.description',
+        resume: '$vuetify.projects.playerNextGen.resume',
         skills: [
             '$vuetify.projects.playerNextGen.skills.one',
             '$vuetify.projects.playerNextGen.skills.two',
@@ -69,6 +73,7 @@ export const PROJECTS: Project[] = [
     {
         title: '$vuetify.projects.journal.title',
         description: '$vuetify.projects.journal.description',
+        resume: '$vuetify.projects.journal.resume',
         skills: [
             '$vuetify.projects.journal.skills.one',
             '$vuetify.projects.journal.skills.two',
@@ -84,6 +89,7 @@ export const PROJECTS: Project[] = [
     {
         title: '$vuetify.projects.apiExplorer.title',
         description: '$vuetify.projects.apiExplorer.description',
+        resume: '$vuetify.projects.apiExplorer.resume',
         skills: [
             '$vuetify.projects.apiExplorer.skills.one',
             '$vuetify.projects.apiExplorer.skills.two',
@@ -98,6 +104,7 @@ export const PROJECTS: Project[] = [
     {
         title: '$vuetify.projects.myIceTool.title',
         description: '$vuetify.projects.myIceTool.description',
+        resume: '$vuetify.projects.myIceTool.resume',
         skills: [
             '$vuetify.projects.myIceTool.skills.one',
             '$vuetify.projects.myIceTool.skills.two',

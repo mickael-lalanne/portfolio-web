@@ -3,7 +3,8 @@
         class="project-preview-container"
         @click="onProjectClick"
     >
-            <div class="project-preview-title">{{ title }}</div>
+        <div class="project-preview-title">{{ title }}</div>
+        <div class="project-preview-resume" v-html="resume"></div>
         <v-spacer></v-spacer>
         <div class="hover-background"></div>
         <img
@@ -37,9 +38,8 @@ export default {
     },
     props: {
         title: { type: String },
-        description: { type: String },
+        resume: { type: String },
         imgName: { type: String },
-        skills: { type: Array },
         dialogComponent: { type: String },
         projectLink: { type: String },
     },
@@ -68,7 +68,7 @@ export default {
     align-items: center;
     justify-content: center;
     border: 1px solid white;
-    border-radius: 25px;
+    border-radius: 10px;
     width: 350px;
     aspect-ratio: 1;
     margin: 20px;
@@ -82,11 +82,15 @@ export default {
         border-width: 1.5px;
         border-color: rgb(var(--v-theme-primary));
         .hover-background {
-            top: 160px;
+            top: 0;
             visibility: visible;
         }
         .project-preview-title {
             text-shadow: 0 0 10px white;
+        }
+        .project-preview-resume {
+            visibility: visible;
+            height: 100px;
         }
     }
 }
@@ -100,12 +104,20 @@ export default {
     padding: 0 50px;
     z-index: 1;
 }
+.project-preview-resume {
+    padding: 0 15px 15px 15px;
+    font-size: 14px;
+    height: 0;
+    visibility: hidden;
+    z-index: 1;
+    transition: height 500ms ease;
+}
 .project-img {
     display: block;
     width: 100%;
     border-top: 1px solid white;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     z-index: 1;
 }
 .hover-background {

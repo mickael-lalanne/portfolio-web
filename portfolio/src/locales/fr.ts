@@ -74,6 +74,8 @@ export default {
             - Gérer ses propres decks: créez, éditez et supprimez vos decks comme bon vous semble.
             Le code est publique et disponible ici: <a href="https://github.com/mickael-lalanne/triple-triad" target="_blank">github.com/mickael-lalanne/triple-triad</a>`,
             link: 'Essayez le jeu vous même en cliquant ici !',
+            resume: `Reproduction du mini jeu <i>“Triple Triad”</i> issu de l'univers de <i>Final Fantasy</i>.<br>
+            Front-end avec Typescript, Vuetify, Vue Router et Pinia. Back-end avec AWS Amplify et GraphQL.`,
             skills: {
                 one: 'Projet personnel',
                 two: 'Gestion des decks en GraphQL et authentification avec AWS Amplify',
@@ -86,6 +88,10 @@ export default {
             - Créer un contenu bien structuré pour une variété de formats de médias (images, vidéos, documents, couleurs, date, …)
             - Utiliser la notion de “variant” pour identifier les champs qui varient selon le contexte
             - Gérer les utilisateurs et le workflow pour contrôler l'édition et la publication de données`,
+            resume: `Upload et édition de contenu.<br>
+            Front-end avec Vue.js, Vuetify et Vuex.<br>
+            Back-end avec AWS (Lambda, S3).<br>
+            Tests unitaires (Jest) et end to end (Cypress).`,
             skills: {
                 one: 'Travail en équipe',
                 two: 'Vues.js, Vuetify, Vuex',
@@ -119,6 +125,7 @@ export default {
         analytics: {
             title: 'INTUIFACE ANALYTICS - CHART & DASHBOARDS',
             description: `Application web développée avec Angular permettant la visualisation de données client via des charts. Les charts sont entièrement personnalisables et peuvent être affichés de n'importe quelle façon dans des dashboards par drag & drop et redimensionnement. Il est aussi possible de partager ces dashboards par lien pour accéder à une version readonly.`,
+            resume: 'Application web avec Angular permettant la visualisation de données client via des charts.<br> Back-end Node.js avec base de données Mongo.',
             skills: {
                 one: 'Travail en équipe',
                 two: 'Angular, Highcharts',
@@ -155,6 +162,8 @@ export default {
         playerNextGen: {
             title: 'INTUIFACE PLAYER NEXT GEN',
             description: `Le Player Next Gen permet aux utilisateurs de visualiser des expériences créées depuis le Composer, sur n'importe quelle plateforme. L'application est développée sur la dernière version d'Angular. Sur ce grand projet que j'ai rejoint en cours de route, je me suis occupé du développement des assets Youtube, Webcam et Linear Gauge.`,
+            resume: `Permettre aux utilisateurs de visualiser leurs expériences créées depuis le Composer.<br>
+            Développement multiplateforme (web, Android, iOS, ...) avec Angular. Tests unitaires avec Jest.`,
             skills: {
                 one: 'Angular',
                 two: 'Développement multiplateforme: web, Android, iOS, Brightsign, Samsung Kiosk, …',
@@ -198,6 +207,7 @@ export default {
         journal: {
             title: 'JOURNAL DU CAPITAINE',
             description: `Ma première passion, ce sont les jeux vidéo. Ma deuxième, c'est écrire. J'ai donc décidé de réaliser un site web me permettant de réunir ces deux passions. Réalisé sous Wordpress, ce site me permet de publier des articles en rapport avec le jeu vidéo.`,
+            resume: `Ma première passion, ce sont les jeux vidéo. Ma deuxième, c'est écrire. Avec Wordpress, j'ai donc décidé de réaliser un site web me permettant de réunir ces deux passions.`,
             skills: {
                 one: 'Projet personnel',
                 two: 'Wordpress',
@@ -208,6 +218,7 @@ export default {
         apiExplorer: {
             title: 'API EXPLORER - TUTORIEL',
             description: `Sujet de stage durant mon année en licence professionnelle. L'objectif était de remplacer un tutoriel d'onboarding intégré avec Appcues pour les nouveaux utilisateurs. Le but était de ne plus être dépendant financièrement du produit et d'avoir son propre tutoriel. J'ai donc dû m'adapter sur un grand projet existant et reproduire l'ancien tutoriel avec des nouvelles améliorations, comme la possibilité de revenir à des étapes précédentes.`,
+            resume: `Sujet de stage durant mon année en licence professionnelle. Objectif : remplacer un tutoriel d'onboarding (intégré avec Appcues) pour les nouveaux utilisateurs.`,
             skills: {
                 one: 'S\'adapter à un projet existant',
                 two: 'Javascript, jQuery',
@@ -264,6 +275,8 @@ export default {
         myIceTool: {
             title: 'MY ICE TOOL - PROJET TUTEURÉ',
             description: `My Ice Tool est un projet étudiant que j'ai dû réaliser durant ma licence professionnelle à Gap. L'objectif était de réaliser un site web permettant de visualiser les conditions d'escalade sur des cascades de glaces dans des zones spécifiques. Notre équipe a notamment dû imaginer l'identité graphique du site, gérer l'authentification, l'ajout de commentaires, utiliser l'api de Google Maps afin de tracer des zones et de placer des points d'intérêts, stocker l'historique des températures en base à l'aide d'un cron, ...`,
+            resume: `Projet étudiant pour visualiser les conditions d'escalade sur des cascades de glaces.
+            Utilisation du framework PHP Laravel, de l'API Google Maps, et d'une base de données MySQL.`,
             skills: {
                 one: 'Framework PHP Laravel',
                 two: 'Google Maps API',
