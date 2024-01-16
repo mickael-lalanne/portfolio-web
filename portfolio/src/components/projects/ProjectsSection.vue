@@ -14,26 +14,50 @@
         </ProjectFiltering>
 
         <!-- PROJECTS -->
-        <ProjectPreview
-            v-for="(project, i) in filteredProjects"
-            :key="i"
-            :reverse="!!(i % 2)"
-            :title="$vuetify.locale.t(project.title)"
-            :description="$vuetify.locale.t(project.description)"
-            :skills="project.skills"
-            :imgName="project.imgName"
-            :dialogComponent="project.dialogComponent"
-        >
-            <template v-slot:projectLink v-if="project.projectLink">
-                <a :href="project.projectLink" target="_blank" style="color: rgb(var(--v-theme-primary));">
-                    {{ $vuetify.locale.t(project.projectLinkText!) }}
-                </a>
-            </template>
+        <div v-if="viewMode === EViewMode.line">
+            <ProjectPreview
+                v-for="(project, i) in filteredProjects"
+                :key="i"
+                :reverse="!!(i % 2)"
+                :title="$vuetify.locale.t(project.title)"
+                :description="$vuetify.locale.t(project.description)"
+                :skills="project.skills"
+                :imgName="project.imgName"
+                :dialogComponent="project.dialogComponent"
+            >
+                <template v-slot:projectLink v-if="project.projectLink">
+                    <a :href="project.projectLink" target="_blank" style="color: rgb(var(--v-theme-primary));">
+                        {{ $vuetify.locale.t(project.projectLinkText!) }}
+                    </a>
+                </template>
 
-            <template v-slot:append>
-                <v-divider class="project-divider"></v-divider>
-            </template>
-        </ProjectPreview>
+                <template v-slot:append>
+                    <v-divider class="project-divider"></v-divider>
+                </template>
+            </ProjectPreview>
+        </div>
+        <div v-else class="grid-view-container">
+            <ProjectPreviewGrid
+                v-for="(project, i) in filteredProjects"
+                :key="i"
+                :title="$vuetify.locale.t(project.title)"
+                :description="$vuetify.locale.t(project.description)"
+                :skills="project.skills"
+                :imgName="project.imgName"
+                :dialogComponent="project.dialogComponent"
+                :project-link="project.projectLink"
+            >
+                <template v-slot:projectLink v-if="project.projectLink">
+                    <a :href="project.projectLink" target="_blank" style="color: rgb(var(--v-theme-primary));">
+                        {{ $vuetify.locale.t(project.projectLinkText!) }}
+                    </a>
+                </template>
+
+                <template v-slot:append>
+                    <v-divider class="project-divider"></v-divider>
+                </template>
+            </ProjectPreviewGrid>
+        </div>
 
         <!-- NO PROJECT MESSAGE -->
         <div
@@ -59,13 +83,14 @@
 
 <script lang="ts">
 import ProjectPreview from "@/components/projects/ProjectPreview.vue";
+import ProjectPreviewGrid from "@/components/projects/ProjectPreviewGrid.vue";
 import ProjectFiltering from "@/components/projects/ProjectFiltering.vue";
 import { EProjectType, Project, EViewMode, DEFAULT_TYPES } from "@/models/Project";
 import { PROJECTS } from './projectsList';
 
 export default {
     name: "ProjectsSection",
-    components: { ProjectPreview, ProjectFiltering },
+    components: { ProjectPreview, ProjectPreviewGrid, ProjectFiltering },
     computed: {
         filteredProjects(): Project[] {
             let filteredProjects: Project[] = PROJECTS.slice();
@@ -130,6 +155,12 @@ export default {
         font-size: 22px;
         font-weight: 700;
     }
+}
+
+.grid-view-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 // Medium devices (tablets, max 768px and less)

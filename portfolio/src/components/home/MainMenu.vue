@@ -73,14 +73,13 @@ export default {
 
 <style lang="scss" scoped>
 .main-menu-container {
-    /* position: fixed; */
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100vw;
     height: 30px;
     background-color: #1a1c20;
-    z-index: 1;
+    z-index: 999;
     a {
         text-decoration: inherit;
         color: inherit;
