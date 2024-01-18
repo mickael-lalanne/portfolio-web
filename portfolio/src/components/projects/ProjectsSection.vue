@@ -95,7 +95,7 @@ export default {
             let filteredProjects: Project[] = PROJECTS.slice();
             const filter: string = this.searchFilter?.toLowerCase();
 
-            return filteredProjects.filter(p => 
+            const newFilteredProjects = filteredProjects.filter(p => 
                 // Filter by text
                 (
                     !filter ||
@@ -105,6 +105,15 @@ export default {
                 // Filter by type (personal, professional, student)
                 this.projectTypes.includes(p.type)
             );
+
+            if (this.filteredProjects && this.filteredProjects.length > 0 && newFilteredProjects.length === 0) {
+                new Audio(require('@/assets/sounds/oof.mp3')).play();
+            }
+            else if (this.filteredProjects && this.filteredProjects.length === 0 && newFilteredProjects.length > 0) {
+                new Audio(require('@/assets/sounds/soLong.mp3')).play();
+            }
+
+            return newFilteredProjects;
         },
     },
     data: () => ({
