@@ -9,12 +9,43 @@
             @viewModeChange="newViewMode => viewMode = newViewMode"
             @typeChange="newTypes => projectTypes = newTypes"
             @searchChange="newSearch => searchFilter = newSearch"
-        >
+        ></ProjectFiltering>
 
-        </ProjectFiltering>
+        <!-- NO PROJECT MESSAGE -->
+        <div
+            v-if="filteredProjects.length === 0 || soLongAnimation"
+            style="position: relative"
+        >
+            <div
+                class="no-project-container d-flex align-center"
+                :class="{ 'no-project-out-animation': soLongAnimation }"
+            >
+                <img
+                    alt="Sad Mario Logo"
+                    class="mx-5"
+                    :src="require('@/assets/images/sadMario.png')"
+                />
+                <div>
+                    <div class="no-project-title">
+                        {{ $vuetify.locale.t('$vuetify.projects.noProject.title') }}
+                    </div>
+                    <div class="no-project-subtitle">
+                        {{ $vuetify.locale.t('$vuetify.projects.noProject.subtitle') }}
+                    </div>
+                </div>
+            </div>
+            <img
+                v-if="showMarioHammerAnimation"
+                id="marioHammerAnimation"
+                alt="Mario animation"
+                class="mario-animation-img"
+                :src="require('@/assets/images/marioHammer.gif')"
+            />
+        </div>
 
         <!-- PROJECTS -->
         <div v-if="viewMode === EViewMode.line">
+        <!-- <div v-if="false"> -->
             <ProjectPreview
                 v-for="(project, i) in filteredProjects"
                 :key="i"
@@ -36,7 +67,8 @@
                 </template>
             </ProjectPreview>
         </div>
-        <div v-else class="grid-view-container">
+        <!-- <div v-else class="grid-view-container"> -->
+        <div v-else-if="true === false" class="grid-view-container">
             <ProjectPreviewGrid
                 v-for="(project, i) in filteredProjects"
                 :key="i"
@@ -57,26 +89,6 @@
                 </template>
             </ProjectPreviewGrid>
         </div>
-
-        <!-- NO PROJECT MESSAGE -->
-        <div
-            v-if="filteredProjects.length === 0"
-            class="no-project-container d-flex align-center"
-        >
-            <img
-                alt="Sad Mario Logo"
-                class="mx-5"
-                :src="require('@/assets/images/sadMario.png')"
-            />
-            <div>
-                <div class="no-project-title">
-                    {{ $vuetify.locale.t('$vuetify.projects.noProject.title') }}
-                </div>
-                <div class="no-project-subtitle">
-                    {{ $vuetify.locale.t('$vuetify.projects.noProject.subtitle') }}
-                </div>
-            </div>
-        </div>
     </div>
 </template>
 
@@ -95,7 +107,7 @@ export default {
             let filteredProjects: Project[] = PROJECTS.slice();
             const filter: string = this.searchFilter?.toLowerCase();
 
-            const newFilteredProjects = filteredProjects.filter(p => 
+            return filteredProjects.filter(p => 
                 // Filter by text
                 (
                     !filter ||
@@ -105,16 +117,33 @@ export default {
                 // Filter by type (personal, professional, student)
                 this.projectTypes.includes(p.type)
             );
-
-            if (this.filteredProjects && this.filteredProjects.length > 0 && newFilteredProjects.length === 0) {
+        },
+    },
+    watch: {
+        filteredProjects: function(newFilters: Project[], oldFilters: Project[]) {
+            if (oldFilters && oldFilters.length > 0 && newFilters.length === 0) {
                 new Audio(require('@/assets/sounds/oof.mp3')).play();
             }
-            else if (this.filteredProjects && this.filteredProjects.length === 0 && newFilteredProjects.length > 0) {
-                new Audio(require('@/assets/sounds/soLong.mp3')).play();
-            }
+            else if (oldFilters && oldFilters.length === 0 && newFilters.length > 0) {
+                this.soLongAnimation = true;
+                this.showMarioHammerAnimation = true;
 
-            return newFilteredProjects;
-        },
+                // Play "So long" sound
+                new Audio(require('@/assets/sounds/soLong.mp3')).play();
+
+                // Hide and reset Mario GIF animation 
+                setTimeout(() => {
+                    this.showMarioHammerAnimation = false;
+                    const marioHammerImage: HTMLImageElement = document.getElementById('marioHammerAnimation') as HTMLImageElement;
+                    marioHammerImage.src = '' + marioHammerImage.src;
+                }, 1800);
+
+                // Reset the "So long" animation
+                setTimeout(() => {
+                    this.soLongAnimation = false;
+                }, 4000);
+            }
+        }
     },
     data: () => ({
         EViewMode: EViewMode,
@@ -122,7 +151,9 @@ export default {
         viewMode: EViewMode.line as EViewMode,
         projectTypes: DEFAULT_TYPES as EProjectType[],
         technologies: ['Front-end', 'Back-end', 'Full-stack'],
-        sortOptions: ['Date', 'Alphabetical']
+        sortOptions: ['Date', 'Alphabetical'],
+        soLongAnimation: false as boolean,
+        showMarioHammerAnimation: false as boolean
     }),
 };
 </script>
@@ -159,6 +190,7 @@ export default {
     padding: 50px;
     background-color: #fcf1f1;
     border-radius: 5px;
+    position: relative;
     .no-project-title {
         font-size: 22px;
         font-weight: 700;
@@ -169,6 +201,28 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+// So long animation
+@keyframes soLongAnimation {
+  0%   {}
+  25%  {
+    transform: translate(0, 0) rotate3d(0, 0, 0, 0);
+  }
+  100%  {
+    transform: translate(100vw, -100vh) rotate3d(0, 1, 0.5, 15rad);
+  }
+}
+
+.mario-animation-img {
+    position: absolute;
+    bottom: -52px;
+    left: -62px;
+}
+
+.no-project-out-animation {
+    animation-name: soLongAnimation;
+    animation-duration: 4s;
 }
 
 // Medium devices (tablets, max 768px and less)
