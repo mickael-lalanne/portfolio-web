@@ -44,8 +44,7 @@
         </div>
 
         <!-- PROJECTS -->
-        <div v-if="viewMode === EViewMode.line">
-        <!-- <div v-if="false"> -->
+        <div v-if="viewMode === EViewMode.line" :class="{ 'projects-in-animation': soLongAnimation }">
             <ProjectPreview
                 v-for="(project, i) in filteredProjects"
                 :key="i"
@@ -67,8 +66,7 @@
                 </template>
             </ProjectPreview>
         </div>
-        <!-- <div v-else class="grid-view-container"> -->
-        <div v-else-if="true === false" class="grid-view-container">
+        <div v-else class="grid-view-container" :class="{ 'projects-in-animation': soLongAnimation }">
             <ProjectPreviewGrid
                 v-for="(project, i) in filteredProjects"
                 :key="i"
@@ -135,7 +133,9 @@ export default {
                 setTimeout(() => {
                     this.showMarioHammerAnimation = false;
                     const marioHammerImage: HTMLImageElement = document.getElementById('marioHammerAnimation') as HTMLImageElement;
-                    marioHammerImage.src = '' + marioHammerImage.src;
+                    if (marioHammerImage) {
+                        marioHammerImage.src = '' + marioHammerImage.src;
+                    }
                 }, 1800);
 
                 // Reset the "So long" animation
@@ -203,26 +203,51 @@ export default {
     justify-content: center;
 }
 
-// So long animation
+/************************
+       ANIMATIONS
+************************/
 @keyframes soLongAnimation {
-  0%   {}
-  25%  {
-    transform: translate(0, 0) rotate3d(0, 0, 0, 0);
-  }
-  100%  {
-    transform: translate(100vw, -100vh) rotate3d(0, 1, 0.5, 15rad);
-  }
+    25% {
+        transform: translate(0, 0) rotate3d(0, 0, 0, 0);
+    }
+    100% {
+        transform: translate(100vw, -100vh) rotate3d(0, 1, 0.5, 15rad);
+    }
+}
+
+@keyframes showProjectsAnimation {
+    0% {
+        opacity: 0;
+        max-height: 0;
+    }
+    25% {
+        transform: translateY(0px);
+        max-height: 0;
+        opacity: 0;
+    }
+    70% {
+        transform: translateY(-325px);
+        max-height: 10000px;
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-325px);
+    }
+}
+
+.no-project-out-animation {
+    animation-name: soLongAnimation;
+    animation-duration: 4s;
+}
+.projects-in-animation {
+    animation-name: showProjectsAnimation;
+    animation-duration: 4s;
 }
 
 .mario-animation-img {
     position: absolute;
     bottom: -52px;
     left: -62px;
-}
-
-.no-project-out-animation {
-    animation-name: soLongAnimation;
-    animation-duration: 4s;
 }
 
 // Medium devices (tablets, max 768px and less)
