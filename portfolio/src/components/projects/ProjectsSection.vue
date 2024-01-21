@@ -22,7 +22,7 @@
             >
                 <img
                     alt="Sad Mario Logo"
-                    class="mx-5"
+                    class="mx-5 sad-mario-img"
                     :src="require('@/assets/images/sadMario.png')"
                 />
                 <div>
@@ -159,6 +159,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$no-project-height: 325px;
 .all-projects-container {
     background-color: #1a1c20;
     padding: 100px 5%;
@@ -191,9 +192,13 @@ export default {
     background-color: #fcf1f1;
     border-radius: 5px;
     position: relative;
+    height: $no-project-height;
     .no-project-title {
         font-size: 22px;
         font-weight: 700;
+    }
+    .sad-mario-img {
+        min-height: 0;
     }
 }
 
@@ -226,12 +231,12 @@ export default {
         opacity: 0;
     }
     70% {
-        transform: translateY(-325px);
+        transform: translateY((-$no-project-height));
         max-height: 10000px;
         opacity: 1;
     }
     100% {
-        transform: translateY(-325px);
+        transform: translateY((-$no-project-height));
     }
 }
 
@@ -254,15 +259,11 @@ export default {
 @media (max-width: 768px) {
     .no-project-container {
         flex-direction: column;
+        padding: 20px;
         .no-project-title {
             margin-top: 10px;
             margin-bottom: 5px;
         }
-    }
-}
-@media (max-width: 400px) {
-    .no-project-container {
-        padding: 20px;
     }
 }
 </style>
