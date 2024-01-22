@@ -167,6 +167,34 @@ $no-project-height: 325px;
     background-color: #1a1c20;
     padding: 100px 5%;
     padding-top: 70px;
+    // Grid effect
+    --color: rgba(114, 114, 114, 0.1);    
+    background-image: linear-gradient(
+        0deg,
+        transparent 24%,
+        var(--color) 25%,
+        var(--color) 26%,
+        transparent 27%,
+        transparent 74%,
+        var(--color) 75%,
+        var(--color) 76%,
+        transparent 77%,
+        transparent
+    ),
+    linear-gradient(
+        90deg,
+        transparent 24%,
+        var(--color) 24%,
+        var(--color) 26%,
+        transparent 27%,
+        transparent 74%,
+        var(--color) 75%,
+        var(--color) 76%,
+        transparent 77%,
+        transparent
+    );
+    background-size: 55px 55px;
+    background-repeat: repeat;
 }
 .section-title {
     color: rgb(var(--v-theme-primary));
