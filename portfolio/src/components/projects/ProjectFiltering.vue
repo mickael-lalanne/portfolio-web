@@ -1,6 +1,14 @@
 <template>
     <div class="projects-filtering">
-        <v-text-field
+        <!-- Project Types -->
+        <SelectMultipleCyberpunk
+            :values="projectTypes"
+            :selectedValues="projectTypesValues"
+            @valueChange="onProjectTypeChange"
+        ></SelectMultipleCyberpunk>
+
+        <!-- Search field -->
+        <!-- <v-text-field
             v-model="searchFilter"
             :label="$vuetify.locale.t('$vuetify.projects.filtering.searchLabel')"
             :placeholder="$vuetify.locale.t('$vuetify.projects.filtering.searchPlaceholder')"
@@ -10,30 +18,8 @@
             class="text-white search-field"
             @update:model-value="$emit('searchChange', searchFilter)"
             clearable
-        ></v-text-field>
-        <v-select
-            chips
-            :label="$vuetify.locale.t('$vuetify.projects.filtering.typeLabel')"
-            :items="projectTypes"
-            v-model="projectTypesValues"
-            class="text-white project-types-select"
-            multiple
-            @update:model-value="$emit('typeChange', projectTypesValues)"
-        >
-            <template v-slot:chip="{ item }">
-                <v-chip>{{ $vuetify.locale.t(item.value) }}</v-chip>
-            </template>
+        ></v-text-field> -->
 
-            <template v-slot:item="{ item, props }">
-                <v-list-item v-bind="props" title="">
-                    {{ $vuetify.locale.t(item.value) }}
-
-                    <template v-slot:prepend="{ isSelected }">
-                        <v-checkbox :model-value="isSelected" hide-details></v-checkbox>
-                    </template>
-                </v-list-item>
-            </template>
-        </v-select>
         <v-spacer></v-spacer>
         <div class="view-mode">
             <!-- Grid -->
@@ -57,10 +43,11 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 import { EViewMode, EProjectType, DEFAULT_TYPES } from '@/models/Project';
-
+import SelectMultipleCyberpunk from '@/components/shared/SelectMultipleCyberpunk.vue';
 
 export default defineComponent({
     name: 'ProjectFiltering',
+    components: { SelectMultipleCyberpunk },
     props: {
         viewMode: { type: String as PropType<EViewMode> }
     },
@@ -69,7 +56,16 @@ export default defineComponent({
         searchFilter: '' as string,
         projectTypes: DEFAULT_TYPES as EProjectType[],
         projectTypesValues: DEFAULT_TYPES as EProjectType[],
-    })
+    }),
+    methods: {
+        onProjectTypeChange(projectType: EProjectType): void {
+            this.projectTypesValues = this.projectTypesValues.includes(projectType)
+                ? this.projectTypesValues.filter((p: EProjectType) => p !== projectType)
+                : this.projectTypesValues.concat(projectType);
+
+            this.$emit('typeChange', this.projectTypesValues);
+        },
+    }
 });
 </script>
 
@@ -82,11 +78,6 @@ export default defineComponent({
     .search-field {
         margin-right: 20px;
         max-width: 300px;
-    }
-    .project-types-select {
-        max-width: 315px;
-        width: 315px;
-        min-height: 82px;
     }
     .view-mode {
         align-self: baseline;
@@ -105,11 +96,6 @@ export default defineComponent({
             max-width: unset;
             width: 100%;
             margin-bottom: 8px;
-        }
-        .project-types-select {
-            max-width: unset;
-            width: 100%;
-            min-height: 82px;
         }
         .view-mode {
             margin-top: 0;
