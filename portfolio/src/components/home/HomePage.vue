@@ -214,7 +214,7 @@ export default {
 
 <style lang="scss" scoped>
 .home-container {
-    background-color: #1a1c20;
+    background-color: rgb(var(--v-theme-dark));
     overflow: hidden;
     position: relative;
 }

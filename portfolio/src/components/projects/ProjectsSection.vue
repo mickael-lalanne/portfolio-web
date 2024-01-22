@@ -1,5 +1,5 @@
 <template>
-    <div id="projects" class="all-projects-container">
+    <div id="projects" class="all-projects-container bg-grid-effect">
         <h2 class="section-title">{{ $vuetify.locale.t('$vuetify.projects.title') }}</h2>
         <div class="title-separator"></div>
 
@@ -164,37 +164,9 @@ export default {
 <style lang="scss" scoped>
 $no-project-height: 325px;
 .all-projects-container {
-    background-color: #1a1c20;
+    background-color: rgb(var(--v-theme-dark));
     padding: 100px 5%;
     padding-top: 70px;
-    // Grid effect
-    --color: rgba(114, 114, 114, 0.1);    
-    background-image: linear-gradient(
-        0deg,
-        transparent 24%,
-        var(--color) 25%,
-        var(--color) 26%,
-        transparent 27%,
-        transparent 74%,
-        var(--color) 75%,
-        var(--color) 76%,
-        transparent 77%,
-        transparent
-    ),
-    linear-gradient(
-        90deg,
-        transparent 24%,
-        var(--color) 24%,
-        var(--color) 26%,
-        transparent 27%,
-        transparent 74%,
-        var(--color) 75%,
-        var(--color) 76%,
-        transparent 77%,
-        transparent
-    );
-    background-size: 55px 55px;
-    background-repeat: repeat;
 }
 .section-title {
     color: rgb(var(--v-theme-primary));

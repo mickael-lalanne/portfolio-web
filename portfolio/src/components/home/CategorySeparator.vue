@@ -1,16 +1,6 @@
 <template>
-    <div>
-        <svg
-            id="bigTriangleColor"
-            xmlns="http://www.w3.org/2000/svg"
-            version="1.1"
-            width="100%"
-            height="100"
-            viewBox="0 0 100 102"
-            preserveAspectRatio="none"
-        >
-            <path d="M0 0 L50 100 L100 0 Z" />
-        </svg>
+    <div class="arrow-container">
+        <div class="arrow bg-grid-effect"></div>
     </div>
 </template>
 
@@ -21,15 +11,15 @@ export default {
 </script>
 
 <style scoped>
-svg#bigTriangleColor {
+.arrow-container {
     pointer-events: none;
     background-color: #fcf1f1;
-    position: absolute;
+    height: 100px;
 }
 
-#bigTriangleColor path {
-    fill: rgb(var(--v-theme-dark));
-    stroke: rgb(var(--v-theme-dark));
-    stroke-width: 2;
+.arrow {
+    height: 100%;
+    background-color: rgb(var(--v-theme-dark));
+    clip-path: polygon(100% 0, 0 0, 50% 100%);
 }
 </style>

@@ -71,7 +71,7 @@ export default {
 <style lang="scss" scoped>
 .contact-container {
     background-color: rgb(var(--v-theme-light));
-    padding: 175px 0;
+    padding: 75px 0;
 }
 .form-container {
     display: flex;

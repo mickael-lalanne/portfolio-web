@@ -206,6 +206,10 @@ export default {
 }
 
 .input:hover + .btn {
+    --primary: #3D3B40;
+    --shadow-primary: rgb(var(--v-theme-primary));
+}
+.input:hover + .btn.active {
     --primary: rgb(var(--v-theme-primary));
     --shadow-primary: rgb(var(--v-theme-secondary));
 }

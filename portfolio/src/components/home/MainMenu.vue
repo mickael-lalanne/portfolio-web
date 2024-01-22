@@ -78,7 +78,7 @@ export default {
     justify-content: center;
     width: 100vw;
     height: 30px;
-    background-color: #1a1c20;
+    background-color: rgb(var(--v-theme-dark));
     z-index: 999;
     a {
         text-decoration: inherit;
