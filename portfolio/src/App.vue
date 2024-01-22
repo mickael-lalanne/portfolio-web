@@ -129,6 +129,8 @@ body {
     );
     background-size: 55px 55px;
     background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 // RESPONSIVE
