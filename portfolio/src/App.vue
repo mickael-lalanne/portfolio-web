@@ -1,25 +1,47 @@
 <template>
     <div>
-        <link rel="icon" href="@assets/logo.png">
+        <link rel="icon" href="@assets/logo.png" />
         <HomePage />
     </div>
 </template>
 
 <script>
-import HomePage from "@/components/home/HomePage.vue";
+import HomePage from '@/components/home/HomePage.vue';
 import { computed, watch } from 'vue';
-import { useRoute } from 'vue-router'
+import { useRoute } from 'vue-router';
+
+// TMP : Stop error resizeObserver when using a v-select component
+// Cf https://github.com/vuejs/vue-cli/issues/7431#issuecomment-1793385162
+// Waiting for this issue to be fixed :  https://github.com/vuetifyjs/vuetify-loader/issues/329
+const debounce = (callback, delay) => {
+    let tid;
+    return function (...args) {
+        const ctx = self;
+        tid && clearTimeout(tid);
+        tid = setTimeout(() => {
+            callback.apply(ctx, args);
+        }, delay);
+    };
+};
+
+const _ = window.ResizeObserver;
+window.ResizeObserver = class ResizeObserver extends _ {
+    constructor(callback) {
+        callback = debounce(callback, 20);
+        super(callback);
+    }
+};
 
 export default {
-    name: "App",
+    name: 'App',
     components: { HomePage },
-    beforeCreate: function() {
+    beforeCreate: function () {
         // Check query params to set the lang if necessary
         const route = useRoute();
         const langQuery = computed(() => route.query.lang);
 
         // Called when the query parameter "lang" has changed
-        watch(langQuery, newLangQuery => {
+        watch(langQuery, (newLangQuery) => {
             this.$vuetify.locale.current = newLangQuery;
         });
     },
@@ -39,24 +61,21 @@ body {
 }
 
 // Scrollbar
-::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 0px;
-	background-color: #404347;
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 0px;
+    background-color: #404347;
 }
 
-::-webkit-scrollbar
-{
-	width: 5px;
-	background-color: #404347;
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: #404347;
 }
 
-::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: rgb(var(--v-theme-primary));
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: rgb(var(--v-theme-primary));
 }
 
 .project-container {

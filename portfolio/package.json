@@ -16,13 +16,18 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.21.3",
     "@mdi/font": "^5.9.55",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
     "@vue/cli-plugin-babel": "~5.0.8",
     "@vue/cli-plugin-eslint": "~5.0.8",
+    "@vue/cli-plugin-typescript": "~5.0.0",
     "@vue/cli-service": "~5.0.8",
+    "@vue/eslint-config-typescript": "^9.1.0",
     "eslint": "^8.36.0",
-    "eslint-plugin-vue": "^9.9.0",
+    "eslint-plugin-vue": "~8.0.1",
     "sass": "^1.59.3",
     "sass-loader": "^13.2.1",
+    "typescript": "~4.5.5",
     "vue-cli-plugin-vuetify": "~2.5.8",
     "vue-particles": "^1.0.9",
     "webpack-plugin-vuetify": "^2.0.1"
@@ -34,12 +39,16 @@
     },
     "extends": [
       "plugin:vue/essential",
-      "eslint:recommended"
+      "eslint:recommended",
+      "@vue/typescript"
     ],
     "parserOptions": {
-      "parser": "@babel/eslint-parser"
+      "parser": "@typescript-eslint/parser"
     },
-    "rules": {}
+    "rules": {
+      "no-extra-semi": 0,
+      "no-unused-vars": 0
+    }
   },
   "browserslist": [
     "> 1%",

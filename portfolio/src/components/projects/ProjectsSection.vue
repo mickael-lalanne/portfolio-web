@@ -2,126 +2,199 @@
     <div id="projects" class="all-projects-container">
         <h2 class="section-title">{{ $vuetify.locale.t('$vuetify.projects.title') }}</h2>
         <div class="title-separator"></div>
-        <!-- Triple Triad -->
-        <ProjectPreview
-            :title="$vuetify.locale.t('$vuetify.projects.tripleTriad.title')"
-            :description="$vuetify.locale.t('$vuetify.projects.tripleTriad.description')"
-            :skills="[
-                $vuetify.locale.t('$vuetify.projects.tripleTriad.skills.one'),
-                $vuetify.locale.t('$vuetify.projects.tripleTriad.skills.two'),
-                $vuetify.locale.t('$vuetify.projects.tripleTriad.skills.three')
-            ]"
-            imgName="tripleTriad.gif"
+
+        <!-- FILTERING -->
+        <ProjectFiltering
+            :viewMode="viewMode"
+            @viewModeChange="newViewMode => viewMode = newViewMode"
+            @typeChange="newTypes => projectTypes = newTypes"
+            @searchChange="newSearch => searchFilter = newSearch"
+        ></ProjectFiltering>
+
+        <!-- NO PROJECT MESSAGE -->
+        <div
+            v-if="filteredProjects.length === 0 || soLongAnimation"
+            style="position: relative"
         >
-            <template v-slot:projectLink>
-                <a href="https://www.mickael-lalanne.fr/triple-triad/" target="_blank" style="color: rgb(var(--v-theme-primary));">
-                    {{ $vuetify.locale.t('$vuetify.projects.tripleTriad.link') }}
-                </a>
-            </template>
-        </ProjectPreview>
-        <v-divider class="project-divider"></v-divider>
-        <!-- Intuiface HCMS -->
-        <ProjectPreview
-            :title="$vuetify.locale.t('$vuetify.projects.hcms.title')"
-            :description="$vuetify.locale.t('$vuetify.projects.hcms.description')"
-            :skills="[
-                $vuetify.locale.t('$vuetify.projects.hcms.skills.one'),
-                $vuetify.locale.t('$vuetify.projects.hcms.skills.two'),
-                $vuetify.locale.t('$vuetify.projects.hcms.skills.three'),
-                $vuetify.locale.t('$vuetify.projects.hcms.skills.four')
-            ]"
-            imgName="hcms.png"
-            dialogComponent="ProjectHCMS"
-            reverse
-        />
-        <v-divider class="project-divider"></v-divider>
-        <!-- Intuiface Analytics -->
-        <ProjectPreview
-            :title="$vuetify.locale.t('$vuetify.projects.analytics.title')"
-            :description="$vuetify.locale.t('$vuetify.projects.analytics.description')"
-            :skills="[
-                $vuetify.locale.t('$vuetify.projects.analytics.skills.one'),
-                $vuetify.locale.t('$vuetify.projects.analytics.skills.two'),
-                $vuetify.locale.t('$vuetify.projects.analytics.skills.three'),
-                $vuetify.locale.t('$vuetify.projects.analytics.skills.four')
-            ]"
-            imgName="analytics.png"
-            dialogComponent="ProjectAnalytics"
-        />
-        <v-divider class="project-divider"></v-divider>
-        <!-- Intuiface Player Next Gen -->
-        <ProjectPreview
-            :title="$vuetify.locale.t('$vuetify.projects.playerNextGen.title')"
-            :description="$vuetify.locale.t('$vuetify.projects.playerNextGen.description')"
-            :skills="[
-                $vuetify.locale.t('$vuetify.projects.playerNextGen.skills.one'),
-                $vuetify.locale.t('$vuetify.projects.playerNextGen.skills.two'),
-                $vuetify.locale.t('$vuetify.projects.playerNextGen.skills.three')
-            ]"
-            imgName="player.png"
-            dialogComponent="ProjectPLN"
-            reverse
-        />
-        <v-divider class="project-divider"></v-divider>
-        <!-- Journal du capitaine -->
-        <ProjectPreview
-            :title="$vuetify.locale.t('$vuetify.projects.journal.title')"
-            :description="$vuetify.locale.t('$vuetify.projects.journal.description')"
-            :skills="[
-                $vuetify.locale.t('$vuetify.projects.journal.skills.one'),
-                $vuetify.locale.t('$vuetify.projects.journal.skills.two'),
-                $vuetify.locale.t('$vuetify.projects.journal.skills.three')
-            ]"
-            imgName="journal.png"
-        >
-            <template v-slot:projectLink>
-                <a href="https://journalducapitaine.fr/" target="_blank" style="color: rgb(var(--v-theme-primary));">journalducapitaine.fr</a>
-            </template>
-        </ProjectPreview>
-        <v-divider class="project-divider"></v-divider>
-        <!-- Tutoriel API Explorer -->
-        <ProjectPreview
-            :title="$vuetify.locale.t('$vuetify.projects.apiExplorer.title')"
-            :description="$vuetify.locale.t('$vuetify.projects.apiExplorer.description')"
-            :skills="[
-                $vuetify.locale.t('$vuetify.projects.apiExplorer.skills.one'),
-                $vuetify.locale.t('$vuetify.projects.apiExplorer.skills.two'),
-                $vuetify.locale.t('$vuetify.projects.apiExplorer.skills.three')
-            ]"
-            imgName="apiExplorer.png"
-            dialogComponent="ProjectApiExplorer"
-            reverse
-        />
-        <v-divider class="project-divider"></v-divider>
-        <!-- My Ice Tool -->
-        <ProjectPreview
-            :title="$vuetify.locale.t('$vuetify.projects.myIceTool.title')"
-            :description="$vuetify.locale.t('$vuetify.projects.myIceTool.description')"
-            :skills="[
-                $vuetify.locale.t('$vuetify.projects.myIceTool.skills.one'),
-                $vuetify.locale.t('$vuetify.projects.myIceTool.skills.two'),
-                $vuetify.locale.t('$vuetify.projects.myIceTool.skills.three')
-            ]"
-            imgName="myIceTool.png"
-            dialogComponent="ProjectMyIceTool"
-        />
+            <div
+                class="no-project-container d-flex align-center"
+                :class="{
+                    'no-project-out-animation': soLongAnimation,
+                    'no-project-in-animation': !soLongAnimation
+                }"
+            >
+                <img
+                    alt="Sad Mario Logo"
+                    class="mx-5 sad-mario-img"
+                    :src="require('@/assets/images/sadMario.png')"
+                />
+                <div>
+                    <div class="no-project-title">
+                        {{ $vuetify.locale.t('$vuetify.projects.noProject.title') }}
+                    </div>
+                    <div class="no-project-subtitle">
+                        {{ $vuetify.locale.t('$vuetify.projects.noProject.subtitle') }}
+                    </div>
+                </div>
+            </div>
+            <img
+                v-if="showMarioHammerAnimation"
+                id="marioHammerAnimation"
+                alt="Mario animation"
+                class="mario-animation-img"
+                :src="require('@/assets/images/marioHammer.gif')"
+            />
+        </div>
+
+        <!-- PROJECTS -->
+        <div v-if="viewMode === EViewMode.line" :class="{ 'projects-in-animation': soLongAnimation }">
+            <ProjectPreview
+                v-for="(project, i) in filteredProjects"
+                :key="i"
+                :reverse="!!(i % 2)"
+                :title="$vuetify.locale.t(project.title)"
+                :description="$vuetify.locale.t(project.description)"
+                :skills="project.skills"
+                :imgName="project.imgName"
+                :dialogComponent="project.dialogComponent"
+            >
+                <template v-slot:projectLink v-if="project.projectLink">
+                    <a :href="project.projectLink" target="_blank" style="color: rgb(var(--v-theme-primary));">
+                        {{ $vuetify.locale.t(project.projectLinkText!) }}
+                    </a>
+                </template>
+
+                <template v-slot:append>
+                    <v-divider class="project-divider"></v-divider>
+                </template>
+            </ProjectPreview>
+        </div>
+        <div v-else class="grid-view-container" :class="{ 'projects-in-animation': soLongAnimation }">
+            <ProjectPreviewGrid
+                v-for="(project, i) in filteredProjects"
+                :key="i"
+                :title="$vuetify.locale.t(project.title)"
+                :resume="$vuetify.locale.t(project.resume)"
+                :imgName="project.imgName"
+                :dialogComponent="project.dialogComponent"
+                :project-link="project.projectLink"
+            >
+                <template v-slot:projectLink v-if="project.projectLink">
+                    <a :href="project.projectLink" target="_blank" style="color: rgb(var(--v-theme-primary));">
+                        {{ $vuetify.locale.t(project.projectLinkText!) }}
+                    </a>
+                </template>
+
+                <template v-slot:append>
+                    <v-divider class="project-divider"></v-divider>
+                </template>
+            </ProjectPreviewGrid>
+        </div>
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import ProjectPreview from "@/components/projects/ProjectPreview.vue";
+import ProjectPreviewGrid from "@/components/projects/ProjectPreviewGrid.vue";
+import ProjectFiltering from "@/components/projects/ProjectFiltering.vue";
+import { EProjectType, Project, EViewMode, DEFAULT_TYPES } from "@/models/Project";
+import { PROJECTS } from './projectsList';
 
 export default {
     name: "ProjectsSection",
-    components: { ProjectPreview }
+    components: { ProjectPreview, ProjectPreviewGrid, ProjectFiltering },
+    computed: {
+        filteredProjects(): Project[] {
+            let filteredProjects: Project[] = PROJECTS.slice();
+            const filter: string = this.searchFilter?.toLowerCase();
+
+            return filteredProjects.filter(p => 
+                // Filter by text
+                (
+                    !filter ||
+                    p.tags.some(tag => tag.includes(filter)) ||
+                    this.$vuetify.locale.t(p.title).toLowerCase().includes(filter)
+                ) &&
+                // Filter by type (personal, professional, student)
+                this.projectTypes.includes(p.type)
+            );
+        },
+    },
+    watch: {
+        filteredProjects: function(newFilters: Project[], oldFilters: Project[]) {
+            if (oldFilters && oldFilters.length > 0 && newFilters.length === 0) {
+                new Audio(require('@/assets/sounds/oof.mp3')).play();
+            }
+            else if (oldFilters && oldFilters.length === 0 && newFilters.length > 0) {
+                this.soLongAnimation = true;
+                this.showMarioHammerAnimation = true;
+
+                // Play "So long" sound
+                new Audio(require('@/assets/sounds/soLong.mp3')).play();
+
+                // Hide and reset Mario GIF animation 
+                setTimeout(() => {
+                    this.showMarioHammerAnimation = false;
+                    const marioHammerImage: HTMLImageElement = document.getElementById('marioHammerAnimation') as HTMLImageElement;
+                    if (marioHammerImage) {
+                        marioHammerImage.src = '' + marioHammerImage.src;
+                    }
+                }, 1800);
+
+                // Reset the "So long" animation
+                setTimeout(() => {
+                    this.soLongAnimation = false;
+                }, 4000);
+            }
+        }
+    },
+    data: () => ({
+        EViewMode: EViewMode,
+        searchFilter: '' as string,
+        viewMode: EViewMode.line as EViewMode,
+        projectTypes: DEFAULT_TYPES as EProjectType[],
+        technologies: ['Front-end', 'Back-end', 'Full-stack'],
+        sortOptions: ['Date', 'Alphabetical'],
+        soLongAnimation: false as boolean,
+        showMarioHammerAnimation: false as boolean
+    }),
 };
 </script>
 
 <style lang="scss" scoped>
+$no-project-height: 325px;
 .all-projects-container {
     background-color: #1a1c20;
     padding: 100px 5%;
     padding-top: 70px;
+    // Grid effect
+    --color: rgba(114, 114, 114, 0.1);    
+    background-image: linear-gradient(
+        0deg,
+        transparent 24%,
+        var(--color) 25%,
+        var(--color) 26%,
+        transparent 27%,
+        transparent 74%,
+        var(--color) 75%,
+        var(--color) 76%,
+        transparent 77%,
+        transparent
+    ),
+    linear-gradient(
+        90deg,
+        transparent 24%,
+        var(--color) 24%,
+        var(--color) 26%,
+        transparent 27%,
+        transparent 74%,
+        var(--color) 75%,
+        var(--color) 76%,
+        transparent 77%,
+        transparent
+    );
+    background-size: 55px 55px;
+    background-repeat: repeat;
 }
 .section-title {
     color: rgb(var(--v-theme-primary));
@@ -141,6 +214,103 @@ export default {
     background-color:rgb(var(--v-theme-primary));
     text-align: center;
     margin: auto;
-    margin-bottom: 65px;
+    margin-bottom: 30px;
+}
+
+.no-project-container {
+    width: fit-content;
+    padding: 50px;
+    background-color: #fcf1f1;
+    border-radius: 5px;
+    position: relative;
+    height: $no-project-height;
+    .no-project-title {
+        font-size: 22px;
+        font-weight: 700;
+    }
+    .sad-mario-img {
+        min-height: 0;
+    }
+}
+
+.grid-view-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/************************
+       ANIMATIONS
+************************/
+@keyframes oofAnimation {
+    0% {
+        opacity: 0;
+        transform: translateX(-2000px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(30px);
+    }
+    80% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+@keyframes soLongAnimation {
+    25% {
+        transform: translate(0, 0) rotate3d(0, 0, 0, 0);
+    }
+    100% {
+        transform: translate(100vw, -100vh) rotate3d(0, 1, 0.5, 15rad);
+    }
+}
+
+@keyframes showProjectsAnimation {
+    0% {
+        opacity: 0;
+        max-height: 0;
+    }
+    25% {
+        transform: translateY(0px);
+        max-height: 0;
+        opacity: 0;
+    }
+    70% {
+        transform: translateY((-$no-project-height));
+        max-height: 10000px;
+        opacity: 1;
+    }
+    100% {
+        transform: translateY((-$no-project-height));
+    }
+}
+
+.no-project-out-animation {
+    animation-name: soLongAnimation;
+    animation-duration: 4s;
+}
+.no-project-in-animation {
+    animation-name: oofAnimation;
+    animation-duration: 1s;
+}
+.projects-in-animation {
+    animation-name: showProjectsAnimation;
+    animation-duration: 4s;
+}
+
+.mario-animation-img {
+    position: absolute;
+    bottom: -52px;
+    left: -62px;
+}
+
+// Medium devices (tablets, max 768px and less)
+@media (max-width: 768px) {
+    .no-project-container {
+        flex-direction: column;
+        padding: 20px;
+        .no-project-title {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+    }
 }
 </style>

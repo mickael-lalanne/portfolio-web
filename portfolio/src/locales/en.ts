@@ -51,6 +51,21 @@ export default {
     },
     projects: {
         title: 'Projects',
+        detail: 'DETAIL',
+        noProject: {
+            title: 'It seems no project is matching your filters.',
+            subtitle: 'Make Mario happy by changing or clearing your filters !'
+        },
+        filtering: {
+            searchLabel: 'Search',
+            searchPlaceholder: 'Ex: front-end, AWS, .NET, Intuiface, ...',
+            typeLabel: 'Project',
+            types: {
+                personal: 'Personal',
+                professional: 'Professional',
+                student: 'Student'
+            }
+        },
         tripleTriad: {
             title: 'TRIPLE TRIAD',
             description: `Reproduction of the <i>“Triple Triad”</i> minigame from the <i>Final Fantasy</i> universe. Developed in typescript with Vue.js, this version of the game allows you to:
@@ -58,6 +73,8 @@ export default {
             Later, the player will have the possibility to play online or against an AI. Take a look at the <a href="https://www.mickael-lalanne.fr/triple-triad/roadmap" target="_blank">roadmap</a> to see more!
             - Manage your own decks: create, edit and delete your decks as you wish.
             Code is public and available here: <a href="https://github.com/mickael-lalanne/triple-triad" target="_blank">github.com/mickael-lalanne/triple-triad</a>`,
+            resume: `Reproduction of the <i>“Triple Triad”</i> minigame from the <i>Final Fantasy</i> universe.<br>
+            Front-end with Typescript, Vuetify, Vue Router, Pinia. Back-end with AWS Amplify and GraphQL.`,
             link: 'Try the game yourself by clicking here!',
             skills: {
                 one: 'Personal project',
@@ -71,6 +88,10 @@ export default {
             - Create well-structured content for a variety of media (images, videos, documents, colors, date, …)
             - Use the “variant” notion to identify fields that change according to their context
             - Handle users and workflow to control the edition and the publication of data`,
+            resume: `Upload and content edition.<br>
+            Front-end with Vue.js, Vuetify and Vuex.<br>
+            Back-end with AWS (Lambda, S3).<br>
+            Unit (Jest) and end to end (Cypress) tests.`,
             skills: {
                 one: 'Team work',
                 two: 'Vues.js, Vuetify, Vuex',
@@ -105,6 +126,7 @@ export default {
         analytics: {
             title: 'INTUIFACE ANALYTICS - CHART & DASHBOARDS',
             description: `Web application developed with Angular allowing users to compare performance and visualize trends in charts using the data collected by their Intuiface experiences. Charts are entirely customizable and can be displayed in any way in the dashboard with drag & drop or resizing. You can also share your dashboards with a link to access them in a readonly version.`,
+            resume: 'Angular web application allowing users to compare performance and visualize trends in charts. Node.js back-end with Mongo database.',
             skills: {
                 one: 'Team work',
                 two: 'Angular, Highcharts',
@@ -137,6 +159,8 @@ export default {
         playerNextGen: {
             title: 'INTUIFACE PLAYER NEXT GEN',
             description: `Player Next Gen allows users to visualize Intuiface experiences on any platform. The application is developed with the latest Angular version. On this great project I joined along the way, I was in charge of the Youtube, Webcam, and linear assets.`,
+            resume: `Allows users to visualize Intuiface experiences on any platform..<br>
+            Cross-platform development (web, Android, iOS, Brightsign, ...) with Angular. Unit tests with Jest.`,
             skills: {
                 one: 'Angular',
                 two: 'Cross-platform development: web, Android, iOS, Brightsign, Samsung Kiosk, …',
@@ -180,15 +204,18 @@ export default {
         journal: {
             title: 'JOURNAL DU CAPITAINE',
             description: `Video games are my first passion, and writing is my second passion. I have naturally decided to make a website to bring together these two passions. Made with Wordpress, this website allows me to post articles related to video games.`,
+            resume: `Video games are my first passion, and writing is my second passion. With Wordpress, I've decided to bring together these two passions by making a website.`,
             skills: {
                 one: 'Personal project',
                 two: 'Wordpress',
                 three: 'Responsive'
-            }
+            },
+            link: 'journalducapitaine.fr'
         },
         apiExplorer: {
             title: 'API EXPLORER - TUTORIAL',
             description: `Internship report during my bachelor's year. The objective was to replace an onboarding tutorial created with Appcues for new users. The purpose was to no longer be financially dependent on the product and to have its own tutorial. I had to adapt to a large existing project and reproduce the old tutorial with new improvements, like the possibility of going back to previous steps.`,
+            resume: `Internship report during my bachelor's year. Objective : replace an onboarding tutorial (created with Appcues) for new users.`,
             skills: {
                 one: 'Adapt to an existing project',
                 two: 'Javascript, jQuery',
@@ -245,6 +272,8 @@ export default {
         myIceTool: {
             title: 'MY ICE TOOL - STUDENT PROJECT',
             description: `My Ice Tool is a student project I did during my professional degree in Gap. The objective was to make a website to visualize the climbing conditions on icefalls in specific places. Our team had to imagine the visual identity, manage the authentication, add comments, the use of the Google Maps api to draw areas and set points of interest, store temperatures history in the database with a cron, …`,
+            resume: `Student project to visualize the climbing conditions on icefalls in specific places.
+            Using the Laravel PHP framework, the Google Maps API, and a MySQL database.`,
             skills: {
                 one: 'PHP Laravel framework',
                 two: 'Google Maps API',

@@ -10,11 +10,11 @@ export const ProjectMixin = {
         imageToExtend: null
     }),
     watch: {
-        showDialog: function (value) {
+        showDialog: function (value: boolean) {
             // Fix Vuetify bug where two scrollbars are displaying at the same for v-dialog in full screen
             // See https://github.com/vuetifyjs/vuetify/issues/5356
             const html = document.querySelector('html');
-            html.style.overflowY = value
+            html!.style.overflowY = value
                 ? 'hidden'
                 : 'unset';
         }
