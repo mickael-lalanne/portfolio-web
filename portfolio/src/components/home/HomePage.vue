@@ -18,18 +18,7 @@
                     />
                 </div>
             </div>
-            <div class="flag-container mt-5 mr-5">
-                <img
-                    alt="France flag"
-                    :src="require('@/assets/images/france_flag.png')"
-                    @click="onLanguageFlagClick('fr')"
-                />
-                <img
-                    alt="Canada flag"
-                    :src="require('@/assets/images/canada_flag.png')"
-                    @click="onLanguageFlagClick('en')"
-                />
-            </div>
+            <LanguageSelector />
             <vue-particles
                 class="particles-container"
                 color="#dedede"
@@ -70,7 +59,7 @@ import ContactSection from "@/components/contact/ContactSection.vue";
 import CategorySeparator from "@/components/home/CategorySeparator.vue";
 import CustomButton from "@/components/shared/CustomButton.vue";
 import CustomFooter from "@/components/home/CustomFooter.vue";
-import { useRouter } from 'vue-router'
+import LanguageSelector from "@/components/home/LanguageSelector.vue";
 
 export default {
     name: "HomePage",
@@ -81,17 +70,13 @@ export default {
         ProjectsSection,
         CategorySeparator,
         CustomButton,
-        CustomFooter
+        CustomFooter,
+        LanguageSelector
     },
     data: () => ({
         selectedCategory: "presentation",
         scrollTimeout: null,
     }),
-    setup() {
-        const router = useRouter();
-
-        return { router };
-    },
     mounted: function() {
         this.$refs.homeContainer.addEventListener(
             "scroll",
@@ -118,7 +103,6 @@ export default {
       `);
     },
     methods: {
-
         scrollToCategory: function(categoryName = "presentation") {
             this.selectedCategory = categoryName;
             const categoryElt = this.$refs[categoryName + "Category"].$el;
@@ -132,14 +116,6 @@ export default {
                 top: elementPosition - 30,
                 behavior: "smooth",
             });
-        },
-        /**
-         * Called when the french or canadian flag has been clicked
-         * Update route to set the "lang" query parameter
-         * @param {string} lang 'fr' or 'en'
-         */
-        onLanguageFlagClick: function(lang) {
-            this.router.push({ path: '/', query: { lang } });
         },
         onHomeContainerScroll: function() {
             if (!this.scrollTimeout) {
@@ -253,19 +229,6 @@ export default {
     color: #fcf1f1;
     font-family: 'Raleway', sans-serif;
     font-display: swap;
-}
-.flag-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1;
-    img {
-        cursor: pointer;
-        transition: all .2s ease-in-out;
-        &:hover {
-            transform: scale(1.1);
-        }
-    }
 }
 .english-warning {
     font-size: 16px;
