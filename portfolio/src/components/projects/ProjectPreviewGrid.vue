@@ -77,6 +77,7 @@ export default {
     overflow: hidden;
     transition-duration: 500ms;
     transition-property: transform;
+    background-color: rgb(var(--v-theme-dark));
     &:hover {
         transform: scale(1.05);
         border-width: 1.5px;
