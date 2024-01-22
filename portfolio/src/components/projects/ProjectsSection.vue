@@ -18,7 +18,10 @@
         >
             <div
                 class="no-project-container d-flex align-center"
-                :class="{ 'no-project-out-animation': soLongAnimation }"
+                :class="{
+                    'no-project-out-animation': soLongAnimation,
+                    'no-project-in-animation': !soLongAnimation
+                }"
             >
                 <img
                     alt="Sad Mario Logo"
@@ -211,6 +214,18 @@ $no-project-height: 325px;
 /************************
        ANIMATIONS
 ************************/
+@keyframes oofAnimation {
+    0% {
+        opacity: 0;
+        transform: translateX(-2000px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(30px);
+    }
+    80% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
 @keyframes soLongAnimation {
     25% {
         transform: translate(0, 0) rotate3d(0, 0, 0, 0);
@@ -243,6 +258,10 @@ $no-project-height: 325px;
 .no-project-out-animation {
     animation-name: soLongAnimation;
     animation-duration: 4s;
+}
+.no-project-in-animation {
+    animation-name: oofAnimation;
+    animation-duration: 1s;
 }
 .projects-in-animation {
     animation-name: showProjectsAnimation;
