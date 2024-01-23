@@ -7,6 +7,7 @@
             <div class="timeline__event__icon ">
                 <img
                     alt="Stratejia Logo"
+                    style="padding: 10px;"
                     :src="require('@/assets/images/timeline/stratejiaLogo.png')"
                 />
                 <div class="timeline__event__date">

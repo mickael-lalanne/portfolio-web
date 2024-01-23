@@ -7,7 +7,7 @@
         >
             <span>FR</span>
             <img
-                v-if="isActive('fr')"
+                v-show="isActive('fr')"
                 alt="France flag"
                 :src="require('@/assets/images/fr.svg')"
             />
@@ -20,7 +20,7 @@
         >
             <span>EN</span>
             <img
-                v-if="isActive('en')"
+                v-show="isActive('en')"
                 alt="Canada flag"
                 :src="require('@/assets/images/ca.svg')"
             />
