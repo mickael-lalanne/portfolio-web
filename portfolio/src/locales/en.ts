@@ -6,12 +6,22 @@ export default {
         shortPresentation: 'Hi, I\'m <h1>Mickaël Lalanne</h1>.<br> I\'m a web developer.',
         workButton: 'SEE MY WORK',
         presentationTitle: 'WHO\'S THERE ?',
-        nameAndAge: 'Mickaël Lalanne, 26 years old',
-        place: 'Québec, Canada',
-        mail: 'mickael.lalanne03@gmail.com',
-        work: 'Full Stack Developer for Stratéjia',
-        workPrevious: 'Previously R&D Engineer for Intuiface.',
-        hobbies: 'Video games, Video montage, Writing',
+        cobeBlock: {
+            about: 'ABOUT ME',
+            mail: 'mickael.lalanne03@gmail.com',
+            writing: 'writing',
+            hobbies: 'hobbies',
+            location: 'location',
+            name: 'full-name',
+            wellBeing: 'well-being',
+            jv: 'video-games',
+            work: 'current-work',
+            walk: 'walk',
+            gym: 'gym',
+            sleep: 'sleep',
+            dietetic: 'dietetic',
+            informations: 'personal-information'
+        },
         career: {
             stratejia: {
                 date: 'Since 2023',

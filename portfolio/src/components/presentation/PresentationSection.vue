@@ -8,47 +8,7 @@
                 class="profile-picture"
                 :src="require('@/assets/images/profilePicture.png')"
             />
-            <div class="resume-categories-container">
-                <div class="resume-category">
-                    <v-icon class="resume-icon" color="rgb(var(--v-theme-primary))">
-                        mdi-account-circle-outline
-                    </v-icon>
-                    <div class="resume-text">{{ $vuetify.locale.t('$vuetify.homepage.nameAndAge') }}</div>
-                </div>
-                <div class="resume-category">
-                    <v-icon class="resume-icon" color="rgb(var(--v-theme-primary))">
-                        mdi-pin-outline
-                    </v-icon>
-                    <div class="resume-text">{{ $vuetify.locale.t('$vuetify.homepage.place') }}</div>
-                </div>
-                <div class="resume-category">
-                    <v-icon class="resume-icon" color="rgb(var(--v-theme-primary))">
-                        mdi-email-outline
-                    </v-icon>
-                    <div class="resume-text">
-                        <a href="mailto:mickael.lalanne03@gmail.com">
-                            {{ $vuetify.locale.t('$vuetify.homepage.mail') }}
-                        </a>
-                    </div>
-                </div>
-                <div class="resume-category">
-                    <v-icon class="resume-icon" color="rgb(var(--v-theme-primary))">
-                        mdi-briefcase-outline
-                    </v-icon>
-                    <div class="resume-text resume-work">
-                        {{ $vuetify.locale.t('$vuetify.homepage.work') }}
-                        <div class="resume-work-previous">
-                            {{ $vuetify.locale.t('$vuetify.homepage.workPrevious') }}
-                        </div>
-                    </div>
-                </div>
-                <div class="resume-category">
-                    <v-icon class="resume-icon" color="rgb(var(--v-theme-primary))">
-                        mdi-gamepad-square-outline
-                    </v-icon>
-                    <div class="resume-text">{{ $vuetify.locale.t('$vuetify.homepage.hobbies') }}</div>
-                </div>
-            </div>
+            <CodeBlockInformations />
         </div>
         <div class="d-flex align-center keywords-social-container">
             <div class="keywords-container mt-10">
@@ -93,10 +53,11 @@
 
 <script>
 import CustomTimeline from "@/components/presentation/CustomTimeline.vue";
+import CodeBlockInformations from "@/components/presentation/CodeBlockInformations.vue";
 
 export default {
     name: "PresentationSection",
-    components: { CustomTimeline },
+    components: { CustomTimeline, CodeBlockInformations },
     data: () => ({
         KEYWORDS: [
             { name: "Vue.js", link: "https://vuejs.org/" },
@@ -193,30 +154,6 @@ export default {
     width: 44px;
     min-width: 44px;
     border-radius: 10%;
-}
-.resume-category {
-    display: flex;
-    font-size: 18px;
-    margin-top: 16px;
-}
-.resume-text {
-    display: flex;
-    align-items: center;
-    color: black;
-    & a {
-        text-decoration: none;
-        color: unset;
-        &:hover {
-            color: rgb(var(--v-theme-primary));
-        }
-    }
-}
-.resume-work {
-    display: block;
-    .resume-work-previous {
-        font-size: 14px;
-        font-style: italic;
-    }
 }
 .keywords-container {
     margin-top: 20px;
@@ -334,19 +271,16 @@ ul li a:hover span:nth-child(4) {
 // RESPONSIVE
 
 // Medium devices (tablets, max 768px and less)
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     .profile-container {
         flex-direction: column;
     }
     .keywords-social-container {
         flex-direction: column-reverse;
     }
-    .resume-categories-container {
-        margin: 0 10%;
-    }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 850px) {
     .profile-picture {
         margin-right: 48px;
     }

@@ -112,6 +112,7 @@ export default {
     width: 800px;
     height: auto;
     border: 2px solid white;
+    pointer-events: none;
 }
 .skills-container {
     margin-top: 20px;
