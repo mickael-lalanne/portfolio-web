@@ -98,7 +98,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fcf1f1;
+    color: rgb(var(--v-theme-light));
 }
 .menu-item:hover {
     background-color: #404347;

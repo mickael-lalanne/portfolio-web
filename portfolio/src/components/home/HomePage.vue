@@ -44,7 +44,6 @@
             />
             <PresentationSection ref="presentationCategory" />
             <ProjectsSection ref="projectsCategory" />
-            <CategorySeparator />
             <ContactSection ref="contactCategory" />
             <CustomFooter />
         </div>
@@ -56,7 +55,6 @@ import MainMenu from "@/components/home/MainMenu.vue";
 import PresentationSection from "@/components/presentation/PresentationSection.vue";
 import ProjectsSection from "@/components/projects/ProjectsSection.vue";
 import ContactSection from "@/components/contact/ContactSection.vue";
-import CategorySeparator from "@/components/home/CategorySeparator.vue";
 import CustomButton from "@/components/shared/CustomButton.vue";
 import CustomFooter from "@/components/home/CustomFooter.vue";
 import LanguageSelector from "@/components/home/LanguageSelector.vue";
@@ -68,7 +66,6 @@ export default {
         PresentationSection,
         ContactSection,
         ProjectsSection,
-        CategorySeparator,
         CustomButton,
         CustomFooter,
         LanguageSelector
@@ -214,11 +211,12 @@ export default {
 
 <style lang="scss" scoped>
 .home-container {
-    background-color: rgb(var(--v-theme-dark));
+    background-color: rgb(var(--v-theme-light));
     overflow: hidden;
     position: relative;
 }
 .home-content-container {
+    background-color: rgb(var(--v-theme-dark));
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -226,7 +224,7 @@ export default {
     justify-content: center;
     text-align: center;
     font-size: 42px;
-    color: #fcf1f1;
+    color: rgb(var(--v-theme-light));
     font-family: 'Raleway', sans-serif;
     font-display: swap;
 }

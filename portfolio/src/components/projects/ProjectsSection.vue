@@ -235,11 +235,15 @@ export default {
 $no-project-height: 325px;
 $no-project-margin: 25px;
 $project-preview-height: 935px;
+$arrow-separator-height: 100px;
 .all-projects-container {
     background-color: rgb(var(--v-theme-dark));
-    padding: 50px 5%;
+    padding-inline: 5%;
     padding-top: 70px;
     overflow: hidden;
+    position: relative;
+    padding-bottom: calc(#{$arrow-separator-height} + 50px);
+    clip-path: polygon(100% 0, 100% 92%, 50% 100%, 0 92%, 0 0);
 }
 .section-title {
     color: rgb(var(--v-theme-primary));
@@ -265,7 +269,7 @@ $project-preview-height: 935px;
 .no-project-container {
     width: fit-content;
     padding: 50px;
-    background-color: #fcf1f1;
+    background-color:rgb(var(--v-theme-light));
     border-radius: 5px;
     position: absolute;
     height: $no-project-height;
@@ -377,6 +381,10 @@ $project-preview-height: 935px;
 
 // Medium devices (tablets, max 768px and less)
 @media (max-width: 768px) {
+    .all-projects-container {
+        clip-path: polygon(100% 0, 100% 96.5%, 50% 100%, 0 96.5%, 0 0);
+        padding-bottom: calc(#{$arrow-separator-height} + 0px);
+    }
     .no-project-container {
         flex-direction: column;
         padding: 20px;
