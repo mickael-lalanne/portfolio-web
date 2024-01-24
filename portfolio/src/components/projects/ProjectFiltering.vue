@@ -74,7 +74,6 @@ export default defineComponent({
 .projects-filtering {
     display: flex;
     align-items: flex-end;
-    margin-bottom: 65px;
     .search-field {
         margin-right: 20px;
         max-width: 300px;
@@ -85,22 +84,17 @@ export default defineComponent({
     }
 }
 
-// Medium devices (tablets, max 768px and less)
-@media (max-width: 768px) {
+@media (max-width: 550px) {
     .projects-filtering {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 30px;
-        .search-field {
-            margin-right: 0;
-            max-width: unset;
-            width: 100%;
-            margin-bottom: 8px;
-        }
+        position: relative;
         .view-mode {
-            margin-top: 0;
+            position: absolute;
+            z-index: 1;
+            top: -55px;
+            right: -10px;
         }
     }
+    
 }
 </style>
 

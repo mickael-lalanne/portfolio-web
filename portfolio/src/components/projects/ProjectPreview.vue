@@ -1,49 +1,43 @@
 <template>
-    <div>
-        <div
-            class="project-preview-container"
-            :style="`flex-direction: ${reverse ? 'row-reverse' : 'row'}`"
-        >
-            <div class="project-left">
-                <div class="project-preview-title">{{ title }}</div>
-                <div class="project-description" v-html="description"></div>
-                <!-- By default, the link open a new dialog to see more details -->
-                <div v-if="!this.$slots.projectLink" class="project-link" @click="showDialog = true">
-                    {{ $vuetify.locale.t('$vuetify.projects.detail') }}
-                </div>
-                <!-- Otherwise, display custom link -->
-                <div v-else class="project-link">
-                    <slot name="projectLink" class="project-link"></slot>
-                </div>
-                <div class="skills-container">
-                    <div
-                        v-for="skill in skills"
-                        :key="skill"
-                        class="skill-container"
-                    >
-                        <img
-                            alt="Check icone"
-                            class="skill-icon"
-                            :src="require('@/assets/images/check.png')"
-                        />
-                        {{ $vuetify.locale.t(skill) }}
-                    </div>
+    <div class="project-preview-container">
+        <div class="project-left">
+            <div class="project-preview-title">{{ title }}</div>
+            <div class="project-description" v-html="description"></div>
+            <!-- By default, the link open a new dialog to see more details -->
+            <div v-if="!this.$slots.projectLink" class="project-link" @click="showDialog = true">
+                {{ $vuetify.locale.t('$vuetify.projects.detail') }}
+            </div>
+            <!-- Otherwise, display custom link -->
+            <div v-else class="project-link">
+                <slot name="projectLink" class="project-link"></slot>
+            </div>
+            <div class="skills-container">
+                <div
+                    v-for="skill in skills"
+                    :key="skill"
+                    class="skill-container"
+                >
+                    <img
+                        alt="Check icone"
+                        class="skill-icon"
+                        :src="require('@/assets/images/check.png')"
+                    />
+                    {{ $vuetify.locale.t(skill) }}
                 </div>
             </div>
-            <div>
-                <img
-                    :alt="`Image de preview ${imgName}`"
-                    class="project-img"
-                    :src="require(`@/assets/images/${imgName}`)"
-                />
-            </div>
-            <component
-                :is="dialogComponent"
-                :showDialog="showDialog"
-                @close="showDialog = false"
-            ></component>
         </div>
-        <slot name="append"></slot>
+        <div>
+            <img
+                :alt="`Image de preview ${imgName}`"
+                class="project-img"
+                :src="require(`@/assets/images/${imgName}`)"
+            />
+        </div>
+        <component
+            :is="dialogComponent"
+            :showDialog="showDialog"
+            @close="showDialog = false"
+        ></component>
     </div>
 </template>
 
@@ -68,7 +62,6 @@ export default {
         description: { type: String },
         imgName: { type: String },
         skills: { type: Array },
-        reverse: { type: Boolean },
         dialogComponent: { type: String },
     },
     data: () => ({
@@ -82,7 +75,11 @@ export default {
     display: flex;
     color: white;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    min-width: 100%;
+    transform: rotateX(180deg);
+    scroll-snap-align: center;
+    padding-inline: 5px;
 }
 .project-left {
     width: 80%;
@@ -93,6 +90,7 @@ export default {
     font-size: 40px;
     font-weight: bold;
     padding-bottom: 15px;
+    padding-top: 20px;
 }
 .project-description {
     margin-bottom: 10px;
@@ -112,7 +110,7 @@ export default {
     display: block;
     max-width: 80vw;
     width: 800px;
-    height: 100%;
+    height: auto;
     border: 2px solid white;
 }
 .skills-container {
@@ -140,13 +138,13 @@ export default {
     }
     .project-left {
         margin: 0px 0px;
-        width: 100%;
+        min-width: 95%;
     }
 }
 // Small devices (landscape phones, max 576px and less)
 @media (max-width: 576px) {
     .project-img {
-        max-width: 95vw;
+        max-width: 100%;
     }
 }
 </style>

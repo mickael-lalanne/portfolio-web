@@ -14,7 +14,7 @@
         <!-- NO PROJECT MESSAGE -->
         <div
             v-if="filteredProjects.length === 0 || soLongAnimation"
-            style="position: relative"
+            style="position: relative; width: 100%;"
         >
             <div
                 class="no-project-container d-flex align-center"
@@ -45,29 +45,53 @@
                 :src="require('@/assets/images/marioHammer.gif')"
             />
         </div>
+        <!-- Used to simulate a translate animation for project in animation -->
+        <div
+            v-if="filteredProjects.length === 0 || soLongAnimation"
+            class="no-project-spacer"
+            :class="{ 'no-project-spacer-out': soLongAnimation }"
+        ></div>
 
         <!-- PROJECTS -->
-        <div v-if="viewMode === EViewMode.line" :class="{ 'projects-in-animation': soLongAnimation }">
-            <ProjectPreview
-                v-for="(project, i) in filteredProjects"
-                :key="i"
-                :reverse="!!(i % 2)"
-                :title="$vuetify.locale.t(project.title)"
-                :description="$vuetify.locale.t(project.description)"
-                :skills="project.skills"
-                :imgName="project.imgName"
-                :dialogComponent="project.dialogComponent"
-            >
-                <template v-slot:projectLink v-if="project.projectLink">
-                    <a :href="project.projectLink" target="_blank" style="color: rgb(var(--v-theme-primary));">
-                        {{ $vuetify.locale.t(project.projectLinkText!) }}
-                    </a>
-                </template>
-
-                <template v-slot:append>
-                    <v-divider class="project-divider"></v-divider>
-                </template>
-            </ProjectPreview>
+        <div
+            v-if="viewMode === EViewMode.line"
+            :class="{ 'projects-in-animation': soLongAnimation }"
+            class="line-view-container"
+        >
+            <div class="pagination-container">
+                <v-btn
+                    v-show="filteredProjects.length > 0 && projectPosition > 0"
+                    variant="text"
+                    icon="mdi-arrow-left-thin"
+                    color="primary"
+                    @click="scrollToProject(projectPosition - 1)"
+                ></v-btn>
+                <v-spacer></v-spacer>
+                <v-btn
+                    v-show="filteredProjects.length > 0 && projectPosition < filteredProjects.length - 1"
+                    variant="text"
+                    icon="mdi-arrow-right-thin"
+                    color="primary"
+                    @click="scrollToProject(projectPosition + 1)"
+                ></v-btn>
+            </div>
+            <div class="line-view-projects-container" ref="lineModeContainer">
+                <ProjectPreview
+                    v-for="(project, i) in filteredProjects"
+                    :key="i"
+                    :title="$vuetify.locale.t(project.title)"
+                    :description="$vuetify.locale.t(project.description)"
+                    :skills="project.skills"
+                    :imgName="project.imgName"
+                    :dialogComponent="project.dialogComponent"
+                >
+                    <template v-slot:projectLink v-if="project.projectLink">
+                        <a :href="project.projectLink" target="_blank" style="color: rgb(var(--v-theme-primary));">
+                            {{ $vuetify.locale.t(project.projectLinkText!) }}
+                        </a>
+                    </template>
+                </ProjectPreview>
+            </div>
         </div>
         <div v-else class="grid-view-container" :class="{ 'projects-in-animation': soLongAnimation }">
             <ProjectPreviewGrid
@@ -121,6 +145,21 @@ export default {
         },
     },
     watch: {
+        viewMode: function(newMode: EViewMode) {
+            // As the line mode HTML container is deleted when switching mode
+            // The scroll event is not longer called
+            // So we have to to create an event listener again 
+            if (newMode === EViewMode.line) {
+                setTimeout(() => {
+                    this.$refs.lineModeContainer
+                        .addEventListener('scroll', this.determineProjectPosition);
+                    this.determineProjectPosition();
+                }, 100);
+            } else {
+                this.$refs.lineModeContainer
+                    .removeEventListener('scroll', this.determineProjectPosition);
+            }
+        },
         filteredProjects: function(newFilters: Project[], oldFilters: Project[]) {
             if (oldFilters && oldFilters.length > 0 && newFilters.length === 0) {
                 new Audio(require('@/assets/sounds/oof.mp3')).play();
@@ -156,17 +195,51 @@ export default {
         technologies: ['Front-end', 'Back-end', 'Full-stack'],
         sortOptions: ['Date', 'Alphabetical'],
         soLongAnimation: false as boolean,
-        showMarioHammerAnimation: false as boolean
+        showMarioHammerAnimation: false as boolean,
+        projectPosition: 0 as number
     }),
+    mounted: function() {
+        this.$refs.lineModeContainer
+            .addEventListener('scroll', this.determineProjectPosition );
+    },
+    beforeDestroy() { 
+        this.$refs.lineModeContainer
+            .removeEventListener('scroll', this.determineProjectPosition);
+    },
+    methods: {
+        /**
+         * Called when scrolling in the project section
+         * Determine the current position to know if we have to display the arrow buttons or not
+         */
+        determineProjectPosition(): void {
+            const containerElt: HTMLElement = this.$refs.lineModeContainer;
+            const scrollPercentage: number = containerElt.scrollLeft / containerElt.scrollWidth;
+            this.projectPosition = Math.round(scrollPercentage * this.filteredProjects.length);
+        },
+        /**
+         * Called when the next or previous arrow button has been clicked
+         * Scroll the projects section the desired project
+         * @param {number} targetProject project to scroll to
+         */
+        scrollToProject(targetProject: number): void {
+            const containerElt: HTMLElement = this.$refs.lineModeContainer;
+            const targetPercentage: number = targetProject / this.filteredProjects.length;
+            const targetPosition: number = targetPercentage * containerElt.scrollWidth;
+            containerElt.scrollLeft = targetPosition;
+        }
+    }
 };
 </script>
 
 <style lang="scss" scoped>
 $no-project-height: 325px;
+$no-project-margin: 25px;
+$project-preview-height: 935px;
 .all-projects-container {
     background-color: rgb(var(--v-theme-dark));
-    padding: 100px 5%;
+    padding: 50px 5%;
     padding-top: 70px;
+    overflow: hidden;
 }
 .section-title {
     color: rgb(var(--v-theme-primary));
@@ -194,8 +267,9 @@ $no-project-height: 325px;
     padding: 50px;
     background-color: #fcf1f1;
     border-radius: 5px;
-    position: relative;
+    position: absolute;
     height: $no-project-height;
+    margin-top: $no-project-margin;
     .no-project-title {
         font-size: 22px;
         font-weight: 700;
@@ -203,6 +277,26 @@ $no-project-height: 325px;
     .sad-mario-img {
         min-height: 0;
     }
+}
+.no-project-spacer {
+    height: $no-project-height;
+}
+.line-view-projects-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    transform: rotateX(180deg);
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+        height: 2px;
+    }
+    &::-webkit-scrollbar-track:horizontal {
+        background-color: white;
+    }
+}
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 .grid-view-container {
@@ -240,19 +334,18 @@ $no-project-height: 325px;
         opacity: 0;
         max-height: 0;
     }
-    25% {
-        transform: translateY(0px);
-        max-height: 0;
-        opacity: 0;
-    }
-    70% {
-        transform: translateY((-$no-project-height));
-        max-height: 10000px;
-        opacity: 1;
-    }
+    70% { opacity: 1;}
     100% {
-        transform: translateY((-$no-project-height));
+        opacity: 1;
+        max-height: 10000px;
     }
+}
+
+@keyframes noProjectOutAnimation {
+    0% { height: $no-project-height; }
+    30% { height: $no-project-height; }
+    70% { height: 0; }
+    100% { height: 0; }
 }
 
 .no-project-out-animation {
@@ -265,12 +358,20 @@ $no-project-height: 325px;
 }
 .projects-in-animation {
     animation-name: showProjectsAnimation;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    max-height: 0;
+    opacity: 0;
+}
+.no-project-spacer-out {
+    animation-name: noProjectOutAnimation;
     animation-duration: 4s;
 }
 
+
 .mario-animation-img {
     position: absolute;
-    bottom: -52px;
+    top: 252px;
     left: -62px;
 }
 
