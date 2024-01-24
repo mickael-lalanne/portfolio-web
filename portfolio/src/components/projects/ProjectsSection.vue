@@ -75,7 +75,12 @@
                     @click="scrollToProject(projectPosition + 1)"
                 ></v-btn>
             </div>
-            <div class="line-view-projects-container" ref="lineModeContainer">
+            <div
+                class="line-view-projects-container"
+                ref="lineModeContainer"
+                @mouseup="onLineProjectsMouseUp"
+                @mousedown="onLineProjectsMouseDown"
+            >
                 <ProjectPreview
                     v-for="(project, i) in filteredProjects"
                     :key="i"
@@ -196,7 +201,8 @@ export default {
         sortOptions: ['Date', 'Alphabetical'],
         soLongAnimation: false as boolean,
         showMarioHammerAnimation: false as boolean,
-        projectPosition: 0 as number
+        projectPosition: 0 as number,
+        mousePosition: { top: 0, left: 0, x: 0, y: 0 } as { top: number, left: number, x: number, y: number }
     }),
     mounted: function() {
         this.$refs.lineModeContainer
@@ -226,6 +232,49 @@ export default {
             const targetPercentage: number = targetProject / this.filteredProjects.length;
             const targetPosition: number = targetPercentage * containerElt.scrollWidth;
             containerElt.scrollLeft = targetPosition;
+        },
+        /**
+         * Called on mouse down event
+         * Apply style to makes scroll pleasant and add listeners
+         * @param {MouseEvent} e mouse down event
+         */
+        onLineProjectsMouseDown(e: MouseEvent): void {
+            this.$refs.lineModeContainer.style.scrollSnapType = 'none';
+            this.$refs.lineModeContainer.style.scrollBehavior = 'auto';
+            this.$refs.lineModeContainer.style.cursor = 'grabbing';
+            this.mousePosition = {
+                left: this.$refs.lineModeContainer.scrollLeft,
+                top: this.$refs.lineModeContainer.scrollTop,
+                // Get the current mouse position
+                x: e.clientX,
+                y: e.clientY,
+            };
+            document.addEventListener('mousemove', this.onLineProjectsMouseMove);
+            document.addEventListener('mouseup', this.onLineProjectsMouseUp);
+        },
+        /**
+         * Called on mouse up event
+         * Reset styles and remove listeners
+         */
+        onLineProjectsMouseUp(): void {
+            this.$refs.lineModeContainer.style.scrollSnapType = 'x mandatory';
+            this.$refs.lineModeContainer.style.scrollBehavior = 'smooth';
+            this.$refs.lineModeContainer.style.cursor = 'grab';
+            document.removeEventListener('mousemove', this.onLineProjectsMouseMove);
+            document.removeEventListener('mouseup', this.onLineProjectsMouseUp);
+        },
+        /**
+         * Called after a mouse down when the mouse is mooving
+         * Scroll in the project lists (line mode only)
+         * @param {MouseEvent} e mouse mouve event
+         */
+        onLineProjectsMouseMove(e: MouseEvent): void {
+            // How far the mouse has been moved
+            const dx = e.clientX - this.mousePosition.x;
+            const dy = e.clientY - this.mousePosition.y;
+            // Scroll in project lists
+            this.$refs.lineModeContainer.scrollTop = this.mousePosition.top - dy;
+            this.$refs.lineModeContainer.scrollLeft = this.mousePosition.left - dx;
         }
     }
 };
@@ -291,6 +340,8 @@ $arrow-separator-height: 100px;
     scroll-snap-type: x mandatory;
     transform: rotateX(180deg);
     scroll-behavior: smooth;
+    cursor: grab;
+    user-select: none;
     &::-webkit-scrollbar {
         height: 2px;
     }
@@ -371,7 +422,6 @@ $arrow-separator-height: 100px;
     animation-name: noProjectOutAnimation;
     animation-duration: 4s;
 }
-
 
 .mario-animation-img {
     position: absolute;
