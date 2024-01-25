@@ -42,7 +42,7 @@
                 <p class="property">
                     <span class="color-2">age</span><span>: </span>
                     <span class="color-preview-1"></span
-                    ><span class="">#26</span>;
+                    ><span class="">#{{getAge()}}</span>;
                 </p>
                 <p class="property">
                     <span class="color-2">{{ $vuetify.locale.t('$vuetify.homepage.cobeBlock.location') }}</span><span>: </span>
@@ -102,6 +102,11 @@ export default {
     name: 'CodeBlockInformations',
     components: {},
     data: () => ({}),
+    methods: {
+        getAge() {
+            return Math.floor((new Date() - new Date('1996-09-03').getTime()) / 3.15576e+10);
+        },
+    }
 };
 </script>
 
