@@ -59,6 +59,9 @@ body {
     font-family: 'Raleway', sans-serif;
     font-display: swap;
 }
+html {
+    view-timeline: --scrollAnimationTimeline block;
+}
 
 // Scrollbar
 ::-webkit-scrollbar-track {

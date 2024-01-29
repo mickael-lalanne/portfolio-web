@@ -2,7 +2,7 @@
     <div class="timeline pb-12 pt-6">
         <!-- STRATEJIA -->
         <div
-            class="timeline__event  animated fadeInUp delay-3s timeline__event--type2"
+            class="timeline__event scroll-animation-1 animated fadeInUp delay-3s timeline__event--type2"
         >
             <div class="timeline__event__icon ">
                 <img
@@ -32,7 +32,7 @@
         </div>
         <!-- INTUIFACE -->
         <div
-            class="timeline__event  animated fadeInUp delay-3s timeline__event--type1"
+            class="timeline__event scroll-animation-2 animated fadeInUp delay-3s timeline__event--type1"
         >
             <div class="timeline__event__icon ">
                 <img
@@ -61,7 +61,7 @@
         </div>
         <!-- LICENCE PRO -->
         <div
-            class="timeline__event animated fadeInUp delay-2s timeline__event--type2"
+            class="timeline__event scroll-animation-3 animated fadeInUp delay-2s timeline__event--type2"
         >
             <div class="timeline__event__icon">
                 <img
@@ -83,7 +83,7 @@
         </div>
         <!-- BTS -->
         <div
-            class="timeline__event animated fadeInUp delay-1s timeline__event--type1"
+            class="timeline__event scroll-animation-4 animated fadeInUp delay-1s timeline__event--type1"
         >
             <div class="timeline__event__icon">
                 <img
@@ -104,7 +104,7 @@
             </div>
         </div>
         <!-- BAC -->
-        <div class="timeline__event animated fadeInUp timeline__event--type2">
+        <div class="timeline__event scroll-animation-5 animated fadeInUp timeline__event--type2">
             <div class="timeline__event__icon">
                 <img
                     alt="Logo diplôme"
@@ -141,6 +141,8 @@ export default {
     flex-direction: column;
 
     &__event {
+        animation: auto linear appear both;
+        animation-timeline: --scrollAnimationTimeline;
         background: #fff;
         position: relative;
         display: flex;
@@ -247,6 +249,33 @@ export default {
             }
         }
     }
+}
+
+// SCROLL ANIMATIONS
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    to {
+        opacity: 1;
+        transform: scaleX(1.0);
+    }
+}
+.scroll-animation-1 {
+    animation-range: cover 25% cover 35%;
+}
+.scroll-animation-2 {
+    animation-range: cover 27.5% cover 37.5%;
+}
+.scroll-animation-3 {
+    animation-range: cover 30% cover 40%;
+}
+.scroll-animation-4 {
+    animation-range: cover 32.5% cover 42.5%;
+}
+.scroll-animation-5 {
+    animation-range: cover 35% cover 45%;
 }
 
 @media (max-width: 786px) {
