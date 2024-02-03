@@ -68,7 +68,6 @@ export default {
     align-items: center;
     justify-content: center;
     border: 1px solid white;
-    border-radius: 10px;
     width: 350px;
     aspect-ratio: 1;
     margin: 20px;
@@ -117,8 +116,6 @@ export default {
     display: block;
     width: 100%;
     border-top: 1px solid white;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
     z-index: 1;
 }
 .hover-background {

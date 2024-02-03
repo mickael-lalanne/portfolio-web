@@ -1,7 +1,6 @@
 <template>
     <div id="contact" class="contact-container">
-        <h2 class="section-title">Contact</h2>
-        <div class="title-separator"></div>
+        <GlitchText class="mb-6" text="Contact" />
         <div class="section-subtitle">
             {{ $vuetify.locale.t('$vuetify.contact.text') }}
         </div>
@@ -41,9 +40,11 @@
 </template>
 
 <script>
+import GlitchText from "@/components/shared/GlitchText.vue";
+
 export default {
     name: "ContactSection",
-    components: {},
+    components: { GlitchText },
     data: () => ({
         valid: true,
         message: "",
@@ -72,6 +73,7 @@ export default {
 .contact-container {
     background-color: rgb(var(--v-theme-light));
     padding: 75px 0;
+    padding-top: 55px;
 }
 .form-container {
     display: flex;
@@ -82,14 +84,6 @@ export default {
     padding: 30px;
     box-shadow: 0 30px 60px -12px rgb(50 50 93 / 25%),
         0 18px 36px -18px rgb(0 0 0 / 30%), 0 -12px 36px -8px rgb(0 0 0 / 3%);
-}
-.title-separator {
-    width: 100px;
-    height: 4px;
-    background-color: rgb(var(--v-theme-primary));
-    text-align: center;
-    margin: auto;
-    margin-bottom: 65px;
 }
 .section-title {
     color: rgb(var(--v-theme-primary));

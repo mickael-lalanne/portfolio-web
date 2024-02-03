@@ -1,7 +1,6 @@
 <template>
     <div id="presentation" class="presentation-container">
-        <h2 class="resume-name pt-12">{{ $vuetify.locale.t('$vuetify.homepage.presentationTitle') }}</h2>
-        <div class="title-separator mb-12"></div>
+        <GlitchText class="my-6" :text="$vuetify.locale.t('$vuetify.homepage.presentationTitle')" />
         <div class="profile-container">
             <img
                 alt="Profile Picture"
@@ -54,10 +53,11 @@
 <script>
 import CustomTimeline from "@/components/presentation/CustomTimeline.vue";
 import CodeBlockInformations from "@/components/presentation/CodeBlockInformations.vue";
+import GlitchText from "@/components/shared/GlitchText.vue";
 
 export default {
     name: "PresentationSection",
-    components: { CustomTimeline, CodeBlockInformations },
+    components: { CustomTimeline, CodeBlockInformations, GlitchText },
     data: () => ({
         KEYWORDS: [
             { name: "Vue.js", link: "https://vuejs.org/" },
@@ -172,13 +172,6 @@ export default {
     &:hover {
         color: rgb(var(--v-theme-secondaryHover)) !important;
     }
-}
-.title-separator {
-    width: 100px;
-    height: 4px;
-    background-color: rgb(var(--v-theme-primary));
-    text-align: center;
-    margin: auto;
 }
 
 // Github icon

@@ -1,7 +1,6 @@
 <template>
     <div id="projects" class="all-projects-container bg-grid-effect">
-        <h2 class="section-title">{{ $vuetify.locale.t('$vuetify.projects.title') }}</h2>
-        <div class="title-separator"></div>
+        <GlitchText class="mb-6" :text="$vuetify.locale.t('$vuetify.projects.title')" />
 
         <!-- FILTERING -->
         <ProjectFiltering
@@ -126,12 +125,13 @@
 import ProjectPreview from "@/components/projects/ProjectPreview.vue";
 import ProjectPreviewGrid from "@/components/projects/ProjectPreviewGrid.vue";
 import ProjectFiltering from "@/components/projects/ProjectFiltering.vue";
+import GlitchText from "@/components/shared/GlitchText.vue";
 import { EProjectType, Project, EViewMode, DEFAULT_TYPES } from "@/models/Project";
 import { PROJECTS } from './projectsList';
 
 export default {
     name: "ProjectsSection",
-    components: { ProjectPreview, ProjectPreviewGrid, ProjectFiltering },
+    components: { ProjectPreview, ProjectPreviewGrid, ProjectFiltering, GlitchText },
     computed: {
         filteredProjects(): Project[] {
             let filteredProjects: Project[] = PROJECTS.slice();
@@ -288,7 +288,7 @@ $arrow-separator-height: 100px;
 .all-projects-container {
     background-color: rgb(var(--v-theme-dark));
     padding-inline: 5%;
-    padding-top: 70px;
+    padding-top: 35px;
     overflow: hidden;
     position: relative;
     padding-bottom: calc(#{$arrow-separator-height} + 50px);
@@ -305,14 +305,6 @@ $arrow-separator-height: 100px;
     opacity: 100;
     color: white;
     margin: 7vh 0;
-}
-.title-separator {
-    width: 100px;
-    height: 4px;
-    background-color:rgb(var(--v-theme-primary));
-    text-align: center;
-    margin: auto;
-    margin-bottom: 30px;
 }
 
 .no-project-container {
