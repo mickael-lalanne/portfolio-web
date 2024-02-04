@@ -137,6 +137,12 @@ html {
     background-position: center;
 }
 
+.vs-code-design {
+    background-color: #1d1e22;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
 // RESPONSIVE
 
 @media (max-width: 1200px) {

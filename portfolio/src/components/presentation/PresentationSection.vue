@@ -2,11 +2,12 @@
     <div id="presentation" class="presentation-container">
         <GlitchText class="my-6" :text="$vuetify.locale.t('$vuetify.homepage.presentationTitle')" />
         <div class="profile-container">
-            <img
-                alt="Profile Picture"
-                class="profile-picture"
-                :src="require('@/assets/images/profilePicture.png')"
-            />
+            <div class="profile-picture vs-code-design">
+                <img
+                    alt="Profile Picture"
+                    :src="require('@/assets/images/profilePicture.webp')"
+                />
+            </div>
             <CodeBlockInformations />
         </div>
         <div class="d-flex align-center keywords-social-container">
@@ -134,11 +135,6 @@ export default {
     align-items: center;
     justify-content: center;
 }
-.profile-picture {
-    width: 400px;
-    height: 100%;
-    max-width: 80vw;
-}
 .resume-name {
     color: rgb(var(--v-theme-primary));
     text-align: center;
@@ -261,6 +257,65 @@ ul li a:hover span:nth-child(4) {
     }
 }
 
+// PROFILE PICTURE
+@mixin styling($box-size) {
+    $anime-time: 8s;
+
+    $clip-distance: .03;
+    $clip-size: $box-size * (1 + $clip-distance * 2);
+    $path-width: 3.5px;
+
+    $main-color: var(--v-theme-secondary);
+
+    %full-fill {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .profile-picture {
+        @extend %full-fill;
+        z-index: 1;
+        min-width: $box-size;
+        max-width: $box-size;
+        height: $box-size;
+        margin: 15px 0;
+        box-shadow: inset 0 0 0 1px rgba($main-color, .5);
+        position: relative;
+
+        &::before,
+        &::after {
+            @extend %full-fill;
+            content: '';
+            z-index: -1;
+            margin: -1 * $clip-distance * 100%;
+            box-shadow: inset 0 0 0 $path-width; 
+            animation: clipMe $anime-time linear infinite;
+        }
+
+        &::before {
+            animation-delay: $anime-time * -.5;
+            color: rgba(var(--v-theme-primary));
+        }
+        &::after {
+            color: rgba(var(--v-theme-secondary));
+        }
+        img {
+            width: 100%;
+            padding: 15px;
+        }
+    }
+    @keyframes clipMe {
+        0%, 100% {clip: rect(0px, $clip-size, $path-width, 0px); }
+        25% {clip: rect(0px, $path-width, $clip-size, 0px); }
+        50% {clip: rect($clip-size - $path-width, $clip-size, $clip-size, 0px); }
+        75% {clip: rect(0px, $clip-size, $clip-size, $clip-size - $path-width); }
+    }
+}
+@include styling($box-size: 380px);
+
 // RESPONSIVE
 
 // Medium devices (tablets, max 768px and less)
@@ -299,5 +354,9 @@ ul li a:hover span:nth-child(4) {
     .timeline-container {
         padding: 0 10px;
     }
+}
+
+@media screen and (max-width: 420px) {
+    @include styling($box-size: 320px);
 }
 </style>

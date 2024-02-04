@@ -1,5 +1,5 @@
 <template>
-    <div class="code-editor">
+    <div class="code-editor vs-code-design">
         <div class="header">
             <span class="title">{{ $vuetify.locale.t('$vuetify.homepage.cobeBlock.about') }}</span>
             <svg
@@ -114,9 +114,6 @@ export default {
 .code-editor {
     min-width: 380px;
     max-width: 380px;
-    background-color: #1d1e22;
-    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
     padding: 2px;
 }
 
@@ -203,6 +200,12 @@ a {
 @media (max-width: 850px) {
     .code-editor {
         margin-top: 20px;
+    }
+}
+@media (max-width: 400px) {
+    .code-editor {
+        margin: 20px 20px 0 20px;
+        min-width: unset;
     }
 }
 </style>
