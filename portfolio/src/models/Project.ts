@@ -14,7 +14,8 @@ export interface Project {
     type: EProjectType;
     dialogComponent?: string;
     tags: string[],
-    resume: string
+    resume: string,
+    date: string
 };
 
 export enum EViewMode {

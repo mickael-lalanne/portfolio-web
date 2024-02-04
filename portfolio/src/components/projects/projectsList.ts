@@ -20,7 +20,8 @@ export const PROJECTS: Project[] = [
         projectLink: 'https://www.mickael-lalanne.fr/triple-triad/',
         projectLinkText: '$vuetify.projects.tripleTriad.link',
         type: EProjectType.personal,
-        tags: [...vueTags, ...fullStackTags, 'typescript', 'aws', 'amplify', 'graphql', 'vue router', 'pinia']
+        tags: [...vueTags, ...fullStackTags, 'typescript', 'aws', 'amplify', 'graphql', 'vue router', 'pinia'],
+        date: '2023'
     },
     // Intuiface HCMS
     {
@@ -36,7 +37,8 @@ export const PROJECTS: Project[] = [
         imgName: 'hcms.png',
         dialogComponent: 'ProjectHCMS',
         type: EProjectType.professional,
-        tags: [...vueTags, ...fullStackTags, 'typescript', 'aws', 'end to end', 'e2e', 'lambda', 's3', 'jest', 'cypress', 'jenkins', 'vuex']
+        tags: [...vueTags, ...fullStackTags, 'typescript', 'aws', 'end to end', 'e2e', 'lambda', 's3', 'jest', 'cypress', 'jenkins', 'vuex'],
+        date: '2019 / 2022'
     },
     // Intuiface Analytics
     {
@@ -52,7 +54,8 @@ export const PROJECTS: Project[] = [
         imgName: 'analytics.png',
         dialogComponent: 'ProjectAnalytics',
         type: EProjectType.professional,
-        tags: [...fullStackTags, 'typescript', 'angular', 'highcharts', 'mongodb', 'mongo', 'end to end', 'e2e']
+        tags: [...fullStackTags, 'typescript', 'angular', 'highcharts', 'mongodb', 'mongo', 'end to end', 'e2e'],
+        date: '2018 / 2019'
     },
     // Intuiface Player Next Gen
     {
@@ -67,7 +70,8 @@ export const PROJECTS: Project[] = [
         imgName: 'player.png',
         dialogComponent: 'ProjectPLN',
         type: EProjectType.professional,
-        tags: [...frontTags, 'angular', 'typescript', 'jest', 'ios', 'android', 'brightsign', 'samsung']
+        tags: [...frontTags, 'angular', 'typescript', 'jest', 'ios', 'android', 'brightsign', 'samsung'],
+        date: '2023'
     },
     // Journal du capitaine
     {
@@ -83,7 +87,8 @@ export const PROJECTS: Project[] = [
         projectLink: 'https://journalducapitaine.fr/',
         projectLinkText: '$vuetify.projects.journal.link',
         type: EProjectType.personal,
-        tags: [...frontTags, 'wordpress', 'cms', 'responsive']
+        tags: [...frontTags, 'wordpress', 'cms', 'responsive'],
+        date: '2019'
     },
     // Tutoriel API Explorer
     {
@@ -98,7 +103,8 @@ export const PROJECTS: Project[] = [
         imgName: 'apiExplorer.png',
         dialogComponent: 'ProjectApiExplorer',
         type: EProjectType.professional,
-        tags: [...frontTags, 'e2e', 'end to end', 'jquery', 'stage', 'internship']
+        tags: [...frontTags, 'e2e', 'end to end', 'jquery', 'stage', 'internship'],
+        date: '2018'
     },
     // My Ice Tool
     {
@@ -113,6 +119,7 @@ export const PROJECTS: Project[] = [
         imgName: 'myIceTool.png',
         dialogComponent: 'ProjectMyIceTool',
         type: EProjectType.student,
-        tags: [...fullStackTags, 'php', 'laravel', 'cron', 'sql', 'mysql', 'api']
+        tags: [...fullStackTags, 'php', 'laravel', 'cron', 'sql', 'mysql', 'api'],
+        date: '2017'
     },
 ]

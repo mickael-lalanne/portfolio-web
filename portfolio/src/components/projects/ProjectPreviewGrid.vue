@@ -4,6 +4,7 @@
         @click="onProjectClick"
     >
         <div class="project-preview-title">{{ title }}</div>
+        <div class="project-preview-date">{{ date }}</div>
         <div class="project-preview-resume" v-html="resume"></div>
         <v-spacer></v-spacer>
         <div class="hover-background"></div>
@@ -42,6 +43,7 @@ export default {
         imgName: { type: String },
         dialogComponent: { type: String },
         projectLink: { type: String },
+        date: { type: String },
     },
     data: () => ({
         showDialog: false,
@@ -103,6 +105,15 @@ export default {
     align-items: center;
     padding: 0 50px;
     z-index: 1;
+}
+.project-preview-date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+    padding: 7px;
+    border-bottom-left-radius: 10px;
 }
 .project-preview-resume {
     padding: 0 15px 15px 15px;

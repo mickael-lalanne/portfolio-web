@@ -1,7 +1,10 @@
 <template>
     <div class="project-preview-container">
         <div class="project-left">
-            <div class="project-preview-title">{{ title }}</div>
+            <div class="project-preview-title">
+                {{ title }}
+                <span class="project-date">- {{ date }}</span>
+            </div>
             <div class="project-description" v-html="description"></div>
             <!-- By default, the link open a new dialog to see more details -->
             <div v-if="!this.$slots.projectLink" class="project-link" @click="showDialog = true">
@@ -63,6 +66,7 @@ export default {
         imgName: { type: String },
         skills: { type: Array },
         dialogComponent: { type: String },
+        date: { type: String },
     },
     data: () => ({
         showDialog: false,
@@ -91,6 +95,15 @@ export default {
     font-weight: bold;
     padding-bottom: 15px;
     padding-top: 20px;
+}
+.project-date {
+    color: rgb(var(--v-theme-primary));
+    font-size: 20px;
+    font-weight: normal;
+    margin-left: 15px;
+    font-family: Roboto;
+    font-style: italic;
+    white-space: nowrap;
 }
 .project-description {
     margin-bottom: 10px;

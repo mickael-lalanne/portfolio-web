@@ -51,7 +51,7 @@
             :class="{ 'no-project-spacer-out': soLongAnimation }"
         ></div>
 
-        <!-- PROJECTS -->
+        <!-- LINE VIEW -->
         <div
             v-if="viewMode === EViewMode.line"
             :class="{ 'projects-in-animation': soLongAnimation }"
@@ -88,6 +88,7 @@
                     :skills="project.skills"
                     :imgName="project.imgName"
                     :dialogComponent="project.dialogComponent"
+                    :date="project.date"
                 >
                     <template v-slot:projectLink v-if="project.projectLink">
                         <a :href="project.projectLink" target="_blank" style="color: rgb(var(--v-theme-primary));">
@@ -97,6 +98,7 @@
                 </ProjectPreview>
             </div>
         </div>
+        <!-- GRID VIEW -->
         <div v-else class="grid-view-container" :class="{ 'projects-in-animation': soLongAnimation }">
             <ProjectPreviewGrid
                 v-for="(project, i) in filteredProjects"
@@ -106,6 +108,7 @@
                 :imgName="project.imgName"
                 :dialogComponent="project.dialogComponent"
                 :project-link="project.projectLink"
+                :date="project.date"
             >
                 <template v-slot:projectLink v-if="project.projectLink">
                     <a :href="project.projectLink" target="_blank" style="color: rgb(var(--v-theme-primary));">

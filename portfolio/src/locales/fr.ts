@@ -176,7 +176,7 @@ export default {
             Développement multiplateforme (web, Android, iOS, ...) avec Angular. Tests unitaires avec Jest.`,
             skills: {
                 one: 'Angular',
-                two: 'Développement multiplateforme: web, Android, iOS, Brightsign, Samsung Kiosk, …',
+                two: 'Développement multiplateforme: Android, iOS, Brightsign, Samsung Kiosk, …',
                 three: 'Tests unitaires avec jest'
             },
             details: {
