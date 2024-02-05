@@ -8,6 +8,23 @@ const fullStackTags: string[] = ['full stack', 'full-stack', 'fullstack', ...fro
 export const PROJECTS: Project[] = [
     // Triple Triad
     {
+        title: '$vuetify.projects.rankingApp.title',
+        description: '$vuetify.projects.rankingApp.description',
+        resume: '$vuetify.projects.rankingApp.resume',
+        skills: [
+            '$vuetify.projects.rankingApp.skills.one',
+            '$vuetify.projects.rankingApp.skills.two',
+            '$vuetify.projects.rankingApp.skills.three',
+            '$vuetify.projects.rankingApp.skills.four'
+        ],
+        imgName: 'rankingApp.gif',
+        dialogComponent: 'ProjectRankingApp',
+        type: EProjectType.personal,
+        tags: [], // TODO
+        date: '2024'
+    },
+    // Triple Triad
+    {
         title: '$vuetify.projects.tripleTriad.title',
         description: '$vuetify.projects.tripleTriad.description',
         resume: '$vuetify.projects.tripleTriad.resume',

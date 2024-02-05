@@ -76,6 +76,21 @@ export default {
                 student: 'Étudiant'
             }
         },
+        rankingApp: {
+            title: 'RANKING APP',
+            description: `Application web permettant aux utilisateurs de créer leurs propres templates et tierlists.
+            Utilisation de <a href="https://clerk.com/" target="_blank">Clerk</a> pour l'authentification et <a href="https://cloudinary.com/" target="_blank">Cloudinary</a> pour la gestion d'images. Application sécurisée selon les normes de l'<a href="https://owasp.org/" target="_blank">OWASP</a> et <u>entièrement responsive</u>.
+            Code publique et disponible en cliquant <a href="https://github.com/mickael-lalanne/ranking-app/" target="_blank">ici</a> !`,
+            link: 'Code publique et disponible en cliquant ici !',
+            resume: `Application web pour créer des templates et des tierlists.<br>
+            Front-end avec Typescript et React. Back-end avec .NET et PostgreSQL.`,
+            skills: {
+                one: 'Projet personnel',
+                two: 'Backend en C# avec .NET et base de données PostgreSQL',
+                three: 'Frontend en Typescript avec React / Redux',
+                four: 'Tests unitaires avec Jest, tests end to end avec Cypress'
+            }
+        },
         tripleTriad: {
             title: 'TRIPLE TRIAD',
             description: `Reproduction du mini jeu <i>“Triple Triad”</i> issu de l'univers de <i>Final Fantasy</i>. Développée en typescript avec Vue.js, cette version du jeu permet de:
