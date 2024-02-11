@@ -24,10 +24,80 @@
                 @click="imageToExtend = 's0Si75U.gif'"
             />
 
-            <!-- TODO : SUMMARY -->
+            <!-- SUMMARY -->
+            <div class="summary">
+                <div class="section-title">{{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.summary') }}</div>
+                <ul class="ml-6">
+                    <li class="summary-title">
+                        <a href="#ra-resume">
+                            {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.inShortTitle') }}
+                        </a>
+                    </li>
+                    <li class="summary-title">
+                        <a href="#ra-why">
+                            {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.whyTitle') }}
+                        </a>
+                    </li>
+                    <li class="summary-title">
+                        <a href="#ra-auth-image">
+                            {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.authImageTitle') }}
+                        </a>
+                        <div class="summary-subtitle">
+                            <a href="#ra-auth">
+                                {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.authTitle') }}
+                            </a>
+                        </div>
+                        <div class="summary-subtitle">
+                            <a href="#ra-image">
+                                {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.imageTitle') }}
+                            </a>
+                        </div>
+                    </li>
+                    <li class="summary-title">
+                        <a href="#ra-ui-ux">
+                            {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.UiUxTitle') }}
+                        </a>
+                    </li>
+                    <li class="summary-title">
+                        <a href="#ra-tests">
+                            {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.testsTitle') }}
+                        </a>
+                        <div class="summary-subtitle">
+                            <a href="#ra-unit-tests">
+                                {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.unitTestsTitle') }}
+                            </a>
+                        </div>
+                        <div class="summary-subtitle">
+                            <a href="#ra-e2e-tests">
+                                {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.e2eTitle') }}
+                            </a>
+                        </div>
+                    </li>
+                    <li class="summary-title">
+                        <a href="#ra-github-actions">
+                            {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.gaTitle') }}
+                        </a>
+                    </li>
+                    <li class="summary-title">
+                        <a href="#ra-security">
+                            {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.securityTitle') }}
+                        </a>
+                    </li>
+                    <li class="summary-title">
+                        <a href="#ra-ssl">
+                            {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.sslTitle') }}
+                        </a>
+                    </li>
+                    <li class="summary-title">
+                        <a href="#ra-conclusion">
+                            {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.conclusionTitle') }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
             <!-- In short -->
-            <div class="section-title">
+            <div id="ra-resume" class="section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.inShortTitle') }}
             </div>
             <div
@@ -44,7 +114,7 @@
             ></div>
 
             <!-- Why -->
-            <div class="section-title">
+            <div id="ra-why" class="section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.whyTitle') }}
             </div>
             <div
@@ -53,7 +123,7 @@
             ></div>
 
             <!-- Authentication and Image Management -->
-            <div class="section-title">
+            <div id="ra-auth-image" class="section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.authImageTitle') }}
             </div>
             <div
@@ -61,14 +131,14 @@
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.authImageContent')"
             ></div>
 
-            <div class="section-content-title">
+            <div id="ra-auth" class="section-content-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.authTitle') }}
             </div>
             <div
                 class="section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.authContent')"
             ></div>
-            <div class="section-content-title">
+            <div id="ra-image" class="section-content-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.imageTitle') }}
             </div>
             <div
@@ -77,7 +147,7 @@
             ></div>
 
             <!-- Responsive and UX Design -->
-            <div class="section-title">
+            <div id="ra-ui-ux" class="section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.UiUxTitle') }}
             </div>
             <div
@@ -179,10 +249,11 @@
             ></div>
 
             <!-- Tests -->
-            <div class="section-title">
+            <div id="ra-tests" class="section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.testsTitle') }}
             </div>
             <div
+                id="ra-unit-tests"
                 class="section-content-title pt-0"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.unitTestsTitle')"
             ></div>
@@ -197,6 +268,7 @@
                 @click="imageToExtend = 's0Si75U.gif'"
             />
             <div
+                id="ra-e2e-tests"
                 class="section-content-title"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.e2eTitle')"
             ></div>
@@ -222,7 +294,7 @@
             />
 
             <!-- Github Actions -->
-            <div class="section-title">
+            <div id="ra-github-actions" class="section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.gaTitle') }}
             </div>
             <div
@@ -231,7 +303,7 @@
             ></div>
 
             <!-- Security -->
-            <div class="section-title">
+            <div id="ra-security" class="section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.securityTitle') }}
             </div>
             <div
@@ -282,7 +354,7 @@
             />
 
             <!-- SSL -->
-            <div class="section-title">
+            <div id="ra-ssl" class="section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.sslTitle') }}
             </div>
             <div
@@ -291,7 +363,7 @@
             ></div>
 
             <!-- Conclusion -->
-            <div class="section-title">
+            <div id="ra-conclusion" class="section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.conclusionTitle') }}
             </div>
             <div
@@ -344,6 +416,12 @@ export default defineComponent({
 .ranking-app-img {
     margin-top: 5px;
     margin-bottom: 15px;
+}
+
+.summary {
+    .summary-subtitle {
+        margin-left: 30px;
+    }
 }
 </style>
 

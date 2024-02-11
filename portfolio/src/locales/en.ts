@@ -90,6 +90,7 @@ export default {
                 four: 'Unit tests with Jest, end to end tests with Cypress'
             },
             details: {
+                summary: 'Summary',
                 inShortTitle: 'In short',
                 inShortList: `- Typescript front-end with <a href="https://fr.react.dev/" target="_blank">React</a> (and <a href="https://redux.js.org/" target="_blank">Redux</a> for state management)
                 - C# back-end with .NET (<a href="https://dotnet.microsoft.com/en-us/apps/aspnet" target="_blank">ASP.NET Core</a>)
