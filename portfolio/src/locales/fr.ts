@@ -56,8 +56,8 @@ export default {
         contact: 'Contact'
     },
     shared: {
-        detail: 'DÉTAIL',
-        by: 'Par'
+        by: 'Par',
+        close: 'Fermer'
     },
     projects: {
         title: 'Projets',
