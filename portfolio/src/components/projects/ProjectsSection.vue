@@ -91,7 +91,7 @@
                     :date="project.date"
                 >
                     <template v-slot:projectLink v-if="project.projectLink">
-                        <a :href="project.projectLink" target="_blank" style="color: rgb(var(--v-theme-primary));">
+                        <a :href="project.projectLink" target="_blank">
                             {{ $vuetify.locale.t(project.projectLinkText!) }}
                         </a>
                     </template>
@@ -111,7 +111,7 @@
                 :date="project.date"
             >
                 <template v-slot:projectLink v-if="project.projectLink">
-                    <a :href="project.projectLink" target="_blank" style="color: rgb(var(--v-theme-primary));">
+                    <a :href="project.projectLink" target="_blank">
                         {{ $vuetify.locale.t(project.projectLinkText!) }}
                     </a>
                 </template>
@@ -313,7 +313,7 @@ $arrow-separator-height: 100px;
 .no-project-container {
     width: fit-content;
     padding: 50px;
-    background-color:rgb(var(--v-theme-light));
+    background-color: rgb(var(--v-theme-light));
     border-radius: 5px;
     position: absolute;
     height: $no-project-height;
@@ -353,6 +353,19 @@ $arrow-separator-height: 100px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.project-link {
+    a {
+        color: rgb(var(--v-theme-primary));
+        text-decoration: unset;
+        text-transform: uppercase;
+    }
+    &:hover {
+        a {
+            color: white;
+        }
+    }
 }
 
 /************************

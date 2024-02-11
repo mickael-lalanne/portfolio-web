@@ -114,12 +114,23 @@ export default {
     white-space: pre-line;
 }
 .project-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 16px;
     cursor: pointer;
-    text-decoration: underline;
-    padding-top: 10px;
+    padding: 7.5px 0;
     color: rgb(var(--v-theme-primary));
     font-weight: bold;
+    border: 1px solid rgb(var(--v-theme-primary));
+    &:hover {
+        background-color: rgb(var(--v-theme-primary));
+        border-color: white;
+        color: white;
+        a {
+            color: white !important;
+        }
+    }
 }
 .project-img {
     display: block;

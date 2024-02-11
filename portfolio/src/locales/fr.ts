@@ -61,7 +61,7 @@ export default {
     },
     projects: {
         title: 'Projets',
-        detail: 'DÉTAIL',
+        detail: 'EN VOIR PLUS',
         noProject: {
             title: 'Il semblerait qu\'aucun projet ne corresponde à vos filtres.',
             subtitle: 'Faites plaisir à Mario en modifiant ou en effaçant vos filtres !'

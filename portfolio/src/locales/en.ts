@@ -61,7 +61,7 @@ export default {
     },
     projects: {
         title: 'Projects',
-        detail: 'DETAIL',
+        detail: 'SEE MORE',
         noProject: {
             title: 'It seems no project is matching your filters.',
             subtitle: 'Make Mario happy by changing or clearing your filters !'
