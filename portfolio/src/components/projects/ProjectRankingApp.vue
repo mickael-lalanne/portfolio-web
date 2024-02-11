@@ -29,67 +29,67 @@
                 <div class="section-title">{{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.summary') }}</div>
                 <ul class="ml-6">
                     <li class="summary-title">
-                        <a href="#ra-resume">
+                        <a @click="scrollToPart('inShort')">
                             {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.inShortTitle') }}
                         </a>
                     </li>
                     <li class="summary-title">
-                        <a href="#ra-why">
+                        <a @click="scrollToPart('why')">
                             {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.whyTitle') }}
                         </a>
                     </li>
                     <li class="summary-title">
-                        <a href="#ra-auth-image">
+                        <a @click="scrollToPart('authImage')">
                             {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.authImageTitle') }}
                         </a>
                         <div class="summary-subtitle">
-                            <a href="#ra-auth">
+                            <a @click="scrollToPart('auth')">
                                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.authTitle') }}
                             </a>
                         </div>
                         <div class="summary-subtitle">
-                            <a href="#ra-image">
+                            <a @click="scrollToPart('image')">
                                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.imageTitle') }}
                             </a>
                         </div>
                     </li>
                     <li class="summary-title">
-                        <a href="#ra-ui-ux">
+                        <a @click="scrollToPart('uiUx')">
                             {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.UiUxTitle') }}
                         </a>
                     </li>
                     <li class="summary-title">
-                        <a href="#ra-tests">
+                        <a @click="scrollToPart('tests')">
                             {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.testsTitle') }}
                         </a>
                         <div class="summary-subtitle">
-                            <a href="#ra-unit-tests">
+                            <a @click="scrollToPart('unitTests')">
                                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.unitTestsTitle') }}
                             </a>
                         </div>
                         <div class="summary-subtitle">
-                            <a href="#ra-e2e-tests">
+                            <a @click="scrollToPart('e2eTests')">
                                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.e2eTitle') }}
                             </a>
                         </div>
                     </li>
                     <li class="summary-title">
-                        <a href="#ra-github-actions">
+                        <a @click="scrollToPart('githubActions')">
                             {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.gaTitle') }}
                         </a>
                     </li>
                     <li class="summary-title">
-                        <a href="#ra-security">
+                        <a @click="scrollToPart('security')">
                             {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.securityTitle') }}
                         </a>
                     </li>
                     <li class="summary-title">
-                        <a href="#ra-ssl">
+                        <a @click="scrollToPart('ssl')">
                             {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.sslTitle') }}
                         </a>
                     </li>
                     <li class="summary-title">
-                        <a href="#ra-conclusion">
+                        <a @click="scrollToPart('conclusion')">
                             {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.conclusionTitle') }}
                         </a>
                     </li>
@@ -97,7 +97,7 @@
             </div>
 
             <!-- In short -->
-            <div id="ra-resume" class="section-title">
+            <div ref="inShort" class="section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.inShortTitle') }}
             </div>
             <div
@@ -114,7 +114,7 @@
             ></div>
 
             <!-- Why -->
-            <div id="ra-why" class="section-title">
+            <div ref="why" class="section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.whyTitle') }}
             </div>
             <div
@@ -123,7 +123,7 @@
             ></div>
 
             <!-- Authentication and Image Management -->
-            <div id="ra-auth-image" class="section-title">
+            <div ref="authImage" class="section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.authImageTitle') }}
             </div>
             <div
@@ -131,14 +131,14 @@
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.authImageContent')"
             ></div>
 
-            <div id="ra-auth" class="section-content-title">
+            <div ref="auth" class="section-content-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.authTitle') }}
             </div>
             <div
                 class="section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.authContent')"
             ></div>
-            <div id="ra-image" class="section-content-title">
+            <div ref="image" class="section-content-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.imageTitle') }}
             </div>
             <div
@@ -147,7 +147,7 @@
             ></div>
 
             <!-- Responsive and UX Design -->
-            <div id="ra-ui-ux" class="section-title">
+            <div ref="uiUx" class="section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.UiUxTitle') }}
             </div>
             <div
@@ -249,11 +249,11 @@
             ></div>
 
             <!-- Tests -->
-            <div id="ra-tests" class="section-title">
+            <div ref="tests" class="section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.testsTitle') }}
             </div>
             <div
-                id="ra-unit-tests"
+                ref="unitTests"
                 class="section-content-title pt-0"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.unitTestsTitle')"
             ></div>
@@ -268,7 +268,7 @@
                 @click="imageToExtend = 's0Si75U.gif'"
             />
             <div
-                id="ra-e2e-tests"
+                ref="e2eTests"
                 class="section-content-title"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.e2eTitle')"
             ></div>
@@ -294,7 +294,7 @@
             />
 
             <!-- Github Actions -->
-            <div id="ra-github-actions" class="section-title">
+            <div ref="githubActions" class="section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.gaTitle') }}
             </div>
             <div
@@ -303,7 +303,7 @@
             ></div>
 
             <!-- Security -->
-            <div id="ra-security" class="section-title">
+            <div ref="security" class="section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.securityTitle') }}
             </div>
             <div
@@ -354,7 +354,7 @@
             />
 
             <!-- SSL -->
-            <div id="ra-ssl" class="section-title">
+            <div ref="ssl" class="section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.sslTitle') }}
             </div>
             <div
@@ -363,7 +363,7 @@
             ></div>
 
             <!-- Conclusion -->
-            <div id="ra-conclusion" class="section-title">
+            <div ref="conclusion" class="section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.conclusionTitle') }}
             </div>
             <div
@@ -386,17 +386,28 @@
     </v-dialog>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue';
-import { ProjectMixin } from '@/mixins/projectMixin.ts';
+import { ProjectMixin } from '@/mixins/projectMixin';
 
 export default defineComponent({
     mixins: [ProjectMixin],
-    name: "ProjectRankingApp"
+    name: "ProjectRankingApp",
+    methods: {
+        scrollToPart: function(ref: string) {
+            this.$refs[ref].scrollIntoView();
+        },
+    }
 });
 </script>
 
 <style lang="scss" scoped>
+.ranking-app-project-container {
+    scroll-behavior: smooth;
+    a {
+        cursor: pointer;
+    }
+}
 .project-title {
     text-align: center;
 }
