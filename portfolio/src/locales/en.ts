@@ -76,6 +76,126 @@ export default {
                 student: 'Student'
             }
         },
+        rankingApp: {
+            title: 'RANKING APP',
+            description: `Web application allowing users to create their own templates and tierlists.
+            Using <a href="https://clerk.com/" target="_blank">Clerk</a> for authentication and <a href="https://cloudinary.com/" target="_blank">Cloudinary</a> for image management. Security according to the <a href="https://owasp.org/" target="_blank">OWASP</a> recommendations and <u>fully responsive</u>.
+            Code is public and available by clicking <a href="https://github.com/mickael-lalanne/ranking-app/" target="_blank">here</a> !`,
+            resume: `Web application to create templates and tierlists.<br>
+            Front-end with Typescript and React. Back-end with .NET and PostgreSQL.`,
+            skills: {
+                one: 'Personal project',
+                two: 'C# backend with .NET and PostgreSQL database',
+                three: 'Typescript frontend with React / Redux',
+                four: 'Unit tests with Jest, end to end tests with Cypress'
+            },
+            details: {
+                inShortTitle: 'In short',
+                inShortList: `- Typescript front-end with <a href="https://fr.react.dev/" target="_blank">React</a> (and <a href="https://redux.js.org/" target="_blank">Redux</a> for state management)
+                - C# back-end with .NET (<a href="https://dotnet.microsoft.com/en-us/apps/aspnet" target="_blank">ASP.NET Core</a>)
+                - PostgreSQL database (<a href="https://neon.tech/" target="_blank">Neon</a> in prod)
+                - Authentication with <a href="https://clerk.com/" target="_blank">Clerk</a>
+                - Image management with <a href="https://cloudinary.com/" target="_blank">Cloudinary</a>
+                - Security according to the <a href="https://owasp.org/" target="_blank">OWASP</a> recommendations
+                - Automating testing and deployment on <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html" target="_blank">AWS Elastic Beanstalk</a> with <a href="https://docs.github.com/en/actions" target="_blank">Github Actions</a>
+                - Unit tests with <a href="https://testing-library.com/docs/react-testing-library/intro/" target="_blank">Jest</a> and <a href="https://testing-library.com/docs/react-testing-library/intro/" target="_blank">Testing Library</a>
+                - End to end tests with <a href="https://www.cypress.io/" target="_blank">Cypress</a>`,
+                inShortContent: 'Ranking App is a web application allowing users to create their own templates and tierlists. First, they create templates indicating a name, tiers and elements they wish to rank. Then, they use these templates to create tierlists. They can save their ranking and even download it as a PNG image.',
+                inShortCode: `All code is public and available at the following address : <a href="https://github.com/mickael-lalanne/ranking-app/" target="_blank">github.com/mickael-lalanne/ranking-app</a>`,
+                whyTitle: 'Why this project ?',
+                whyContent: `I landed in Quebec at the end of October, and at the beginning of November my job hunting began. I quickly realized that finding a front-end only opportunity with Vue.js may be complicated.
+                
+                However, I received the first feedback from what will become my next company: Stratejia. Like many companies in Quebec, their technology stack revolves around React and .NET, two technologies that I do not master. So I decided to take this <a href="https://www.youtube.com/watch?v=4RKuyp_bOhY" target="_blank">first course</a> to show my determination. After completing the tutorial and <a href="https://github.com/mickael-lalanne/ranking-app-react" target="_blank">publishing it on Github</a>, the project speaks to me and the desire to make a finished and personalized version comes to me.
+
+                This is when the Ranking App adventure begins and will keep me busy every day for the next 2 months. `,
+                authImageTitle: `Authentication and Image Management`,
+                authImageContent: `<a href="https://daily.dev/" target="_blank">daily.dev</a> is a web application that I use for my technology watch. It allowed me to draw my attention to two libraries that I had wanted to use for a while. Both offer an attractive free plan, so Ranking App was the perfect opportunity to give it a try.`,
+                authTitle: `Authentication with Clerk`,
+                authContent: `<a href="https://clerk.com/" target="_blank">Clerk</a> is an authentication platform allowing you to connect via password or social network (Google, Facebook, etc.), but also sending codes by e-mail or SMS. The platform also allows access to an online dashboard to manage its user base.
+
+                I really liked using Clerk, its implementation is easy, fast and customizable. The library allowed me to save a lot of time and to concentrate even more on the other aspects of my application.
+                
+                Looking back, I nevertheless think that Clerk is not the optimal choice for a .NET application, because the library does not provide an SDK for this technology. <a href="https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity?view=aspnetcore-8.0&tabs=visual-studio" target="_blank">Identity</a>, perfectly integrated with .NET and the Microsoft ecosystem, would certainly have been a better choice.
+                However, for a front-end only application, or with a Node.js server, I would not hesitate to reuse Clerk.`,
+                imageTitle: `Image management with Cloudinary`,
+                imageContent: `When the user creates Templates in Ranking App, he must choose images which must then be ranked in a Tierlist. Therefore, the images need to be hosted somewhere.
+                The AWS S3 service would have largely fulfilled this role and would certainly also have been a wiser choice. Cloudinary offers much more than storing images, the platform also allows you to transform, optimize and even analyze image or video media. Lots of services that I don't use in Ranking App.
+                However, its implementation is simple, fast, and secure. So I keep this library in mind for future projects that might require more than media storage.`,
+                UiUxTitle: `Responsive and UX Design`,
+                UiContent: `From a UI point of view, the application is fully responsive :`,
+                UxContent: `From a UX point of view, here are the different elements that I implemented to improve the user experience :`,
+                UxList: `- Confirmation popup when a user wants to delete a template. We explain to him that deleting a template also deletes ALL associated tierlists. As a result, we are forced to manually write the template name to validate the deletion.`,
+                UxList2 : `- The same goes for deleting a tierlist, without having to manually write the name of the tierlist because its deletion remains less important than a template. From a code perspective, the React component used is the same.`,
+                UxList3 : `- Loading indicator when retrieving the list of templates and tierlists on the server side.`,
+                UxList4 : `- Loading indicator when adding, modifying, and deleting a template or tierlist, <b>also preventing any possible user interaction</b>.`,
+                UxList5 : `- When adding a tier, you are allowed to select only the available tiers.`,
+                UxList6 : `- Info message when no template or tierlist exists.`,
+                UxList7 : `- Info message on the tierlists page when no template exists (the add button is then disabled).`,
+                UxList8 : `- D&D supported both on browsers AND on touch screens thanks to the <a href="https://react-dnd.github.io/react-dnd/about" target="_blank">react-dnd library</a>.`,
+                testsTitle: `Tests`,
+                unitTestsTitle: `Unit tests`,
+                unitTestsContent: `To unit test Ranking App, I chose <a href="https://jestjs.io/fr/" target="_blank">Jest</a>, a testing framework that I used a lot in a professional environment. However, <a href="https://redux.js.org/usage/writing-tests#ui-and-network-testing-tools" target="_blank">on the Redux recommendations</a>, I coupled it with the <a href="https://testing-library.com/docs/react-testing-library/intro/" target="_blank">React Testing Library</a>.
+
+                I had some difficulties in implementing it at first because the Testing Library <a href="https://testing-library.com/docs/guiding-principles/" target="_blank">philosophy</a> is different from what I was used to doing. Here, we position ourselves from the perspective of the end user: we base ourselves on DOM elements rather than on React components. As a result, we do not have access to the state of the application. For example, <b>instead of checking that our “color” variable has the value “red”, we instead ensure that the CSS applied to our DOM element has the value “red” in its “background-color” property</b>.
+                
+                Finally, I think this approach is a very good practice. Once implemented well, I have no doubt that it will be more effective than testing the application from a developer perspective.
+                
+                The coverage is far from perfect but I remain satisfied because it covers the parts of the code that I consider important. This is still more than enough for a personal project.`,
+                e2eTitle: `End to end test`,
+                e2eContent: `To test Ranking App end-to-end, I went with <a href="https://www.cypress.io/" target="_blank">Cypress</a>. The tests were separated into 3 parts, one for each page: the home page, the Templates page and the Tierlists page.
+                Here is what I find interesting to note:
+                
+                    <span>- <u>Authentication management</u> : be careful to only connect once at the start of the tests. Between each test, we use the <code>beforeEach</code> hook to keep cookies with <code>cy.session</code>. As a result, we avoid reaching the Clerk limit as specified in <a href="https://clerk.com/docs/testing/cypress#test-signed-in" target="_blank">their documentation</a>.</span>
+                    <span>- <u>Snapshot comparison</u> : using the <a href="https://github.com/cypress-visual-regression/cypress-visual-regression" target="_blank">cypress-visual-regression</a> plugin to detect potential visual regressions. Base snapshots are stored in the <a href="https://github.com/mickael-lalanne/ranking-app/tree/main/ClientApp/cypress/screenshots/base" target="_blank">cypress/screenshots/base</a> folder.</span>
+                    <span>- <u>Tests independence and integrity</u> : each test must be able to run independently of the others. This is done by calling a specific route from the server which deletes everything attached to the test account. Therefore, we are sure that all tests will start with the same basis.</span>
+                We also mock the server response for certain parts using <code>cy.intercept</code>. This is for example the case for the Tierlists page which requires having at least one template to be able to be used.`,
+                e2eCypressContent: `Overview of running tests in the cypress console :`,
+                gaTitle: `Github Actions`,
+                gaContent: `My technical watch also allowed me to discover Github Actions, a continuous integration and continuous delivery (CI/CD) tool. Until then, I had only used Jenkins or Azure Pipeline professionally.
+
+                So I took advantage of this personal project to test Github Actions by:
+                    <span>- automatically deploying on <a href="https://aws.amazon.com/elasticbeanstalk/" target="_blank">AWS Elastic Beanstalk</a> when code is published on the prod branch <i>(<a href="https://github.com/mickael-lalanne/ranking-app/blob/main/.github/workflows/deployment.yml" target="_blank">see this file</a>)</i></span>
+                    <span>- running unit tests with jest, regardless of the branch on which the code is published. A downloadable coverage artifact is also generated <i>(<a href="https://github.com/mickael-lalanne/ranking-app/blob/main/.github/workflows/deployment.yml" target="_blank">see this file</a>)</i></span>
+                
+                I would also have liked to automate end-to-end testing with Cypress. However, this requires access to a PostgreSQL database. Such a case would therefore have required a full-fledged dev environment, which is a little disproportionate in terms of costs for a project whose sole purpose is to be present in my portfolio. So I was content to run the end to end tests manually and locally.`,
+                securityTitle: `Security aspect`,
+                securityContent: `At the 2 companies I knew when making Ranking App, security has always occupied an important place. <a href="https://owasp.org/" target="_blank">OWASP<a/> is an international organization focused on improving software security. Along with its recommendations, here are the concepts I applied and find interesting to share :`,
+                securityList: `- Never have sensitive data visible directly in the code (like api keys or secret keys). To do this, I used Github environment variables, the ASP.NET <a href="https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-8.0&tabs=windows#secret-manager" target="_blank">Secret Manager</a> tool locally, and the environment variables of the EC2 machine in production.`,
+                securityList2: `- Prevent access to the API by unauthenticated users.
+                On the client side, I added the <a href="https://www.axios.com/" target="_blank">Axios</a> library to implement middleware for all my requests in order to populate the Authorization header with the token returned by Clerk <i>(<a href="https://github.com/mickael-lalanne/ranking-app/commit/c9e96c7a4ac71d2b87b1d81238e940c2bf665669#diff-b93619a54685643f8e49eb74c560eaee565465772a5175249e8615906c2c07e7" target="_blank">see this commit</a>)</i>.`,
+                securityList3: `On the server side, I check this token to confirm the identity of the user and prevent access to the Controllers to those who are not authenticated. For this I use the <code>[Authorize]</code> attribute <i>(<a href="https://github.com/mickael-lalanne/ranking-app/commit/b0bef71922a3c62867ce1795e47107bde17f5166#diff-0b69b473fe937040615d69f606751f61ddbc2e3a1849360ff2456c22afe88c0b" target="_blank">see this commit</a>)</i>.`,
+                securityList4: `- To avoid any <a href="https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html#:~:text=Insecure%20Direct%20Object%20Reference%20(IDOR,allowed%20to%20access%20specific%20data." target="_blank">IDOR</a> vulnerability (present in the OWASP top 10), I ensured that users can only access THEIR templates and THEIR tierlists. Initially, I passed the userId as a parameter to my requests, which is bad practice because a malicious individual could change this value to retrieve, modify or delete templates that do not belong to them. So I made the following changes:
+                    <span>- Server side: I rely on the authenticated user to retrieve their ID, and I check at each route that what they are trying to retrieve, modify or delete really belongs to them. If this is not the case, I return a 403 error: forbidden access. <i>(<a href="https://github.com/mickael-lalanne/ranking-app/commit/aa20fed59212ac70923689961b00f55d57df4208" target="_blank">see this commit</a>)</i>.</span>
+                    <span>- Client side: I simply stop sending the userId parameter to the server.</span>`,
+                securityList5: `- Still on OWASP recommendations, use <a href="https://securityheaders.com/" target="_blank">securityheaders.com</a> to add secure headers to the application.
+                    <span>- Ranking App score before adding headers :</span>`,
+                securityList6: `<span>- Ranking App score after adding headers :</span>`,
+                sslTitle: `Mickaël against SSL`,
+                sslContent: `Trying to have Ranking App accessible at <i>ranking-app.mickael-lalanne.fr</i> was the longest and most difficult part of the project. If the application is not currently available online, this is mainly due to the costs associated with HTTPS hosting.
+
+                Note that I already pay for a domain name and hosting with a certificate for the address <i>mickael-lalanne.fr</i>. It was therefore not an option for me to pay for a new certificate, I wanted to use mine.
+                
+                I still managed to implement the 2 following solutions, but neither satisfied me :
+                - <u>Deployment with AWS Elastic Beanstalk on a single EC2 instance</u>
+                I followed the following Amazon documentation: <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/SSLNET.SingleInstance.html" target="_blank">Terminating HTTPS on Amazon EC2 instances running .NET</a>. Unfortunately, the browser detected that the certificate was self-generated and displayed the following warning message: <i>ERR_CERT_AUTHORITY_INVALID</i>.
+                - <u>Deployment with AWS Elastic Beanstalk on a load balancer</u>
+                After days of searching, trying things, and getting stuck, I finally got what I wanted by following the <a href="https://medium.com/@chiragmehta900/adding-a-custom-domain-for-the-aws-elastic-beanstalk-application-using-route-53-1fd89f204651" target="_blank">Adding a custom domain for the AWS Elastic Beanstalk application using Route 53</a> tutorial.
+                Problem: after a few days, I realize that the price is almost 3 times higher than that of a single instance. It would have cost me around €30 per month, which is too expensive for this kind of project.
+                
+                I had also considered having the app accessible only via HTTP, but this was not possible with Clerk. In production mode, the authentication platform only works in HTTPS.`,
+                conclusionTitle: `Conclusion: What I learned`,
+                conclusionSubtitle1: `.NET and hosting`,
+                conclusionContent1: `It may seem silly, but I realized that for a .NET project (and this is also the case for a Node.js project), you need to have a machine that is running constantly and therefore pay for hosting.
+                If Ranking App really had to be accessible online, <b>I would certainly opt for a fully serverless environment</b>, based on AWS Lambda and API Gateway for example. This would avoid having to pay for a machine that is constantly running, and the costs would only be linked to actual usage, such as the number of calls to the API.`,
+                conclusionSubtitle2: `Prioritization and organization`,
+                conclusionContent2: `I quickly realized that if I wanted to implement EVERY idea that came into my head, the project would still be in progress and would probably never have seen the light of day. So I had to make choices, prioritize certain tasks and abandon others. I still noted a few ideas that I would like to implement for a potential V2, such as:
+                - Make Ranking App a PWA (Progressive Web App)
+                - The possibility of choosing a color for each of its thirds
+                - Error management with a monitoring tool like <a href="https://sentry.io/welcome/" target="_blank">Sentry</a> or <a href="https://newrelic.com/fr" target="_blank">New Relic</a>
+                - Improve test coverage
+                - Add more server-side checks (for example, that the name field of a template is not empty)`,
+            }
+        },
         tripleTriad: {
             title: 'TRIPLE TRIAD',
             description: `Reproduction of the <i>“Triple Triad”</i> minigame from the <i>Final Fantasy</i> universe. Developed in typescript with Vue.js, this version of the game allows you to:
