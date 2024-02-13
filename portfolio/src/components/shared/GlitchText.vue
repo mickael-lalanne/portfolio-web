@@ -1,7 +1,6 @@
 <template>
     <div class="container">
         <div class="glitch" :data-text="text">{{ text }}</div>
-        <div class="glow">{{ text }}</div>
     </div>
 </template>
 
@@ -94,13 +93,5 @@ export default {
             clip-path: inset(#{$top}px 0 #{$bottom}px 0);
         }
     }
-}
-
-.glow {
-    @extend .glitch;
-    text-shadow: 0 0 1000px rgb(223, 191, 191);
-    color: transparent;
-    position: absolute;
-    top: 0;
 }
 </style>
