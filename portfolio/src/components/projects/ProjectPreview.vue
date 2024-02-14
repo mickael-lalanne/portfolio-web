@@ -90,7 +90,7 @@ export default {
 .project-left {
     width: 80%;
     max-width: 770px;
-    margin: 0px 50px;
+    margin-right: 50px;
 }
 .project-preview-title {
     font-size: 40px;

@@ -57,22 +57,15 @@
             :class="{ 'projects-in-animation': soLongAnimation }"
             class="line-view-container"
         >
-            <div class="pagination-container">
-                <v-btn
-                    v-show="filteredProjects.length > 0 && projectPosition > 0"
-                    variant="text"
-                    icon="mdi-arrow-left-thin"
-                    color="primary"
-                    @click="scrollToProject(projectPosition - 1)"
-                ></v-btn>
-                <v-spacer></v-spacer>
-                <v-btn
-                    v-show="filteredProjects.length > 0 && projectPosition < filteredProjects.length - 1"
-                    variant="text"
-                    icon="mdi-arrow-right-thin"
-                    color="primary"
-                    @click="scrollToProject(projectPosition + 1)"
-                ></v-btn>
+            <!-- class="line-view-container d-flex align-center justify-center" -->
+            <div
+                class="pagination-btn pagination-left-btn"
+                :class="{
+                    'pagination-btn-hidden': !filteredProjects.length || projectPosition === 0
+                }"
+                @click="scrollToProject(projectPosition - 1)"
+            >
+                <v-icon color="primary" size="30">mdi-arrow-left-bold</v-icon>
             </div>
             <div
                 class="line-view-projects-container"
@@ -90,12 +83,23 @@
                     :dialogComponent="project.dialogComponent"
                     :date="project.date"
                 >
+                    <template v-slot:previousButton>
+                    </template>
                     <template v-slot:projectLink v-if="project.projectLink">
                         <a :href="project.projectLink" target="_blank">
                             {{ $vuetify.locale.t(project.projectLinkText!) }}
                         </a>
                     </template>
                 </ProjectPreview>
+            </div>
+            <div
+                class="pagination-btn pagination-right-btn"
+                :class="{
+                    'pagination-btn-hidden': !filteredProjects.length || projectPosition >= filteredProjects.length - 1
+                }"
+                @click="scrollToProject(projectPosition + 1)"
+            >
+                <v-icon color="primary" size="30">mdi-arrow-right-bold</v-icon>
             </div>
         </div>
         <!-- GRID VIEW -->
@@ -329,6 +333,11 @@ $arrow-separator-height: 100px;
 .no-project-spacer {
     height: $no-project-height;
 }
+.line-view-container {
+    padding: 0 50px;
+    margin-top: 15px;
+    position: relative;
+}
 .line-view-projects-container {
     display: flex;
     overflow-x: auto;
@@ -344,9 +353,37 @@ $arrow-separator-height: 100px;
         background-color: white;
     }
 }
-.pagination-container {
+.pagination-right-btn {
+    right: 0;
+}
+.pagination-left-btn {
+    left: 0;
+}
+.pagination-btn {
+    top: calc(50% - 19px);
+    position: absolute;
+    min-width: 38px;
+    padding: 3px;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(var(--v-theme-primary));
+    &-hidden {
+        opacity: 0;
+        pointer-events: none;
+        height: 0;
+        margin: 0;
+        padding: 0;
+    }
+    &:hover {
+        background-color: rgb(var(--v-theme-primary));
+        i {
+            color: white !important;
+        }
+    }
 }
 
 .grid-view-container {
