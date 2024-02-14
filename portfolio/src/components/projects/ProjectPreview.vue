@@ -109,7 +109,7 @@ export default {
 }
 .project-description {
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 18px;
     text-align: justify;
     white-space: pre-line;
 }
@@ -123,6 +123,7 @@ export default {
     color: rgb(var(--v-theme-primary));
     font-weight: bold;
     border: 1px solid rgb(var(--v-theme-primary));
+    text-align: center;
     &:hover {
         background-color: rgb(var(--v-theme-primary));
         border-color: white;

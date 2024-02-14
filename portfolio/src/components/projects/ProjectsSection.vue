@@ -125,6 +125,17 @@
                 </template>
             </ProjectPreviewGrid>
         </div>
+
+        <!-- MARIO WALKING -->
+        <div class="mario-walking-container">
+            <div class="mario-walking-content">
+                <img
+                    alt="Mario en train de marcher"
+                    :src="require('@/assets/images/marioWalking.gif')"
+                />
+            </div>
+            <div class="mario-walking-ground"></div>
+        </div>
     </div>
 </template>
 
@@ -405,6 +416,28 @@ $arrow-separator-height: 100px;
     }
 }
 
+.mario-walking-container {
+    height: 100px;
+    pointer-events: none;
+    user-select: none;
+    .mario-walking-content {
+        position: absolute;
+        left: 0;
+        width: 100vw;
+        animation: marioWalkingAnimation linear 5s infinite;
+        bottom: 93px;
+    }
+    .mario-walking-ground {
+        background-image: url('@/assets/images/marioBlock.png');
+        width: 100vw;
+        height: 100px;
+        background-repeat: repeat;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+}
+
 /************************
        ANIMATIONS
 ************************/
@@ -448,6 +481,11 @@ $arrow-separator-height: 100px;
     100% { height: 0; }
 }
 
+@keyframes marioWalkingAnimation {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100vw); }
+}
+
 .no-project-out-animation {
     animation-name: soLongAnimation;
     animation-duration: 4s;
@@ -487,6 +525,12 @@ $arrow-separator-height: 100px;
             margin-top: 10px;
             margin-bottom: 5px;
         }
+    }
+    .line-view-container {
+        padding: 0;
+    }
+    .pagination-btn {
+        display: none;
     }
 }
 </style>
