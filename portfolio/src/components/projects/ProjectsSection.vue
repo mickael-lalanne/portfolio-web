@@ -25,7 +25,7 @@
                 <img
                     alt="Sad Mario Logo"
                     class="mx-5 sad-mario-img"
-                    :src="require('@/assets/images/sadMario.png')"
+                    :src="require('@/assets/images/mario/sadMario.png')"
                 />
                 <div>
                     <div class="no-project-title">
@@ -41,7 +41,7 @@
                 id="marioHammerAnimation"
                 alt="Mario animation"
                 class="mario-animation-img"
-                :src="require('@/assets/images/marioHammer.gif')"
+                :src="require('@/assets/images/mario/marioHammer.gif')"
             />
         </div>
         <!-- Used to simulate a translate animation for project in animation -->
@@ -131,7 +131,7 @@
             <div class="mario-walking-content">
                 <img
                     alt="Mario en train de marcher"
-                    :src="require('@/assets/images/marioWalking.gif')"
+                    :src="require('@/assets/images/mario/marioWalking.gif')"
                 />
             </div>
             <div class="mario-walking-ground"></div>
@@ -428,7 +428,7 @@ $arrow-separator-height: 100px;
         bottom: 93px;
     }
     .mario-walking-ground {
-        background-image: url('@/assets/images/marioBlock.png');
+        background-image: url('@/assets/images/mario/marioBlock.png');
         width: 100vw;
         height: 100px;
         background-repeat: repeat;
