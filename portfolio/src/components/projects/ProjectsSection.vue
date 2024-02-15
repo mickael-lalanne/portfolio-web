@@ -5,6 +5,7 @@
         <!-- FILTERING -->
         <ProjectFiltering
             :viewMode="viewMode"
+            :disable="soLongAnimation || showMarioHammerAnimation"
             @viewModeChange="newViewMode => viewMode = newViewMode"
             @typeChange="newTypes => projectTypes = newTypes"
             @searchChange="newSearch => searchFilter = newSearch"
@@ -206,7 +207,7 @@ export default {
                 // Reset the "So long" animation
                 setTimeout(() => {
                     this.soLongAnimation = false;
-                }, 4000);
+                }, 3000);
             }
         }
     },

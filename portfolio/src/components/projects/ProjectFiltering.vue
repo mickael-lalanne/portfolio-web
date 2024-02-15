@@ -1,5 +1,5 @@
 <template>
-    <div class="projects-filtering">
+    <div class="projects-filtering" :class="{ 'projects-filtering-disable': disable }">
         <!-- Project Types -->
         <SelectMultipleCyberpunk
             :values="projectTypes"
@@ -49,7 +49,8 @@ export default defineComponent({
     name: 'ProjectFiltering',
     components: { SelectMultipleCyberpunk },
     props: {
-        viewMode: { type: String as PropType<EViewMode> }
+        viewMode: { type: String as PropType<EViewMode> },
+        disable: { type: Boolean }
     },
     data: () => ({
         EViewMode: EViewMode,
@@ -82,6 +83,12 @@ export default defineComponent({
         align-self: baseline;
         margin-top: 8px;
     }
+}
+.projects-filtering-disable {
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.75;
+    filter: grayscale(100%);
 }
 
 @media (max-width: 550px) {
