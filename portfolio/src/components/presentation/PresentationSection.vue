@@ -8,7 +8,7 @@
                     :src="require('@/assets/images/profilePicture.webp')"
                 />
             </div>
-            <CodeBlockInformations />
+            <CodeBlockInformations class="code-block" />
         </div>
         <div class="d-flex align-center keywords-social-container">
             <div class="keywords-container mt-10">
@@ -257,64 +257,30 @@ ul li a:hover span:nth-child(4) {
     }
 }
 
-// PROFILE PICTURE
-@mixin styling($box-size) {
-    $anime-time: 8s;
-
-    $clip-distance: .03;
-    $clip-size: $box-size * (1 + $clip-distance * 2);
-    $path-width: 3.5px;
-
-    $main-color: var(--v-theme-secondary);
-
-    %full-fill {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+.profile-picture {
+    height: 380px;
+    aspect-ratio: 1;
+    z-index: 0;
+    transform: rotate(-2deg);
+    transition-duration: 0.3s;
+    &:hover {
+        transform: rotate(-2deg) scale(1.1);
+        z-index: 2;
     }
-
-    .profile-picture {
-        @extend %full-fill;
-        z-index: 1;
-        min-width: $box-size;
-        max-width: $box-size;
-        height: $box-size;
-        margin: 15px 0;
-        box-shadow: inset 0 0 0 1px rgba($main-color, .5);
-        position: relative;
-
-        &::before,
-        &::after {
-            @extend %full-fill;
-            content: '';
-            z-index: -1;
-            margin: -1 * $clip-distance * 100%;
-            box-shadow: inset 0 0 0 $path-width; 
-            animation: clipMe $anime-time linear infinite;
-        }
-
-        &::before {
-            animation-delay: $anime-time * -.5;
-            color: rgba(var(--v-theme-primary));
-        }
-        &::after {
-            color: rgba(var(--v-theme-secondary));
-        }
-        img {
-            width: 100%;
-            padding: 15px;
-        }
-    }
-    @keyframes clipMe {
-        0%, 100% {clip: rect(0px, $clip-size, $path-width, 0px); }
-        25% {clip: rect(0px, $path-width, $clip-size, 0px); }
-        50% {clip: rect($clip-size - $path-width, $clip-size, $clip-size, 0px); }
-        75% {clip: rect(0px, $clip-size, $clip-size, $clip-size - $path-width); }
+    img {
+        width: 100%;
+        height: 100%;
+        padding: 15px;
     }
 }
-@include styling($box-size: 380px);
+.code-block {
+    transform: rotate(2deg);
+    z-index: 1;
+    transition-duration: 0.3s;
+    &:hover {
+        transform: rotate(2deg) scale(1.1);
+    }
+}
 
 // RESPONSIVE
 
@@ -326,11 +292,12 @@ ul li a:hover span:nth-child(4) {
     .keywords-social-container {
         flex-direction: column-reverse;
     }
-}
-
-@media (min-width: 850px) {
-    .profile-picture {
-        margin-right: 48px;
+    .profile-picture,
+    .code-block {
+        transform: unset;
+        &:hover {
+            transform: unset;
+        }
     }
 }
 
@@ -357,6 +324,8 @@ ul li a:hover span:nth-child(4) {
 }
 
 @media screen and (max-width: 420px) {
-    @include styling($box-size: 320px);
+    .profile-picture {
+        height: 320px;
+    }
 }
 </style>
