@@ -86,6 +86,7 @@ export default {
     transform: rotateX(180deg);
     scroll-snap-align: center;
     padding-inline: 5px;
+    min-height: 455px;
 }
 .project-left {
     width: 80%;

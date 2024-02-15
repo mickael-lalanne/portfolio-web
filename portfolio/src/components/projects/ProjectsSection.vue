@@ -24,9 +24,9 @@
                 }"
             >
                 <img
-                    alt="Sad Mario Logo"
+                    alt="Bowser face"
                     class="mx-5 sad-mario-img"
-                    :src="require('@/assets/images/mario/sadMario.png')"
+                    :src="require('@/assets/images/mario/bowser.png')"
                 />
                 <div>
                     <div class="no-project-title">
@@ -300,7 +300,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$no-project-height: 325px;
+$no-project-height: 455px;
 $no-project-margin: 25px;
 $project-preview-height: 935px;
 $arrow-separator-height: 100px;
@@ -330,16 +330,20 @@ $arrow-separator-height: 100px;
     width: fit-content;
     padding: 50px;
     background-color: rgb(var(--v-theme-light));
-    border-radius: 5px;
     position: absolute;
     height: $no-project-height;
     margin-top: $no-project-margin;
+    box-shadow: -5px 0 0 0 rgb(var(--v-theme-primary)),
+        5px 0 0 0 rgb(var(--v-theme-primary)),
+        0 -5px 0 0 rgb(var(--v-theme-primary)),
+        0 5px 0 0 rgb(var(--v-theme-primary));
     .no-project-title {
         font-size: 22px;
         font-weight: 700;
     }
-    .sad-mario-img {
+    img {
         min-height: 0;
+        animation: bowserAnimation linear 3s infinite;
     }
 }
 .no-project-spacer {
@@ -445,14 +449,13 @@ $arrow-separator-height: 100px;
 @keyframes oofAnimation {
     0% {
         opacity: 0;
-        transform: translateX(-2000px);
+        transform: scale(0);
     }
     60% {
         opacity: 1;
-        transform: translateX(30px);
+        transform: scale(1.1);
     }
-    80% { transform: translateX(-10px); }
-    100% { transform: translateX(0); }
+    100% { transform: scale(1.0); }
 }
 @keyframes soLongAnimation {
     25% {
@@ -487,6 +490,12 @@ $arrow-separator-height: 100px;
     100% { transform: translateX(100vw); }
 }
 
+@keyframes bowserAnimation {
+    0% { transform: scale(1.0); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1.0); }
+}
+
 .no-project-out-animation {
     animation-name: soLongAnimation;
     animation-duration: 4s;
@@ -509,7 +518,7 @@ $arrow-separator-height: 100px;
 
 .mario-animation-img {
     position: absolute;
-    top: 252px;
+    top: 382px;
     left: -62px;
 }
 

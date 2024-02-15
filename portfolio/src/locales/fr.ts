@@ -63,8 +63,8 @@ export default {
         title: 'Projets',
         detail: 'EN VOIR PLUS',
         noProject: {
-            title: 'Il semblerait qu\'aucun projet ne corresponde à vos filtres.',
-            subtitle: 'Faites plaisir à Mario en modifiant ou en effaçant vos filtres !'
+            title: 'Il semblerait qu\'aucun projet ne corresponde à tes filtres.',
+            subtitle: 'Combat Bowser en modifiant ou en effaçant tes filtres !'
         },
         filtering: {
             searchLabel: 'Recherche',

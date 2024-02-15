@@ -64,7 +64,7 @@ export default {
         detail: 'SEE MORE',
         noProject: {
             title: 'It seems no project is matching your filters.',
-            subtitle: 'Make Mario happy by changing or clearing your filters !'
+            subtitle: 'Defeat Bowser by changing or clearing your filters !'
         },
         filtering: {
             searchLabel: 'Search',
