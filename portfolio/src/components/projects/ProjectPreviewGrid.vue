@@ -3,6 +3,7 @@
         class="project-preview-container"
         @click="onProjectClick"
     >
+        <img v-if="pinned" class="project-preview-pinned" :src="require('@/assets/images/mario/star.png')"/>
         <div class="project-preview-title">{{ title }}</div>
         <div class="project-preview-date">{{ date }}</div>
         <div class="project-preview-resume" v-html="resume"></div>
@@ -46,6 +47,7 @@ export default {
         dialogComponent: { type: String },
         projectLink: { type: String },
         date: { type: String },
+        pinned: { type: Number }
     },
     data: () => ({
         showDialog: false,
@@ -116,6 +118,11 @@ export default {
     border-left: 1px solid white;
     padding: 7px;
     border-bottom-left-radius: 10px;
+}
+.project-preview-pinned {
+    position: absolute;
+    left: 10px;
+    top: 10px;
 }
 .project-preview-resume {
     padding: 0 15px 15px 15px;

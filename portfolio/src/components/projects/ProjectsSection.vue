@@ -83,6 +83,7 @@
                     :imgName="project.imgName"
                     :dialogComponent="project.dialogComponent"
                     :date="project.date"
+                    :pinned="project.pinned"
                 >
                     <template v-slot:previousButton>
                     </template>
@@ -114,6 +115,7 @@
                 :dialogComponent="project.dialogComponent"
                 :project-link="project.projectLink"
                 :date="project.date"
+                :pinned="project.pinned"
             >
                 <template v-slot:projectLink v-if="project.projectLink">
                     <a :href="project.projectLink" target="_blank">
@@ -156,16 +158,21 @@ export default {
             let filteredProjects: Project[] = PROJECTS.slice();
             const filter: string = this.searchFilter?.toLowerCase();
 
-            return filteredProjects.filter(p => 
-                // Filter by text
-                (
-                    !filter ||
-                    p.tags.some(tag => tag.includes(filter)) ||
-                    this.$vuetify.locale.t(p.title).toLowerCase().includes(filter)
-                ) &&
-                // Filter by type (personal, professional, student)
-                this.projectTypes.includes(p.type)
-            );
+            return filteredProjects
+                .filter(p => 
+                    // Filter by text
+                    (
+                        !filter ||
+                        p.tags.some(tag => tag.includes(filter)) ||
+                        this.$vuetify.locale.t(p.title).toLowerCase().includes(filter)
+                    ) &&
+                    // Filter by type (personal, professional, student)
+                    this.projectTypes.includes(p.type)
+                )
+                // Sort by date
+                .sort((a, b) => Number(b.date.slice(-4)) - Number(a.date.slice(-4)))
+                // Then, display pinned projects first 
+                .sort((a, b) => a.pinned! - b.pinned!);
         },
     },
     watch: {

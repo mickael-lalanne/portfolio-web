@@ -15,7 +15,8 @@ export interface Project {
     dialogComponent?: string;
     tags: string[],
     resume: string,
-    date: string
+    date: string,
+    pinned?: number
 };
 
 export enum EViewMode {

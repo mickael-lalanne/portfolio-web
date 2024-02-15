@@ -2,6 +2,10 @@
     <div class="project-preview-container">
         <div class="project-left">
             <div class="project-preview-title">
+                <img
+                    v-if="pinned"
+                    :src="require('@/assets/images/mario/star.png')"
+                />
                 {{ title }}
                 <span class="project-date">- {{ date }}</span>
             </div>
@@ -69,6 +73,7 @@ export default {
         skills: { type: Array },
         dialogComponent: { type: String },
         date: { type: String },
+        pinned: { type: Number },
     },
     data: () => ({
         showDialog: false,
@@ -110,7 +115,7 @@ export default {
 }
 .project-description {
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 15px;
     text-align: justify;
     white-space: pre-line;
 }

@@ -6,7 +6,7 @@ const backEndTags: string[] = ['back-end', 'backend', 'back end'];
 const fullStackTags: string[] = ['full stack', 'full-stack', 'fullstack', ...frontTags, ...backEndTags];
 
 export const PROJECTS: Project[] = [
-    // Triple Triad
+    // Ranking App
     {
         title: '$vuetify.projects.rankingApp.title',
         description: '$vuetify.projects.rankingApp.description',
@@ -21,7 +21,8 @@ export const PROJECTS: Project[] = [
         dialogComponent: 'ProjectRankingApp',
         type: EProjectType.personal,
         tags: [], // TODO
-        date: '2024'
+        date: '2024',
+        pinned: 2
     },
     // Triple Triad
     {
@@ -38,7 +39,8 @@ export const PROJECTS: Project[] = [
         projectLinkText: '$vuetify.projects.tripleTriad.link',
         type: EProjectType.personal,
         tags: [...vueTags, ...fullStackTags, 'typescript', 'aws', 'amplify', 'graphql', 'vue router', 'pinia'],
-        date: '2023'
+        date: '2023',
+        pinned: 1
     },
     // Intuiface HCMS
     {
