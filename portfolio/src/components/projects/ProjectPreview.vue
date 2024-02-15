@@ -90,7 +90,7 @@ export default {
     min-width: 100%;
     transform: rotateX(180deg);
     scroll-snap-align: center;
-    padding-inline: 5px;
+    padding-inline: 15px;
     min-height: 455px;
 }
 .project-left {

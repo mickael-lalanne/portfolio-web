@@ -357,7 +357,7 @@ $arrow-separator-height: 100px;
     height: $no-project-height;
 }
 .line-view-container {
-    padding: 0 50px;
+    padding: 0 45px;
     margin-top: 15px;
     position: relative;
 }
