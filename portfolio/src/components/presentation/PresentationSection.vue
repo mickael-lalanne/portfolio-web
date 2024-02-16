@@ -13,12 +13,18 @@
         <div class="d-flex align-center keywords-social-container">
             <div class="keywords-container mt-10">
                 <a
-                    v-for="keyword in randomKeywords"
+                    v-for="(keyword, i) in randomKeywords"
                     :key="keyword.name"
                     :href="keyword.link"
                     target="_blank"
                     rel="noopener"
                 >
+                    <img
+                        alt="Boo"
+                        class="boo-img"
+                        :class="{ 'boo-img-displayed': i === booToDisplay }"
+                        :src="require('@/assets/images/mario/boo.gif')"
+                    />
                     <v-chip class="keyword-chip" color="secondary">
                         {{ keyword.name }}
                     </v-chip>
@@ -100,6 +106,7 @@ export default {
             { name: ".NET", link: "https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet/" },
             { name: "React", link: "https://fr.react.dev/" }
         ],
+        booToDisplay: undefined
     }),
     computed: {
         randomKeywords: function() {
@@ -122,6 +129,15 @@ export default {
 
             return array;
         },
+    },
+    mounted() {
+        // Each 5 seconds, show a random boo
+        setInterval(() => {
+            this.booToDisplay = Math.floor(Math.random() * this.KEYWORDS.length);
+            setTimeout(() => {
+                this.booToDisplay = undefined;
+            }, 2000);
+        }, 3500);
     },
 };
 </script>
@@ -160,6 +176,32 @@ export default {
     a {
         text-decoration: none;
         color: unset;
+        position: relative;
+        display: inline-block;
+    }
+}
+.boo-img {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+}
+.boo-img-displayed {
+    animation: booAnimation 2s infinite;
+}
+@keyframes booAnimation {
+    0% {
+        opacity: 0;
+        transform: rotate(0deg) translate(-25px) rotate(0deg);
+    }
+    50% { opacity: 1; }
+    100% {
+        opacity: 0;
+        transform:rotate(360deg) translate(-25px) rotate(-360deg);
     }
 }
 .keyword-chip {
