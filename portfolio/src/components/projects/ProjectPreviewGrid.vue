@@ -137,6 +137,8 @@ export default {
     width: 100%;
     border-top: 1px solid white;
     z-index: 1;
+    height: 174px;
+    object-fit: cover;
 }
 .hover-background {
     background: rgb(var(--v-theme-primary));
