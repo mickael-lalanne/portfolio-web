@@ -29,5 +29,8 @@ export default {
     &:hover {
         background-color: rgb(var(--v-theme-primary));
     }
+    &:active {
+        background-color: rgb(var(--v-theme-secondary));
+    }
 }
 </style>

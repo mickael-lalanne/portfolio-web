@@ -16,7 +16,7 @@
             @click="$emit('close')"
         ></v-progress-circular>
         <img
-            :src="'https://i.imgur.com/' + imgId"
+            :src="imgur ? 'https://i.imgur.com/' + imgId : imgId"
             @click="$emit('close')"
             @load="showLoading = false" />
     </v-dialog>
@@ -27,7 +27,8 @@ export default {
     name: "ImageExtend",
     components: {},
     props: {
-        imgId: { type: String }
+        imgId: { type: String },
+        imgur: { type: Boolean, default: () => true }
     },
     data: () => ({
         dialog: true,

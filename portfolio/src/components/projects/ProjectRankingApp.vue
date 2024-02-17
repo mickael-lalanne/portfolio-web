@@ -5,6 +5,12 @@
         hide-overlay
         transition="dialog-bottom-transition"
     >
+        <ImageExtend
+            v-if="imageToExtend"
+            :imgId="imageToExtend"
+            :imgur="false"
+            @close="imageToExtend = null"
+        />
         <v-card class="project-container ranking-app-project-container">
             <!-- CLOSE BUTTON -->
             <CloseButton @click="$emit('close')" />
@@ -14,14 +20,13 @@
                 <img
                     alt="Ranking App logo"
                     :src="require('@/assets/images/projects/rankingApp/logo.png')"
-                    @click="imageToExtend = 'aLJYtCt.png'"
                 />
             </div>
 
             <img
                 alt="Ranking App - Overview"
                 :src="require('@/assets/images/projects/rankingApp/demo.gif')"
-                @click="imageToExtend = 's0Si75U.gif'"
+                @click="imageToExtend = require('@/assets/images/projects/rankingApp/demo.gif')"
             />
 
             <!-- SUMMARY -->
@@ -159,7 +164,7 @@
                 style="height: 375px; width: fit-content;"
                 class="ranking-app-img"
                 :src="require('@/assets/images/projects/rankingApp/responsive.gif')"
-                @click="imageToExtend = 's0Si75U.gif'"
+                @click="imageToExtend = require('@/assets/images/projects/rankingApp/responsive.gif')"
             />
 
             <div
@@ -174,7 +179,7 @@
                 alt="Ranking App - Popup de confirmation (template)"
                 class="ranking-app-img"
                 :src="require('@/assets/images/projects/rankingApp/confirmationTemplate.webp')"
-                @click="imageToExtend = 's0Si75U.gif'"
+                @click="imageToExtend = require('@/assets/images/projects/rankingApp/confirmationTemplate.webp')"
             />
 
             <div
@@ -185,7 +190,7 @@
                 alt="Ranking App - Popup de confirmation (tierlist)"
                 class="ranking-app-img"
                 :src="require('@/assets/images/projects/rankingApp/confirmationTierlist.webp')"
-                @click="imageToExtend = 's0Si75U.gif'"
+                @click="imageToExtend = require('@/assets/images/projects/rankingApp/confirmationTierlist.webp')"
             />
 
             <div
@@ -196,7 +201,7 @@
                 alt="Ranking App - Loading serveur"
                 class="ranking-app-img"
                 :src="require('@/assets/images/projects/rankingApp/fetchingLoading.webp')"
-                @click="imageToExtend = 's0Si75U.gif'"
+                @click="imageToExtend = require('@/assets/images/projects/rankingApp/fetchingLoading.webp')"
             />
 
             <div
@@ -207,7 +212,7 @@
                 alt="Ranking App - Loading création"
                 class="ranking-app-img"
                 :src="require('@/assets/images/projects/rankingApp/creationLoading.webp')"
-                @click="imageToExtend = 's0Si75U.gif'"
+                @click="imageToExtend = require('@/assets/images/projects/rankingApp/creationLoading.webp')"
             />
 
             <div
@@ -218,7 +223,7 @@
                 alt="Ranking App - Ajout d'un tier"
                 class="ranking-app-img"
                 :src="require('@/assets/images/projects/rankingApp/newTier.webp')"
-                @click="imageToExtend = 's0Si75U.gif'"
+                @click="imageToExtend = require('@/assets/images/projects/rankingApp/newTier.webp')"
             />
 
             <div
@@ -229,7 +234,7 @@
                 alt="Ranking App - No tierlist message"
                 class="ranking-app-img"
                 :src="require('@/assets/images/projects/rankingApp/noTierlistMessage.webp')"
-                @click="imageToExtend = 's0Si75U.gif'"
+                @click="imageToExtend = require('@/assets/images/projects/rankingApp/noTierlistMessage.webp')"
             />
 
             <div
@@ -240,7 +245,7 @@
                 alt="Ranking App - No template message"
                 class="ranking-app-img"
                 :src="require('@/assets/images/projects/rankingApp/noTemplateMessage.webp')"
-                @click="imageToExtend = 's0Si75U.gif'"
+                @click="imageToExtend = require('@/assets/images/projects/rankingApp/noTemplateMessage.webp')"
             />
 
             <div
@@ -265,7 +270,7 @@
                 alt="Ranking App - Coverage"
                 class="ranking-app-img"
                 :src="require('@/assets/images/projects/rankingApp/coverage.webp')"
-                @click="imageToExtend = 's0Si75U.gif'"
+                @click="imageToExtend = require('@/assets/images/projects/rankingApp/coverage.webp')"
             />
             <div
                 ref="e2eTests"
@@ -280,7 +285,7 @@
                 alt="Ranking App - Mock"
                 class="ranking-app-img"
                 :src="require('@/assets/images/projects/rankingApp/mock.webp')"
-                @click="imageToExtend = 's0Si75U.gif'"
+                @click="imageToExtend = require('@/assets/images/projects/rankingApp/mock.webp')"
             />
             <div
                 class="section-content"
@@ -290,7 +295,7 @@
                 alt="Ranking App - Cypress"
                 class="ranking-app-img"
                 :src="require('@/assets/images/projects/rankingApp/cypress.webp')"
-                @click="imageToExtend = 's0Si75U.gif'"
+                @click="imageToExtend = require('@/assets/images/projects/rankingApp/cypress.webp')"
             />
 
             <!-- Github Actions -->
@@ -322,7 +327,7 @@
                 alt="Ranking App - Access token"
                 class="ranking-app-img"
                 :src="require('@/assets/images/projects/rankingApp/accessToken.webp')"
-                @click="imageToExtend = 's0Si75U.gif'"
+                @click="imageToExtend = require('@/assets/images/projects/rankingApp/accessToken.webp')"
             />
             <div
                 class="section-content"
@@ -340,7 +345,7 @@
                 alt="Ranking App - Security headers before"
                 class="ranking-app-img"
                 :src="require('@/assets/images/projects/rankingApp/securityHeadersBefore.webp')"
-                @click="imageToExtend = 's0Si75U.gif'"
+                @click="imageToExtend = require('@/assets/images/projects/rankingApp/securityHeadersBefore.webp')"
             />
             <div
                 class="section-content"
@@ -350,7 +355,7 @@
                 alt="Ranking App - Security headers after"
                 class="ranking-app-img"
                 :src="require('@/assets/images/projects/rankingApp/securityHeadersAfter.webp')"
-                @click="imageToExtend = 's0Si75U.gif'"
+                @click="imageToExtend = require('@/assets/images/projects/rankingApp/securityHeadersAfter.webp')"
             />
 
             <!-- SSL -->
@@ -407,9 +412,15 @@ export default defineComponent({
     a {
         cursor: pointer;
     }
+    img {
+        cursor: pointer;
+    }
 }
 .project-title {
     text-align: center;
+    img {
+        cursor: unset;
+    }
 }
 .section-title {
     text-transform: uppercase;
