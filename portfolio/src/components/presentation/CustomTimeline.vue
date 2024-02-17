@@ -262,29 +262,46 @@ export default {
         transform: scaleX(1.0);
     }
 }
-.scroll-animation-1 {
-    animation-range: cover 25% cover 35%;
+@mixin scrollDrivenAnimation($defaultRange1, $defaultRange2, $itemSize) {
+    .scroll-animation-1 {
+        animation-range: cover $defaultRange1 cover $defaultRange2;
+    }
+    .scroll-animation-2 {
+        animation-range: cover calc(#{$defaultRange1} + #{$itemSize}) cover calc(#{$defaultRange2} + #{$itemSize});
+    }
+    .scroll-animation-3 {
+        animation-range: cover calc(#{$defaultRange1} + #{$itemSize} * 2) cover calc(#{$defaultRange2} + #{$itemSize} * 2);
+    }
+    .scroll-animation-4 {
+        animation-range: cover calc(#{$defaultRange1} + #{$itemSize} * 3) cover calc(#{$defaultRange2} + #{$itemSize} * 3);
+    }
+    .scroll-animation-5 {
+        animation-range: cover calc(#{$defaultRange1} + #{$itemSize} * 4) cover calc(#{$defaultRange2} + #{$itemSize} * 4);
+    }
 }
-.scroll-animation-2 {
-    animation-range: cover 27.5% cover 37.5%;
-}
-.scroll-animation-3 {
-    animation-range: cover 30% cover 40%;
-}
-.scroll-animation-4 {
-    animation-range: cover 32.5% cover 42.5%;
-}
-.scroll-animation-5 {
-    animation-range: cover 35% cover 45%;
-}
+@include scrollDrivenAnimation(1500px, 1909px, 125px);
 
 @media (max-width: 786px) {
     .timeline__event {
         flex-direction: column;
+        &::before,
+        &::after,
+        img {
+            visibility: hidden;
+        }
     }
     .timeline__event__icon {
         border-radius: 4px 4px 0 0;
         padding: 5px;
     }
+}
+@media (max-width: 850px) {
+    @include scrollDrivenAnimation(1850px, 2150px, 200px);
+}
+@media (max-width: 400px) {
+    @include scrollDrivenAnimation(2000px, 2400px, 219px);
+}
+@media (max-width: 380px) {
+    @include scrollDrivenAnimation(1920px, 2300px, 219px);
 }
 </style>
