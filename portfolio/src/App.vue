@@ -48,12 +48,59 @@ export default {
 };
 </script>
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Raleway:ital,wght@0,100;0,200;1,100;1,200&display=swap');
+@font-face {
+    font-family: 'Black Ops One';
+    src: url('@/assets/fonts/BlackOpsOne-Regular.ttf');
+}
 @font-face {
     font-family: VT323;
     src: url('@/assets/fonts/VT323-Regular.ttf');
+}
+@font-face {
+    font-family: Raleway;
+    src: url('@/assets/fonts/raleway/Raleway-Thin.ttf');
+    font-weight: 100;
+}
+@font-face {
+    font-family: Raleway;
+    src: url('@/assets/fonts/raleway/Raleway-ExtraLight.ttf');
+    font-weight: 200;
+}
+@font-face {
+    font-family: Raleway;
+    src: url('@/assets/fonts/raleway/Raleway-Light.ttf');
+    font-weight: 300;
+}
+@font-face {
+    font-family: Raleway;
+    src: url('@/assets/fonts/raleway/Raleway-Regular.ttf');
+    font-weight: 400;
+}
+@font-face {
+    font-family: Raleway;
+    src: url('@/assets/fonts/raleway/Raleway-Medium.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: Raleway;
+    src: url('@/assets/fonts/raleway/Raleway-SemiBold.ttf');
+    font-weight: 600;
+}
+@font-face {
+    font-family: Raleway;
+    src: url('@/assets/fonts/raleway/Raleway-Bold.ttf');
+    font-weight: 700;
+}
+@font-face {
+    font-family: Raleway;
+    src: url('@/assets/fonts/raleway/Raleway-ExtraBold.ttf');
+    font-weight: 800;
+}
+@font-face {
+    font-family: Raleway;
+    src: url('@/assets/fonts/raleway/Raleway-Black.ttf');
+    font-weight: 900;
 }
 html,
 body {
