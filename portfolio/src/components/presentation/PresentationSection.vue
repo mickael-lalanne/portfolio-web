@@ -2,56 +2,39 @@
     <div id="presentation" class="presentation-container">
         <GlitchText class="my-6" :text="$vuetify.locale.t('$vuetify.homepage.presentationTitle')" />
         <div class="profile-container">
-            <div class="profile-picture vs-code-design">
+            <div class="profile-picture">
                 <img
+                    class="vs-code-design"
                     alt="Profile Picture"
                     :src="require('@/assets/images/profilePicture.webp')"
                 />
+                <a href="https://github.com/mickael-lalanne" target="_blank" class="vs-code-design github-btn">
+                    <v-icon color="white" size="70">mdi-github</v-icon>
+                </a>
+                <a href="https://www.linkedin.com/in/mickael-lalanne/" target="_blank" class="vs-code-design linkedin-btn">
+                    <v-icon color="white" size="70">mdi-linkedin</v-icon>
+                </a>
             </div>
             <CodeBlockInformations class="code-block" />
         </div>
-        <div class="d-flex align-center keywords-social-container">
-            <div class="keywords-container mt-10">
-                <a
-                    v-for="(keyword, i) in randomKeywords"
-                    :key="keyword.name"
-                    :href="keyword.link"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    <img
-                        alt="Boo"
-                        class="boo-img"
-                        :class="{ 'boo-img-displayed': i === booToDisplay }"
-                        :src="require('@/assets/images/mario/boo.gif')"
-                    />
-                    <v-chip class="keyword-chip" color="secondary">
-                        {{ keyword.name }}
-                    </v-chip>
-                </a>
-            </div>
-            <ul class="d-flex justify-center mt-10 pa-0">
-                <li>
-                    <a
-                        class="resume-social-icon"
-                        href="https://github.com/mickael-lalanne"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <v-icon
-                            color="rgb(var(--v-theme-dark))"
-                            size="70"
-                            class="resume-social-network-icon"
-                        >
-                            mdi-github
-                        </v-icon>
-                    </a>
-                </li>
-            </ul>
+        <div class="keywords-container mt-12">
+            <a
+                v-for="(keyword, i) in randomKeywords"
+                :key="keyword.name"
+                :href="keyword.link"
+                target="_blank"
+                rel="noopener"
+            >
+                <img
+                    alt="Boo"
+                    class="boo-img"
+                    :class="{ 'boo-img-displayed': i === booToDisplay }"
+                    :src="require('@/assets/images/mario/boo.gif')"
+                />
+                <v-chip class="keyword-chip" color="secondary">
+                    {{ keyword.name }}
+                </v-chip>
+            </a>
         </div>
         <CustomTimeline class="timeline-container" />
     </div>
@@ -178,6 +161,12 @@ export default {
         color: unset;
         position: relative;
         display: inline-block;
+        &:hover {
+            .keyword-chip {
+                transform: scale(1.1);
+                color: rgb(var(--v-theme-secondaryHover)) !important;
+            }
+        }
     }
 }
 .boo-img {
@@ -207,112 +196,26 @@ export default {
 .keyword-chip {
     margin: 5px;
     cursor: pointer;
-    &:hover {
-        color: rgb(var(--v-theme-secondaryHover)) !important;
-    }
-}
-
-// Github icon
-ul li {
-    list-style: none;
-}
-ul li a {
-    display: block;
-    position: relative;
-    width: 100px;
-    height: 100px;
-    line-height: 100px;
-    font-size: 40px;
-    text-align: center;
-    text-decoration: none;
-    color: rgb(var(--v-theme-dark));
-    margin: 0 30px;
-    transition: 0.5s;
-}
-ul li a span {
-    position: absolute;
-    transition: transform 0.5s;
-}
-ul li a span:nth-child(1),
-ul li a span:nth-child(3) {
-    width: 100%;
-    height: 3px;
-    background: rgb(var(--v-theme-dark));
-}
-ul li a span:nth-child(1) {
-    top: 0;
-    left: 0;
-    transform-origin: right;
-}
-ul li a:hover span:nth-child(1) {
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.5s;
-}
-
-ul li a span:nth-child(3) {
-    bottom: 0;
-    left: 0;
-    transform-origin: left;
-}
-ul li a:hover span:nth-child(3) {
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.5s;
-}
-
-ul li a span:nth-child(2),
-ul li a span:nth-child(4) {
-    width: 3px;
-    height: 100%;
-    background: rgb(var(--v-theme-dark));
-}
-ul li a span:nth-child(2) {
-    top: 0;
-    left: 0;
-    transform: scale(0);
-    transform-origin: bottom;
-}
-ul li a:hover span:nth-child(2) {
-    transform: scale(1);
-    transform-origin: top;
-    transition: transform 0.5s;
-}
-ul li a span:nth-child(4) {
-    top: 0;
-    right: 0;
-    transform: scale(0);
-    transform-origin: top;
-}
-ul li a:hover span:nth-child(4) {
-    transform: scale(1);
-    transform-origin: bottom;
-    transition: transform 0.5s;
-}
-
-.resume-social-icon:hover {
-    span {
-        background: rgb(var(--v-theme-primary));
-    }
-    .resume-social-network-icon {
-        color: rgb(var(--v-theme-primary)) !important;
-    }
+    transition-duration: 0.3s;
 }
 
 .profile-picture {
     height: 380px;
     aspect-ratio: 1;
     z-index: 0;
-    transform: rotate(-2deg);
-    transition-duration: 0.3s;
+    position: relative;
     &:hover {
-        transform: rotate(-2deg) scale(1.1);
         z-index: 2;
     }
     img {
+        transition-duration: 0.3s;
+        transform: rotate(-2deg);
         width: 100%;
         height: 100%;
         padding: 15px;
+        &:hover {
+            transform: rotate(-2deg) scale(1.1);
+        }
     }
 }
 .code-block {
@@ -323,6 +226,39 @@ ul li a:hover span:nth-child(4) {
         transform: rotate(2deg) scale(1.1);
     }
 }
+.github-btn,
+.linkedin-btn {
+    position: absolute;
+    left: -27px;
+    padding: 12px;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(var(--v-theme-primary));
+    }
+    &:active {
+        background-color: rgb(var(--v-theme-secondary));;
+    }
+}
+.github-btn {
+    bottom: -25px;
+    z-index: 2;
+    transform: rotate(-17deg);
+    &:hover {
+        transform: rotate(-17deg) scale(1.1);
+    }
+    &:active {
+        background-color: rgb(var(--v-theme-secondary));;
+    }
+}
+.linkedin-btn {
+    bottom: 55px;
+    z-index: 1;
+    transform: rotate(12deg);
+    &:hover {
+        transform: rotate(12deg) scale(1.1);
+    }
+}
 
 // RESPONSIVE
 
@@ -331,9 +267,6 @@ ul li a:hover span:nth-child(4) {
     .profile-container {
         flex-direction: column;
     }
-    .keywords-social-container {
-        flex-direction: column-reverse;
-    }
     .profile-picture,
     .code-block {
         transform: unset;
@@ -341,10 +274,30 @@ ul li a:hover span:nth-child(4) {
             transform: unset;
         }
     }
+    .profile-picture img,
+    .profile-picture img:hover,
+    .code-block,
+    .linkedin-btn,
+    .github-btn {
+        transform: unset;
+        z-index: unset;
+    }
+    .linkedin-btn,
+    .github-btn {
+        left: -20px;
+    }
+    .linkedin-btn {
+        top: 0;
+        bottom: unset;
+    }
+    .github-btn {
+        bottom: 0;
+        right: -20px;
+        left: unset;
+    }
 }
 
 @media (max-width: 1200px) {
-    .keywords-social-container,
     .timeline-container {
         padding: 0 20%;
     }
@@ -359,7 +312,6 @@ ul li a:hover span:nth-child(4) {
 
 // Small devices (landscape phones, less than 576px)
 @media (max-width: 576px) {
-    .keywords-social-container,
     .timeline-container {
         padding: 0 10px;
     }

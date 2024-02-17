@@ -12,7 +12,7 @@ export default {
             writing: 'écriture',
             hobbies: 'passions',
             location: 'emplacement',
-            name: 'prénom-nom',
+            name: 'nom',
             wellBeing: 'bien-être',
             jv: 'jeux-vidéo',
             work: 'travail-actuel',
