@@ -13,6 +13,14 @@
                 mdi-github
             </v-icon>
         </a>
+        <div class="cheep-cheep-container">
+            <div class="cheep-cheep-content">
+                <img
+                    alt="Cheep cheep"
+                    :src="require('@/assets/images/mario/cheepCheep.webp')"
+                />
+            </div>
+        </div>
     </div>
 </template>
 
@@ -52,6 +60,40 @@ a {
         .github-icon {
             color: rgb(var(--v-theme-primary));
         }
+    }
+}
+.cheep-cheep-container {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 100%;
+    user-select: none;
+    pointer-events: none;
+    img {
+        position: absolute;
+        bottom: 0;
+        transform: scaleX(-1);
+        animation: cheepCheepAnimation linear 10s infinite;
+    }
+}
+$jumpHeight: -100px;
+@keyframes cheepCheepAnimation {
+    0% {
+        transform: scaleX(-1) translateY($jumpHeight);
+        left: 0;
+    }
+    3% { transform: scaleX(-1) translateY(calc(#{$jumpHeight} + 20px)); }
+    10% { transform: scaleX(-1) translateY(0px); }
+    40% { transform: scaleX(-1) translateY(0px); }
+    47% { transform: scaleX(-1) translateY(calc(#{$jumpHeight} + 20px)); }
+    50% { transform: scaleX(-1) translateY($jumpHeight); }
+    53% { transform: scaleX(-1) translateY(calc(#{$jumpHeight} + 20px)); }
+    60% { transform: scaleX(-1) translateY(0px); }
+    90% { transform: scaleX(-1) translateY(0px); }
+    97% { transform: scaleX(-1) translateY(calc(#{$jumpHeight} + 20px)); }
+    100% {
+        transform: scaleX(-1) translateY($jumpHeight);
+        left: 100%;
     }
 }
 </style>
