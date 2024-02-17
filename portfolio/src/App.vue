@@ -51,6 +51,10 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Raleway:ital,wght@0,100;0,200;1,100;1,200&display=swap');
+@font-face {
+    font-family: VT323;
+    src: url('@/assets/fonts/VT323-Regular.ttf');
+}
 html,
 body {
     scroll-behavior: smooth;

@@ -91,7 +91,7 @@ export default {
     transform: rotateX(180deg);
     scroll-snap-align: center;
     padding-inline: 15px;
-    min-height: 455px;
+    height: 500px;
 }
 .project-left {
     width: 80%;
@@ -179,6 +179,9 @@ export default {
 @media (max-width: 576px) {
     .project-img {
         max-width: 100%;
+    }
+    .project-preview-container {
+        height: inherit;
     }
 }
 </style>

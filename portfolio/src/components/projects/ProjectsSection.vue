@@ -1,5 +1,9 @@
 <template>
-    <div id="projects" class="all-projects-container bg-grid-effect">
+    <div
+        id="projects"
+        class="all-projects-container bg-grid-effect"
+        :class="{ 'all-projects-container-line-view': viewMode === EViewMode.line }"
+    >
         <GlitchText class="mb-6" :text="$vuetify.locale.t('$vuetify.projects.title')" />
 
         <!-- FILTERING -->
@@ -30,7 +34,7 @@
                 />
                 <div>
                     <div class="no-project-title">
-                        {{ $vuetify.locale.t('$vuetify.projects.noProject.title') }}
+                        GAME OVER
                     </div>
                     <div class="no-project-subtitle">
                         {{ $vuetify.locale.t('$vuetify.projects.noProject.subtitle') }}
@@ -70,6 +74,7 @@
             </div>
             <div
                 class="line-view-projects-container"
+                :style="`overflow-x: ${filteredProjects.length > 0 ? 'scroll' : 'auto'}`"
                 ref="lineModeContainer"
                 @mouseup="onLineProjectsMouseUp"
                 @mousedown="onLineProjectsMouseDown"
@@ -307,7 +312,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$no-project-height: 455px;
+$no-project-height: 350px;
 $no-project-margin: 25px;
 $project-preview-height: 935px;
 $arrow-separator-height: 100px;
@@ -320,12 +325,8 @@ $arrow-separator-height: 100px;
     padding-bottom: calc(#{$arrow-separator-height} + 50px);
     clip-path: polygon(100% 0, 100% 92%, 50% 100%, 0 92%, 0 0);
 }
-.section-title {
-    color: rgb(var(--v-theme-primary));
-    font-size: 40px;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
+.all-projects-container-line-view {
+    height: 930px;
 }
 .project-divider {
     opacity: 100;
@@ -345,7 +346,9 @@ $arrow-separator-height: 100px;
         0 -5px 0 0 rgb(var(--v-theme-primary)),
         0 5px 0 0 rgb(var(--v-theme-primary));
     .no-project-title {
-        font-size: 22px;
+        font-family: "VT323";
+        font-size: 70px;
+        text-align: center;
         font-weight: 700;
     }
     img {
@@ -363,7 +366,6 @@ $arrow-separator-height: 100px;
 }
 .line-view-projects-container {
     display: flex;
-    overflow-x: auto;
     scroll-snap-type: x mandatory;
     transform: rotateX(180deg);
     scroll-behavior: smooth;
@@ -525,7 +527,7 @@ $arrow-separator-height: 100px;
 
 .mario-animation-img {
     position: absolute;
-    top: 382px;
+    top: 277px;
     left: -62px;
 }
 
@@ -548,6 +550,12 @@ $arrow-separator-height: 100px;
     }
     .pagination-btn {
         display: none;
+    }
+}
+@media (max-width: 1700px) {
+    
+    .all-projects-container {
+        height: unset;
     }
 }
 </style>
