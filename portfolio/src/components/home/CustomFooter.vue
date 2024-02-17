@@ -96,4 +96,9 @@ $jumpHeight: -100px;
         left: 100%;
     }
 }
+@media (max-width: 768px) {
+    .cheep-cheep-container img {
+        animation-duration: 5s !important;
+    }
+}
 </style>

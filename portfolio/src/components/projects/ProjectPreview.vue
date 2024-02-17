@@ -184,6 +184,11 @@ export default {
         height: inherit;
     }
 }
+@media (max-width: 1700px) {
+    .project-preview-container {
+        height: unset;
+    }
+}
 </style>
 
 <style lang="scss">

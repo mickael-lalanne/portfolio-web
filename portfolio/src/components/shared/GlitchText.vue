@@ -1,7 +1,7 @@
 <template>
-    <div class="container" :style="`--content-var: '${text}';`">
+    <div class="container" :style="`--content-var: '${text.toUpperCase()}';`">
         <div class="content">
-            {{ text }}
+            {{ text.toUpperCase() }}
         </div>
     </div>
 </template>

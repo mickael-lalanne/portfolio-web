@@ -551,9 +551,11 @@ $arrow-separator-height: 100px;
     .pagination-btn {
         display: none;
     }
+    .mario-walking-content {
+        animation-duration: 2s !important;
+    }
 }
 @media (max-width: 1700px) {
-    
     .all-projects-container {
         height: unset;
     }
