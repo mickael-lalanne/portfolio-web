@@ -43,4 +43,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
           local-dir: portfolio/dist/
-          server-dir: www/test/ #TMP
+          server-dir: www/
