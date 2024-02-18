@@ -7,7 +7,7 @@
             :class="{ 'radio-wrapper-active': selectedValues.includes(value) }"
             @click="$emit('valueChange', value)"
         >
-            <input :id="'value-' + index" name="btn" class="input" />
+            <div :id="'value-' + index" name="btn" class="input"></div>
             <div class="btn" :class="{ 'active': selectedValues.includes(value) }">
                 <span v-if="(index === 0 || index === 1) && windowWidth > SIZE_BREAKPOINT">
                     _
