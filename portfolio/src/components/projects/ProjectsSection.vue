@@ -138,6 +138,7 @@
         <div class="mario-walking-container">
             <div class="mario-walking-content">
                 <img
+                    id="marioWalkingGif"
                     alt="Mario en train de marcher"
                     :src="require('@/assets/images/mario/marioWalking.gif')"
                 />
@@ -238,6 +239,15 @@ export default {
     mounted: function() {
         this.$refs.lineModeContainer
             .addEventListener('scroll', this.determineProjectPosition );
+        
+        // There is a bug where Mario walking gif stop playing after a while
+        // To prevent this, reset the gif every minute
+        setInterval(() => {
+            const marioWalkingImage: HTMLImageElement = document.getElementById('marioWalkingGif') as HTMLImageElement;
+            if (marioWalkingImage) {
+                marioWalkingImage.src = '' + marioWalkingImage.src;
+            }
+        }, 60000);
     },
     beforeDestroy() { 
         this.$refs.lineModeContainer
@@ -495,7 +505,7 @@ $arrow-separator-height: 100px;
 }
 
 @keyframes marioWalkingAnimation {
-    0% { transform: translateX(0); }
+    0% { transform: translateX(-85px); }
     100% { transform: translateX(100vw); }
 }
 
