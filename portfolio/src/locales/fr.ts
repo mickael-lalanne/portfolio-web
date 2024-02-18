@@ -64,7 +64,7 @@ export default {
         detail: 'EN VOIR PLUS',
         noProject: {
             title: 'Il semblerait qu\'aucun projet ne corresponde à tes filtres.',
-            subtitle: 'Combat Bowser en modifiant ou en effaçant tes filtres !'
+            subtitle: 'Combat Bowser en modifiant tes filtres !'
         },
         filtering: {
             searchLabel: 'Recherche',
@@ -72,7 +72,7 @@ export default {
             typeLabel: 'Projet',
             types: {
                 personal: 'Personnel',
-                professional: 'Profesionnel',
+                professional: 'Professionnel',
                 student: 'Étudiant'
             }
         },
