@@ -23,20 +23,20 @@
             </div>
 
             <!-- About -->
-            <div class="section-title">
+            <div class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.playerNextGen.details.presentationTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.playerNextGen.details.presentationContent')"
             ></div>
 
             <!-- Asset Youtube -->
-            <div class="section-title">
+            <div class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.playerNextGen.details.youtubeTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.playerNextGen.details.youtubeContent')"
             ></div>
 
@@ -48,11 +48,11 @@
             />
 
             <!-- Asset Linear Gauge -->
-            <div class="section-title">
+            <div class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.playerNextGen.details.gaugeTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.playerNextGen.details.gaugeContent')"
             ></div>
 
@@ -64,7 +64,7 @@
             />
 
             <div
-                class="section-content my-5"
+                class="project-section-content my-5"
                 v-html="$vuetify.locale.t('$vuetify.projects.playerNextGen.details.gaugeContent2')"
             ></div>
 
@@ -75,7 +75,7 @@
             />
 
             <div
-                class="section-content mt-5"
+                class="project-section-content mt-5"
                 v-html="$vuetify.locale.t('$vuetify.projects.playerNextGen.details.gaugeContent3')"
             ></div>
         </v-card>
@@ -94,25 +94,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .project-title {
-    text-align: center;
     img {
         width: 600px;
     }
-}
-img {
-    max-width: 100%;
-    cursor: pointer;
-}
-.section-title {
-    text-transform: uppercase;
-    font-size: 24px;
-    font-weight: bold;
-    padding-top: 30px;
-    padding-bottom: 15px;
-}
-.section-content-title {
-    padding-top: 10px;
-    padding-bottom: 5px;
-    text-decoration: underline;
 }
 </style>

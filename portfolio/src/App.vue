@@ -115,6 +115,51 @@ html {
     view-timeline: --scrollAnimationTimeline block;
 }
 
+// SHARED CLASSES IN PROJECTS
+.project-container {
+    background-color: rgb(var(--v-theme-light)) !important;
+    padding: 5vh 30vw !important;
+    text-align: justify;
+    font-family: 'Roboto';
+    font-display: swap;
+    min-height: unset !important;
+    min-width: unset !important;
+    overflow-x: auto;
+    img {
+        max-width: 100%;
+        cursor: pointer;
+    }
+    a {
+        text-decoration: underline;
+        color: rgb(var(--v-theme-primary));
+        &:hover {
+            color: rgb(var(--v-theme-secondary));
+        }
+    }
+}
+.project-section-content {
+    white-space: pre-line;
+}
+.project-title {
+    text-align: center;
+    img {
+        cursor: unset;
+    }
+}
+.project-section-title {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: bold;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+.project-section-content-title {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-decoration: underline;
+}
+
+
 // Scrollbar
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -131,29 +176,6 @@ html {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: rgb(var(--v-theme-primary));
-}
-
-.project-container {
-    background-color: rgb(var(--v-theme-light)) !important;
-    padding: 5vh 30vw !important;
-    text-align: justify;
-    font-family: 'Roboto';
-    font-display: swap;
-    min-height: unset !important;
-    min-width: unset !important;
-    overflow-x: auto;
-
-    a {
-        text-decoration: underline;
-        color: rgb(var(--v-theme-primary));
-        &:hover {
-            color: rgb(var(--v-theme-secondary));
-        }
-    }
-}
-
-.section-content {
-    white-space: pre-line;
 }
 
 .bg-grid-effect {

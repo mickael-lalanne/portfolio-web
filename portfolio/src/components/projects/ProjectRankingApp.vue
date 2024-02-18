@@ -31,7 +31,7 @@
 
             <!-- SUMMARY -->
             <div class="summary">
-                <div class="section-title">{{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.summary') }}</div>
+                <div class="project-section-title">{{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.summary') }}</div>
                 <ul class="ml-6">
                     <li class="summary-title">
                         <a @click="scrollToPart('inShort')">
@@ -102,61 +102,61 @@
             </div>
 
             <!-- In short -->
-            <div ref="inShort" class="section-title">
+            <div ref="inShort" class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.inShortTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.inShortList')"
             ></div>
             <div
-                class="section-content mt-6"
+                class="project-section-content mt-6"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.inShortContent')"
             ></div>
             <div
-                class="section-content mt-6"
+                class="project-section-content mt-6"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.inShortCode')"
             ></div>
 
             <!-- Why -->
-            <div ref="why" class="section-title">
+            <div ref="why" class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.whyTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.whyContent')"
             ></div>
 
             <!-- Authentication and Image Management -->
-            <div ref="authImage" class="section-title">
+            <div ref="authImage" class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.authImageTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.authImageContent')"
             ></div>
 
-            <div ref="auth" class="section-content-title">
+            <div ref="auth" class="project-section-content-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.authTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.authContent')"
             ></div>
-            <div ref="image" class="section-content-title">
+            <div ref="image" class="project-section-content-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.imageTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.imageContent')"
             ></div>
 
             <!-- Responsive and UX Design -->
-            <div ref="uiUx" class="section-title">
+            <div ref="uiUx" class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.UiUxTitle') }}
             </div>
             <div
-                class="section-content-title pt-2"
+                class="project-section-content-title pt-2"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.UiContent')"
             ></div>
             <img
@@ -168,11 +168,11 @@
             />
 
             <div
-                class="section-content-title pt-2 mb-2"
+                class="project-section-content-title pt-2 mb-2"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.UxContent')"
             ></div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.UxList')"
             ></div>
             <img
@@ -183,7 +183,7 @@
             />
 
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.UxList2')"
             ></div>
             <img
@@ -194,7 +194,7 @@
             />
 
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.UxList3')"
             ></div>
             <img
@@ -205,7 +205,7 @@
             />
 
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.UxList4')"
             ></div>
             <img
@@ -216,7 +216,7 @@
             />
 
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.UxList5')"
             ></div>
             <img
@@ -227,7 +227,7 @@
             />
 
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.UxList6')"
             ></div>
             <img
@@ -238,7 +238,7 @@
             />
 
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.UxList7')"
             ></div>
             <img
@@ -249,21 +249,21 @@
             />
 
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.UxList8')"
             ></div>
 
             <!-- Tests -->
-            <div ref="tests" class="section-title">
+            <div ref="tests" class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.testsTitle') }}
             </div>
             <div
                 ref="unitTests"
-                class="section-content-title pt-0"
+                class="project-section-content-title pt-0"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.unitTestsTitle')"
             ></div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.unitTestsContent')"
             ></div>
             <img
@@ -274,11 +274,11 @@
             />
             <div
                 ref="e2eTests"
-                class="section-content-title"
+                class="project-section-content-title"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.e2eTitle')"
             ></div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.e2eContent')"
             ></div>
             <img
@@ -288,7 +288,7 @@
                 @click="imageToExtend = require('@/assets/images/projects/rankingApp/mock.webp')"
             />
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.e2eCypressContent')"
             ></div>
             <img
@@ -299,28 +299,28 @@
             />
 
             <!-- Github Actions -->
-            <div ref="githubActions" class="section-title">
+            <div ref="githubActions" class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.gaTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.gaContent')"
             ></div>
 
             <!-- Security -->
-            <div ref="security" class="section-title">
+            <div ref="security" class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.securityTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.securityContent')"
             ></div>
             <div
-                class="section-content mt-6"
+                class="project-section-content mt-6"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.securityList')"
             ></div>
             <div
-                class="section-content mt-6"
+                class="project-section-content mt-6"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.securityList2')"
             ></div>
             <img
@@ -330,15 +330,15 @@
                 @click="imageToExtend = require('@/assets/images/projects/rankingApp/accessToken.webp')"
             />
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.securityList3')"
             ></div>
             <div
-                class="section-content mt-6"
+                class="project-section-content mt-6"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.securityList4')"
             ></div>
             <div
-                class="section-content mt-6"
+                class="project-section-content mt-6"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.securityList5')"
             ></div>
             <img
@@ -348,7 +348,7 @@
                 @click="imageToExtend = require('@/assets/images/projects/rankingApp/securityHeadersBefore.webp')"
             />
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.securityList6')"
             ></div>
             <img
@@ -359,32 +359,32 @@
             />
 
             <!-- SSL -->
-            <div ref="ssl" class="section-title">
+            <div ref="ssl" class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.sslTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.sslContent')"
             ></div>
 
             <!-- Conclusion -->
-            <div ref="conclusion" class="section-title">
+            <div ref="conclusion" class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.rankingApp.details.conclusionTitle') }}
             </div>
             <div
-                class="section-content-title pt-4"
+                class="project-section-content-title pt-4"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.conclusionSubtitle1')"
             ></div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.conclusionContent1')"
             ></div>
             <div
-                class="section-content-title"
+                class="project-section-content-title"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.conclusionSubtitle2')"
             ></div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.rankingApp.details.conclusionContent2')"
             ></div>
         </v-card>
@@ -409,30 +409,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 .ranking-app-project-container {
     scroll-behavior: smooth;
-    a {
-        cursor: pointer;
-    }
-    img {
-        cursor: pointer;
-    }
-}
-.project-title {
-    text-align: center;
-    img {
-        cursor: unset;
-    }
-}
-.section-title {
-    text-transform: uppercase;
-    font-size: 24px;
-    font-weight: bold;
-    padding-top: 30px;
-    padding-bottom: 15px;
-}
-.section-content-title {
-    padding-top: 35px;
-    padding-bottom: 5px;
-    text-decoration: underline;
 }
 
 .ranking-app-img {
@@ -448,11 +424,11 @@ export default defineComponent({
 </style>
 
 <style lang="scss">
-.ranking-app-project-container .section-content span {
+.ranking-app-project-container .project-section-content span {
     margin-left: 25px;
 }
 
-.ranking-app-project-container .section-content code {
+.ranking-app-project-container .project-section-content code {
     background-color: black;
     color: white;
 }

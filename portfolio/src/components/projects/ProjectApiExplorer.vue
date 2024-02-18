@@ -22,11 +22,11 @@
                 />
             </div>
             <!-- Présentation -->
-            <div class="section-title">
+            <div class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.apiExplorer.details.presentationTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.apiExplorer.details.presentationContent')"
             ></div>
             <img
@@ -37,16 +37,16 @@
             />
 
             <!-- Objectif -->
-            <div class="section-title">
+            <div class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.apiExplorer.details.objectiveTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.apiExplorer.details.objectiveContent')"
             ></div>
 
             <!-- Technologies -->
-            <div class="section-title">
+            <div class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.apiExplorer.details.technologiesTitle') }}
             </div>
             <div style="width: 400px; margin: auto">
@@ -58,16 +58,16 @@
                 />
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.apiExplorer.details.technologiesContent')"
             ></div>
 
             <!-- Design -->
-            <div class="section-title">
+            <div class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.apiExplorer.details.designTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.apiExplorer.details.designContent')"
             ></div>
             <img
@@ -77,7 +77,7 @@
                 @click="imageToExtend = 'Y4SvFhr.png'"
             />
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.apiExplorer.details.designContent2')"
             ></div>
             <div style="margin: auto" class="pt-3">
@@ -89,20 +89,20 @@
             </div>
 
             <!-- Tests -->
-            <div class="section-title">
+            <div class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.apiExplorer.details.testsTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.apiExplorer.details.testsContent')"
             ></div>
 
             <!-- Conclusion -->
-            <div class="section-title">
+            <div class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.apiExplorer.details.conclusionTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.apiExplorer.details.conclusionContent')"
             ></div>
             <img
@@ -127,25 +127,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .project-title {
-    text-align: center;
     img {
         width: 600px;
     }
-}
-img {
-    max-width: 100%;
-    cursor: pointer;
-}
-.section-title {
-    text-transform: uppercase;
-    font-size: 24px;
-    font-weight: bold;
-    padding-top: 30px;
-    padding-bottom: 15px;
-}
-.section-content-title {
-    padding-top: 10px;
-    padding-bottom: 5px;
-    text-decoration: underline;
 }
 </style>

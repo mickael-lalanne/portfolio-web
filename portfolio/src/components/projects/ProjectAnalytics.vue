@@ -22,11 +22,11 @@
                 />
             </div>
             <!-- Présentation -->
-            <div class="section-title">
+            <div class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.analytics.details.presentationTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.analytics.details.presentationContent')"
             ></div>
             <div style="text-align: center;" class="pt-3">
@@ -39,11 +39,11 @@
             </div>
 
             <!-- Dashboard -->
-            <div class="section-title">
+            <div class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.analytics.details.dashboardTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.analytics.details.dashboardContent')"
             ></div>
             <img
@@ -54,11 +54,11 @@
             />
 
             <!-- Chart Editor -->
-            <div class="section-title">
+            <div class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.analytics.details.chartEditorTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.analytics.details.chartEditorContent')"
             ></div>
             <img
@@ -69,11 +69,11 @@
             />
 
             <!-- Chart Template Library -->
-            <div class="section-title">
+            <div class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.analytics.details.templateLibraryTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.analytics.details.templateLibraryContent')"
             ></div>
             <div style="margin: auto" class="pt-3">
@@ -85,11 +85,11 @@
             </div>
 
             <!-- Partage de Dashboard -->
-            <div class="section-title">
+            <div class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.analytics.details.shareTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.analytics.details.shareContent')"
             ></div>
             <img
@@ -114,33 +114,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .project-title {
-    text-align: center;
     img {
         width: 600px;
-    }
-}
-img {
-    max-width: 100%;
-    cursor: pointer;
-}
-.section-title {
-    text-transform: uppercase;
-    font-size: 24px;
-    font-weight: bold;
-    padding-top: 30px;
-    padding-bottom: 15px;
-}
-.section-content-title {
-    padding-top: 10px;
-    padding-bottom: 5px;
-    text-decoration: underline;
-}
-
-a {
-    text-decoration: underline;
-    color: unset !important;
-    &:hover {
-        color: rgb(var(--v-theme-secondary)) !important;
     }
 }
 </style>

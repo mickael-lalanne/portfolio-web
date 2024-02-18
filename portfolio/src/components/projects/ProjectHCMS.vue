@@ -30,11 +30,11 @@
             />
 
             <!-- Dashboard -->
-            <div class="section-title">
+            <div class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.hcms.details.dashboardTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.hcms.details.dashboardContent')"
             ></div>
 
@@ -46,11 +46,11 @@
             />
 
             <!-- Structure -->
-            <div class="section-title">
+            <div class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.hcms.details.structureTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.hcms.details.structureContent')"
             ></div>
 
@@ -67,11 +67,11 @@
                 </a>
             </p>
 
-            <div class="section-title">
+            <div class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.hcms.details.variantTitle') }}
             </div>
             <div
-                class="section-content"
+                class="project-section-content"
                 v-html="$vuetify.locale.t('$vuetify.projects.hcms.details.variantContent')"
             ></div>
 
@@ -83,11 +83,11 @@
             />
 
             <!-- Content -->
-            <div class="section-title">
+            <div class="project-section-title">
                 {{ $vuetify.locale.t('$vuetify.projects.hcms.details.contentTitle') }}
             </div>
 
-            <div class="section-content">
+            <div class="project-section-content">
                 <div class="font-weight-bold pb-5">
                     {{ $vuetify.locale.t('$vuetify.projects.hcms.details.importTitle') }}
                 </div>
@@ -136,25 +136,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .project-title {
-    text-align: center;
     img {
         width: 600px;
     }
-}
-img {
-    max-width: 100%;
-    cursor: pointer;
-}
-.section-title {
-    text-transform: uppercase;
-    font-size: 24px;
-    font-weight: bold;
-    padding-top: 30px;
-    padding-bottom: 15px;
-}
-.section-content-title {
-    padding-top: 10px;
-    padding-bottom: 5px;
-    text-decoration: underline;
 }
 </style>
