@@ -84,11 +84,13 @@
                     :key="i"
                     :title="$vuetify.locale.t(project.title)"
                     :description="$vuetify.locale.t(project.description)"
+                    :resume="$vuetify.locale.t(project.resume)"
                     :skills="project.skills"
                     :imgName="project.imgName"
                     :dialogComponent="project.dialogComponent"
                     :date="project.date"
                     :pinned="project.pinned"
+                    :windowWidth="windowWidth"
                 >
                     <template v-slot:previousButton>
                     </template>
@@ -234,7 +236,8 @@ export default {
         soLongAnimation: false as boolean,
         showMarioHammerAnimation: false as boolean,
         projectPosition: 0 as number,
-        mousePosition: { top: 0, left: 0, x: 0, y: 0 } as { top: number, left: number, x: number, y: number }
+        mousePosition: { top: 0, left: 0, x: 0, y: 0 } as { top: number, left: number, x: number, y: number },
+        windowWidth: window.innerWidth
     }),
     mounted: function() {
         this.$refs.lineModeContainer
@@ -248,10 +251,15 @@ export default {
                 marioWalkingImage.src = '' + marioWalkingImage.src;
             }
         }, 60000);
+
+        this.$nextTick(() => {
+            window.addEventListener('resize', this.onResize);
+        })
     },
     beforeDestroy() { 
         this.$refs.lineModeContainer
             .removeEventListener('scroll', this.determineProjectPosition);
+        window.removeEventListener('resize', this.onResize); 
     },
     methods: {
         /**
@@ -316,6 +324,9 @@ export default {
             // Scroll in project lists
             this.$refs.lineModeContainer.scrollTop = this.mousePosition.top - dy;
             this.$refs.lineModeContainer.scrollLeft = this.mousePosition.left - dx;
+        },
+        onResize() {
+            this.windowWidth = window.innerWidth;
         }
     }
 };

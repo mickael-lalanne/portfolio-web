@@ -9,7 +9,7 @@
                 {{ title }}
                 <span class="project-date">- {{ date }}</span>
             </div>
-            <div class="project-description" v-html="description"></div>
+            <div class="project-description" v-html="windowWidth > 700 ? description : resume"></div>
             <!-- By default, the link open a new dialog to see more details -->
             <div v-if="!this.$slots.projectLink" class="project-link" @click="showDialog = true">
                 {{ $vuetify.locale.t('$vuetify.projects.detail') }}
@@ -69,11 +69,13 @@ export default {
     props: {
         title: { type: String },
         description: { type: String },
+        resume: { type: String },
         imgName: { type: String },
         skills: { type: Array },
         dialogComponent: { type: String },
         date: { type: String },
         pinned: { type: Number },
+        windowWidth: { type: Number },
     },
     data: () => ({
         showDialog: false,
