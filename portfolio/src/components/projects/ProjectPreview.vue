@@ -1,15 +1,20 @@
 <template>
     <div class="project-preview-container">
         <div class="project-left">
-            <div class="project-preview-title">
+            <div class="project-preview-title d-flex align-center">
                 <img
                     v-if="pinned"
+                    class="mr-2"
                     :src="require('@/assets/images/mario/star.png')"
                 />
-                {{ title }}
-                <span class="project-date">- {{ date }}</span>
+                <span>{{ title }} <span class="project-date">- {{ date }}</span></span>
+                
             </div>
-            <div class="project-description" v-html="windowWidth > 700 ? description : resume"></div>
+            <div
+                class="project-description"
+                :style="`white-space: ${windowWidth > 700 ? 'pre-line' : 'normal'};`"
+                v-html="windowWidth > 700 ? description : resume"
+            ></div>
             <!-- By default, the link open a new dialog to see more details -->
             <div v-if="!this.$slots.projectLink" class="project-link" @click="showDialog = true">
                 {{ $vuetify.locale.t('$vuetify.projects.detail') }}
@@ -114,12 +119,12 @@ export default {
     font-family: Roboto;
     font-style: italic;
     white-space: nowrap;
+    padding-top: 13px;
 }
 .project-description {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 15px;
     text-align: justify;
-    white-space: pre-line;
 }
 .project-link {
     display: flex;
@@ -184,6 +189,17 @@ export default {
     }
     .project-preview-container {
         height: inherit;
+    }
+    .project-preview-title {
+        font-size: 25px;
+        padding-top: 15px;
+        span {
+            padding-top: 5px;
+        }
+    }
+    .project-date {
+        font-size: 14px;
+        margin-left: 10px;
     }
 }
 @media (max-width: 1700px) {

@@ -2,7 +2,10 @@
     <div
         id="projects"
         class="all-projects-container bg-grid-effect"
-        :class="{ 'all-projects-container-line-view': viewMode === EViewMode.line }"
+        :class="{
+            'all-projects-container-line-view': viewMode === EViewMode.line,
+            'all-projects-container-grid-view': viewMode === EViewMode.grid
+        }"
     >
         <GlitchText class="mb-6" :text="$vuetify.locale.t('$vuetify.projects.title')" />
 
@@ -17,7 +20,7 @@
 
         <!-- NO PROJECT MESSAGE -->
         <div
-            v-if="filteredProjects.length === 0 || soLongAnimation"
+            v-show="filteredProjects.length === 0 || soLongAnimation"
             style="position: relative; width: 100%;"
         >
             <div
@@ -349,6 +352,9 @@ $arrow-separator-height: 100px;
 .all-projects-container-line-view {
     height: 930px;
 }
+.all-projects-container-grid-view {
+    min-height: 930px;
+}
 .project-divider {
     opacity: 100;
     color: white;
@@ -579,6 +585,9 @@ $arrow-separator-height: 100px;
 @media (max-width: 1700px) {
     .all-projects-container {
         height: unset;
+    }
+    .all-projects-container-grid-view {
+        min-height: unset;
     }
 }
 </style>
