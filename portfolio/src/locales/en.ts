@@ -76,6 +76,73 @@ export default {
                 student: 'Student'
             }
         },
+        kaisenWorkout: {
+            title: 'KAISEN WORKOUT',
+            description: `Mobile application that allows me to create and follow my own training programs.
+            Code is public and available at the following address : <b><a href="https://github.com/mickael-lalanne/kaisen-workout/" target="_blank">github.com/mickael-lalanne/kaisen-workout</a></b> !
+            Try the app yourself on your Android by <b><a href="https://expo.dev/artifacts/eas/rJ5SARrhB3zGYYAhWi5P8G.apk" target="_blank">downloading the APK here</a></b> !`,
+            resume: `Mobile app to track and create training programs.<br>
+            Developed in Typescript with React Native and Expo. Local database with Realm.`,
+            skills: {
+                one: 'Personal project',
+                two: 'Mobile app in Typescript with React Native and Expo',
+                three: 'Local database with Realm',
+                four: 'Using Github Copilot during development'
+            },
+            details: {
+                summary: 'Summary',
+                inShortTitle: 'In short',
+                inShortList: `- Mobile app with <a href="https://reactnative.dev/" target="_blank">React Native</a>, <a href="https://expo.dev/" target="_blank">Expo</a> and <a href="https://www.typescriptlang.org/" target="_blank">Typescript</a>
+                - Local database with <a href="https://www.mongodb.com/docs/realm/sdk/react-native/" target="_blank">Realm</a>
+                - State management with <a href="https://redux.js.org/" target="_blank">Redux</a> and <a href="https://redux-toolkit.js.org/" target="_blank">Redux Toolkit</a>
+                - UI with <a href="https://reactnativepaper.com/" target="_blank">React Native Paper</a> and <a href="https://reactnavigation.org/" target="_blank">React Navigation</a>
+                - Automated APK build with <a href="https://docs.github.com/en/actions" target="_blank">Github Actions</a>
+                - Using <a href="https://github.com/features/copilot" target="_blank">Github Copilot</a> during the development phase`,
+                inShortContent: `Code is public and available at the following address : <a href="https://github.com/mickael-lalanne/kaisen-workout" target="_blank">github.com/mickael-lalanne/kaisen-workout</a>.<br>
+                Try Kaisen Workout yourself on your Android by downloading the APK <a href="https://expo.dev/artifacts/eas/rJ5SARrhB3zGYYAhWi5P8G.apk" target="_blank">here</a>.`,
+                whatTitle: `What's Kaisen Workout ?`,
+                whatContent: `Inspired by the Jujutsu Kaisen manga, Kaisen Workout is a mobile application that I developed to support me during my training sessions at the gym. It allows, among other things, to :`,
+                whatList: `- <b>Create your own programs</b>: exercise sets, number of repetitions, rest duration.
+                - <b>Note your performances each session</b> in order to have easy access to the performances of the previous session. The goal is to achieve progressive overload.
+                - <b>View and analyze all sessions performed</b>.
+                - <b>Personalize your experience</b> with dark mode, different color themes and the ability to rate your performance in kilograms or pounds.`,
+                architectureTitle: `Architecture and database`,
+                architectureContent: `In its V1, Kaisen Workout does not have online functionalities. Everything is managed through a local database with Realm, now called <i>Atlas Device SDK</i>. Online synchronization should therefore be able to be done later and easily with a MongoDB database.`,
+                architectureContent2: `For routing, I use <a href="https://reactnavigation.org/" target="_blank">React Navigation</a>. The application is divided into 3 main screens accessible via a <a href="https://reactnavigation.org/docs/bottom-tab-navigator" target="_blank">Bottom Tab</a> : <i>Programs</i>, <i>Workout</i> et <i>Progression</i>. Each of these screens also use their own nested screens using a <a href="https://reactnavigation.org/docs/stack-navigator" target="_blank">Stack Navigator.`,
+                programTitle: `Program creation`,
+                programContent: `Before you can use the application, you need to have programs. These must be composed of a name, an image, and one or more sets of exercises. Each set is linked to one or more exercises (also called Superset) and includes a rest time as well as a number of repetitions.
+                From a UX point of view, efforts have been made to make the experience as pleasant as possible. For example, it is possible to create an exercise on the fly directly from the program creation : the user does not have to go through the exercise screen. This is also the case for set creation, which can be done directly during training. To do this, multiple React components, like <i>ExerciseBuilder</i> or <i>SetBuilder</i>, are reused in multiple places.`,
+                workoutTitle: `During workout`,
+                workoutContent: `The <i>“Workout”</i> screen is in my opinion the most important, because it is the reason why I developed the application.
+
+                To encourage progressive overload, it must first allow me to easily visualize the performance of the previous session. With Realm, it's very easy to access this information, I can easily retrieve the last session by sorting by date and filtering by state and program :`,
+                workoutContent2: `Once it is retrieved, I just have to go through its sets to find a repetition that corresponds to the right exercise and the right order :`,
+                workoutContent3: `The <i>“Workout”</i> screen should also allow me to time my recovery periods. Initially, I saved the duration in seconds of the rest time in the store. Then, using a thunk, I decremented this value by 1 every second. This is great when we stay on the application, but as soon as we lock our phone or change applications, the timer is paused and its value is no longer updated.
+                In order to correct this behavior, I first thought of using a library to perform background tasks like <i><a href="https://docs.expo.dev/versions/latest/sdk/task-manager/" target="_blank">expo-task-manager</a></i> or <i><a href="https://docs.expo.dev/versions/latest/sdk/background-fetch/" target="_blank">expo-background-fetch</a></i>. But I finally turned to a solution that was much simpler to implement and certainly more efficient : calculating and saving an end date in the store rather than a simple number.
+                Therefore, no matter if we close the application, lock or restart our phone, we will always have the correct timer displayed in Kaisen Workout.`,
+                progressionTitle: `Session analysis`,
+                progressionContent: `The last screen, <i>“Progress”</i>, allows me to view the completed sessions. All completed workouts are displayed in a data table and indicate the date and program followed. As I record both the date the session started, as well as the date it ended, you have access to the duration of your training, which is always interesting data.
+
+                When you select a workout, you have access to a detailed report which indicates all the sets, repetitions and performances linked to the session.`,
+                preferencesTitle: `Preferences`,
+                preferencesContent: `Finally, a preferences menu is accessible at the top right of the application. It allows to :`,
+                preferencesList: `- Enable or disable dark mode
+                - Select a color theme (between blue and orange in V1)
+                - Choose the unit of weight between kilogram and pounds`,
+                preferencesContent2: `Regarding the weight unit, you should know that regardless of the user's choice, the data will be saved in kilograms in the database. It is only in the display and when saving that the values will be converted or not.`,
+                copilotTitle: `Feedback on Github Copilot`,
+                copilotContent: `I used this project to test Github Copilot with its trial period. My opinion is extremely positive and I am convinced that AI tools of this kind will become even more essential for developers in the coming years.
+
+                Copilot's auto-completion is impressive and has often saved me a lot of time. For example, I just had to write <i>convertKgToLb</i> as the function name for the tool to generate the entire logic for me. In some cases, I didn't even need to do any coding or search for answers on Stackoverflow.
+                
+                It was also possible for me to generate comments for certain classes and functions. At any time, we can select code to ask Copilot to explain it to us, document it, or generate tests. We can also open a command prompt to ask Copilot to generate a specific code for us.`,
+                conclusionTitle: `Conclusion`,
+                conclusionContent: `I loved learning and developing my first mobile application with React Native, especially when I know that the application will actually serve me.
+                The whole development process was very smooth and I never found myself stuck on one topic for long. Expo is a very interesting library that makes development very accessible because it offers a number of features and makes building applications much easier.
+                
+                Since I plan to use Kaisen Workout frequently, I will likely improve the app with updates. I already have some ideas in mind for a potential V2, such as online synchronization, the possibility of adding notes on sets and sessions, or even having graphs to show the evolution of performances.`,
+            },
+        },
         rankingApp: {
             title: 'RANKING APP',
             description: `Web application allowing users to create their own templates and tierlists.

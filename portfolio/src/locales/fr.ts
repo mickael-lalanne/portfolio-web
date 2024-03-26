@@ -76,11 +76,77 @@ export default {
                 student: 'Étudiant'
             }
         },
+        kaisenWorkout: {
+            title: 'KAISEN WORKOUT',
+            description: `Application mobile qui me permet de créer et de suivre mes propres programmes d'entraînement.
+            Le code est publique et disponible à l'adresse suivante : <b><a href="https://github.com/mickael-lalanne/kaisen-workout/" target="_blank">github.com/mickael-lalanne/kaisen-workout</a></b>.
+            Essayez vous-même l'application sur votre Android en <b><a href="https://expo.dev/artifacts/eas/rJ5SARrhB3zGYYAhWi5P8G.apk" target="_blank">téléchargeant l'APK ici</a></b> !`,
+            resume: `App mobile pour suivre et créer des programmes d'entraînement.<br>
+            Développé en Typescript avec React Native et Expo. Base de données locale avec Realm.`,
+            skills: {
+                one: 'Projet personnel',
+                two: 'App mobile en Typescript avec React Native et Expo',
+                three: 'Base de données locale avec Realm',
+                four: 'Utilisation de Github Copilot durant le développement'
+            },
+            details: {
+                summary: 'Sommaire',
+                inShortTitle: 'En résumé',
+                inShortList: `- Application mobile avec <a href="https://reactnative.dev/" target="_blank">React Native</a>, <a href="https://expo.dev/" target="_blank">Expo</a> et <a href="https://www.typescriptlang.org/" target="_blank">Typescript</a>
+                - Base de données locale avec <a href="https://www.mongodb.com/docs/realm/sdk/react-native/" target="_blank">Realm</a>
+                - State management avec <a href="https://redux.js.org/" target="_blank">Redux</a> et <a href="https://redux-toolkit.js.org/" target="_blank">Redux Toolkit</a>
+                - UI avec <a href="https://reactnativepaper.com/" target="_blank">React Native Paper</a> et <a href="https://reactnavigation.org/" target="_blank">React Navigation</a>
+                - Build d'APK automatisé avec <a href="https://docs.github.com/en/actions" target="_blank">Github Actions</a>
+                - Utilisation de <a href="https://github.com/features/copilot" target="_blank">Github Copilot</a> durant la phase de développement`,
+                inShortContent: `Le code est publique et disponible à l'adresse suivante : <a href="https://github.com/mickael-lalanne/kaisen-workout" target="_blank">github.com/mickael-lalanne/kaisen-workout</a>.<br>
+                Essayez vous même Kaisen Workout sur votre Android en téléchargeant l'APK <a href="https://expo.dev/artifacts/eas/rJ5SARrhB3zGYYAhWi5P8G.apk" target="_blank">ici</a>.`,
+                whatTitle: `Kaisen Workout, c'est quoi ?`,
+                whatContent: `Inspiré du manga Jujutsu Kaisen, Kaisen Workout est une application mobile que j'ai développé pour m'accompagner durant mes séances d'entraînement à la salle de sport. Elle permet entre autre de :`,
+                whatList: `- <b>Créer ses propres programmes</b> : sets d'exercices, nombre de répétitions, durée de repos.
+                - <b>Noter ses performances</b> chaque séance afin d'avoir un accès facile aux performances de la séance précédente. Le but étant d'atteindre une surcharge progressive.
+                - <b>Voir et analyser toutes les séances effectuées</b>.
+                - <b>Personnaliser son expérience</b> avec le mode sombre, les différents thèmes de couleur et la possibilité de noter ses performances en kilogramme ou en livre.`,
+                architectureTitle: `Architecture et base de données`,
+                architectureContent: `Dans sa V1, Kaisen Workout ne possède pas de fonctionnalités en ligne. Tout est géré via une base de données locale avec Realm, maintenant appelé <i>Atlas Device SDK</i>. La synchronisation en ligne devrait donc pouvoir se faire ultérieurement et facilement avec une base de données MongoDB.`,
+                architectureContent2: `Pour ce qui est du routage, j'utilise <a href="https://reactnavigation.org/" target="_blank">React Navigation</a>. L'application est divisée en 3 écrans principaux accessibles via un <a href="https://reactnavigation.org/docs/bottom-tab-navigator" target="_blank">Bottom Tab</a> : <i>Programs</i>, <i>Workout</i> et <i>Progression</i>. Chacun de ces écrans utilisent également leur propres écrans imbriqués grâce à un <a href="https://reactnavigation.org/docs/stack-navigator" target="_blank">Stack Navigator.`,
+                programTitle: `Création de programmes`,
+                programContent: `Avant de pouvoir utiliser l'application, il est nécessaire d'avoir des programmes. Ces derniers sont obligatoirement composés d'un nom, d'une image, et d'un ou plusieurs sets d'exercices. Chaque set étant lié à un ou plusieurs exercices (aussi appelé Superset) et comporte un temps de repos ainsi qu'un nombre de répétitions.
+                D'un point de vue UX, des efforts ont été fait pour rendre l'expérience la plus agréable possible. Il est par exemple possible de créer un exercice à la volée directement depuis la création de programme : l'utilisateur n'est pas obligé de passer par l'écran d'exercice. C'est également le cas pour la création de set, qui peut être faite directement pendant un entraînement. Pour ce faire, plusieurs composants React, comme <i>ExerciseBuilder</i> ou <i>SetBuilder</i>, sont réutilisés à plusieurs endroits.`,
+                workoutTitle: `Durant l'entraînement`,
+                workoutContent: `L'écran <i>“Workout”</i> est à mon sens le plus important, car il est là raison pour laquelle j'ai développé l'application.
+
+                Pour encourager à une surcharge progressive, il doit d'abord me permettre de visualiser facilement les performances de la séance précédente. Avec Realm, c'est très simple d'accéder à ces informations, je peux facilement récupérer la dernière session en triant par date et en filtrant par state et programme :`,
+                workoutContent2: `Une fois celle-ci récupérée, je n'ai plus qu'à parcourir ses sets afin de trouver une répétition qui correspond au bon exercice et au bon ordre :`,
+                workoutContent3: `L'écran <i>“Workout”</i> doit également me permettre de chronométrer mes temps de récupération. Initialement, je sauvegardais dans le store la durée en secondes du temps de repos. Puis, à l'aide d'un <i>thunk</i>, je venais décrémenter cette valeur de 1 toutes les secondes. C'est très bien quand on reste sur l'application, mais dès lors qu'on verrouille notre téléphone ou qu'on change d'application, le timer se met en pause et sa valeur ne se met plus à jour.
+                Afin de corriger ce comportement, j'ai d'abord pensé à utiliser une librairie pour effectuer des tâches en fond comme <i><a href="https://docs.expo.dev/versions/latest/sdk/task-manager/" target="_blank">expo-task-manager</a></i> ou encore <i><a href="https://docs.expo.dev/versions/latest/sdk/background-fetch/" target="_blank">expo-background-fetch</a></i>. Mais je me suis finalement tourné vers une solution beaucoup plus simple à implémenter et certainement plus performante : calculer et sauvegarder une date de fin dans le store plutôt qu'un simple nombre. De ce fait, peu importe si on ferme l'application, qu'on verrouille ou redémarre notre téléphone, on aura toujours le bon timer affiché dans Kaisen Workout.`,
+                progressionTitle: `Analyse des sessions`,
+                progressionContent: `Le dernier écran <i>“Progression”</i> me permet de visualiser les sessions effectuées. Tous les entraînements terminés sont affichés dans un datatable et indiquent la date et le programme suivi. Comme j'enregistre à la fois la date à laquelle la session a commencé, ainsi que la date à laquelle elle a terminé, on a accès à la durée de son entraînement, ce qui est une donnée toujours intéressante.
+
+                Quand on sélectionne un entraînement, on a accès à un compte rendu détaillé qui indique tous les sets, les répétitions et les performances liés à la session.`,
+                preferencesTitle: `Préférences`,
+                preferencesContent: `Enfin, un menu de préférences est accessible en haut à droite de l'application. Il permet notamment :`,
+                preferencesList: `- D'activer ou désactiver le mode sombre
+                - De sélectionner un thème de couleur (entre bleu et orange dans la V1)
+                - De choisir l'unité de poids entre kilogramme et livres`,
+                preferencesContent2: `Pour ce qui concerne l'unité de poids, il faut savoir que peu importe le choix de l'utilisateur, les données seront sauvegardées en kilogramme dans la base de données. C'est uniquement dans l'affichage et au moment d'enregistrer que l'on convertira ou non les valeurs.`,
+                copilotTitle: `Retour d'expérience sur Github Copilot`,
+                copilotContent: `J'ai profité de ce projet pour tester Github Copilot avec sa période d'essai. Mon avis est extrêmement positif et je suis persuadé que les outils en IA dans ce genre deviendront encore plus indispensables pour les développeurs dans les prochaines années.
+
+                L'auto complétion de Copilot est impressionnante et m'a souvent fait gagner énormément de temps. Par exemple, il me suffisait d'écrire comme nom de fonction <i>convertKgToLb</i> pour que l'outil me génère intégralement la logique. Dans certains cas, je n'avais même pas besoin de coder ou d'aller chercher des réponses sur Stackoverflow.
+                
+                Il m'a également été possible de générer les commentaires de certaines classes et fonctions. À tout moment, on peut sélectionner du code pour demander à Copilot de nous l'expliquer, le documenter, ou générer des tests. On peut également ouvrir un invit de commande pour demander à Copilot de nous générer un code particulier.`,
+                conclusionTitle: `Conclusion`,
+                conclusionContent: `J'ai adoré apprendre et développer ma première application mobile avec React Native, d'autant plus quand je sais que l'application va réellement me servir.
+                Tout le processus de développement a été très fluide et je ne me suis jamais retrouvé bloqué longtemps sur un sujet. Expo est une librairie très intéressante qui rend très accessible le développement mobile car elle propose bon nombre de fonctionnalités et facilite beaucoup le build des applications.
+                
+                Comme je compte utiliser Kaisen Workout fréquemment, j'améliorerai probablement l'application avec des mises à jour. J'ai déjà quelques idées en tête pour une potentielle V2, comme une synchronisation en ligne, la possibilité d'ajouter des notes sur les sets et sessions, ou encore avoir des graphiques pour montrer l'évolution des performances.`,
+            },
+        },
         rankingApp: {
             title: 'RANKING APP',
             description: `Application web permettant aux utilisateurs de créer leurs propres templates et tierlists.
             Utilisation de <a href="https://clerk.com/" target="_blank">Clerk</a> pour l'authentification et <a href="https://cloudinary.com/" target="_blank">Cloudinary</a> pour la gestion d'images. Application sécurisée selon les normes de l'<a href="https://owasp.org/" target="_blank">OWASP</a> et <u>entièrement responsive</u>.
-            Code publique et disponible en cliquant <a href="https://github.com/mickael-lalanne/ranking-app/" target="_blank">ici</a> !`,
+            Code publique disponible en cliquant <a href="https://github.com/mickael-lalanne/ranking-app/" target="_blank">ici</a> !`,
             resume: `Application web pour créer des templates et des tierlists.<br>
             Front-end avec Typescript et React. Back-end avec .NET et PostgreSQL.`,
             skills: {

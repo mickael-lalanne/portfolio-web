@@ -6,6 +6,24 @@ const backEndTags: string[] = ['back-end', 'backend', 'back end'];
 const fullStackTags: string[] = ['full stack', 'full-stack', 'fullstack', ...frontTags, ...backEndTags];
 
 export const PROJECTS: Project[] = [
+    // Kaisen Workout
+    {
+        title: '$vuetify.projects.kaisenWorkout.title',
+        description: '$vuetify.projects.kaisenWorkout.description',
+        resume: '$vuetify.projects.kaisenWorkout.resume',
+        skills: [
+            '$vuetify.projects.kaisenWorkout.skills.one',
+            '$vuetify.projects.kaisenWorkout.skills.two',
+            '$vuetify.projects.kaisenWorkout.skills.three',
+            '$vuetify.projects.kaisenWorkout.skills.four'
+        ],
+        imgName: 'kaisenWorkout.webp',
+        dialogComponent: 'ProjectKaisenWorkout',
+        type: EProjectType.personal,
+        tags: [], // TODO
+        date: '2024',
+        pinned: 1
+    },
     // Ranking App
     {
         title: '$vuetify.projects.rankingApp.title',
@@ -22,7 +40,7 @@ export const PROJECTS: Project[] = [
         type: EProjectType.personal,
         tags: [], // TODO
         date: '2024',
-        pinned: 2
+        pinned: 3
     },
     // Triple Triad
     {
@@ -40,7 +58,7 @@ export const PROJECTS: Project[] = [
         type: EProjectType.personal,
         tags: [...vueTags, ...fullStackTags, 'typescript', 'aws', 'amplify', 'graphql', 'vue router', 'pinia'],
         date: '2023',
-        pinned: 1
+        pinned: 2
     },
     // Intuiface HCMS
     {

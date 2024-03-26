@@ -135,6 +135,7 @@ html {
         &:hover {
             color: rgb(var(--v-theme-secondary));
         }
+        cursor: pointer;
     }
 }
 .project-section-content {
