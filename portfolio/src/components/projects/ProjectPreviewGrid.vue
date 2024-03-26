@@ -29,6 +29,7 @@ import ProjectMyIceTool from "@/components/projects/ProjectMyIceTool.vue";
 import ProjectHCMS from "@/components/projects/ProjectHCMS.vue";
 import ProjectPLN from "@/components/projects/ProjectPLN.vue";
 import ProjectRankingApp from "@/components/projects/ProjectRankingApp.vue";
+import ProjectKaisenWorkout from "@/components/projects/ProjectKaisenWorkout.vue";
 
 export default {
     name: "ProjectPreviewGrid",
@@ -38,7 +39,8 @@ export default {
         ProjectMyIceTool,
         ProjectHCMS,
         ProjectPLN,
-        ProjectRankingApp
+        ProjectRankingApp,
+        ProjectKaisenWorkout
     },
     props: {
         title: { type: String },
